@@ -1,9 +1,9 @@
 const headerTemplate = `
   <div class="container nav-wrapper">
-    <a href="bold-brew.html" class="logo">Bold Brew<span>.</span></a>
+    <a href="index.html" class="logo">Bold Brew<span>.</span></a>
     <nav>
       <ul>
-        <li><a href="bold-brew.html">Trang chủ</a></li>
+        <li><a href="index.html">Trang chủ</a></li>
         <li><a href="product.html">Sản phẩm</a></li>
         <li><a href="about.html">Giới thiệu</a></li>
         <li><a href="contact.html">Liên hệ</a></li>
@@ -12,7 +12,7 @@ const headerTemplate = `
     </nav>
     <div class="header-actions">
       <a href="login.html" class="btn btn-outline btn-login">Đăng nhập</a>
-      <button type="button" class="btn-icon" aria-label="Giỏ hàng">
+      <button  type="button" class="btn-icon btn_cart" aria-label="Giỏ hàng">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="9" cy="21" r="1" />
           <circle cx="20" cy="21" r="1" />
@@ -26,7 +26,7 @@ const headerTemplate = `
 const footerTemplate = `
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="bold-brew.html" class="footer-logo">Bold Brew<span>.</span></a>
+      <a href="index.html" class="footer-logo">Bold Brew<span>.</span></a>
       <p class="footer-tagline">Hương vị trọn vẹn và caffeine sạch cho những ai không chấp nhận dừng lại.</p>
       <div class="social">
         <a href="#" aria-label="Trang Instagram">IG</a>
@@ -69,6 +69,13 @@ function injectComponents() {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
   const data=localStorage.getItem('userData');
+  const btnCart = document.querySelector('.btn_cart');
+
+  if (btnCart) {
+    btnCart.addEventListener('click', () => {
+      window.location.href = 'cart.html';
+    });
+  }
   const userData = data ? JSON.parse(data) : null;
 
   if (userData) {
@@ -83,7 +90,7 @@ function injectComponents() {
   if (header) {
     header.innerHTML = headerTemplate;
     
-    const currentPath = window.location.pathname.split('/').pop() || 'bold-brew.html';
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = header.querySelectorAll('nav a');
     navLinks.forEach(link => {
       if (link.getAttribute('href') === currentPath) {
