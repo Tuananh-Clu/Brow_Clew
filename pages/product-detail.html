@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết Sản phẩm - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/bold-brew.css">
+  <link rel="stylesheet" href="../styles/product-detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="../scripts/components.js" defer></script>
+  <script src="../scripts/product-detail.js" defer></script>
+</head>
+<body class="detail-page">
+  <header>
+    <!-- Injected by components.js -->
+  </header>
+
+  <main class="product-detail-main">
+    <div class="container detail-container">
+       <div class="detail-gallery">
+          <div class="image-wrapper">
+             <div class="glow-effect"></div>
+             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsrUb7VxnpjuSArF2bycexsfKkn8CcU-PZYRSNII8Fd4wusHMtdLWwzGgQFaT23XwTxG8_IMD4R0Fub8rBm4DL2RWb0xX5t6en5oPegzG0O8TS5HAXqL0IFBW6mgMF2LCcZrzFkF8R7vvCr1d8eNbIJsekrQIUcQgOAFqAjdlEbFsg-5-Tkx9cKCiOciQ-J60UOTTvxrj_TnESM1KdAtsO-EYEerEE-L9-8bQIUpbwaHsMcfe3pNN5uGPNfMuNW0br8FgcdkbVvg" alt="Macchiato Nghệ Thuật">
+          </div>
+       </div>
+       
+       <div class="detail-info">
+          <div class="breadcrumbs">
+             <a href="bold-brew.html">Trang chủ</a> / <a href="product.html">Sản phẩm</a> / <span>Macchiato Nghệ Thuật</span>
+          </div>
+          
+          <h1 class="detail-title">Macchiato Nghệ Thuật</h1>
+          <p class="detail-desc">Sự hòa quyện hoàn hảo giữa espresso mạnh mẽ và lớp bọt sữa mềm mịn bồng bềnh. Mang lại cảm giác béo ngậy mà vẫn giữ trọn vẹn hương vị nguyên bản của hạt cà phê đặc sản, được rang mộc tỉ mỉ bởi nghệ nhân của chúng tôi.</p>
+          
+          <div class="detail-price">
+             <span id="base-price" data-price="8.00">$8.00</span>
+          </div>
+
+          <form class="customization-form" id="addToCartForm">
+            <!-- Add to Cart Actions -->
+            <div class="action-row">
+               <div class="quantity-selector">
+                  <button type="button" class="qty-btn minus" aria-label="Giảm số lượng"><i class="fa-solid fa-minus"></i></button>
+                  <input type="number" id="qty" value="1" min="1" class="qty-input" readonly>
+                  <button type="button" class="qty-btn plus" aria-label="Tăng số lượng"><i class="fa-solid fa-plus"></i></button>
+               </div>
+               <button type="submit" class="btn btn-orange btn-add-cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ hàng - <span id="total-price">$8.00</span>
+               </button>
+            </div>
+          </form>
+       </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Injected by components.js -->
+  </footer>
+</body>
+</html>

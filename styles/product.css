@@ -1,0 +1,178 @@
+/* --- General Utilities --- */
+.artistic-bg {
+  background: var(--brand-gray);
+  min-height: 100vh;
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+}
+
+.product-hero {
+  padding-top: 180px;
+  padding-bottom: 100px;
+  background: var(--brand-gray);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.product-hero.hide{
+  display: none;
+}
+.artistic-product-grid.hide {
+  display: none;
+}
+.product-hero::after {
+  content: "MENU";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 280px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.02);
+  z-index: 0;
+  pointer-events: none;
+}
+.product-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.product-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.product-hero p {
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+.product-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 48px 0 0;
+}
+.filter-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border-gray);
+  background: var(--white);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--brand-black);
+  color: var(--white);
+  border-color: var(--brand-black);
+}
+.artistic-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 48px;
+  padding: 60px 0 120px;
+}
+.artistic-product-card {
+  position: relative;
+  border-radius: 40px;
+  background: var(--white);
+  padding: 48px 32px 32px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s;
+  overflow: hidden;
+  border: 1px solid var(--border-gray);
+}
+.artistic-product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, var(--brand-orange-soft) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 40px 40px 0 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.artistic-product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+  border-color: var(--brand-orange);
+}
+.artistic-product-card:hover::before {
+  opacity: 1;
+}
+.artistic-product-card img {
+  position: relative;
+  z-index: 1;
+  height: 240px;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0 auto 32px;
+  filter: drop-shadow(0 20px 24px rgba(0,0,0,0.12));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.artistic-product-card:hover img {
+  transform: scale(1.08) rotate(4deg);
+}
+.artistic-product-card h3 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.artistic-product-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--text-gray);
+  font-size: 15px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.artistic-product-card .price-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-gray);
+}
+.artistic-product-card .price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--brand-black);
+}
+.btn-add {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand-black);
+  color: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn-add:hover {
+  background: var(--brand-orange);
+  transform: rotate(90deg);
+}

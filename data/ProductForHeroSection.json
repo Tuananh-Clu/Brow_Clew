@@ -1,0 +1,1818 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso Đậm",
+    "subtitle": "Cà Phê Nguyên Chất Thuần Khiết",
+    "category": "Coffee",
+    "price": 45000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d1a00",
+      "secondary": "#f5e6d3",
+      "background": "#1a0d00"
+    },
+    "image": "../images/PictureProductHero/1.png",
+    "description": "Espresso nguyên chất đậm đà, chiết xuất từ hạt arabica rang mộc, hậu vị dài và thơm.",
+    "ingredients": [
+      {
+        "name": "Arabica Bean",
+        "detail": "Hạt arabica rang mộc tạo vị đậm đà."
+      },
+      {
+        "name": "Hot Water",
+        "detail": "Nước nóng chiết xuất tinh chất cà phê."
+      },
+      {
+        "name": "Cream Foam",
+        "detail": "Lớp crema vàng óng trên bề mặt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Caffeine",
+        "value": "High"
+      },
+      {
+        "title": "Origin",
+        "value": "Arabica"
+      },
+      {
+        "title": "Brew",
+        "value": "Espresso"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Americano Sảng",
+    "subtitle": "Espresso Pha Loãng Thanh Thoát",
+    "category": "Coffee",
+    "price": 49000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2500",
+      "secondary": "#fde8cc",
+      "background": "#1f0e00"
+    },
+    "image": "../images/PictureProductHero/2.png",
+    "description": "Americano pha loãng với nước nóng, vị đắng nhẹ thanh thoát, thích hợp uống cả ngày.",
+    "ingredients": [
+      {
+        "name": "Double Espresso",
+        "detail": "Hai shot espresso đậm đà làm nền."
+      },
+      {
+        "name": "Hot Water",
+        "detail": "Nước nóng pha loãng vị đắng nhẹ."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên làm mát sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Low Cal",
+        "value": "5 kcal"
+      },
+      {
+        "title": "Caffeine",
+        "value": "Medium"
+      },
+      {
+        "title": "Size",
+        "value": "350ml"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino Mịn",
+    "subtitle": "Espresso Và Foam Sữa Cổ Điển",
+    "category": "Coffee",
+    "price": 59000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#7b4a2d",
+      "secondary": "#f9e0c8",
+      "background": "#2a1508"
+    },
+    "image": "../images/PictureProductHero/3.webp",
+    "description": "Cappuccino cổ điển với lớp foam sữa mịn, vị espresso đậm hòa quyện béo nhẹ.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Shot espresso đậm làm nền vững chắc."
+      },
+      {
+        "name": "Steamed Milk",
+        "detail": "Sữa hấp tạo độ béo nhẹ dịu."
+      },
+      {
+        "name": "Milk Foam",
+        "detail": "Foam mịn tạo lớp bông bềnh hấp dẫn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Foam",
+        "value": "Silky"
+      },
+      {
+        "title": "Ratio",
+        "value": "1:1:1"
+      },
+      {
+        "title": "Classic",
+        "value": "Italy"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Latte Caramel",
+    "subtitle": "Sữa Và Sốt Caramel Thủ Công",
+    "category": "Coffee",
+    "price": 65000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "../images/PictureProductHero/4.png",
+    "description": "Latte caramel ngọt sâu với sốt caramel thủ công và sữa tươi béo mịn.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Nền cà phê đậm đà cân bằng vị ngọt."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi béo mịn hòa quyện cùng espresso."
+      },
+      {
+        "name": "Caramel Sauce",
+        "detail": "Sốt caramel nấu thủ công tạo độ ngọt sâu."
+      }
+    ],
+    "features": [
+      {
+        "title": "Caramel",
+        "value": "Handmade"
+      },
+      {
+        "title": "Sweetness",
+        "value": "Medium"
+      },
+      {
+        "title": "Milk",
+        "value": "Fresh"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Flat White",
+    "subtitle": "Cà Phê Đậm Ít Sữa Kiểu Úc",
+    "category": "Coffee",
+    "price": 62000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5c3317",
+      "secondary": "#eddcc8",
+      "background": "#1c0e05"
+    },
+    "image": "../images/PictureProductHero/5.png",
+    "description": "Flat white đậm espresso, ít sữa hơn latte, dành cho người thích vị cà phê mạnh.",
+    "ingredients": [
+      {
+        "name": "Double Espresso",
+        "detail": "Hai shot cho vị cà phê mạnh hơn."
+      },
+      {
+        "name": "Micro Foam Milk",
+        "detail": "Sữa foam siêu mịn đặc trưng kiểu Úc."
+      },
+      {
+        "name": "Arabica Blend",
+        "detail": "Blend arabica chọn lọc tạo hậu vị ngọt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Origin",
+        "value": "Australia"
+      },
+      {
+        "title": "Ratio",
+        "value": "1:2"
+      },
+      {
+        "title": "Strong",
+        "value": "Bold"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cold Brew",
+    "subtitle": "Cà Phê Ngâm Lạnh 16 Giờ",
+    "category": "Coffee",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d4a6e",
+      "secondary": "#c8ddf5",
+      "background": "#0a1520"
+    },
+    "image": "../images/PictureProductHero/6.png",
+    "description": "Cold brew ủ lạnh 16 giờ, vị ngọt tự nhiên, ít axit, thơm mượt và cực kỳ sảng khoái.",
+    "ingredients": [
+      {
+        "name": "Coarse Ground Coffee",
+        "detail": "Cà phê xay thô ngâm lạnh 16 giờ."
+      },
+      {
+        "name": "Filtered Water",
+        "detail": "Nước lọc sạch chiết xuất chậm từng giọt."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên giữ lạnh và độ tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Brew Time",
+        "value": "16 giờ"
+      },
+      {
+        "title": "Low Acid",
+        "value": "67%"
+      },
+      {
+        "title": "Caffeine",
+        "value": "2x"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Macchiato Nghệ",
+    "subtitle": "Espresso Và Foam Sữa Bồng Bềnh",
+    "category": "Coffee",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e85d04",
+      "secondary": "#fff4ec",
+      "background": "#1b0e00"
+    },
+    "image": "../images/PictureProductHero/7.png",
+    "description": "Macchiato với lớp bọt sữa mềm mịn bồng bềnh, espresso đậm hòa quyện hoàn hảo.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Shot espresso đậm đà làm điểm nhấn."
+      },
+      {
+        "name": "Milk Foam",
+        "detail": "Foam sữa mềm mịn đặt lên trên."
+      },
+      {
+        "name": "Arabica Specialty",
+        "detail": "Hạt arabica đặc sản rang thủ công."
+      }
+    ],
+    "features": [
+      {
+        "title": "Art",
+        "value": "Latte Art"
+      },
+      {
+        "title": "Foam",
+        "value": "Velvety"
+      },
+      {
+        "title": "Specialty",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mocha Cacao",
+    "subtitle": "Cà Phê Và Cacao Nam Mỹ",
+    "category": "Coffee",
+    "price": 68000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2040",
+      "secondary": "#e8c8e0",
+      "background": "#180a14"
+    },
+    "image": "../images/PictureProductHero/8.png",
+    "description": "Mocha kết hợp espresso và cacao Nam Mỹ nguyên bản, phủ kem tươi mịn màng.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Cà phê đậm làm nền cho mocha."
+      },
+      {
+        "name": "Dark Cacao",
+        "detail": "Cacao Nam Mỹ 70% nguyên chất."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Kem tươi phủ lên mềm mịn hấp dẫn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Cacao",
+        "value": "70%"
+      },
+      {
+        "title": "Origin",
+        "value": "S. America"
+      },
+      {
+        "title": "Rich",
+        "value": "Premium"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Blueberry Dream",
+    "subtitle": "Việt Quất Béo Mịn Thơm Ngát",
+    "category": "Milkshake",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6f3fa5",
+      "secondary": "#d8c4ff",
+      "background": "#140b1f"
+    },
+    "image": "../images/PictureProductHero/9.png",
+    "description": "Milkshake việt quất béo mịn kết hợp cùng syrup blueberry đậm vị và whipped cream.",
+    "ingredients": [
+      {
+        "name": "Blueberry",
+        "detail": "Việt quất tươi tạo vị chua ngọt tự nhiên."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Kem sữa giúp texture mềm và mịn hơn."
+      },
+      {
+        "name": "Blueberry Syrup",
+        "detail": "Tăng hương thơm và màu tím đặc trưng."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Xay lạnh giữ độ tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fresh Berry",
+        "value": "100%"
+      },
+      {
+        "title": "Creamy",
+        "value": "Ultra"
+      },
+      {
+        "title": "Cold Blend",
+        "value": "12 phút"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Strawberry Heaven",
+    "subtitle": "Dâu Tây Ngọt Dịu Tự Nhiên",
+    "category": "Milkshake",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#ff4f7a",
+      "secondary": "#ffd4de",
+      "background": "#1a0d12"
+    },
+    "image": "../images/PictureProductHero/10.png",
+    "description": "Milkshake dâu tây mềm mịn cùng lớp syrup xoáy ngọt nhẹ và topping dâu tươi.",
+    "ingredients": [
+      {
+        "name": "Fresh Strawberry",
+        "detail": "Dâu tươi tạo vị ngọt thanh tự nhiên."
+      },
+      {
+        "name": "Milk Cream",
+        "detail": "Mang lại độ béo nhẹ cân bằng vị trái cây."
+      },
+      {
+        "name": "Strawberry Syrup",
+        "detail": "Tạo lớp swirl đỏ nổi bật."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Lớp kem phía trên mềm và mịn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sweet Taste",
+        "value": "Premium"
+      },
+      {
+        "title": "Fresh Fruit",
+        "value": "Daily"
+      },
+      {
+        "title": "Smooth",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Chocolate Storm",
+    "subtitle": "Cacao Đậm Vị 85%",
+    "category": "Milkshake",
+    "price": 82000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6a3d2b",
+      "secondary": "#e2c2b0",
+      "background": "#140d0a"
+    },
+    "image": "../images/PictureProductHero/11.png",
+    "description": "Chocolate shake đậm vị cacao 85% cùng whipped cream và chocolate chips giòn.",
+    "ingredients": [
+      {
+        "name": "Dark Chocolate",
+        "detail": "Chocolate đen 85% tạo vị cacao đậm."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Giúp thức uống mềm và béo hơn."
+      },
+      {
+        "name": "Chocolate Chips",
+        "detail": "Tăng độ giòn nhẹ khi uống."
+      },
+      {
+        "name": "Milk",
+        "detail": "Cân bằng vị chocolate."
+      }
+    ],
+    "features": [
+      {
+        "title": "Dark Cocoa",
+        "value": "85%"
+      },
+      {
+        "title": "Extra Cream",
+        "value": "Smooth"
+      },
+      {
+        "title": "Choco",
+        "value": "Premium"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Vanilla Cloud",
+    "subtitle": "Vanilla Bean Nhẹ Nhàng Thanh Khiết",
+    "category": "Milkshake",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d6b98d",
+      "secondary": "#fff2df",
+      "background": "#19140d"
+    },
+    "image": "../images/PictureProductHero/12.png",
+    "description": "Vanilla milkshake mềm mịn với vanilla bean nguyên chất và lớp kem béo.",
+    "ingredients": [
+      {
+        "name": "Vanilla Bean",
+        "detail": "Vanilla tự nhiên tạo mùi thơm nhẹ."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Mang lại độ béo dịu."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Lớp kem mềm phía trên."
+      },
+      {
+        "name": "Ice Cream",
+        "detail": "Tăng độ sánh và mịn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vanilla",
+        "value": "Natural"
+      },
+      {
+        "title": "Smooth",
+        "value": "Creamy"
+      },
+      {
+        "title": "Premium",
+        "value": "Blend"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Caramel Shake",
+    "subtitle": "Caramel Thủ Công Béo Ngậy",
+    "category": "Milkshake",
+    "price": 78000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "../images/PictureProductHero/13.png",
+    "description": "Caramel milkshake đậm đà với sốt caramel nấu thủ công, béo ngậy và thơm.",
+    "ingredients": [
+      {
+        "name": "Caramel Sauce",
+        "detail": "Caramel nấu thủ công từ đường mía."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Kem béo tạo độ sánh mượt."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi cân bằng vị ngọt."
+      },
+      {
+        "name": "Vanilla Extract",
+        "detail": "Vani tăng hương thơm."
+      }
+    ],
+    "features": [
+      {
+        "title": "Handmade",
+        "value": "Caramel"
+      },
+      {
+        "title": "Rich",
+        "value": "Creamy"
+      },
+      {
+        "title": "Sweet",
+        "value": "Deep"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Oreo Crush",
+    "subtitle": "Oreo Nghiền Vụn Kem Sữa",
+    "category": "Milkshake",
+    "price": 80000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d2d2d",
+      "secondary": "#e8e8e8",
+      "background": "#111111"
+    },
+    "image": "../images/PictureProductHero/14.png",
+    "description": "Milkshake Oreo nghiền vụn trộn đều với kem sữa, phủ whipped cream và Oreo nguyên.",
+    "ingredients": [
+      {
+        "name": "Oreo Cookies",
+        "detail": "Bánh Oreo nghiền tạo vị béo giòn."
+      },
+      {
+        "name": "Vanilla Ice Cream",
+        "detail": "Kem sữa vanilla trộn đều."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi giúp shake sánh mịn."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Kem tươi phủ trên cùng."
+      }
+    ],
+    "features": [
+      {
+        "title": "Oreo",
+        "value": "Original"
+      },
+      {
+        "title": "Cookie",
+        "value": "Crushed"
+      },
+      {
+        "title": "Creamy",
+        "value": "Ultra"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Taro Milk",
+    "subtitle": "Khoai Môn Tím Đặc Trưng",
+    "category": "Milkshake",
+    "price": 76000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#9b59b6",
+      "secondary": "#e8d5f5",
+      "background": "#1a0d24"
+    },
+    "image": "../images/PictureProductHero/15.png",
+    "description": "Milkshake khoai môn tím đặc trưng, vị ngọt bùi và màu tím hấp dẫn.",
+    "ingredients": [
+      {
+        "name": "Taro Root",
+        "detail": "Khoai môn tím tươi xay nhuyễn."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi tạo độ mịn creamy."
+      },
+      {
+        "name": "Taro Powder",
+        "detail": "Bột khoai môn tăng màu và hương."
+      },
+      {
+        "name": "Coconut Milk",
+        "detail": "Nước cốt dừa thêm vị béo thơm."
+      }
+    ],
+    "features": [
+      {
+        "title": "Taro",
+        "value": "Fresh"
+      },
+      {
+        "title": "Purple",
+        "value": "Natural"
+      },
+      {
+        "title": "Creamy",
+        "value": "Rich"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Banana Foster",
+    "subtitle": "Chuối Chín Vàng Kem Vanilla",
+    "category": "Milkshake",
+    "price": 70000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f5c518",
+      "secondary": "#fffde0",
+      "background": "#1a1600"
+    },
+    "image": "../images/PictureProductHero/16.png",
+    "description": "Milkshake chuối chín ngọt tự nhiên kết hợp kem vanilla và caramel nhẹ.",
+    "ingredients": [
+      {
+        "name": "Ripe Banana",
+        "detail": "Chuối chín vàng ngọt tự nhiên."
+      },
+      {
+        "name": "Vanilla Ice Cream",
+        "detail": "Kem vanilla tăng độ béo ngậy."
+      },
+      {
+        "name": "Caramel",
+        "detail": "Caramel nhẹ tạo hậu vị thơm."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi giúp shake sánh đều."
+      }
+    ],
+    "features": [
+      {
+        "title": "Banana",
+        "value": "Ripe"
+      },
+      {
+        "title": "Natural",
+        "value": "Sweet"
+      },
+      {
+        "title": "Foster",
+        "value": "Classic"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Matcha Latte",
+    "subtitle": "Matcha Nhật Thanh Dịu Tinh Tế",
+    "category": "Matcha",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5f8f52",
+      "secondary": "#d9f0d2",
+      "background": "#10170d"
+    },
+    "image": "../images/PictureProductHero/17.png",
+    "description": "Matcha latte mịn với trà xanh Nhật đậm nhẹ và lớp foam sữa mềm mát.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha nguyên chất tạo vị trà đậm và thơm."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi giúp cân bằng vị chát nhẹ."
+      },
+      {
+        "name": "Cream Foam",
+        "detail": "Foam mềm tăng texture khi uống."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Giữ lạnh lâu và tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Premium Matcha",
+        "value": "100%"
+      },
+      {
+        "title": "Cream Foam",
+        "value": "Smooth"
+      },
+      {
+        "title": "Imported",
+        "value": "Japan"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Matcha Cold",
+    "subtitle": "Trà Xanh Ủ Lạnh Sảng Khoái",
+    "category": "Matcha",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d6b3a",
+      "secondary": "#c8e8c5",
+      "background": "#0d1a0c"
+    },
+    "image": "../images/PictureProductHero/18.png",
+    "description": "Matcha pha cold brew lạnh, vị trà xanh đậm đà, thanh mát và tươi sảng khoái.",
+    "ingredients": [
+      {
+        "name": "Matcha Powder",
+        "detail": "Matcha xay mịn ngâm lạnh qua đêm."
+      },
+      {
+        "name": "Cold Water",
+        "detail": "Nước lạnh chiết xuất vị trà nhẹ nhàng."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên giữ độ mát lâu."
+      }
+    ],
+    "features": [
+      {
+        "title": "Cold Brew",
+        "value": "12 giờ"
+      },
+      {
+        "title": "Low Sugar",
+        "value": "Natural"
+      },
+      {
+        "title": "Fresh",
+        "value": "Daily"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Matcha Espresso",
+    "subtitle": "Matcha Và Espresso Kết Đôi",
+    "category": "Matcha",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4d7a3a",
+      "secondary": "#d5eecf",
+      "background": "#121a0f"
+    },
+    "image": "../images/PictureProductHero/19.png",
+    "description": "Kết hợp độc đáo matcha Nhật và espresso, hai vị đắng bổ sung cho nhau tuyệt vời.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha Uji nguyên chất vị đậm."
+      },
+      {
+        "name": "Espresso Shot",
+        "detail": "Shot espresso tạo lớp crema."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi cân bằng hai vị đắng."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fusion",
+        "value": "Unique"
+      },
+      {
+        "title": "Double",
+        "value": "Bitter"
+      },
+      {
+        "title": "Energy",
+        "value": "2x"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Matcha Coconut",
+    "subtitle": "Matcha Và Nước Cốt Dừa Nhiệt Đới",
+    "category": "Matcha",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a7c40",
+      "secondary": "#d0eecc",
+      "background": "#0f1a0d"
+    },
+    "image": "../images/PictureProductHero/20.png",
+    "description": "Matcha kết hợp nước cốt dừa thơm béo, vị nhiệt đới lạ miệng và cực kỳ mát lạnh.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha nguyên chất thơm vị trà."
+      },
+      {
+        "name": "Coconut Milk",
+        "detail": "Nước cốt dừa béo thơm nhiệt đới."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Đá xay mịn tạo độ mát lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Tropical",
+        "value": "Coconut"
+      },
+      {
+        "title": "Matcha",
+        "value": "Premium"
+      },
+      {
+        "title": "Fresh",
+        "value": "Blend"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Matcha Berry",
+    "subtitle": "Matcha Xoáy Dâu Tây Ombre",
+    "category": "Matcha",
+    "price": 78000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5a7a3a",
+      "secondary": "#d8f0c8",
+      "background": "#111a0e"
+    },
+    "image": "../images/PictureProductHero/21.png",
+    "description": "Matcha xoáy cùng dâu tây tươi, ombre xanh-đỏ đẹp mắt, vị chua ngọt hài hòa.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha tạo lớp xanh thanh mát."
+      },
+      {
+        "name": "Fresh Strawberry",
+        "detail": "Dâu tươi tạo lớp đỏ chua ngọt."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi kết nối hai lớp hương vị."
+      }
+    ],
+    "features": [
+      {
+        "title": "Ombre",
+        "value": "Green-Red"
+      },
+      {
+        "title": "Berry",
+        "value": "Fresh"
+      },
+      {
+        "title": "Visual",
+        "value": "Stunning"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Matcha Honey",
+    "subtitle": "Matcha Mật Ong Và Yến Mạch",
+    "category": "Matcha",
+    "price": 71000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6b8f4a",
+      "secondary": "#e0f0d0",
+      "background": "#141c10"
+    },
+    "image": "../images/PictureProductHero/22.png",
+    "description": "Matcha với mật ong nguyên chất và sữa yến mạch, lành mạnh và thơm ngon.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha xay mịn tạo vị trà đậm."
+      },
+      {
+        "name": "Oat Milk",
+        "detail": "Sữa yến mạch bổ dưỡng thay thế sữa bò."
+      },
+      {
+        "name": "Raw Honey",
+        "detail": "Mật ong nguyên chất tạo độ ngọt tự nhiên."
+      }
+    ],
+    "features": [
+      {
+        "title": "Healthy",
+        "value": "Oat"
+      },
+      {
+        "title": "Honey",
+        "value": "Raw"
+      },
+      {
+        "title": "Plant",
+        "value": "Based"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Matcha Foam",
+    "subtitle": "Matcha Phủ Foam Muối Cheese",
+    "category": "Matcha",
+    "price": 74000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#507840",
+      "secondary": "#d5eccb",
+      "background": "#10180d"
+    },
+    "image": "../images/PictureProductHero/23.png",
+    "description": "Matcha đá lạnh phủ lớp foam muối cheese béo ngậy, hot trend của mùa hè.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha lạnh làm nền thanh mát."
+      },
+      {
+        "name": "Cream Cheese",
+        "detail": "Phô mai kem đánh bông với muối."
+      },
+      {
+        "name": "Sea Salt",
+        "detail": "Muối biển cân bằng vị béo của cheese."
+      }
+    ],
+    "features": [
+      {
+        "title": "Trending",
+        "value": "2024"
+      },
+      {
+        "title": "Salt Cheese",
+        "value": "Foam"
+      },
+      {
+        "title": "Contrast",
+        "value": "Unique"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Matcha Đá",
+    "subtitle": "Matcha Slush Mát Lạnh Sảng Khoái",
+    "category": "Matcha",
+    "price": 76000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4e7c3c",
+      "secondary": "#ccead8",
+      "background": "#0e1a10"
+    },
+    "image": "../images/PictureProductHero/24.png",
+    "description": "Matcha đá xay mịn như slush, mát lạnh sảng khoái, phủ whipped cream và matcha powder.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha nguyên chất pha đậm."
+      },
+      {
+        "name": "Crushed Ice",
+        "detail": "Đá xay mịn tạo texture slush."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Kem tươi phủ trên cùng."
+      }
+    ],
+    "features": [
+      {
+        "title": "Slush",
+        "value": "Texture"
+      },
+      {
+        "title": "Matcha",
+        "value": "Grade A"
+      },
+      {
+        "title": "Summer",
+        "value": "Hit"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Mango Sunset",
+    "subtitle": "Sinh Tố Xoài Nhiệt Đới",
+    "category": "Smoothie",
+    "price": 65000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#ffb300",
+      "secondary": "#ffe7a8",
+      "background": "#1c1405"
+    },
+    "image": "../images/PictureProductHero/25.png",
+    "description": "Smoothie xoài chín nhiệt đới ngọt đậm, đá xay mịn mát và vitamin C cao.",
+    "ingredients": [
+      {
+        "name": "Fresh Mango",
+        "detail": "Xoài chín tạo vị ngọt tự nhiên."
+      },
+      {
+        "name": "Yogurt",
+        "detail": "Sữa chua giúp tăng vị béo nhẹ."
+      },
+      {
+        "name": "Honey",
+        "detail": "Mật ong tạo hậu vị dịu."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Đá xay giúp giữ độ lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fresh Fruit",
+        "value": "Daily"
+      },
+      {
+        "title": "Vitamin C",
+        "value": "High"
+      },
+      {
+        "title": "Tropical",
+        "value": "Taste"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Avocado Creamy",
+    "subtitle": "Bơ Chín Béo Mịn Bổ Dưỡng",
+    "category": "Smoothie",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a7c40",
+      "secondary": "#d0eecc",
+      "background": "#0f1a0d"
+    },
+    "image": "../images/PictureProductHero/26.png",
+    "description": "Bơ chín béo mịn xay nhuyễn với sữa đặc, thơm ngậy và bổ dưỡng.",
+    "ingredients": [
+      {
+        "name": "Ripe Avocado",
+        "detail": "Bơ chín tạo texture béo mịn tự nhiên."
+      },
+      {
+        "name": "Condensed Milk",
+        "detail": "Sữa đặc tạo độ ngọt đặc trưng."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi giúp blend mịn hơn."
+      },
+      {
+        "name": "Ice",
+        "detail": "Làm lạnh sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Healthy Fat",
+        "value": "Rich"
+      },
+      {
+        "title": "Vitamin E",
+        "value": "High"
+      },
+      {
+        "title": "Creamy",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Mixed Berry",
+    "subtitle": "Hỗn Hợp 4 Loại Berry Tươi",
+    "category": "Smoothie",
+    "price": 68000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#8b3a8b",
+      "secondary": "#f0d0f0",
+      "background": "#180b18"
+    },
+    "image": "../images/PictureProductHero/27.png",
+    "description": "Hỗn hợp 4 loại berry tươi: dâu, việt quất, mâm xôi và cherry tím đậm vị.",
+    "ingredients": [
+      {
+        "name": "Strawberry",
+        "detail": "Dâu tươi tạo vị chua ngọt nền."
+      },
+      {
+        "name": "Blueberry",
+        "detail": "Việt quất tím đậm vị antioxidant."
+      },
+      {
+        "name": "Raspberry",
+        "detail": "Mâm xôi chua thanh đặc trưng."
+      },
+      {
+        "name": "Cherry",
+        "detail": "Cherry tím tăng màu và hương."
+      }
+    ],
+    "features": [
+      {
+        "title": "4 Berries",
+        "value": "Fresh"
+      },
+      {
+        "title": "Antioxidant",
+        "value": "Rich"
+      },
+      {
+        "title": "Purple",
+        "value": "Power"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Peach Paradise",
+    "subtitle": "Đào Chín Mọng Yogurt Mật Ong",
+    "category": "Smoothie",
+    "price": 62000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f0884a",
+      "secondary": "#fde8d0",
+      "background": "#1c0e05"
+    },
+    "image": "../images/PictureProductHero/28.png",
+    "description": "Đào chín mọng xay mịn với yogurt và mật ong, thanh ngọt và tươi mát.",
+    "ingredients": [
+      {
+        "name": "Fresh Peach",
+        "detail": "Đào chín mọng ngọt tự nhiên."
+      },
+      {
+        "name": "Greek Yogurt",
+        "detail": "Sữa chua Hy Lạp giàu protein."
+      },
+      {
+        "name": "Raw Honey",
+        "detail": "Mật ong tăng vị ngọt tự nhiên."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Peach",
+        "value": "Fresh"
+      },
+      {
+        "title": "Protein",
+        "value": "Greek"
+      },
+      {
+        "title": "Natural",
+        "value": "Sweet"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Watermelon Chill",
+    "subtitle": "Dưa Hấu Đỏ Mát Lạnh Mùa Hè",
+    "category": "Smoothie",
+    "price": 58000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e84040",
+      "secondary": "#ffd0d0",
+      "background": "#1c0808"
+    },
+    "image": "../images/PictureProductHero/29.png",
+    "description": "Dưa hấu đỏ tươi xay lạnh, ngọt mát tự nhiên không cần thêm đường.",
+    "ingredients": [
+      {
+        "name": "Fresh Watermelon",
+        "detail": "Dưa hấu đỏ chín tự nhiên."
+      },
+      {
+        "name": "Lime Juice",
+        "detail": "Chanh tươi vắt tạo vị chua thanh."
+      },
+      {
+        "name": "Mint Leaves",
+        "detail": "Bạc hà tươi tăng độ mát lạnh."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Xay lạnh giữ độ tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Zero Sugar",
+        "value": "Added"
+      },
+      {
+        "title": "Vitamin A",
+        "value": "High"
+      },
+      {
+        "title": "Summer",
+        "value": "Fresh"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Pineapple Zing",
+    "subtitle": "Dứa Vàng Nhiệt Đới Gừng Tươi",
+    "category": "Smoothie",
+    "price": 60000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4a017",
+      "secondary": "#fdf0c0",
+      "background": "#1a1500"
+    },
+    "image": "../images/PictureProductHero/30.png",
+    "description": "Dứa vàng nhiệt đới chua ngọt xay nhuyễn với gừng nhẹ, tươi mát và bổ dưỡng.",
+    "ingredients": [
+      {
+        "name": "Fresh Pineapple",
+        "detail": "Dứa chín vàng chua ngọt tự nhiên."
+      },
+      {
+        "name": "Fresh Ginger",
+        "detail": "Gừng tươi tạo hương ấm nhẹ."
+      },
+      {
+        "name": "Coconut Water",
+        "detail": "Nước dừa bổ điện giải."
+      },
+      {
+        "name": "Ice",
+        "detail": "Làm lạnh sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vitamin C",
+        "value": "Ultra"
+      },
+      {
+        "title": "Ginger",
+        "value": "Fresh"
+      },
+      {
+        "title": "Digestive",
+        "value": "Aid"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Dragon Fruit",
+    "subtitle": "Thanh Long Đỏ Rực Bắt Mắt",
+    "category": "Smoothie",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e8407a",
+      "secondary": "#ffd0e8",
+      "background": "#1c0812"
+    },
+    "image": "../images/PictureProductHero/31.png",
+    "description": "Thanh long đỏ rực xay mịn, màu sắc bắt mắt, vị nhẹ thanh và đầy chất xơ.",
+    "ingredients": [
+      {
+        "name": "Red Dragon Fruit",
+        "detail": "Thanh long đỏ tạo màu rực rỡ."
+      },
+      {
+        "name": "Yogurt",
+        "detail": "Sữa chua tạo độ béo nhẹ."
+      },
+      {
+        "name": "Chia Seeds",
+        "detail": "Hạt chia bổ sung chất xơ."
+      },
+      {
+        "name": "Honey",
+        "detail": "Mật ong điều vị ngọt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Superfood",
+        "value": "Dragon"
+      },
+      {
+        "title": "Fiber",
+        "value": "Rich"
+      },
+      {
+        "title": "Color",
+        "value": "Vivid"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Passion Fruit",
+    "subtitle": "Chanh Dây Vàng Thơm Nhiệt Đới",
+    "category": "Smoothie",
+    "price": 67000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4820a",
+      "secondary": "#fde8b0",
+      "background": "#1a1000"
+    },
+    "image": "../images/PictureProductHero/32.webp",
+    "description": "Chanh dây vàng thơm chua ngọt, hương nhiệt đới đặc trưng, sảng khoái và quyến rũ.",
+    "ingredients": [
+      {
+        "name": "Passion Fruit",
+        "detail": "Chanh dây vàng thơm nhiệt đới."
+      },
+      {
+        "name": "Orange Juice",
+        "detail": "Nước cam tươi tăng vitamin C."
+      },
+      {
+        "name": "Honey",
+        "detail": "Mật ong cân bằng vị chua."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Đá xay mịn mát lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Passion",
+        "value": "Tropical"
+      },
+      {
+        "title": "Vitamin C",
+        "value": "2x"
+      },
+      {
+        "title": "Aroma",
+        "value": "Intense"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Mint Freeze",
+    "subtitle": "Bạc Hà Mát Lạnh Sảng Khoái",
+    "category": "Ice Drink",
+    "price": 55000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#41c7a5",
+      "secondary": "#c8fff1",
+      "background": "#091512"
+    },
+    "image": "../images/PictureProductHero/33.png",
+    "description": "Bạc hà mát lạnh với nước có gas, hương thơm fresh và hậu vị thanh mát.",
+    "ingredients": [
+      {
+        "name": "Mint Leaves",
+        "detail": "Lá bạc hà tạo cảm giác mát lạnh."
+      },
+      {
+        "name": "Sparkling Water",
+        "detail": "Tạo độ sảng khoái khi uống."
+      },
+      {
+        "name": "Lime Juice",
+        "detail": "Tăng vị chua thanh nhẹ."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Giữ lạnh lâu."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fresh Mint",
+        "value": "100%"
+      },
+      {
+        "title": "Cooling",
+        "value": "Ultra"
+      },
+      {
+        "title": "Sparkling",
+        "value": "Light"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Lemon Soda",
+    "subtitle": "Soda Chanh Sủi Bọt Giải Khát",
+    "category": "Ice Drink",
+    "price": 48000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4c010",
+      "secondary": "#fdfac0",
+      "background": "#191700"
+    },
+    "image": "../images/PictureProductHero/34.png",
+    "description": "Soda chanh vàng chua thanh, sủi bọt tươi, giải khát hoàn hảo ngày nắng.",
+    "ingredients": [
+      {
+        "name": "Fresh Lemon",
+        "detail": "Chanh vàng vắt tươi chua thanh."
+      },
+      {
+        "name": "Sparkling Water",
+        "detail": "Soda sủi bọt giải khát."
+      },
+      {
+        "name": "Simple Syrup",
+        "detail": "Đường loãng điều vị ngọt."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh mát sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sparkling",
+        "value": "Fresh"
+      },
+      {
+        "title": "Vitamin C",
+        "value": "High"
+      },
+      {
+        "title": "Low Cal",
+        "value": "Light"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Coconut Water",
+    "subtitle": "Nước Dừa Tươi Bổ Điện Giải",
+    "category": "Ice Drink",
+    "price": 52000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5aaa70",
+      "secondary": "#ccf0d8",
+      "background": "#0d1a10"
+    },
+    "image": "../images/PictureProductHero/35.png",
+    "description": "Nước dừa tươi nguyên chất lạnh, ngọt thanh tự nhiên và bổ điện giải.",
+    "ingredients": [
+      {
+        "name": "Fresh Coconut",
+        "detail": "Nước dừa nguyên chất tươi mát."
+      },
+      {
+        "name": "Young Coconut Meat",
+        "detail": "Cơm dừa non mềm dịu."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh tăng độ sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Electrolyte",
+        "value": "Natural"
+      },
+      {
+        "title": "Coconut",
+        "value": "Fresh"
+      },
+      {
+        "title": "Pure",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Lychee Soda",
+    "subtitle": "Soda Vải Thiều Hồng Thơm Ngọt",
+    "category": "Ice Drink",
+    "price": 52000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e87090",
+      "secondary": "#ffd8e5",
+      "background": "#1a0c12"
+    },
+    "image": "../images/PictureProductHero/36.png",
+    "description": "Soda vải thiều hồng nhạt, thơm ngọt đặc trưng, sủi bọt và sảng khoái.",
+    "ingredients": [
+      {
+        "name": "Lychee Syrup",
+        "detail": "Siro vải thiều thơm ngọt đặc trưng."
+      },
+      {
+        "name": "Sparkling Water",
+        "detail": "Soda sủi bọt giải khát."
+      },
+      {
+        "name": "Fresh Lychee",
+        "detail": "Vải tươi tăng hương thơm."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Lychee",
+        "value": "Fresh"
+      },
+      {
+        "title": "Sparkling",
+        "value": "Pink"
+      },
+      {
+        "title": "Floral",
+        "value": "Scent"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Soda Cam",
+    "subtitle": "Cam Vắt Tươi Soda Vitamin C",
+    "category": "Ice Drink",
+    "price": 50000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f07020",
+      "secondary": "#fde8c8",
+      "background": "#1c0e00"
+    },
+    "image": "../images/PictureProductHero/37.png",
+    "description": "Cam tươi vắt pha soda, chua ngọt tự nhiên, vitamin C cao và cực kỳ tươi mát.",
+    "ingredients": [
+      {
+        "name": "Fresh Orange",
+        "detail": "Cam tươi vắt nguyên chất."
+      },
+      {
+        "name": "Sparkling Water",
+        "detail": "Soda sủi bọt giải khát."
+      },
+      {
+        "name": "Orange Slice",
+        "detail": "Lát cam trang trí hấp dẫn."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vitamin C",
+        "value": "Fresh"
+      },
+      {
+        "title": "Natural",
+        "value": "100%"
+      },
+      {
+        "title": "Citrus",
+        "value": "Bright"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Trà Đào",
+    "subtitle": "Trà Đào Thanh Mát Hương Nhiều Lớp",
+    "category": "Ice Drink",
+    "price": 55000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f09050",
+      "secondary": "#fde8d0",
+      "background": "#1c1005"
+    },
+    "image": "../images/PictureProductHero/38.png",
+    "description": "Trà đào thơm ngọt pha sả tươi và cam thái, vị nhiều lớp hấp dẫn và mát lạnh.",
+    "ingredients": [
+      {
+        "name": "Peach Tea",
+        "detail": "Trà đào thơm ngọt đặc trưng."
+      },
+      {
+        "name": "Lemongrass",
+        "detail": "Sả tươi tạo hương thơm đặc biệt."
+      },
+      {
+        "name": "Thai Orange",
+        "detail": "Cam thái tươi tạo vị chua nhẹ."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh mát sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Multi Layer",
+        "value": "Flavor"
+      },
+      {
+        "title": "Herbal",
+        "value": "Fresh"
+      },
+      {
+        "title": "Aromatic",
+        "value": "Unique"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Trà Vải",
+    "subtitle": "Trà Vải Và Dâu Tây Màu Hồng",
+    "category": "Ice Drink",
+    "price": 57000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e05070",
+      "secondary": "#ffd0e0",
+      "background": "#1a080f"
+    },
+    "image": "../images/PictureProductHero/39.png",
+    "description": "Trà vải thiều ngọt thơm pha dâu tây tươi, màu hồng đẹp mắt và vị chua ngọt dễ chịu.",
+    "ingredients": [
+      {
+        "name": "Lychee Tea",
+        "detail": "Trà vải thiều thơm ngọt."
+      },
+      {
+        "name": "Fresh Strawberry",
+        "detail": "Dâu tươi tạo vị chua ngọt."
+      },
+      {
+        "name": "Jelly",
+        "detail": "Thạch trái cây thêm texture."
+      },
+      {
+        "name": "Ice",
+        "detail": "Đá lạnh sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Pink",
+        "value": "Color"
+      },
+      {
+        "title": "Sweet Sour",
+        "value": "Balance"
+      },
+      {
+        "title": "Fruity",
+        "value": "Blend"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Blue Lagoon",
+    "subtitle": "Soda Xanh Lagoon Ảo Diệu",
+    "category": "Ice Drink",
+    "price": 60000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2080d0",
+      "secondary": "#c0e8ff",
+      "background": "#051520"
+    },
+    "image": "../images/PictureProductHero/40.png",
+    "description": "Soda xanh lagoon bắt mắt với bạc hà và nước cốt chanh, mát lạnh và cực kỳ ảo diệu.",
+    "ingredients": [
+      {
+        "name": "Blue Curacao",
+        "detail": "Màu xanh lagoon huyền ảo."
+      },
+      {
+        "name": "Sparkling Water",
+        "detail": "Soda sủi bọt giải khát."
+      },
+      {
+        "name": "Lime Juice",
+        "detail": "Chanh tươi tạo vị chua thanh."
+      },
+      {
+        "name": "Mint",
+        "detail": "Bạc hà tăng độ mát lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Blue",
+        "value": "Lagoon"
+      },
+      {
+        "title": "Tropical",
+        "value": "Vibe"
+      },
+      {
+        "title": "Visual",
+        "value": "Stunning"
+      }
+    ]
+  }
+]

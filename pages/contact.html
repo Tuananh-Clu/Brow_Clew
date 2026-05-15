@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/bold-brew.css">
+  <link rel="stylesheet" href="../styles/contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="../scripts/components.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <!-- Injected by components.js -->
+  </header>
+
+  <section class="contact-header">
+    <div class="container">
+      <h1 class="contact-title">Kết Nối Với Chúng Tôi</h1>
+      <p class="contact-subtitle">Dù bạn có câu hỏi về sản phẩm, đơn hàng hay chỉ muốn chia sẻ tình yêu cà phê, chúng tôi luôn sẵn sàng lắng nghe.</p>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="container contact-wrapper">
+      <div class="contact-info">
+        <h2>Thông Tin Liên Hệ</h2>
+        <p>Ghé thăm cửa hàng hoặc liên hệ với chúng tôi qua các kênh dưới đây.</p>
+        
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <h4>Địa chỉ</h4>
+            <p>123 Đường Cà Phê, Quận 1, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <h4>Điện thoại</h4>
+            <p>+84 123 456 789</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-text">
+            <h4>Email</h4>
+            <p>hello@boldbrew.vn</p>
+          </div>
+        </div>
+        
+        <div class="contact-social">
+          <h4>Theo dõi Bold Brew</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h2>Gửi Tin Nhắn</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" placeholder="Nhập họ và tên của bạn" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Nhập email của bạn" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Chủ đề</label>
+            <select id="subject">
+              <option value="general">Thắc mắc chung</option>
+              <option value="order">Hỗ trợ đơn hàng</option>
+              <option value="partner">Hợp tác kinh doanh</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Lời nhắn</label>
+            <textarea id="message" rows="5" placeholder="Bạn muốn nói gì với chúng tôi?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-orange btn-block submit-btn">Gửi Tin Nhắn <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <!-- Injected by components.js -->
+  </footer>
+
+</body>
+</html>

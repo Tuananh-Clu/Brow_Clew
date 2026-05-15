@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký Tài Khoản - Bold Brew</title>
+  <meta name="description" content="Tạo tài khoản Bold Brew để theo dõi đơn hàng, tích điểm thưởng và khám phá ưu đãi dành riêng cho thành viên.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/bold-brew.css">
+  <link rel="stylesheet" href="../styles/register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="register-layout">
+
+    <!-- LEFT VISUAL PANEL -->
+    <div class="register-visual">
+      <a href="bold-brew.html" class="register-back">
+        <i class="fa-solid fa-arrow-left"></i> Quay lại
+      </a>
+
+      <!-- Background image -->
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80" alt="Coffee art" class="register-visual-bg">
+
+      <!-- Overlay content -->
+      <div class="register-visual-content">
+        <a href="bold-brew.html" class="register-logo">Bold Brew<span>.</span></a>
+        <h1 class="register-visual-title">Hành Trình<br>Cà Phê<br>Của Bạn</h1>
+        <p class="register-visual-subtitle">Tham gia cộng đồng Bold Brew</p>
+
+        <!-- Member perks -->
+        <div class="register-perks">
+          <div class="perk-item">
+            <div class="perk-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="perk-text">
+              <strong>Tích điểm thưởng</strong>
+              <span>1 điểm cho mỗi $1 chi tiêu</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon"><i class="fa-solid fa-gift"></i></div>
+            <div class="perk-text">
+              <strong>Ưu đãi thành viên</strong>
+              <span>Giảm 10% đơn đầu tiên</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="perk-text">
+              <strong>Giao hàng ưu tiên</strong>
+              <span>Nhận đồ trong 20 phút</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM PANEL -->
+    <div class="register-form-container">
+
+      <!-- Top nav -->
+      <div class="register-top-nav">
+        <span class="register-step-label">Bước 1 / 1</span>
+        <p class="register-have-account">
+          Đã có tài khoản? <a href="login.html">Đăng nhập</a>
+        </p>
+      </div>
+
+      <div class="register-form-inner">
+        <div class="register-header">
+          <div class="register-header-icon">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+          <h2>Tạo tài khoản</h2>
+          <p>Tham gia Bold Brew — mỗi ngụm cà phê, mỗi điểm thưởng.</p>
+        </div>
+
+        <form class="register-form" id="registerForm" novalidate>
+
+          <!-- Full name + Username row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reg-fullname">
+                <i class="fa-solid fa-user"></i> Họ và tên
+              </label>
+              <input type="text" id="reg-fullname" name="fullname" placeholder="Nguyễn Văn A" required autocomplete="name">
+              <span class="field-error" id="err-fullname"></span>
+            </div>
+            <div class="form-group">
+              <label for="reg-username">
+                <i class="fa-solid fa-at"></i> Tên người dùng
+              </label>
+              <input type="text" id="reg-username" name="username" placeholder="nguyen.van.a" required autocomplete="username">
+              <span class="field-error" id="err-username"></span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="reg-email">
+              <i class="fa-solid fa-envelope"></i> Địa chỉ Email
+            </label>
+            <div class="input-icon-wrap">
+              <input type="email" id="reg-email" name="email" placeholder="hello@boldbrew.com" required autocomplete="email">
+              <span class="input-status" id="email-status"></span>
+            </div>
+            <span class="field-error" id="err-email"></span>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="reg-phone">
+              <i class="fa-solid fa-phone"></i> Số điện thoại
+            </label>
+            <div class="input-phone-wrap">
+              <div class="phone-prefix">
+                <img src="https://flagcdn.com/w20/vn.png" alt="VN" width="20">
+                <span>+84</span>
+              </div>
+              <input type="tel" id="reg-phone" name="phone" placeholder="0912 345 678" autocomplete="tel">
+            </div>
+            <span class="field-error" id="err-phone"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="reg-password">
+              <i class="fa-solid fa-lock"></i> Mật khẩu
+            </label>
+            <div class="input-icon-wrap">
+              <input type="password" id="reg-password" name="password" placeholder="Tối thiểu 8 ký tự" required autocomplete="new-password">
+              <button type="button" class="toggle-pw" id="toggle-pw1" aria-label="Hiện mật khẩu">
+                <i class="fa-regular fa-eye" id="eye1"></i>
+              </button>
+            </div>
+            <!-- Password strength -->
+            <div class="pw-strength-wrap" id="pw-strength-wrap">
+              <div class="pw-strength-bar">
+                <div class="pw-strength-fill" id="pw-fill"></div>
+              </div>
+              <span class="pw-strength-label" id="pw-label">Nhập mật khẩu</span>
+            </div>
+            <span class="field-error" id="err-password"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="reg-confirm">
+              <i class="fa-solid fa-shield-halved"></i> Xác nhận mật khẩu
+            </label>
+            <div class="input-icon-wrap">
+              <input type="password" id="reg-confirm" name="confirm" placeholder="Nhập lại mật khẩu" required autocomplete="new-password">
+              <button type="button" class="toggle-pw" id="toggle-pw2" aria-label="Hiện mật khẩu">
+                <i class="fa-regular fa-eye" id="eye2"></i>
+              </button>
+            </div>
+            <span class="field-error" id="err-confirm"></span>
+          </div>
+
+          <!-- Birthday (optional) -->
+          <div class="form-group">
+            <label for="reg-dob">
+              <i class="fa-solid fa-cake-candles"></i> Ngày sinh <span class="optional-tag">Tùy chọn</span>
+            </label>
+            <input type="date" id="reg-dob" name="dob" autocomplete="bday">
+            <p class="field-hint">Nhận ưu đãi sinh nhật đặc biệt!</p>
+          </div>
+
+          <!-- Terms -->
+          <div class="form-group terms-group">
+            <label class="custom-checkbox" for="reg-terms">
+              <input type="checkbox" id="reg-terms" name="terms" required>
+              <span class="checkbox-box"></span>
+              <span class="checkbox-label">
+                Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a> của Bold Brew.
+              </span>
+            </label>
+            <span class="field-error" id="err-terms"></span>
+          </div>
+
+          <div class="form-group terms-group">
+            <label class="custom-checkbox" for="reg-newsletter">
+              <input type="checkbox" id="reg-newsletter" name="newsletter">
+              <span class="checkbox-box"></span>
+              <span class="checkbox-label">Đăng ký nhận tin khuyến mãi và ưu đãi từ Bold Brew.</span>
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-orange btn-block register-submit-btn" id="register-submit">
+            <i class="fa-solid fa-user-plus"></i>
+            <span id="submit-text">Tạo tài khoản ngay</span>
+            <span class="spinner" id="submit-spinner" style="display:none;"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+          </button>
+
+          <!-- Social register -->
+          <div class="social-divider">
+            <span>Hoặc đăng ký với</span>
+          </div>
+          <div class="social-register-btns">
+            <button type="button" class="social-btn" id="google-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Google
+            </button>
+            <button type="button" class="social-btn" id="facebook-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
+              Facebook
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="success-toast" id="success-toast">
+    <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+    <div class="toast-text">
+      <strong>Đăng ký thành công!</strong>
+      <span>Chào mừng đến với Bold Brew 🎉</span>
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    function setupToggle(toggleId, inputId, eyeId) {
+      document.getElementById(toggleId).addEventListener('click', () => {
+        const inp = document.getElementById(inputId);
+        const eye = document.getElementById(eyeId);
+        const isHidden = inp.type === 'password';
+        inp.type = isHidden ? 'text' : 'password';
+        eye.className = isHidden ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+      });
+    }
+    setupToggle('toggle-pw1', 'reg-password', 'eye1');
+    setupToggle('toggle-pw2', 'reg-confirm', 'eye2');
+
+    // Password strength
+    const pwInput = document.getElementById('reg-password');
+    pwInput.addEventListener('input', () => {
+      const val = pwInput.value;
+      const fill = document.getElementById('pw-fill');
+      const label = document.getElementById('pw-label');
+      let strength = 0;
+      if (val.length >= 8) strength++;
+      if (/[A-Z]/.test(val)) strength++;
+      if (/[0-9]/.test(val)) strength++;
+      if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+      const pct = (strength / 4) * 100;
+      fill.style.width = pct + '%';
+      const colors = ['#e53e3e','#e53e3e','#f6ad55','#38a169','#38a169'];
+      const labels = ['','Rất yếu','Yếu','Trung bình','Mạnh'];
+      fill.style.background = colors[strength];
+      label.textContent = labels[strength] || 'Nhập mật khẩu';
+      label.style.color = colors[strength] || '#aaa';
+    });
+
+    // Email live validation
+    const emailInp = document.getElementById('reg-email');
+    const emailStatus = document.getElementById('email-status');
+    emailInp.addEventListener('blur', () => {
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInp.value);
+      emailStatus.innerHTML = emailInp.value
+        ? (valid ? '<i class="fa-solid fa-circle-check" style="color:#38a169"></i>' : '<i class="fa-solid fa-circle-xmark" style="color:#e53e3e"></i>')
+        : '';
+    });
+
+    // Form submit
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      // Clear errors
+      document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.register-form input').forEach(el => el.classList.remove('input-error'));
+
+      const fullname = document.getElementById('reg-fullname').value.trim();
+      const username = document.getElementById('reg-username').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('reg-confirm').value;
+      const terms = document.getElementById('reg-terms').checked;
+
+      if (!fullname) {
+        showError('err-fullname', 'reg-fullname', 'Vui lòng nhập họ và tên.');
+        valid = false;
+      }
+      if (!username || username.length < 3) {
+        showError('err-username', 'reg-username', 'Tên người dùng phải có ít nhất 3 ký tự.');
+        valid = false;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('err-email', 'reg-email', 'Email không hợp lệ.');
+        valid = false;
+      }
+      if (password.length < 8) {
+        showError('err-password', 'reg-password', 'Mật khẩu phải có ít nhất 8 ký tự.');
+        valid = false;
+      }
+      if (password !== confirm) {
+        showError('err-confirm', 'reg-confirm', 'Mật khẩu xác nhận không khớp.');
+        valid = false;
+      }
+      if (!terms) {
+        document.getElementById('err-terms').textContent = 'Vui lòng đồng ý với điều khoản dịch vụ.';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Show loading
+      const btn = document.getElementById('register-submit');
+      document.getElementById('submit-text').style.display = 'none';
+      document.getElementById('submit-spinner').style.display = 'inline-flex';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.disabled = false;
+        document.getElementById('submit-text').style.display = 'inline';
+        document.getElementById('submit-spinner').style.display = 'none';
+        // Show success toast
+        const toast = document.getElementById('success-toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          window.location.href = 'dashboard.html';
+        }, 2200);
+      }, 1800);
+    });
+
+    function showError(errId, inputId, msg) {
+      document.getElementById(errId).textContent = msg;
+      document.getElementById(inputId).classList.add('input-error');
+    }
+  </script>
+</body>
+</html>

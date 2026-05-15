@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng điều khiển - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/bold-brew.css">
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="dash-sidebar">
+      <a href="bold-brew.html" class="logo dash-logo">Bold Brew<span>.</span></a>
+      <ul class="dash-nav">
+        <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Tổng quan</a></li>
+        <li><a href="product.html"><i class="fa-solid fa-mug-hot"></i> Đặt hàng ngay</a></li>
+        <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Lịch sử đơn</a></li>
+        <li><a href="#"><i class="fa-solid fa-star"></i> Hội viên VIP</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Cài đặt</a></li>
+      </ul>
+      <div style="margin-top: auto;">
+        <a href="login.html" class="btn btn-outline btn-block" style="display: flex; gap: 8px; justify-content: center; border-radius: 16px;"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <div class="dash-header">
+        <div class="dash-greeting">
+          <h1>Chào ngày mới, Hoàng Anh</h1>
+          <p>Hôm nay bạn muốn thưởng thức hương vị gì từ Bold Brew?</p>
+        </div>
+        <div class="dash-profile">
+          <button class="btn-icon" style="background: var(--white); color: var(--brand-black); border: 1px solid var(--border-gray); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face" alt="User Avatar" class="dash-avatar">
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <div class="dash-card-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="dash-card-info">
+            <h3>Điểm Tích Lũy</h3>
+            <div class="value">1,240</div>
+          </div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon" style="background: #e6f4ea; color: #137333;">
+            <i class="fa-solid fa-mug-saucer"></i>
+          </div>
+          <div class="dash-card-info">
+            <h3>Ly Đã Thưởng Thức</h3>
+            <div class="value">42</div>
+          </div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-icon" style="background: #fce8e6; color: #c5221f;">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="dash-card-info">
+            <h3>Món Yêu Thích</h3>
+            <div class="value" style="font-size: 24px; margin-top: 4px;">Cold Brew</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-recent">
+        <div class="dash-recent-header">
+          <h2>Hành Trình Hương Vị (Đơn Gần Đây)</h2>
+          <a href="#" class="btn btn-outline btn-sm" style="border-radius: 999px;">Xem toàn bộ</a>
+        </div>
+        <div style="overflow-x: auto;">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>Mã Đơn</th>
+                <th>Ngày Đặt</th>
+                <th>Chi Tiết</th>
+                <th>Tổng Cộng</th>
+                <th>Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#BB-8492</strong></td>
+                <td>14 Thg 5, 2026</td>
+                <td>Chai Cold Brew Đặc Ký (x2)</td>
+                <td><strong>$29.98</strong></td>
+                <td><span class="status completed">Hoàn tất</span></td>
+              </tr>
+              <tr>
+                <td><strong>#BB-8471</strong></td>
+                <td>12 Thg 5, 2026</td>
+                <td>Macchiato Nghệ Thuật</td>
+                <td><strong>$8.00</strong></td>
+                <td><span class="status completed">Hoàn tất</span></td>
+              </tr>
+              <tr>
+                <td><strong>#BB-8420</strong></td>
+                <td>08 Thg 5, 2026</td>
+                <td>Đen Nguyên Bản, Bánh Sừng Bò</td>
+                <td><strong>$11.50</strong></td>
+                <td><span class="status completed">Hoàn tất</span></td>
+              </tr>
+              <tr>
+                <td><strong>#BB-8355</strong></td>
+                <td>02 Thg 5, 2026</td>
+                <td>Cold Brew Tinh Xảo (Đá)</td>
+                <td><strong>$8.00</strong></td>
+                <td><span class="status completed">Hoàn tất</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/bold-brew.css">
+  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="module" src="../scripts/AuthService.js" defer></script>
+</head>
+
+<body>
+  <div class="login-layout">
+    <div class="login-visual">
+      <a href="bold-brew.html" class="login-back"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+      <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?w=1000&q=80" alt="Coffee pouring gracefully">
+      <div class="login-visual-text">
+        <h1 class="login-visual-title">Nghệ Thuật<br>Pha Chế</h1>
+        <p class="login-visual-subtitle">Bold Brew.</p>
+      </div>
+    </div>
+    <div class="login-form-container">
+      <div class="login-header">
+        <h2>Chào mừng trở lại</h2>
+        <p>Đăng nhập để tiếp tục hành trình khám phá hương vị đích thực.</p>
+      </div>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="email">Email của bạn</label>
+          <input type="email" id="email" placeholder="ví dụ: hello@boldbrew.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+        </div>
+        <div class="login-options">
+          <label style="display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer;">
+            <input type="checkbox" style="width: 18px; height: 18px;"> Ghi nhớ tôi
+          </label>
+          <a href="#">Quên mật khẩu?</a>
+        </div>
+        <button type="button" class="btn btn-black btn-block"
+          style="padding: 18px; font-size: 16px; border-radius: 16px;"
+          onclick="window.location.href='dashboard.html'">Đăng nhập ngay</button>
+      </form>
+      <div style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <p style="text-align: center; margin: 30px 0 20px; font-size: 14px; color: var(--text-gray);">
+          Hoặc đăng nhập bằng
+        </p>
+        <button type="button" class="btn btn-outline btn_google_login"><i class="fa-brands fa-google"></i>
+          Google</button>
+      </div>
+
+      <p style="text-align: center; margin-top: 40px; font-size: 15px; color: var(--text-gray);">
+        Người mới? <a href="register.html"
+          style="color: var(--brand-orange); font-weight: 700; text-decoration: none;">Tạo tài khoản</a>
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
