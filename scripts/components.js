@@ -12,7 +12,7 @@ const headerTemplate = `
     </nav>
     <div class="header-actions">
       <a href="login.html" class="btn btn-outline btn-login">Đăng nhập</a>
-      <button  type="button" class="btn-icon btn_cart" aria-label="Giỏ hàng">
+      <button type="button" class="btn-icon btn_cart" aria-label="Giỏ hàng">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="9" cy="21" r="1" />
           <circle cx="20" cy="21" r="1" />
@@ -68,57 +68,43 @@ const footerTemplate = `
 function injectComponents() {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
-  const data=localStorage.getItem('userData');
-  const currentPathFull = window.location.pathname;
-  const isInPages = currentPathFull.includes('/pages/');
-  const prefix = isInPages ? '../' : 'pages/';
-
-  // Update navigation links with proper prefix
-  let updatedHeader = headerTemplate
-    .replace(/href="product\.html"/g, `href="${prefix}product.html"`)
-    .replace(/href="about\.html"/g, `href="${prefix}about.html"`)
-    .replace(/href="contact\.html"/g, `href="${prefix}contact.html"`)
-    .replace(/href="leaderboard\.html"/g, `href="${prefix}leaderboard.html"`)
-    .replace(/href="login\.html"/g, `href="${prefix}login.html"`);
-
-  let updatedFooter = footerTemplate
-    .replace(/href="about\.html"/g, `href="${prefix}about.html"`)
-    .replace(/href="contact\.html"/g, `href="${prefix}contact.html"`);
+  const data = localStorage.getItem('userData');
+  const userData = data ? JSON.parse(data) : null;
 
   if (header) {
-    header.innerHTML = updatedHeader;
+    header.innerHTML = headerTemplate;
 
     const btnCart = header.querySelector('.btn_cart');
     if (btnCart) {
       btnCart.addEventListener('click', () => {
-        window.location.href = prefix + 'cart.html';
+        window.location.href = 'cart.html';
       });
     }
 
-    const currentPage = currentPathFull.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = header.querySelectorAll('nav a');
     navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href.endsWith(currentPage)) {
+      if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
-  }
 
-  const userData = data ? JSON.parse(data) : null;
-  if (userData && header) {
-    const loginBtn = header.querySelector('.btn-login');
-    if (loginBtn) {
-      loginBtn.textContent = userData.name;
-      loginBtn.classList.remove('btn-outline');
-      loginBtn.classList.add('btn-solid');
-      loginBtn.href = prefix + 'profile.html';
+    if (userData) {
+      const loginBtn = header.querySelector('.btn-login');
+      if (loginBtn) {
+        loginBtn.textContent = userData.name;
+        loginBtn.classList.remove('btn-outline');
+        loginBtn.classList.add('btn-solid');
+        loginBtn.href = 'profile.html';
+      }
     }
   }
 
   if (footer) {
-    footer.innerHTML = updatedFooter;
+    footer.innerHTML = footerTemplate;
   }
 }
+
+document.addEventListener('DOMContentLoaded', injectComponents);
 
 document.addEventListener('DOMContentLoaded', injectComponents);

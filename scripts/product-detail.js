@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const productId = urlParams.get("id") || "macchiato";
 
   try {
-    const response = await fetch("../data/ProductsDetail.json");
+    const response = await fetch("data/ProductsDetail.json");
 
     const products = await response.json();
 

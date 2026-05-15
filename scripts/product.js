@@ -1,6 +1,6 @@
 async function initProducts() {
   try {
-    const response = await fetch('../data/ProductsDetail.json');
+    const response = await fetch('data/ProductsDetail.json');
     const products = await response.json();
     renderProductGrid(products);
     setupFilters(products);

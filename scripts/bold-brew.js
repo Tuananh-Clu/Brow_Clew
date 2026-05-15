@@ -18,7 +18,7 @@ const btnRight = document.querySelector(".button_right");
 const btDetails = document.querySelector(".button_details");
 
 async function init() {
-  const res = await fetch("../data/ProductForHeroSection.json");
+  const res = await fetch("data/ProductForHeroSection.json");
   products = await res.json();
 
   if (!products.length) return;
