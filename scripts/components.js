@@ -69,38 +69,55 @@ function injectComponents() {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
   const data=localStorage.getItem('userData');
-  const btnCart = document.querySelector('.btn_cart');
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  if (btnCart) {
-    btnCart.addEventListener('click', () => {
-      window.location.href = 'cart.html';
-    });
-  }
-  const userData = data ? JSON.parse(data) : null;
+  const currentPathFull = window.location.pathname;
+  const isInPages = currentPathFull.includes('/pages/');
+  const prefix = isInPages ? '../' : 'pages/';
 
-  if (userData) {
-    const loginBtn = header.querySelector('.btn-login');
-    if (loginBtn) {
-      loginBtn.textContent = userData.name;
-      loginBtn.classList.remove('btn-outline');
-      loginBtn.classList.add('btn-solid');
-      loginBtn.href = 'profile.html';
-    }
-  }
+  // Update navigation links with proper prefix
+  let updatedHeader = headerTemplate
+    .replace(/href="product\.html"/g, `href="${prefix}product.html"`)
+    .replace(/href="about\.html"/g, `href="${prefix}about.html"`)
+    .replace(/href="contact\.html"/g, `href="${prefix}contact.html"`)
+    .replace(/href="leaderboard\.html"/g, `href="${prefix}leaderboard.html"`)
+    .replace(/href="login\.html"/g, `href="${prefix}login.html"`);
+
+  let updatedFooter = footerTemplate
+    .replace(/href="about\.html"/g, `href="${prefix}about.html"`)
+    .replace(/href="contact\.html"/g, `href="${prefix}contact.html"`);
+
   if (header) {
-    header.innerHTML = headerTemplate;
-    
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    header.innerHTML = updatedHeader;
+
+    const btnCart = header.querySelector('.btn_cart');
+    if (btnCart) {
+      btnCart.addEventListener('click', () => {
+        window.location.href = prefix + 'cart.html';
+      });
+    }
+
+    const currentPage = currentPathFull.split('/').pop() || 'index.html';
     const navLinks = header.querySelectorAll('nav a');
     navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPath) {
+      const href = link.getAttribute('href');
+      if (href.endsWith(currentPage)) {
         link.classList.add('active');
       }
     });
   }
 
+  const userData = data ? JSON.parse(data) : null;
+  if (userData && header) {
+    const loginBtn = header.querySelector('.btn-login');
+    if (loginBtn) {
+      loginBtn.textContent = userData.name;
+      loginBtn.classList.remove('btn-outline');
+      loginBtn.classList.add('btn-solid');
+      loginBtn.href = prefix + 'profile.html';
+    }
+  }
+
   if (footer) {
-    footer.innerHTML = footerTemplate;
+    footer.innerHTML = updatedFooter;
   }
 }
 
