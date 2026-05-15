@@ -70,7 +70,7 @@ function injectComponents() {
   const footer = document.querySelector('footer');
   const data=localStorage.getItem('userData');
   const btnCart = document.querySelector('.btn_cart');
-
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   if (btnCart) {
     btnCart.addEventListener('click', () => {
       window.location.href = 'cart.html';
