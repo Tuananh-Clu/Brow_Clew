@@ -1,13 +1,33 @@
+function rendercategoryButtons(categories) {
+  const filter=["Coffee","Milkshake","Matcha","Smoothie","Ice Drink"];
+  const productCategories=document.getElementById('product-filters');
+
+
+  filter.forEach(category => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.textContent = category;
+    productCategories.appendChild(btn);
+  });
+
+}
+
+
+
+
 async function initProducts() {
   try {
     const response = await fetch('data/ProductsDetail.json');
     const products = await response.json();
     renderProductGrid(products);
+    rendercategoryButtons([...new Set(products.map(p => p.category))]);
     setupFilters(products);
+
   } catch (error) {
     console.error('Error loading products:', error);
   }
 }
+
 
 function renderProductGrid(products) {
   const grid = document.getElementById('product-grid');
@@ -35,22 +55,19 @@ function renderProductGrid(products) {
 
 function setupFilters(products) {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  
+
+
+
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active state
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
       const filterValue = btn.textContent;
       if (filterValue === 'Tất cả') {
         renderProductGrid(products);
       } else {
         const filtered = products.filter(p => {
-          // Simple category matching
-          if (filterValue === 'Cold Brew') return p.category === 'Coffee' || p.category === 'Cold Brew';
-          if (filterValue === 'Espresso Cao Cấp') return p.category === 'Coffee';
-          if (filterValue === 'Đặc Sản Của Quán') return p.category === 'Specialty' || p.category === 'Signature';
           return p.category === filterValue;
         });
         renderProductGrid(filtered);

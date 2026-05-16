@@ -1,0 +1,2702 @@
+[
+  {
+    "id": 1,
+    "productId": 5,
+    "rating": 4,
+    "reviewer": "Hà Duy",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-02",
+    "helpful": 44
+  },
+  {
+    "id": 2,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Võ Hùng",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-23",
+    "helpful": 6
+  },
+  {
+    "id": 3,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Tô Hòa",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-16",
+    "helpful": 40
+  },
+  {
+    "id": 4,
+    "productId": 12,
+    "rating": 4,
+    "reviewer": "Nguyễn Hà",
+    "text": "Mỗi lần ghé luôn order. Nhân viên thân thiện, dịch vụ nhanh.",
+    "date": "2026-04-02",
+    "helpful": 19
+  },
+  {
+    "id": 5,
+    "productId": 6,
+    "rating": 5,
+    "reviewer": "Đinh Trung",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-02",
+    "helpful": 7
+  },
+  {
+    "id": 6,
+    "productId": 37,
+    "rating": 4,
+    "reviewer": "Trần Thảo",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-27",
+    "helpful": 34
+  },
+  {
+    "id": 7,
+    "productId": 11,
+    "rating": 5,
+    "reviewer": "Nguyễn Tuấn",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-04-16",
+    "helpful": 20
+  },
+  {
+    "id": 8,
+    "productId": 29,
+    "rating": 5,
+    "reviewer": "Tạ Minh",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-05-10",
+    "helpful": 17
+  },
+  {
+    "id": 9,
+    "productId": 28,
+    "rating": 4,
+    "reviewer": "Trần Anh",
+    "text": "5 sao xứng đáng! Rất hài lòng.",
+    "date": "2026-03-27",
+    "helpful": 11
+  },
+  {
+    "id": 10,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Bùi Hùng",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-11",
+    "helpful": 38
+  },
+  {
+    "id": 11,
+    "productId": 30,
+    "rating": 4,
+    "reviewer": "Bùi Hà",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-03-18",
+    "helpful": 42
+  },
+  {
+    "id": 12,
+    "productId": 8,
+    "rating": 5,
+    "reviewer": "Võ Duy",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-04-11",
+    "helpful": 42
+  },
+  {
+    "id": 13,
+    "productId": 37,
+    "rating": 5,
+    "reviewer": "Chu Anh",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-16",
+    "helpful": 46
+  },
+  {
+    "id": 14,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Nguyễn Hòa",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-28",
+    "helpful": 7
+  },
+  {
+    "id": 15,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Tạ Minh",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-03-26",
+    "helpful": 51
+  },
+  {
+    "id": 16,
+    "productId": 29,
+    "rating": 5,
+    "reviewer": "Hồ Minh",
+    "text": "Xứng đáng với giá tiền, rất vui lòng.",
+    "date": "2026-04-28",
+    "helpful": 21
+  },
+  {
+    "id": 17,
+    "productId": 9,
+    "rating": 4,
+    "reviewer": "Lê Anh",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-05-07",
+    "helpful": 37
+  },
+  {
+    "id": 18,
+    "productId": 9,
+    "rating": 5,
+    "reviewer": "Chu Quyền",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-12",
+    "helpful": 21
+  },
+  {
+    "id": 19,
+    "productId": 32,
+    "rating": 4,
+    "reviewer": "Tô Anh",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-05-06",
+    "helpful": 52
+  },
+  {
+    "id": 20,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Hồ Phương",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-01",
+    "helpful": 40
+  },
+  {
+    "id": 21,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Đặng Minh",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-28",
+    "helpful": 22
+  },
+  {
+    "id": 22,
+    "productId": 16,
+    "rating": 4,
+    "reviewer": "Bùi Duy",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-04-09",
+    "helpful": 20
+  },
+  {
+    "id": 23,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Hồ Anh",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-23",
+    "helpful": 8
+  },
+  {
+    "id": 24,
+    "productId": 5,
+    "rating": 4,
+    "reviewer": "Phạm Duy",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-03",
+    "helpful": 53
+  },
+  {
+    "id": 25,
+    "productId": 33,
+    "rating": 5,
+    "reviewer": "Chu Tùng",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-12",
+    "helpful": 51
+  },
+  {
+    "id": 26,
+    "productId": 8,
+    "rating": 4,
+    "reviewer": "Tô Duy",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-21",
+    "helpful": 16
+  },
+  {
+    "id": 27,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Vũ Phương",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-04-08",
+    "helpful": 51
+  },
+  {
+    "id": 28,
+    "productId": 18,
+    "rating": 4,
+    "reviewer": "Dương Quyền",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-05-13",
+    "helpful": 28
+  },
+  {
+    "id": 29,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Tô Hòa",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-03-28",
+    "helpful": 37
+  },
+  {
+    "id": 30,
+    "productId": 26,
+    "rating": 4,
+    "reviewer": "Đặng Thảo",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-18",
+    "helpful": 18
+  },
+  {
+    "id": 31,
+    "productId": 1,
+    "rating": 4,
+    "reviewer": "Tạ Hiếu",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-04-29",
+    "helpful": 31
+  },
+  {
+    "id": 32,
+    "productId": 28,
+    "rating": 4,
+    "reviewer": "Đặng Thảo",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-25",
+    "helpful": 9
+  },
+  {
+    "id": 33,
+    "productId": 24,
+    "rating": 4,
+    "reviewer": "Dương Minh",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-13",
+    "helpful": 32
+  },
+  {
+    "id": 34,
+    "productId": 19,
+    "rating": 5,
+    "reviewer": "Phạm Nhân",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-05-04",
+    "helpful": 43
+  },
+  {
+    "id": 35,
+    "productId": 27,
+    "rating": 5,
+    "reviewer": "Hà Tuấn",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-03-23",
+    "helpful": 37
+  },
+  {
+    "id": 36,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Đinh Hà",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-05-15",
+    "helpful": 43
+  },
+  {
+    "id": 37,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Trần Hà",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-03-19",
+    "helpful": 52
+  },
+  {
+    "id": 38,
+    "productId": 39,
+    "rating": 5,
+    "reviewer": "Hoàng Duy",
+    "text": "Xứng đáng với giá tiền, rất vui lòng.",
+    "date": "2026-04-13",
+    "helpful": 22
+  },
+  {
+    "id": 39,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Đinh Anh",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-18",
+    "helpful": 12
+  },
+  {
+    "id": 40,
+    "productId": 3,
+    "rating": 5,
+    "reviewer": "Trần Phương",
+    "text": "Xứng đáng với giá tiền, rất vui lòng.",
+    "date": "2026-04-12",
+    "helpful": 49
+  },
+  {
+    "id": 41,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Lê Hòa",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-05-06",
+    "helpful": 49
+  },
+  {
+    "id": 42,
+    "productId": 5,
+    "rating": 5,
+    "reviewer": "Chu Minh",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-25",
+    "helpful": 43
+  },
+  {
+    "id": 43,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Vũ Tâm",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-03-24",
+    "helpful": 7
+  },
+  {
+    "id": 44,
+    "productId": 9,
+    "rating": 5,
+    "reviewer": "Nguyễn Nhân",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-10",
+    "helpful": 26
+  },
+  {
+    "id": 45,
+    "productId": 37,
+    "rating": 5,
+    "reviewer": "Tạ Thảo",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-03-22",
+    "helpful": 10
+  },
+  {
+    "id": 46,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Lê Linh",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-03-19",
+    "helpful": 12
+  },
+  {
+    "id": 47,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Hồ Tuấn",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-04-04",
+    "helpful": 23
+  },
+  {
+    "id": 48,
+    "productId": 22,
+    "rating": 4,
+    "reviewer": "Đinh Trung",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-05-03",
+    "helpful": 32
+  },
+  {
+    "id": 49,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Đặng Minh",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-08",
+    "helpful": 16
+  },
+  {
+    "id": 50,
+    "productId": 37,
+    "rating": 4,
+    "reviewer": "Lê Anh",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-28",
+    "helpful": 37
+  },
+  {
+    "id": 51,
+    "productId": 30,
+    "rating": 4,
+    "reviewer": "Tạ Quyền",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-04-18",
+    "helpful": 45
+  },
+  {
+    "id": 52,
+    "productId": 38,
+    "rating": 4,
+    "reviewer": "Phạm Hà",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-06",
+    "helpful": 19
+  },
+  {
+    "id": 53,
+    "productId": 37,
+    "rating": 4,
+    "reviewer": "Đinh Anh",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-03-24",
+    "helpful": 22
+  },
+  {
+    "id": 54,
+    "productId": 24,
+    "rating": 4,
+    "reviewer": "Phạm Linh",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-04-13",
+    "helpful": 43
+  },
+  {
+    "id": 55,
+    "productId": 26,
+    "rating": 5,
+    "reviewer": "Đặng Hiếu",
+    "text": "Yêu thích! Sẽ là nước uống yêu thích của tôi.",
+    "date": "2026-04-28",
+    "helpful": 35
+  },
+  {
+    "id": 56,
+    "productId": 3,
+    "rating": 5,
+    "reviewer": "Lê Tuấn",
+    "text": "Ngon, tươi mát, đủ lạnh. Tuyệt vời!",
+    "date": "2026-05-10",
+    "helpful": 8
+  },
+  {
+    "id": 57,
+    "productId": 21,
+    "rating": 4,
+    "reviewer": "Hoàng Trung",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-03-19",
+    "helpful": 33
+  },
+  {
+    "id": 58,
+    "productId": 16,
+    "rating": 4,
+    "reviewer": "Đinh Linh",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-05-11",
+    "helpful": 13
+  },
+  {
+    "id": 59,
+    "productId": 40,
+    "rating": 5,
+    "reviewer": "Tô Nhân",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-04",
+    "helpful": 37
+  },
+  {
+    "id": 60,
+    "productId": 9,
+    "rating": 4,
+    "reviewer": "Đặng Anh",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-03-27",
+    "helpful": 25
+  },
+  {
+    "id": 61,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Đặng Hiếu",
+    "text": "Yêu thích! Sẽ là nước uống yêu thích của tôi.",
+    "date": "2026-04-26",
+    "helpful": 52
+  },
+  {
+    "id": 62,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Tạ Duy",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-05-13",
+    "helpful": 53
+  },
+  {
+    "id": 63,
+    "productId": 15,
+    "rating": 4,
+    "reviewer": "Vũ Anh",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-04-15",
+    "helpful": 18
+  },
+  {
+    "id": 64,
+    "productId": 33,
+    "rating": 4,
+    "reviewer": "Lê Duy",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-03-27",
+    "helpful": 19
+  },
+  {
+    "id": 65,
+    "productId": 32,
+    "rating": 5,
+    "reviewer": "Hà Thảo",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-14",
+    "helpful": 47
+  },
+  {
+    "id": 66,
+    "productId": 21,
+    "rating": 4,
+    "reviewer": "Phạm Tâm",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-03-19",
+    "helpful": 45
+  },
+  {
+    "id": 67,
+    "productId": 35,
+    "rating": 5,
+    "reviewer": "Hồ Phương",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-04-07",
+    "helpful": 54
+  },
+  {
+    "id": 68,
+    "productId": 2,
+    "rating": 5,
+    "reviewer": "Phạm Tâm",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-04-08",
+    "helpful": 11
+  },
+  {
+    "id": 69,
+    "productId": 18,
+    "rating": 4,
+    "reviewer": "Vũ Tâm",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-05-05",
+    "helpful": 33
+  },
+  {
+    "id": 70,
+    "productId": 1,
+    "rating": 5,
+    "reviewer": "Đinh Linh",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-30",
+    "helpful": 47
+  },
+  {
+    "id": 71,
+    "productId": 24,
+    "rating": 5,
+    "reviewer": "Chu Phương",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-05-04",
+    "helpful": 54
+  },
+  {
+    "id": 72,
+    "productId": 19,
+    "rating": 5,
+    "reviewer": "Hoàng Tuấn",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-05-01",
+    "helpful": 11
+  },
+  {
+    "id": 73,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Phạm Trung",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-17",
+    "helpful": 18
+  },
+  {
+    "id": 74,
+    "productId": 12,
+    "rating": 5,
+    "reviewer": "Dương Linh",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-05-03",
+    "helpful": 51
+  },
+  {
+    "id": 75,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Chu Hà",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-05-07",
+    "helpful": 30
+  },
+  {
+    "id": 76,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Phạm Trung",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-13",
+    "helpful": 52
+  },
+  {
+    "id": 77,
+    "productId": 34,
+    "rating": 4,
+    "reviewer": "Đinh Phương",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-27",
+    "helpful": 34
+  },
+  {
+    "id": 78,
+    "productId": 6,
+    "rating": 5,
+    "reviewer": "Hoàng Minh",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-05-07",
+    "helpful": 11
+  },
+  {
+    "id": 79,
+    "productId": 12,
+    "rating": 4,
+    "reviewer": "Hà Phương",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-03-27",
+    "helpful": 38
+  },
+  {
+    "id": 80,
+    "productId": 18,
+    "rating": 5,
+    "reviewer": "Tạ Tùng",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-04-25",
+    "helpful": 22
+  },
+  {
+    "id": 81,
+    "productId": 24,
+    "rating": 5,
+    "reviewer": "Tạ Nhân",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-05-07",
+    "helpful": 6
+  },
+  {
+    "id": 82,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Bùi Hiếu",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-29",
+    "helpful": 39
+  },
+  {
+    "id": 83,
+    "productId": 8,
+    "rating": 4,
+    "reviewer": "Phạm Trung",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-03-26",
+    "helpful": 33
+  },
+  {
+    "id": 84,
+    "productId": 20,
+    "rating": 5,
+    "reviewer": "Nguyễn Minh",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-05-11",
+    "helpful": 16
+  },
+  {
+    "id": 85,
+    "productId": 27,
+    "rating": 5,
+    "reviewer": "Lê Hùng",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-26",
+    "helpful": 31
+  },
+  {
+    "id": 86,
+    "productId": 27,
+    "rating": 4,
+    "reviewer": "Dương Linh",
+    "text": "5 sao xứng đáng! Rất hài lòng.",
+    "date": "2026-04-08",
+    "helpful": 45
+  },
+  {
+    "id": 87,
+    "productId": 8,
+    "rating": 4,
+    "reviewer": "Tạ Thảo",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-09",
+    "helpful": 24
+  },
+  {
+    "id": 88,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Phạm Tâm",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-14",
+    "helpful": 49
+  },
+  {
+    "id": 89,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Hồ Nhân",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-05-16",
+    "helpful": 12
+  },
+  {
+    "id": 90,
+    "productId": 6,
+    "rating": 4,
+    "reviewer": "Đinh Thảo",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-05-05",
+    "helpful": 20
+  },
+  {
+    "id": 91,
+    "productId": 29,
+    "rating": 5,
+    "reviewer": "Nguyễn Tùng",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-05-05",
+    "helpful": 37
+  },
+  {
+    "id": 92,
+    "productId": 2,
+    "rating": 4,
+    "reviewer": "Đinh Tuấn",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-04-22",
+    "helpful": 28
+  },
+  {
+    "id": 93,
+    "productId": 19,
+    "rating": 4,
+    "reviewer": "Lê Thảo",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-03-26",
+    "helpful": 6
+  },
+  {
+    "id": 94,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Hồ Tùng",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-13",
+    "helpful": 6
+  },
+  {
+    "id": 95,
+    "productId": 29,
+    "rating": 5,
+    "reviewer": "Phạm Tùng",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-05-09",
+    "helpful": 19
+  },
+  {
+    "id": 96,
+    "productId": 18,
+    "rating": 5,
+    "reviewer": "Phạm Tuấn",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-21",
+    "helpful": 28
+  },
+  {
+    "id": 97,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Lê Hà",
+    "text": "5 sao xứng đáng! Rất hài lòng.",
+    "date": "2026-04-09",
+    "helpful": 31
+  },
+  {
+    "id": 98,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Trần Phương",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-28",
+    "helpful": 46
+  },
+  {
+    "id": 99,
+    "productId": 35,
+    "rating": 5,
+    "reviewer": "Nguyễn Phương",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-14",
+    "helpful": 19
+  },
+  {
+    "id": 100,
+    "productId": 14,
+    "rating": 5,
+    "reviewer": "Nguyễn Nhân",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-05",
+    "helpful": 33
+  },
+  {
+    "id": 101,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Nguyễn Thảo",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-03-21",
+    "helpful": 45
+  },
+  {
+    "id": 102,
+    "productId": 12,
+    "rating": 4,
+    "reviewer": "Tô Tuấn",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-05-15",
+    "helpful": 43
+  },
+  {
+    "id": 103,
+    "productId": 34,
+    "rating": 4,
+    "reviewer": "Tô Minh",
+    "text": "Yêu thích! Sẽ là nước uống yêu thích của tôi.",
+    "date": "2026-04-28",
+    "helpful": 11
+  },
+  {
+    "id": 104,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Võ Anh",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-06",
+    "helpful": 29
+  },
+  {
+    "id": 105,
+    "productId": 26,
+    "rating": 5,
+    "reviewer": "Phạm Linh",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-25",
+    "helpful": 7
+  },
+  {
+    "id": 106,
+    "productId": 38,
+    "rating": 4,
+    "reviewer": "Bùi Tuấn",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-08",
+    "helpful": 54
+  },
+  {
+    "id": 107,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Tạ Tâm",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-13",
+    "helpful": 10
+  },
+  {
+    "id": 108,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Phạm Quyền",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-20",
+    "helpful": 53
+  },
+  {
+    "id": 109,
+    "productId": 21,
+    "rating": 5,
+    "reviewer": "Đặng Anh",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-05-16",
+    "helpful": 49
+  },
+  {
+    "id": 110,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Tạ Hùng",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-06",
+    "helpful": 39
+  },
+  {
+    "id": 111,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Đinh Minh",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-05-09",
+    "helpful": 13
+  },
+  {
+    "id": 112,
+    "productId": 25,
+    "rating": 5,
+    "reviewer": "Hà Anh",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-28",
+    "helpful": 37
+  },
+  {
+    "id": 113,
+    "productId": 12,
+    "rating": 5,
+    "reviewer": "Chu Hùng",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-05-04",
+    "helpful": 6
+  },
+  {
+    "id": 114,
+    "productId": 22,
+    "rating": 4,
+    "reviewer": "Hoàng Quyền",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-07",
+    "helpful": 35
+  },
+  {
+    "id": 115,
+    "productId": 30,
+    "rating": 4,
+    "reviewer": "Tạ Hòa",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-03-19",
+    "helpful": 30
+  },
+  {
+    "id": 116,
+    "productId": 1,
+    "rating": 5,
+    "reviewer": "Đinh Tâm",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-05-03",
+    "helpful": 13
+  },
+  {
+    "id": 117,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Dương Minh",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-23",
+    "helpful": 24
+  },
+  {
+    "id": 118,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Hoàng Phương",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-16",
+    "helpful": 31
+  },
+  {
+    "id": 119,
+    "productId": 31,
+    "rating": 4,
+    "reviewer": "Đinh Trung",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-01",
+    "helpful": 5
+  },
+  {
+    "id": 120,
+    "productId": 31,
+    "rating": 4,
+    "reviewer": "Đinh Tâm",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-04-03",
+    "helpful": 39
+  },
+  {
+    "id": 121,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Bùi Nhân",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-24",
+    "helpful": 12
+  },
+  {
+    "id": 122,
+    "productId": 28,
+    "rating": 4,
+    "reviewer": "Đinh Linh",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-24",
+    "helpful": 15
+  },
+  {
+    "id": 123,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Trần Tâm",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-12",
+    "helpful": 41
+  },
+  {
+    "id": 124,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Chu Hùng",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-03-31",
+    "helpful": 37
+  },
+  {
+    "id": 125,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Tạ Hùng",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-03-30",
+    "helpful": 32
+  },
+  {
+    "id": 126,
+    "productId": 20,
+    "rating": 5,
+    "reviewer": "Trần Tuấn",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-09",
+    "helpful": 53
+  },
+  {
+    "id": 127,
+    "productId": 33,
+    "rating": 5,
+    "reviewer": "Tô Thảo",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-01",
+    "helpful": 23
+  },
+  {
+    "id": 128,
+    "productId": 36,
+    "rating": 5,
+    "reviewer": "Bùi Duy",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-30",
+    "helpful": 35
+  },
+  {
+    "id": 129,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Hà Hiếu",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-24",
+    "helpful": 32
+  },
+  {
+    "id": 130,
+    "productId": 40,
+    "rating": 5,
+    "reviewer": "Bùi Hiếu",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-30",
+    "helpful": 46
+  },
+  {
+    "id": 131,
+    "productId": 38,
+    "rating": 4,
+    "reviewer": "Chu Tùng",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-19",
+    "helpful": 37
+  },
+  {
+    "id": 132,
+    "productId": 14,
+    "rating": 5,
+    "reviewer": "Hà Trung",
+    "text": "Mỗi lần ghé luôn order. Nhân viên thân thiện, dịch vụ nhanh.",
+    "date": "2026-04-12",
+    "helpful": 34
+  },
+  {
+    "id": 133,
+    "productId": 15,
+    "rating": 5,
+    "reviewer": "Chu Tùng",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-05-01",
+    "helpful": 35
+  },
+  {
+    "id": 134,
+    "productId": 25,
+    "rating": 5,
+    "reviewer": "Chu Minh",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-05-06",
+    "helpful": 27
+  },
+  {
+    "id": 135,
+    "productId": 21,
+    "rating": 4,
+    "reviewer": "Chu Tùng",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-05-02",
+    "helpful": 12
+  },
+  {
+    "id": 136,
+    "productId": 36,
+    "rating": 4,
+    "reviewer": "Hoàng Phương",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-04-03",
+    "helpful": 7
+  },
+  {
+    "id": 137,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Đinh Hà",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-20",
+    "helpful": 47
+  },
+  {
+    "id": 138,
+    "productId": 5,
+    "rating": 5,
+    "reviewer": "Tạ Thảo",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-05-01",
+    "helpful": 39
+  },
+  {
+    "id": 139,
+    "productId": 7,
+    "rating": 5,
+    "reviewer": "Vũ Linh",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-14",
+    "helpful": 41
+  },
+  {
+    "id": 140,
+    "productId": 22,
+    "rating": 5,
+    "reviewer": "Lê Trung",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-04-24",
+    "helpful": 19
+  },
+  {
+    "id": 141,
+    "productId": 27,
+    "rating": 4,
+    "reviewer": "Nguyễn Linh",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-04-28",
+    "helpful": 46
+  },
+  {
+    "id": 142,
+    "productId": 9,
+    "rating": 4,
+    "reviewer": "Đinh Nhân",
+    "text": "Ngon, tươi mát, đủ lạnh. Tuyệt vời!",
+    "date": "2026-04-11",
+    "helpful": 7
+  },
+  {
+    "id": 143,
+    "productId": 1,
+    "rating": 4,
+    "reviewer": "Tô Nhân",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-03-24",
+    "helpful": 12
+  },
+  {
+    "id": 144,
+    "productId": 25,
+    "rating": 5,
+    "reviewer": "Chu Hiếu",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-04-15",
+    "helpful": 51
+  },
+  {
+    "id": 145,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Dương Minh",
+    "text": "Xứng đáng với giá tiền, rất vui lòng.",
+    "date": "2026-03-30",
+    "helpful": 33
+  },
+  {
+    "id": 146,
+    "productId": 34,
+    "rating": 4,
+    "reviewer": "Võ Hùng",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-26",
+    "helpful": 33
+  },
+  {
+    "id": 147,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Phạm Thảo",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-05",
+    "helpful": 30
+  },
+  {
+    "id": 148,
+    "productId": 9,
+    "rating": 5,
+    "reviewer": "Võ Hòa",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-05-15",
+    "helpful": 53
+  },
+  {
+    "id": 149,
+    "productId": 12,
+    "rating": 5,
+    "reviewer": "Vũ Quyền",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-05-12",
+    "helpful": 52
+  },
+  {
+    "id": 150,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Võ Tuấn",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-25",
+    "helpful": 31
+  },
+  {
+    "id": 151,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Hoàng Quyền",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-03-28",
+    "helpful": 14
+  },
+  {
+    "id": 152,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Dương Anh",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-04-10",
+    "helpful": 49
+  },
+  {
+    "id": 153,
+    "productId": 13,
+    "rating": 5,
+    "reviewer": "Hoàng Hà",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-25",
+    "helpful": 6
+  },
+  {
+    "id": 154,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Tạ Duy",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-01",
+    "helpful": 14
+  },
+  {
+    "id": 155,
+    "productId": 6,
+    "rating": 5,
+    "reviewer": "Tạ Hiếu",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-03-20",
+    "helpful": 48
+  },
+  {
+    "id": 156,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Phạm Tùng",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-05-07",
+    "helpful": 9
+  },
+  {
+    "id": 157,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Hồ Minh",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-07",
+    "helpful": 49
+  },
+  {
+    "id": 158,
+    "productId": 35,
+    "rating": 4,
+    "reviewer": "Tạ Tâm",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-05-15",
+    "helpful": 47
+  },
+  {
+    "id": 159,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Trần Quyền",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-05-03",
+    "helpful": 19
+  },
+  {
+    "id": 160,
+    "productId": 13,
+    "rating": 4,
+    "reviewer": "Nguyễn Trung",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-04-03",
+    "helpful": 54
+  },
+  {
+    "id": 161,
+    "productId": 39,
+    "rating": 4,
+    "reviewer": "Trần Thảo",
+    "text": "Ngon, tươi mát, đủ lạnh. Tuyệt vời!",
+    "date": "2026-03-23",
+    "helpful": 37
+  },
+  {
+    "id": 162,
+    "productId": 2,
+    "rating": 4,
+    "reviewer": "Bùi Phương",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-12",
+    "helpful": 46
+  },
+  {
+    "id": 163,
+    "productId": 6,
+    "rating": 4,
+    "reviewer": "Đặng Hà",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-27",
+    "helpful": 16
+  },
+  {
+    "id": 164,
+    "productId": 15,
+    "rating": 4,
+    "reviewer": "Tạ Hòa",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-04-04",
+    "helpful": 11
+  },
+  {
+    "id": 165,
+    "productId": 24,
+    "rating": 5,
+    "reviewer": "Tạ Quyền",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-05-06",
+    "helpful": 45
+  },
+  {
+    "id": 166,
+    "productId": 38,
+    "rating": 4,
+    "reviewer": "Hà Tuấn",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-03-24",
+    "helpful": 22
+  },
+  {
+    "id": 167,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Tô Minh",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-05-04",
+    "helpful": 54
+  },
+  {
+    "id": 168,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Võ Quyền",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-04-01",
+    "helpful": 13
+  },
+  {
+    "id": 169,
+    "productId": 38,
+    "rating": 5,
+    "reviewer": "Nguyễn Trung",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-21",
+    "helpful": 38
+  },
+  {
+    "id": 170,
+    "productId": 18,
+    "rating": 5,
+    "reviewer": "Hồ Phương",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-03-29",
+    "helpful": 12
+  },
+  {
+    "id": 171,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Hà Trung",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-04-25",
+    "helpful": 9
+  },
+  {
+    "id": 172,
+    "productId": 15,
+    "rating": 5,
+    "reviewer": "Tô Trung",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-03-24",
+    "helpful": 7
+  },
+  {
+    "id": 173,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Hồ Tuấn",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-05-10",
+    "helpful": 15
+  },
+  {
+    "id": 174,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Trần Trung",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-03-23",
+    "helpful": 40
+  },
+  {
+    "id": 175,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Phạm Duy",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-04-21",
+    "helpful": 42
+  },
+  {
+    "id": 176,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Lê Phương",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-03-28",
+    "helpful": 13
+  },
+  {
+    "id": 177,
+    "productId": 33,
+    "rating": 5,
+    "reviewer": "Phạm Phương",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-12",
+    "helpful": 14
+  },
+  {
+    "id": 178,
+    "productId": 6,
+    "rating": 5,
+    "reviewer": "Tô Thảo",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-04-20",
+    "helpful": 25
+  },
+  {
+    "id": 179,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Võ Quyền",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-04-29",
+    "helpful": 14
+  },
+  {
+    "id": 180,
+    "productId": 6,
+    "rating": 5,
+    "reviewer": "Hà Tâm",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-20",
+    "helpful": 41
+  },
+  {
+    "id": 181,
+    "productId": 22,
+    "rating": 4,
+    "reviewer": "Vũ Hùng",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-02",
+    "helpful": 30
+  },
+  {
+    "id": 182,
+    "productId": 39,
+    "rating": 5,
+    "reviewer": "Hà Tâm",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-05-13",
+    "helpful": 42
+  },
+  {
+    "id": 183,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Đặng Tùng",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-04",
+    "helpful": 48
+  },
+  {
+    "id": 184,
+    "productId": 16,
+    "rating": 4,
+    "reviewer": "Đinh Trung",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-29",
+    "helpful": 43
+  },
+  {
+    "id": 185,
+    "productId": 34,
+    "rating": 5,
+    "reviewer": "Nguyễn Anh",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-19",
+    "helpful": 13
+  },
+  {
+    "id": 186,
+    "productId": 33,
+    "rating": 5,
+    "reviewer": "Đinh Trung",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-27",
+    "helpful": 26
+  },
+  {
+    "id": 187,
+    "productId": 20,
+    "rating": 5,
+    "reviewer": "Hồ Tuấn",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-05-03",
+    "helpful": 43
+  },
+  {
+    "id": 188,
+    "productId": 5,
+    "rating": 5,
+    "reviewer": "Nguyễn Thảo",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-03-28",
+    "helpful": 15
+  },
+  {
+    "id": 189,
+    "productId": 33,
+    "rating": 4,
+    "reviewer": "Lê Duy",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-04",
+    "helpful": 13
+  },
+  {
+    "id": 190,
+    "productId": 36,
+    "rating": 4,
+    "reviewer": "Dương Hùng",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-05-09",
+    "helpful": 54
+  },
+  {
+    "id": 191,
+    "productId": 27,
+    "rating": 4,
+    "reviewer": "Tô Phương",
+    "text": "Mỗi lần ghé luôn order. Nhân viên thân thiện, dịch vụ nhanh.",
+    "date": "2026-04-04",
+    "helpful": 51
+  },
+  {
+    "id": 192,
+    "productId": 34,
+    "rating": 5,
+    "reviewer": "Lê Minh",
+    "text": "Xứng đáng với giá tiền, rất vui lòng.",
+    "date": "2026-05-03",
+    "helpful": 42
+  },
+  {
+    "id": 193,
+    "productId": 35,
+    "rating": 4,
+    "reviewer": "Chu Minh",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-16",
+    "helpful": 27
+  },
+  {
+    "id": 194,
+    "productId": 15,
+    "rating": 5,
+    "reviewer": "Trần Thảo",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-05-01",
+    "helpful": 23
+  },
+  {
+    "id": 195,
+    "productId": 26,
+    "rating": 4,
+    "reviewer": "Đinh Nhân",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-05-01",
+    "helpful": 41
+  },
+  {
+    "id": 196,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Dương Tâm",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-20",
+    "helpful": 50
+  },
+  {
+    "id": 197,
+    "productId": 34,
+    "rating": 5,
+    "reviewer": "Hà Trung",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-04-28",
+    "helpful": 18
+  },
+  {
+    "id": 198,
+    "productId": 32,
+    "rating": 5,
+    "reviewer": "Đặng Duy",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-14",
+    "helpful": 28
+  },
+  {
+    "id": 199,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Dương Hùng",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-01",
+    "helpful": 13
+  },
+  {
+    "id": 200,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Vũ Hà",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-09",
+    "helpful": 40
+  },
+  {
+    "id": 201,
+    "productId": 15,
+    "rating": 5,
+    "reviewer": "Hồ Linh",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-04-27",
+    "helpful": 25
+  },
+  {
+    "id": 202,
+    "productId": 9,
+    "rating": 5,
+    "reviewer": "Võ Tuấn",
+    "text": "Mỗi lần ghé luôn order. Nhân viên thân thiện, dịch vụ nhanh.",
+    "date": "2026-04-30",
+    "helpful": 26
+  },
+  {
+    "id": 203,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Vũ Tâm",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-03-29",
+    "helpful": 52
+  },
+  {
+    "id": 204,
+    "productId": 27,
+    "rating": 5,
+    "reviewer": "Dương Hùng",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-13",
+    "helpful": 9
+  },
+  {
+    "id": 205,
+    "productId": 24,
+    "rating": 5,
+    "reviewer": "Chu Minh",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-23",
+    "helpful": 41
+  },
+  {
+    "id": 206,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Tô Tuấn",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-28",
+    "helpful": 34
+  },
+  {
+    "id": 207,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Tạ Hùng",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-05-12",
+    "helpful": 28
+  },
+  {
+    "id": 208,
+    "productId": 11,
+    "rating": 4,
+    "reviewer": "Hoàng Duy",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-04",
+    "helpful": 14
+  },
+  {
+    "id": 209,
+    "productId": 10,
+    "rating": 5,
+    "reviewer": "Vũ Tâm",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-03-26",
+    "helpful": 23
+  },
+  {
+    "id": 210,
+    "productId": 23,
+    "rating": 4,
+    "reviewer": "Võ Duy",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-17",
+    "helpful": 42
+  },
+  {
+    "id": 211,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Võ Thảo",
+    "text": "Sản phẩm đã vượt kỳ vọng của tôi.",
+    "date": "2026-05-07",
+    "helpful": 49
+  },
+  {
+    "id": 212,
+    "productId": 1,
+    "rating": 5,
+    "reviewer": "Hoàng Duy",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-04-12",
+    "helpful": 10
+  },
+  {
+    "id": 213,
+    "productId": 36,
+    "rating": 5,
+    "reviewer": "Trần Trung",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-03-28",
+    "helpful": 44
+  },
+  {
+    "id": 214,
+    "productId": 12,
+    "rating": 4,
+    "reviewer": "Dương Hiếu",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-04-20",
+    "helpful": 27
+  },
+  {
+    "id": 215,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Đặng Tâm",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-05-06",
+    "helpful": 7
+  },
+  {
+    "id": 216,
+    "productId": 1,
+    "rating": 4,
+    "reviewer": "Phạm Phương",
+    "text": "Yêu thích! Sẽ là nước uống yêu thích của tôi.",
+    "date": "2026-05-09",
+    "helpful": 41
+  },
+  {
+    "id": 217,
+    "productId": 17,
+    "rating": 5,
+    "reviewer": "Hà Hà",
+    "text": "Ngon, tươi mát, đủ lạnh. Tuyệt vời!",
+    "date": "2026-03-21",
+    "helpful": 15
+  },
+  {
+    "id": 218,
+    "productId": 2,
+    "rating": 4,
+    "reviewer": "Trần Nhân",
+    "text": "Sản phẩm đã vượt kỳ vọng của tôi.",
+    "date": "2026-05-14",
+    "helpful": 52
+  },
+  {
+    "id": 219,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Dương Hà",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-29",
+    "helpful": 44
+  },
+  {
+    "id": 220,
+    "productId": 20,
+    "rating": 5,
+    "reviewer": "Chu Tùng",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-03-28",
+    "helpful": 20
+  },
+  {
+    "id": 221,
+    "productId": 39,
+    "rating": 5,
+    "reviewer": "Phạm Linh",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-03-20",
+    "helpful": 50
+  },
+  {
+    "id": 222,
+    "productId": 24,
+    "rating": 4,
+    "reviewer": "Bùi Tùng",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-04-08",
+    "helpful": 5
+  },
+  {
+    "id": 223,
+    "productId": 10,
+    "rating": 4,
+    "reviewer": "Hà Anh",
+    "text": "Sản phẩm đã vượt kỳ vọng của tôi.",
+    "date": "2026-04-24",
+    "helpful": 13
+  },
+  {
+    "id": 224,
+    "productId": 9,
+    "rating": 5,
+    "reviewer": "Võ Anh",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-20",
+    "helpful": 26
+  },
+  {
+    "id": 225,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Lê Nhân",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-03-24",
+    "helpful": 13
+  },
+  {
+    "id": 226,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Võ Hòa",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-04-12",
+    "helpful": 30
+  },
+  {
+    "id": 227,
+    "productId": 11,
+    "rating": 5,
+    "reviewer": "Võ Nhân",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-05-13",
+    "helpful": 5
+  },
+  {
+    "id": 228,
+    "productId": 33,
+    "rating": 4,
+    "reviewer": "Tạ Hùng",
+    "text": "5 sao xứng đáng! Rất hài lòng.",
+    "date": "2026-05-11",
+    "helpful": 28
+  },
+  {
+    "id": 229,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Đinh Hà",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-16",
+    "helpful": 6
+  },
+  {
+    "id": 230,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Võ Anh",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-28",
+    "helpful": 51
+  },
+  {
+    "id": 231,
+    "productId": 18,
+    "rating": 5,
+    "reviewer": "Vũ Tâm",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-05",
+    "helpful": 8
+  },
+  {
+    "id": 232,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Đinh Quyền",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-26",
+    "helpful": 30
+  },
+  {
+    "id": 233,
+    "productId": 19,
+    "rating": 5,
+    "reviewer": "Đinh Duy",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-27",
+    "helpful": 11
+  },
+  {
+    "id": 234,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Hà Nhân",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-04-02",
+    "helpful": 50
+  },
+  {
+    "id": 235,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Hồ Thảo",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-03-23",
+    "helpful": 24
+  },
+  {
+    "id": 236,
+    "productId": 15,
+    "rating": 4,
+    "reviewer": "Hoàng Hòa",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-04-19",
+    "helpful": 5
+  },
+  {
+    "id": 237,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Bùi Quyền",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-09",
+    "helpful": 32
+  },
+  {
+    "id": 238,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Lê Hòa",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-05-08",
+    "helpful": 38
+  },
+  {
+    "id": 239,
+    "productId": 39,
+    "rating": 4,
+    "reviewer": "Đặng Hiếu",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-04-29",
+    "helpful": 21
+  },
+  {
+    "id": 240,
+    "productId": 8,
+    "rating": 4,
+    "reviewer": "Tạ Duy",
+    "text": "Hơi đắng một chút nhưng là điểm hay của sản phẩm.",
+    "date": "2026-05-16",
+    "helpful": 44
+  },
+  {
+    "id": 241,
+    "productId": 23,
+    "rating": 4,
+    "reviewer": "Trần Tùng",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-04-21",
+    "helpful": 50
+  },
+  {
+    "id": 242,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Dương Hiếu",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-20",
+    "helpful": 36
+  },
+  {
+    "id": 243,
+    "productId": 10,
+    "rating": 5,
+    "reviewer": "Phạm Tâm",
+    "text": "Ngon, tươi mát, đủ lạnh. Tuyệt vời!",
+    "date": "2026-04-12",
+    "helpful": 18
+  },
+  {
+    "id": 244,
+    "productId": 1,
+    "rating": 4,
+    "reviewer": "Chu Quyền",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-04-02",
+    "helpful": 35
+  },
+  {
+    "id": 245,
+    "productId": 13,
+    "rating": 5,
+    "reviewer": "Bùi Quyền",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-05-11",
+    "helpful": 10
+  },
+  {
+    "id": 246,
+    "productId": 29,
+    "rating": 5,
+    "reviewer": "Bùi Hùng",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-04-07",
+    "helpful": 36
+  },
+  {
+    "id": 247,
+    "productId": 37,
+    "rating": 5,
+    "reviewer": "Phạm Phương",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-05-11",
+    "helpful": 40
+  },
+  {
+    "id": 248,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Dương Hùng",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-03-24",
+    "helpful": 37
+  },
+  {
+    "id": 249,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Hà Phương",
+    "text": "Yêu thích! Sẽ là nước uống yêu thích của tôi.",
+    "date": "2026-03-19",
+    "helpful": 29
+  },
+  {
+    "id": 250,
+    "productId": 18,
+    "rating": 5,
+    "reviewer": "Vũ Quyền",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-03-28",
+    "helpful": 45
+  },
+  {
+    "id": 251,
+    "productId": 37,
+    "rating": 5,
+    "reviewer": "Tạ Nhân",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-05-08",
+    "helpful": 28
+  },
+  {
+    "id": 252,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Tạ Hùng",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-03-25",
+    "helpful": 30
+  },
+  {
+    "id": 253,
+    "productId": 35,
+    "rating": 4,
+    "reviewer": "Dương Thảo",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-13",
+    "helpful": 16
+  },
+  {
+    "id": 254,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Đinh Trung",
+    "text": "Rất ngon! Hương vị tuyệt vời, chất lượng đảm bảo. Sẽ quay lại!",
+    "date": "2026-05-14",
+    "helpful": 33
+  },
+  {
+    "id": 255,
+    "productId": 39,
+    "rating": 5,
+    "reviewer": "Đặng Anh",
+    "text": "Đậm đà, đúng hương vị, toàn 5 sao!",
+    "date": "2026-04-13",
+    "helpful": 30
+  },
+  {
+    "id": 256,
+    "productId": 25,
+    "rating": 4,
+    "reviewer": "Trần Linh",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-04-21",
+    "helpful": 49
+  },
+  {
+    "id": 257,
+    "productId": 13,
+    "rating": 5,
+    "reviewer": "Chu Hà",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-04-08",
+    "helpful": 46
+  },
+  {
+    "id": 258,
+    "productId": 16,
+    "rating": 4,
+    "reviewer": "Nguyễn Thảo",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-05-15",
+    "helpful": 37
+  },
+  {
+    "id": 259,
+    "productId": 13,
+    "rating": 4,
+    "reviewer": "Bùi Duy",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-04-26",
+    "helpful": 16
+  },
+  {
+    "id": 260,
+    "productId": 11,
+    "rating": 4,
+    "reviewer": "Đinh Anh",
+    "text": "Sản phẩm đã vượt kỳ vọng của tôi.",
+    "date": "2026-05-01",
+    "helpful": 7
+  },
+  {
+    "id": 261,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Đặng Anh",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-04-28",
+    "helpful": 33
+  },
+  {
+    "id": 262,
+    "productId": 37,
+    "rating": 4,
+    "reviewer": "Nguyễn Tuấn",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-05-13",
+    "helpful": 17
+  },
+  {
+    "id": 263,
+    "productId": 28,
+    "rating": 5,
+    "reviewer": "Đinh Tuấn",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-04-24",
+    "helpful": 5
+  },
+  {
+    "id": 264,
+    "productId": 5,
+    "rating": 4,
+    "reviewer": "Tạ Anh",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-04-19",
+    "helpful": 22
+  },
+  {
+    "id": 265,
+    "productId": 19,
+    "rating": 4,
+    "reviewer": "Bùi Quyền",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-04-04",
+    "helpful": 14
+  },
+  {
+    "id": 266,
+    "productId": 39,
+    "rating": 4,
+    "reviewer": "Hồ Quyền",
+    "text": "Không quá tổn hại cho sức khỏe, ngon lại lành mạnh.",
+    "date": "2026-03-25",
+    "helpful": 25
+  },
+  {
+    "id": 267,
+    "productId": 25,
+    "rating": 5,
+    "reviewer": "Hồ Nhân",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-03",
+    "helpful": 37
+  },
+  {
+    "id": 268,
+    "productId": 22,
+    "rating": 5,
+    "reviewer": "Tạ Tâm",
+    "text": "Công thức tuyệt vời, ổn định mỗi lần.",
+    "date": "2026-04-29",
+    "helpful": 25
+  },
+  {
+    "id": 269,
+    "productId": 35,
+    "rating": 4,
+    "reviewer": "Đinh Hòa",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-05-07",
+    "helpful": 46
+  },
+  {
+    "id": 270,
+    "productId": 4,
+    "rating": 4,
+    "reviewer": "Bùi Hòa",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-04-15",
+    "helpful": 12
+  },
+  {
+    "id": 271,
+    "productId": 40,
+    "rating": 4,
+    "reviewer": "Hoàng Tâm",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-24",
+    "helpful": 35
+  },
+  {
+    "id": 272,
+    "productId": 15,
+    "rating": 4,
+    "reviewer": "Võ Duy",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-05-07",
+    "helpful": 19
+  },
+  {
+    "id": 273,
+    "productId": 16,
+    "rating": 5,
+    "reviewer": "Bùi Quyền",
+    "text": "Khá tốt, có thể cải thiện một chút nữa.",
+    "date": "2026-04-09",
+    "helpful": 47
+  },
+  {
+    "id": 274,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Trần Hiếu",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-04-27",
+    "helpful": 6
+  },
+  {
+    "id": 275,
+    "productId": 34,
+    "rating": 4,
+    "reviewer": "Hồ Phương",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-04-11",
+    "helpful": 47
+  },
+  {
+    "id": 276,
+    "productId": 19,
+    "rating": 5,
+    "reviewer": "Vũ Nhân",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-04-24",
+    "helpful": 14
+  },
+  {
+    "id": 277,
+    "productId": 17,
+    "rating": 4,
+    "reviewer": "Hoàng Nhân",
+    "text": "Perfect! Không có gì để phàn nàn.",
+    "date": "2026-03-18",
+    "helpful": 17
+  },
+  {
+    "id": 278,
+    "productId": 27,
+    "rating": 5,
+    "reviewer": "Hà Hà",
+    "text": "Lần này còn tốt hơn lần trước!",
+    "date": "2026-03-22",
+    "helpful": 37
+  },
+  {
+    "id": 279,
+    "productId": 20,
+    "rating": 5,
+    "reviewer": "Lê Thảo",
+    "text": "Sản phẩm đã vượt kỳ vọng của tôi.",
+    "date": "2026-04-08",
+    "helpful": 19
+  },
+  {
+    "id": 280,
+    "productId": 38,
+    "rating": 5,
+    "reviewer": "Đinh Tùng",
+    "text": "Tuyệt vời, sẽ là thường khách.",
+    "date": "2026-05-05",
+    "helpful": 48
+  },
+  {
+    "id": 281,
+    "productId": 2,
+    "rating": 4,
+    "reviewer": "Đặng Minh",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-03-20",
+    "helpful": 36
+  },
+  {
+    "id": 282,
+    "productId": 36,
+    "rating": 4,
+    "reviewer": "Hà Thảo",
+    "text": "Thơm lắm, cảm giác tươi mát.",
+    "date": "2026-04-20",
+    "helpful": 16
+  },
+  {
+    "id": 283,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Nguyễn Anh",
+    "text": "Foam sữa mềm mịn tuyệt vời!",
+    "date": "2026-05-10",
+    "helpful": 48
+  },
+  {
+    "id": 284,
+    "productId": 35,
+    "rating": 4,
+    "reviewer": "Trần Duy",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-04-16",
+    "helpful": 14
+  },
+  {
+    "id": 285,
+    "productId": 11,
+    "rating": 4,
+    "reviewer": "Trần Trung",
+    "text": "Ngon lắm! Lần tới còn order nữa.",
+    "date": "2026-04-16",
+    "helpful": 41
+  },
+  {
+    "id": 286,
+    "productId": 38,
+    "rating": 5,
+    "reviewer": "Đặng Anh",
+    "text": "Tuyệt vời, không thất vọng. Giá hợp lý với chất lượng.",
+    "date": "2026-03-28",
+    "helpful": 39
+  },
+  {
+    "id": 287,
+    "productId": 31,
+    "rating": 5,
+    "reviewer": "Hà Anh",
+    "text": "Chuẩn vị, không kém gì quán nước ngoài.",
+    "date": "2026-04-28",
+    "helpful": 25
+  },
+  {
+    "id": 288,
+    "productId": 15,
+    "rating": 5,
+    "reviewer": "Đinh Tâm",
+    "text": "Hơi ngọt một chút nhưng vẫn rất ngon.",
+    "date": "2026-04-28",
+    "helpful": 18
+  },
+  {
+    "id": 289,
+    "productId": 3,
+    "rating": 5,
+    "reviewer": "Chu Thảo",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-03-25",
+    "helpful": 42
+  },
+  {
+    "id": 290,
+    "productId": 7,
+    "rating": 4,
+    "reviewer": "Vũ Nhân",
+    "text": "Rất khác biệt so với những nơi khác.",
+    "date": "2026-03-30",
+    "helpful": 17
+  },
+  {
+    "id": 291,
+    "productId": 38,
+    "rating": 5,
+    "reviewer": "Hồ Anh",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-05-06",
+    "helpful": 52
+  },
+  {
+    "id": 292,
+    "productId": 21,
+    "rating": 4,
+    "reviewer": "Bùi Anh",
+    "text": "Tất cả mọi thứ đều hoàn hảo!",
+    "date": "2026-03-24",
+    "helpful": 20
+  },
+  {
+    "id": 293,
+    "productId": 33,
+    "rating": 5,
+    "reviewer": "Hoàng Hà",
+    "text": "Chất lượng cao, đúng như quảng cáo. Rất tốt!",
+    "date": "2026-03-31",
+    "helpful": 34
+  },
+  {
+    "id": 294,
+    "productId": 14,
+    "rating": 4,
+    "reviewer": "Hà Hòa",
+    "text": "Không ngờ ngon thế! Bất ngờ tích cực.",
+    "date": "2026-03-20",
+    "helpful": 24
+  },
+  {
+    "id": 295,
+    "productId": 21,
+    "rating": 5,
+    "reviewer": "Võ Hiếu",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-05-09",
+    "helpful": 17
+  },
+  {
+    "id": 296,
+    "productId": 30,
+    "rating": 5,
+    "reviewer": "Võ Trung",
+    "text": "Tốt nhưng lần này hơi khác so với bình thường.",
+    "date": "2026-05-10",
+    "helpful": 25
+  },
+  {
+    "id": 297,
+    "productId": 20,
+    "rating": 4,
+    "reviewer": "Võ Hà",
+    "text": "Giá hơi cao nhưng chất lượng bù lại.",
+    "date": "2026-05-16",
+    "helpful": 51
+  },
+  {
+    "id": 298,
+    "productId": 29,
+    "rating": 4,
+    "reviewer": "Trần Tâm",
+    "text": "Ingredients tươi, chất lượng rõ ràng.",
+    "date": "2026-04-16",
+    "helpful": 54
+  },
+  {
+    "id": 299,
+    "productId": 3,
+    "rating": 4,
+    "reviewer": "Tô Quyền",
+    "text": "Lần đầu uống, rất ấn tượng!",
+    "date": "2026-05-07",
+    "helpful": 52
+  },
+  {
+    "id": 300,
+    "productId": 12,
+    "rating": 5,
+    "reviewer": "Vũ Hòa",
+    "text": "Cực kỳ hài lòng. Sẽ giới thiệu cho bạn bè.",
+    "date": "2026-03-18",
+    "helpful": 11
+  }
+]

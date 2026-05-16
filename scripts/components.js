@@ -83,29 +83,161 @@ const aiChatTemplate = `
   </div>
   <div class="ai-chat-overlay"></div>
 `;
+function injectAIStyles() {
+  const style = document.createElement("style");
+  style.textContent = `
+.ai-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
 
+.suggestion-card {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.suggestion-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.suggestion-img-wrap img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.suggestion-category {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.suggestion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.suggestion-info h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.suggestion-subtitle {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+.suggestion-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.suggestion-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.suggestion-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f5c842;
+}
+
+.suggestion-btn {
+  background: #f5c842;
+  color: #111;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.suggestion-btn:hover {
+  background: #e6b800;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background: #666;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+  `;
+  document.head.appendChild(style);
+}
 function injectComponents() {
-  const header = document.querySelector('header');
-  const footer = document.querySelector('footer');
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  injectAIStyles();
   const body = document.body;
   const userData = (() => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
     return user ? JSON.parse(user) : null;
   })();
 
-  if (!document.querySelector('.ai-chat-panel')) {
-    body.insertAdjacentHTML('beforeend', aiChatTemplate);
+  if (!document.querySelector(".ai-chat-panel")) {
+    body.insertAdjacentHTML("beforeend", aiChatTemplate);
     setupAIChat();
   }
 
   if (header) {
     header.innerHTML = headerTemplate;
-    header.querySelector('.btn_cart').addEventListener('click', () => window.location.href = 'cart.html');
-    header.querySelector('.btn-ai-open').addEventListener('click', openAIChat);
-
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    header.querySelectorAll('nav a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    header
+      .querySelector(".btn_cart")
+      .addEventListener("click", () => (window.location.href = "cart.html"));
+    header.querySelector(".btn-ai-open").addEventListener("click", openAIChat);
+    header.querySelectorAll("nav a").forEach((link) => {
+      if (link.getAttribute("href") === currentPage)
+        link.classList.add("active");
     });
 
     if (userData) setupUserMenu(header, userData);
@@ -115,11 +247,11 @@ function injectComponents() {
 }
 
 function setupUserMenu(header, userData) {
-  const loginBtn = header.querySelector('.btn-login');
+  const loginBtn = header.querySelector(".btn-login");
   if (!loginBtn) return;
 
-  const userMenu = document.createElement('div');
-  userMenu.className = 'user-menu';
+  const userMenu = document.createElement("div");
+  userMenu.className = "user-menu";
   userMenu.innerHTML = `
     <button class="btn-user-icon" aria-label="Menu người dùng">
       ${userData.photoURL ? `<img src="${userData.photoURL}" alt="Avatar" class="user-avatar">` : `<i class="fas fa-user"></i>`}
@@ -139,53 +271,57 @@ function setupUserMenu(header, userData) {
 
   loginBtn.replaceWith(userMenu);
 
-  const dropdown = userMenu.querySelector('.user-dropdown');
-  userMenu.querySelector('.btn-user-icon').addEventListener('click', () => dropdown.classList.toggle('active'));
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.user-menu')) dropdown.classList.remove('active');
+  const dropdown = userMenu.querySelector(".user-dropdown");
+  userMenu
+    .querySelector(".btn-user-icon")
+    .addEventListener("click", () => dropdown.classList.toggle("active"));
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".user-menu")) dropdown.classList.remove("active");
   });
 
-  userMenu.querySelector('.ai-recommend-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    dropdown.classList.remove('active');
-    openAIChat();
-  });
+  userMenu
+    .querySelector(".ai-recommend-link")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      dropdown.classList.remove("active");
+      openAIChat();
+    });
 
-  userMenu.querySelector('.logout-btn').addEventListener('click', async () => {
-    const { logout } = await import('./AuthService.js');
+  userMenu.querySelector(".logout-btn").addEventListener("click", async () => {
+    const { logout } = await import("./AuthService.js");
     logout();
   });
 }
 
 function setupAIChat() {
-  const panel = document.querySelector('.ai-chat-panel');
-  const closeBtn = panel.querySelector('.ai-close-btn');
-  const sendBtn = panel.querySelector('.ai-chat-send');
-  const input = panel.querySelector('.ai-chat-input');
-  const overlay = document.querySelector('.ai-chat-overlay');
+  const panel = document.querySelector(".ai-chat-panel");
+  const closeBtn = panel.querySelector(".ai-close-btn");
+  const sendBtn = panel.querySelector(".ai-chat-send");
+  const input = panel.querySelector(".ai-chat-input");
+  const overlay = document.querySelector(".ai-chat-overlay");
 
-  closeBtn.addEventListener('click', closeAIChat);
-  overlay.addEventListener('click', closeAIChat);
-  sendBtn.addEventListener('click', () => sendMessage(input.value));
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage(input.value);
+  closeBtn.addEventListener("click", closeAIChat);
+  overlay.addEventListener("click", closeAIChat);
+  sendBtn.addEventListener("click", () => sendMessage(input.value));
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") sendMessage(input.value);
   });
 
   addAIInitialMessage();
 }
 
 function openAIChat() {
-  const panel = document.querySelector('.ai-chat-panel');
-  panel.classList.add('active');
+  const panel = document.querySelector(".ai-chat-panel");
+  panel.classList.add("active");
 }
 
 function closeAIChat() {
-  const panel = document.querySelector('.ai-chat-panel');
-  panel.classList.remove('active');
+  const panel = document.querySelector(".ai-chat-panel");
+  panel.classList.remove("active");
 }
 
 function addAIInitialMessage() {
-  const messages = document.querySelector('.ai-chat-messages');
+  const messages = document.querySelector(".ai-chat-messages");
   if (messages.children.length === 0) {
     messages.innerHTML = `
       <div class="ai-message">
@@ -198,37 +334,137 @@ function addAIInitialMessage() {
   }
 }
 
-function sendMessage(text) {
+
+const history = [];
+let systemInstruction = "";
+let menuLoaded = false;
+
+async function sendMessage(text) {
+  const API_KEY = "AIzaSyDl2nSm6fSI6F69AkLRCdMfGe2sOIGSCNE";
+
   if (!text.trim()) return;
 
-  const input = document.querySelector('.ai-chat-input');
-  const messages = document.querySelector('.ai-chat-messages');
+  const input = document.querySelector(".ai-chat-input");
+  const messages = document.querySelector(".ai-chat-messages");
 
-  messages.innerHTML += `<div class="user-message"><div class="user-message-content">${text}</div></div>`;
-  input.value = '';
+  if (!menuLoaded) {
+    const data = await fetch("data/ProductForHeroSection.json").then((res) =>
+      res.json()
+    );
+    systemInstruction = `
+      Bạn là trợ lý tư vấn món uống của quán cà phê.
+      Đây là toàn bộ menu: ${JSON.stringify(data)}
 
-  setTimeout(() => {
-    const response = generateAIResponse(text);
-    messages.innerHTML += `<div class="ai-message"><div class="ai-message-content">${response}</div></div>`;
-    messages.scrollTop = messages.scrollHeight;
-  }, 600);
-
-  messages.scrollTop = messages.scrollHeight;
-}
-
-function generateAIResponse(userInput) {
-  const input = userInput.toLowerCase();
-  const responses = {
-    'nhẹ nhàng': 'Tuyệt vời! Bạn sẽ thích <strong>Cold Brew Đá</strong> của chúng tôi - hương vị cân bằng, không sữa bò, và rất mượt mà. <button class="ai-product-btn">Xem chi tiết</button>',
-    'đắng': 'Bạn muốn trải nghiệm vị đắng đặc trưng? <strong>Đen Nguyên Bản</strong> là lựa chọn hoàn hảo - năng lượng cổ điển, không pha tạp. <button class="ai-product-btn">Xem chi tiết</button>',
-    'sô cô la': 'Tôi biết rồi! <strong>Macchiato</strong> kết hợp sô cô la đậm với caffeine - chính là những gì bạn đang tìm! <button class="ai-product-btn">Xem chi tiết</button>',
-    'default': 'Dựa trên sở thích của bạn, tôi gợi ý <strong>Cold Brew Đá</strong> - nó cân bằng hoàn hảo giữa vị đậm và mượt mà. Bạn có muốn biết thêm? <button class="ai-product-btn">Xem chi tiết</button>'
-  };
-
-  for (let [key, value] of Object.entries(responses)) {
-    if (key !== 'default' && input.includes(key)) return value;
+      Khi gợi ý món, LUÔN trả về JSON theo đúng định dạng sau, KHÔNG giải thích thêm:
+      {
+        "message": "Lời tư vấn chi tiết",
+        "suggestions": [
+          {
+            "id": "id của món",
+            "name": "Tên món",
+            "subtitle": "Subtitle",
+            "price": 80000,
+            "currency": "VND",
+            "description": "Mô tả món",
+            "image": "đường dẫn ảnh",
+            "category": "danh mục"
+          }
+        ]
+      }
+    `;
+    menuLoaded = true;
   }
-  return responses.default;
+
+  messages.innerHTML += `
+    <div class="user-message">
+      <div class="user-message-content">${text}</div>
+    </div>
+  `;
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+
+  history.push({ role: "user", parts: [{ text: text }] });
+
+
+  const loadingId = "loading-" + Date.now();
+  messages.innerHTML += `
+    <div class="ai-message" id="${loadingId}">
+      <div class="ai-avatar">AI</div>
+      <div class="ai-message-content">
+        <div class="typing-dots"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  `;
+  messages.scrollTop = messages.scrollHeight;
+
+  try {
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemInstruction }] },
+          contents: history,
+          generationConfig: { responseMimeType: "application/json" },
+        }),
+      }
+    );
+
+    const result = await res.json();
+    document.getElementById(loadingId)?.remove();
+
+    if (result.error) {
+      messages.innerHTML += `
+        <div class="ai-message">
+          <div class="ai-avatar">AI</div>
+          <div class="ai-message-content error">⚠️ ${result.error.message}</div>
+        </div>
+      `;
+      return;
+    }
+
+    const aiResponse = result.candidates[0].content.parts[0].text;
+    history.push({ role: "model", parts: [{ text: aiResponse }] });
+
+    const parsed = JSON.parse(aiResponse);
+
+    messages.innerHTML += `
+      <div class="ai-message">
+        <div class="ai-avatar">AI</div>
+        <div class="ai-message-content">
+          <p class="ai-text">${parsed.message}</p>
+          <div class="ai-suggestions">
+            ${parsed.suggestions.map((s) => `
+              <div class="suggestion-card" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d)">
+                <div class="suggestion-img-wrap">
+                  <img src="${s.image}" alt="${s.name}" />
+                  <span class="suggestion-category">${s.category}</span>
+                </div>
+                <div class="suggestion-info">
+                  <h4>${s.name}</h4>
+                  <p class="suggestion-subtitle">${s.subtitle}</p>
+                  <p class="suggestion-desc">${s.description}</p>
+                  <div class="suggestion-footer">
+                    <span class="suggestion-price">${Number(s.price).toLocaleString("vi-VN")}₫</span>
+                    <a href="product-detail.html?id=${s.id}" class="suggestion-btn">
+                      Xem món →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+
+  } catch (error) {
+    document.getElementById(loadingId)?.remove();
+    console.error("Error:", error);
+  }
 }
 
-document.addEventListener('DOMContentLoaded', injectComponents);
+document.addEventListener("DOMContentLoaded", injectComponents);

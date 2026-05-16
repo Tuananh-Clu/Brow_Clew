@@ -11,11 +11,10 @@
   <link rel="stylesheet" href="styles/product-detail.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <script src="scripts/components.js" defer></script>
-  <script src="scripts/product-detail.js" defer></script>
+  <script type="module" src="scripts/product-detail.js" defer></script>
 </head>
 <body class="detail-page">
   <header>
-    <!-- Injected by components.js -->
   </header>
 
   <main class="product-detail-main">
@@ -25,22 +24,43 @@
              <div class="glow-effect"></div>
              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsrUb7VxnpjuSArF2bycexsfKkn8CcU-PZYRSNII8Fd4wusHMtdLWwzGgQFaT23XwTxG8_IMD4R0Fub8rBm4DL2RWb0xX5t6en5oPegzG0O8TS5HAXqL0IFBW6mgMF2LCcZrzFkF8R7vvCr1d8eNbIJsekrQIUcQgOAFqAjdlEbFsg-5-Tkx9cKCiOciQ-J60UOTTvxrj_TnESM1KdAtsO-EYEerEE-L9-8bQIUpbwaHsMcfe3pNN5uGPNfMuNW0br8FgcdkbVvg" alt="Macchiato Nghệ Thuật">
           </div>
-       </div>
-       
-       <div class="detail-info">
-          <div class="breadcrumbs">
-             <a href="index.html">Trang chủ</a> / <a href="product.html">Sản phẩm</a> / <span>Macchiato Nghệ Thuật</span>
+            <div class="reviews-section" id="reviewsSection">
+            <div class="reviews-header">
+              <h2 class="section-title">Đánh Giá Sản Phẩm</h2>
+              <div class="rating-summary">
+                <div class="rating-average" id="ratingAverage">4.8</div>
+                <div class="rating-stars" id="ratingSummaryStars"></div>
+                <div class="rating-count" id="ratingCount">(150 đánh giá)</div>
+              </div>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid">
+            </div>
           </div>
-          
-          <h1 class="detail-title">Macchiato Nghệ Thuật</h1>
+       </div>
+
+       <div class="detail-info">
+          <div class="detail-header">
+            <h1 class="detail-title da">Macchiato Nghệ Thuật</h1>
+            <p class="detail-subtitle">Espresso Và Foam Sữa Bồng Bềnh</p>
+          </div>
+
           <p class="detail-desc">Sự hòa quyện hoàn hảo giữa espresso mạnh mẽ và lớp bọt sữa mềm mịn bồng bềnh. Mang lại cảm giác béo ngậy mà vẫn giữ trọn vẹn hương vị nguyên bản của hạt cà phê đặc sản, được rang mộc tỉ mỉ bởi nghệ nhân của chúng tôi.</p>
-          
+
           <div class="detail-price">
              <span id="base-price" data-price="8.00">$8.00</span>
           </div>
 
           <form class="customization-form" id="addToCartForm">
-            <!-- Add to Cart Actions -->
+            <div id="customizationOptions"></div>
+
+            <div id="toppingsSection" style="display: none;">
+              <div class="custom-group">
+                <label class="custom-label">Topping Thêm</label>
+                <div class="toppings-grid" id="toppingsGrid">
+                </div>
+              </div>
+            </div>
+
             <div class="action-row">
                <div class="quantity-selector">
                   <button type="button" class="qty-btn minus" aria-label="Giảm số lượng"><i class="fa-solid fa-minus"></i></button>
@@ -52,12 +72,25 @@
                </button>
             </div>
           </form>
+
+          <div class="ingredients-section" id="ingredientsSection">
+            <h2 class="section-title">Thành Phần Chính</h2>
+            <div class="ingredients-grid" id="ingredientsGrid">
+            </div>
+          </div>
+
+          <div class="features-section" id="featuresSection">
+            <h2 class="section-title">Đặc Điểm</h2>
+            <div class="features-grid" id="featuresGrid">
+            </div>
+          </div>
+
+        
        </div>
     </div>
   </main>
 
   <footer>
-    <!-- Injected by components.js -->
   </footer>
 </body>
 </html>
