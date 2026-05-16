@@ -119,12 +119,12 @@ const logout = () => {
 };
 
 onAuthStateChanged(auth, (firebaseUser) => {
-  if (!firebaseUser && getUserFromLocalStorage()) {
-    // Sync localStorage with Firebase auth state
-  }
+  const storedUser = getUserFromLocalStorage();
+  if (!firebaseUser && !storedUser) return;
+  if (firebaseUser && !storedUser) saveUserToLocalStorage(firebaseUser);
 });
 
-if (getUserFromLocalStorage() && document.querySelector(".btn_google_login")) {
+if (getUserFromLocalStorage() && !document.querySelector(".btn_google_login")) {
   window.location.href = "dashboard.html";
 }
 
@@ -133,8 +133,3 @@ handleEmailSignup();
 handleEmailLogin();
 
 export { logout };
-
-
-
-
-

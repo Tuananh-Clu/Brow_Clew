@@ -126,11 +126,11 @@ function renderProduct(product) {
 
           <div class="topping-content">
 
-            <span>
+            <span class="topping-name">
               ${topping.name}
             </span>
 
-            <span>
+            <span class="topping-price">
               +${formatPrice(topping.price)}
             </span>
 
