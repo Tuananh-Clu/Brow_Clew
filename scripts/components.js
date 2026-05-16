@@ -68,8 +68,8 @@ const footerTemplate = `
 function injectComponents() {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
-  const data = localStorage.getItem('userData');
-  const userData = data ? JSON.parse(data) : null;
+  const user = localStorage.getItem('user');
+  const userData = user ? JSON.parse(user) : null;
 
   if (header) {
     header.innerHTML = headerTemplate;
@@ -90,12 +90,60 @@ function injectComponents() {
     });
 
     if (userData) {
+      const headerActions = header.querySelector('.header-actions');
       const loginBtn = header.querySelector('.btn-login');
-      if (loginBtn) {
-        loginBtn.textContent = userData.name;
-        loginBtn.classList.remove('btn-outline');
-        loginBtn.classList.add('btn-solid');
-        loginBtn.href = 'profile.html';
+
+      if (loginBtn && headerActions) {
+        const userMenuHTML = `
+          <div class="user-menu">
+            <button class="btn-user-icon" aria-label="Menu người dùng">
+              ${userData.photoURL
+                ? `<img src="${userData.photoURL}" alt="Avatar" class="user-avatar">`
+                : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`
+              }
+            </button>
+            <div class="user-dropdown">
+              <div class="user-info">
+                <p class="user-name">${userData.name}</p>
+                <p class="user-email">${userData.email}</p>
+              </div>
+              <a href="profile.html" class="dropdown-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Hồ sơ cá nhân
+              </a>
+              <a href="orders.html" class="dropdown-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                Đơn hàng
+              </a>
+              <hr class="dropdown-divider">
+              <button class="dropdown-link logout-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+        `;
+
+        loginBtn.replaceWith(new DOMParser().parseFromString(userMenuHTML, 'text/html').body.firstChild);
+
+        const userBtn = header.querySelector('.btn-user-icon');
+        const dropdown = header.querySelector('.user-dropdown');
+        const logoutBtn = header.querySelector('.logout-btn');
+
+        userBtn.addEventListener('click', () => {
+          dropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.user-menu')) {
+            dropdown.classList.remove('active');
+          }
+        });
+
+        logoutBtn.addEventListener('click', async () => {
+          const { logout } = await import('./AuthService.js');
+          logout();
+        });
       }
     }
   }
@@ -104,7 +152,5 @@ function injectComponents() {
     footer.innerHTML = footerTemplate;
   }
 }
-
-document.addEventListener('DOMContentLoaded', injectComponents);
 
 document.addEventListener('DOMContentLoaded', injectComponents);
