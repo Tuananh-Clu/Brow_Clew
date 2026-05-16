@@ -34,6 +34,73 @@
     </div>
   </div>
 
+  <div class="customize-modal" id="customizeModal">
+    <div class="customize-overlay" id="customizeOverlay"></div>
+    <div class="customize-content">
+      <button class="customize-close" id="customizeClose">
+        <i class="fa-solid fa-times"></i>
+      </button>
+
+      <div class="customize-header">
+        <img id="modalProductImg" src="" alt="">
+        <div class="customize-info">
+          <h2 id="modalProductName"></h2>
+          <p id="modalProductPrice"></p>
+        </div>
+      </div>
+
+      <div class="customize-body">
+        <form id="customizeForm" class="customization-form">
+          <div id="modalCustomizationOptions"></div>
+          <div id="modalToppingsSection" style="display: none;">
+            <div class="custom-group">
+              <label class="custom-label" data-icon="🍰">Topping Thêm</label>
+              <div class="toppings-grid" id="modalToppingsGrid"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="customize-footer">
+        <div class="quantity-selector">
+          <button type="button" class="qty-btn minus" id="modalQtyMinus">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <input type="number" id="modalQty" value="1" min="1" readonly>
+          <button type="button" class="qty-btn plus" id="modalQtyPlus">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div style="flex: 1; display: flex; gap: 8px;">
+          <button type="button" class="btn btn-outline" id="modalSaveBtn">
+            <i class="fa-solid fa-bookmark"></i>
+            Lưu Recipe
+          </button>
+          <button type="button" class="btn btn-orange" id="modalAddBtn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Thêm vào giỏ - <span id="modalTotalPrice">45,000đ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="save-recipe-modal" id="saveRecipeModal">
+    <div class="save-recipe-overlay" id="saveRecipeOverlay"></div>
+    <div class="save-recipe-content">
+      <button class="save-recipe-close" id="saveRecipeClose">
+        <i class="fa-solid fa-times"></i>
+      </button>
+      <h2>Lưu Recipe</h2>
+      <input type="text" id="recipeNameInput" placeholder="Đặt tên cho recipe này..." maxlength="50">
+      <div class="recipe-preview" id="recipePreview"></div>
+      <div class="save-recipe-footer">
+        <button type="button" class="btn btn-outline" id="cancelSaveBtn">Hủy</button>
+        <button type="button" class="btn btn-orange" id="confirmSaveBtn">Lưu Recipe</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
   </footer>
 </body>

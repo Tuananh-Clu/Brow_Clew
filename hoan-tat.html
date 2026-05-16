@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đơn Hàng Hoàn Tất - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bold-brew.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/completion.js" defer></script>
+  <style>
+    .completion-main { padding-top: 120px; padding-bottom: 80px; background: var(--brand-gray); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .completion-container { background: white; border-radius: 24px; padding: 60px 40px; text-align: center; max-width: 600px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .success-icon { font-size: 80px; color: var(--brand-orange); margin-bottom: 20px; animation: scaleIn 0.5s ease; }
+    @keyframes scaleIn { from { transform: scale(0); } to { transform: scale(1); } }
+    .completion-title { font-size: 36px; font-weight: 700; color: var(--brand-black); margin-bottom: 12px; }
+    .completion-subtitle { font-size: 16px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.6; }
+    .order-details { background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%); border-radius: 16px; padding: 24px; margin-bottom: 32px; text-align: left; }
+    .detail-item { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-gray); }
+    .detail-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .detail-label { color: var(--text-gray); font-weight: 500; }
+    .detail-value { font-weight: 700; color: var(--brand-black); }
+    .order-number { font-size: 18px; color: var(--brand-orange); font-weight: 700; font-family: monospace; }
+    .status-badge { display: inline-block; background: linear-gradient(135deg, var(--brand-orange) 0%, #ff8a3d 100%); color: white; padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+    .next-steps { margin: 32px 0; }
+    .step-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
+    .step-number { background: var(--brand-orange); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 16px; flex-shrink: 0; }
+    .step-content { text-align: left; }
+    .step-title { font-weight: 600; color: var(--brand-black); margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: var(--text-gray); }
+    .action-buttons { display: flex; gap: 12px; flex-direction: column; }
+    .action-buttons a, .action-buttons button { padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; font-size: 14px; }
+    .btn-primary { background: var(--brand-orange); color: white; }
+    .btn-primary:hover { background: #ff7514; transform: translateY(-2px); }
+    .btn-secondary { background: var(--brand-gray); color: var(--brand-black); border: 2px solid var(--border-gray); }
+    .btn-secondary:hover { border-color: var(--brand-orange); color: var(--brand-orange); }
+    .contact-info { background: linear-gradient(135deg, var(--brand-orange-soft) 0%, #fff 100%); border-left: 4px solid var(--brand-orange); border-radius: 12px; padding: 20px; margin-top: 32px; text-align: left; }
+    .contact-info h4 { font-weight: 700; margin-bottom: 12px; }
+    .contact-item { font-size: 13px; color: var(--text-gray); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <main class="completion-main">
+    <div class="completion-container">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+
+      <span class="status-badge">✓ Đặt Hàng Thành Công</span>
+
+      <h1 class="completion-title">Cảm Ơn Bạn!</h1>
+      <p class="completion-subtitle">Đơn hàng của bạn đã được xác nhận và đang được chuẩn bị. Chúng tôi sẽ giao hàng sớm nhất có thể.</p>
+
+      <div class="order-details">
+        <div class="detail-item">
+          <span class="detail-label">Mã Đơn Hàng</span>
+          <span class="detail-value order-number" id="orderNumber">BBD-2026-001</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Ngày Đặt</span>
+          <span class="detail-value" id="orderDate">16/05/2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Tổng Tiền</span>
+          <span class="detail-value" id="totalPrice">0đ</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Thời Gian Giao Dự Kiến</span>
+          <span class="detail-value" id="estimatedTime">30 phút</span>
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Xác Nhận Đơn</div>
+            <div class="step-desc">Đơn hàng đang được xác nhận trong 5 phút tới</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Chuẩn Bị Hàng</div>
+            <div class="step-desc">Chúng tôi đang chuẩn bị các sản phẩm của bạn</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Giao Hàng</div>
+            <div class="step-desc">Đơn hàng sẽ được giao đến bạn trong 30 phút</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="product.html" class="btn-primary">
+          <i class="fas fa-shopping-bag"></i> Tiếp Tục Mua Sắm
+        </a>
+        <a href="orders.html" class="btn-secondary">
+          <i class="fas fa-box"></i> Xem Đơn Hàng
+        </a>
+      </div>
+
+      <div class="contact-info">
+        <h4><i class="fas fa-headset"></i> Cần Hỗ Trợ?</h4>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>Gọi cho chúng tôi: <strong>1900 xxx xxx</strong></span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>Email: <strong>support@boldbrew.vn</strong></span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Thời gian: 24/7</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+</body>
+</html>

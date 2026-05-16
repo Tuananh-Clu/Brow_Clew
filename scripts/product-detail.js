@@ -25,8 +25,8 @@ async function renderProduct(product) {
   renderFeatures(product);
   await renderReviews(product);
   setupPriceAndQuantity(product);
+  setupLikeButton(product);
 }
-
 
 function updateProductInfo(product) {
   document.querySelector(".detail-title").textContent = product.name;
@@ -54,13 +54,29 @@ async function loadCustomizationOptions(product) {
 function renderOptions(options) {
   const customizationDiv = document.getElementById("customizationOptions");
 
+  const iconMap = {
+    size: "📏",
+    temperature: "🌡️",
+    ice: "🧊",
+    sugar: "🍯",
+    milk: "🥛",
+    strength: "💪",
+    foam: "☁️",
+    flavor: "✨"
+  };
+
   options.forEach((option) => {
     const group = document.createElement("div");
     group.classList.add("custom-group");
 
     const label = document.createElement("label");
     label.classList.add("custom-label");
-    label.textContent = option.label;
+    label.innerHTML = `<span>${option.label}</span>`;
+
+    const icon = iconMap[option.id.toLowerCase()] || "🔹";
+    label.style.setProperty("--icon", `"${icon}"`);
+    label.setAttribute("data-icon", icon);
+
     group.appendChild(label);
 
     const row = document.createElement("div");
@@ -240,8 +256,6 @@ async function renderReviews(product) {
       const footer = document.createElement("div");
       footer.classList.add("review-footer");
 
-
-
       card.appendChild(header);
       card.appendChild(name);
       card.appendChild(text);
@@ -267,6 +281,19 @@ function setupPriceAndQuantity(product) {
   const form = document.getElementById("addToCartForm");
   const totalPrice = document.getElementById("total-price");
   const qtyInput = document.getElementById("qty");
+  const toppingCheckboxes = document.querySelectorAll("#toppingsGrid input[type='checkbox']");
+
+  toppingCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      const toppingPrice = parseInt(checkbox.nextSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, ""));
+      if (checkbox.checked) {
+        product.price += toppingPrice;
+      } else {
+        product.price -= toppingPrice;
+      }
+      updatePrice();
+    });
+  });
 
   const formatPrice = (price) => price.toLocaleString("vi-VN") + " ₫";
 
@@ -301,4 +328,34 @@ function setupPriceAndQuantity(product) {
   });
 
   updatePrice();
+}
+
+function setupLikeButton(product) {
+  const likeBtn = document.getElementById('likeBtn');
+  if (!likeBtn) return;
+
+  const likedProducts = JSON.parse(localStorage.getItem('likedProducts')) || [];
+  const isLiked = likedProducts.some(p => p.id === product.id);
+
+  if (isLiked) {
+    likeBtn.classList.add('liked');
+    likeBtn.innerHTML = '<i class="fa-solid fa-heart"></i>';
+  }
+
+  likeBtn.addEventListener('click', () => {
+    const likedProducts = JSON.parse(localStorage.getItem('likedProducts')) || [];
+    const index = likedProducts.findIndex(p => p.id === product.id);
+
+    if (index > -1) {
+      likedProducts.splice(index, 1);
+      likeBtn.classList.remove('liked');
+      likeBtn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+    } else {
+      likedProducts.push({ id: product.id, name: product.name, image: product.image });
+      likeBtn.classList.add('liked');
+      likeBtn.innerHTML = '<i class="fa-solid fa-heart"></i>';
+    }
+
+    localStorage.setItem('likedProducts', JSON.stringify(likedProducts));
+  });
 }

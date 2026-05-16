@@ -15,9 +15,9 @@ const headerTemplate = `
       <button type="button" class="btn-icon btn-ai-open" aria-label="AI Chọn Món" title="AI Chọn Món">
         <i class="fas fa-wand-magic-sparkles"></i>
       </button>
-      <button type="button" class="btn-icon btn_cart" aria-label="Giỏ hàng">
+      <a href="cart.html" class="btn-icon btn_cart" aria-label="Giỏ hàng">
         <i class="fas fa-shopping-cart"></i>
-      </button>
+      </a>
     </div>
   </div>
 `;
@@ -231,9 +231,8 @@ function injectComponents() {
 
   if (header) {
     header.innerHTML = headerTemplate;
-    header
-      .querySelector(".btn_cart")
-      .addEventListener("click", () => (window.location.href = "cart.html"));
+    const cartBtn = header.querySelector(".btn_cart");
+    cartBtn.addEventListener("click", () => (window.location.href = "cart.html"));
     header.querySelector(".btn-ai-open").addEventListener("click", openAIChat);
     header.querySelectorAll("nav a").forEach((link) => {
       if (link.getAttribute("href") === currentPage)
@@ -334,13 +333,12 @@ function addAIInitialMessage() {
   }
 }
 
-
 const history = [];
 let systemInstruction = "";
 let menuLoaded = false;
 
 async function sendMessage(text) {
-  const API_KEY = "AIzaSyDl2nSm6fSI6F69AkLRCdMfGe2sOIGSCNE";
+  const API_KEY = "AIzaSyBVChV9D0RHxR9A1t83LnjQLQp9wTSUx2g";
 
   if (!text.trim()) return;
 
@@ -384,7 +382,6 @@ async function sendMessage(text) {
   messages.scrollTop = messages.scrollHeight;
 
   history.push({ role: "user", parts: [{ text: text }] });
-
 
   const loadingId = "loading-" + Date.now();
   messages.innerHTML += `

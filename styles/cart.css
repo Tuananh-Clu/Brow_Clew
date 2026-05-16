@@ -1,8 +1,3 @@
-/* ==========================================
-   CART PAGE — Bold Brew
-   ========================================== */
-
-/* ---- Cart badge on nav icon ---- */
 .cart-icon-btn { position: relative; text-decoration: none; }
 .cart-badge {
   position: absolute;
@@ -23,7 +18,6 @@
   border: 2px solid #fff;
 }
 
-/* ---- Cart Hero ---- */
 .cart-main { padding-top: 80px; min-height: 100vh; background: #faf9f7; }
 .cart-hero {
   background: linear-gradient(135deg, #1b120a 0%, #2d1e12 60%, #3d2a1a 100%);
@@ -81,7 +75,6 @@
 .cart-continue-btn:hover { border-color: #fff; background: rgba(255,255,255,0.15); }
 .cart-continue-btn i { margin-right: 6px; }
 
-/* ---- Breadcrumb ---- */
 .cart-breadcrumb {
   display: flex;
   align-items: center;
@@ -95,7 +88,6 @@
 .cart-breadcrumb i { font-size: 9px; }
 .cart-breadcrumb span { color: rgba(255,255,255,0.9); }
 
-/* ---- Step Progress ---- */
 .cart-steps {
   display: flex;
   align-items: center;
@@ -142,7 +134,6 @@
 }
 .active-line { background: var(--brand-orange); }
 
-/* ---- Layout ---- */
 .cart-body {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -152,7 +143,6 @@
   align-items: start;
 }
 
-/* ---- Items Column ---- */
 .cart-items-col {}
 
 .cart-items-header {
@@ -178,7 +168,6 @@
 }
 .cart-clear-btn:hover { background: #fff0f0; }
 
-/* ---- Cart Item Card ---- */
 .cart-item {
   background: var(--white);
   border: 1px solid var(--border-gray);
@@ -255,7 +244,6 @@
 
 .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
 
-/* ---- Quantity Control ---- */
 .qty-control {
   display: flex;
   align-items: center;
@@ -285,12 +273,10 @@
   font-size: 15px;
 }
 
-/* ---- Item Price ---- */
 .cart-item-price { text-align: right; }
 .cart-item-unit-price { display: block; font-size: 12px; color: var(--text-gray); margin-bottom: 2px; }
 .cart-item-total-price { font-size: 20px; font-weight: 700; color: var(--brand-black); }
 
-/* ---- Empty State ---- */
 .cart-empty {
   flex-direction: column;
   align-items: center;
@@ -316,7 +302,6 @@
 .cart-empty h3 { font-family: var(--font-display); font-size: 24px; margin-bottom: 10px; }
 .cart-empty p { color: var(--text-gray); font-size: 14px; margin-bottom: 24px; }
 
-/* ---- Promo Section ---- */
 .promo-section {
   background: var(--white);
   border: 1px solid var(--border-gray);
@@ -352,7 +337,6 @@
 }
 .promo-hint { margin-top: 10px; font-size: 13px; font-weight: 600; }
 
-/* ---- Summary Card ---- */
 .cart-summary-col { position: sticky; top: 100px; }
 
 .cart-summary-card {
@@ -409,7 +393,6 @@
 .checkout-btn i { margin-right: 4px; }
 .checkout-btn:disabled { opacity: 0.5; cursor: not-allowed; filter: none; transform: none; }
 
-/* ---- Payment Methods ---- */
 .payment-methods { margin-bottom: 20px; }
 .payment-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-gray); margin-bottom: 10px; }
 .payment-icons { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -423,7 +406,6 @@
   background: var(--brand-gray);
 }
 
-/* ---- Guarantees ---- */
 .summary-guarantee { display: flex; flex-direction: column; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border-gray); }
 .guarantee-item {
   display: flex;
@@ -434,7 +416,6 @@
 }
 .guarantee-item i { color: var(--brand-orange); width: 16px; text-align: center; }
 
-/* ---- Upsell Card ---- */
 .cart-upsell-card {
   background: linear-gradient(135deg, var(--brand-orange-soft) 0%, #fff 100%);
   border: 1px solid rgba(232,93,4,0.15);
@@ -476,7 +457,6 @@
 }
 .upsell-add-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
 
-/* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .cart-body { grid-template-columns: 1fr; }
   .cart-summary-col { position: static; }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bold-brew.css">
+  <link rel="stylesheet" href="styles/cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/payment.js" defer></script>
+  <style>
+    .payment-main { padding-top: 120px; padding-bottom: 80px; background: var(--brand-gray); min-height: 100vh; }
+    .payment-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .payment-form-col { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+    .payment-summary-col { display: flex; flex-direction: column; gap: 20px; }
+    .payment-title { font-size: 28px; font-weight: 700; margin-bottom: 32px; color: var(--brand-black); }
+    .form-group { margin-bottom: 24px; }
+    .form-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--brand-black); }
+    .form-input, .form-select { width: 100%; padding: 12px 16px; border: 2px solid var(--border-gray); border-radius: 12px; font-size: 14px; transition: border-color 0.2s; }
+    .form-input:focus, .form-select:focus { outline: none; border-color: var(--brand-orange); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .payment-methods { margin: 32px 0; }
+    .method-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+    .payment-method { display: flex; align-items: center; padding: 16px; border: 2px solid var(--border-gray); border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-bottom: 12px; }
+    .payment-method:hover { border-color: var(--brand-orange); background: rgba(232, 93, 4, 0.05); }
+    .payment-method input { margin-right: 12px; cursor: pointer; }
+    .payment-method-icon { font-size: 20px; margin-right: 12px; }
+    .payment-method-info { flex: 1; }
+    .payment-method-name { font-weight: 600; color: var(--brand-black); }
+    .payment-method-desc { font-size: 12px; color: var(--text-gray); }
+    .payment-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+    .order-summary-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+    .summary-item { display: flex; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-gray); }
+    .summary-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .summary-label { color: var(--text-gray); }
+    .summary-value { font-weight: 600; color: var(--brand-black); }
+    .summary-total { display: flex; justify-content: space-between; padding-top: 16px; border-top: 2px solid var(--border-gray); margin-top: 16px; font-size: 18px; font-weight: 700; }
+    .pay-btn { width: 100%; padding: 16px; background: var(--brand-orange); color: white; border: none; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s; margin-top: 32px; }
+    .pay-btn:hover { background: #ff7514; transform: translateY(-2px); }
+    .pay-btn:disabled { background: #ccc; cursor: not-allowed; }
+    @media (max-width: 992px) { .payment-container { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <main class="payment-main">
+    <div class="payment-container">
+      <div class="payment-form-col">
+        <h1 class="payment-title">Thanh Toán</h1>
+
+        <form id="paymentForm">
+          <!-- Shipping Info -->
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; margin-top: 30px;">Thông Tin Giao Hàng</h3>
+
+          <div class="form-group">
+            <label class="form-label">Họ và Tên *</label>
+            <input type="text" class="form-input" id="fullName" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-input" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Số Điện Thoại *</label>
+            <input type="tel" class="form-input" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Địa Chỉ *</label>
+            <input type="text" class="form-input" id="address" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Thành Phố *</label>
+              <input type="text" class="form-input" id="city" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mã Bưu Chính</label>
+              <input type="text" class="form-input" id="zipcode">
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="payment-methods">
+            <h3 class="method-title">Phương Thức Thanh Toán</h3>
+
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="card" checked>
+              <i class="fas fa-credit-card payment-method-icon" style="color: var(--brand-orange);"></i>
+              <div class="payment-method-info">
+                <div class="payment-method-name">Thẻ Tín Dụng / Ghi Nợ</div>
+                <div class="payment-method-desc">Visa, Mastercard, JCB</div>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="momo">
+              <i class="fas fa-mobile-alt payment-method-icon" style="color: #a20025;"></i>
+              <div class="payment-method-info">
+                <div class="payment-method-name">Ví MoMo</div>
+                <div class="payment-method-desc">Thanh toán qua ứng dụng MoMo</div>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="bank">
+              <i class="fas fa-university payment-method-icon" style="color: #0066cc;"></i>
+              <div class="payment-method-info">
+                <div class="payment-method-name">Chuyển Khoản Ngân Hàng</div>
+                <div class="payment-method-desc">Chuyển khoản trực tiếp vào tài khoản</div>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="paymentMethod" value="cash">
+              <i class="fas fa-money-bill payment-method-icon" style="color: #27ae60;"></i>
+              <div class="payment-method-info">
+                <div class="payment-method-name">Thanh Toán Khi Nhận Hàng</div>
+                <div class="payment-method-desc">Thanh toán tiền mặt khi nhận</div>
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group" style="margin-top: 24px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+              <input type="checkbox" id="agreeTerms" required>
+              <span style="margin-left: 8px; font-size: 14px;">Tôi đồng ý với <a href="#" style="color: var(--brand-orange); text-decoration: none;">Điều khoản & Điều kiện</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="pay-btn">
+            <i class="fas fa-lock"></i> Hoàn Thành Thanh Toán
+          </button>
+        </form>
+      </div>
+
+      <div class="payment-summary-col">
+        <div class="order-summary-card">
+          <h3 class="payment-title">Đơn Hàng</h3>
+          <div id="orderItemsList"></div>
+
+          <div class="summary-item">
+            <span class="summary-label">Tạm Tính</span>
+            <span class="summary-value" id="subtotal">0đ</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="summary-label">Phí Vận Chuyển</span>
+            <span class="summary-value" style="color: var(--brand-orange);">Miễn Phí</span>
+          </div>
+
+          <div class="summary-item" id="discountItem" style="display: none;">
+            <span class="summary-label">Giảm Giá</span>
+            <span class="summary-value" style="color: var(--brand-orange);" id="discountAmount">0đ</span>
+          </div>
+
+          <div class="summary-item">
+            <span class="summary-label">Thuế VAT (8%)</span>
+            <span class="summary-value" id="taxAmount">0đ</span>
+          </div>
+
+          <div class="summary-total">
+            <span>Tổng Cộng</span>
+            <span id="totalAmount" style="color: var(--brand-orange);">0đ</span>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, var(--brand-orange-soft) 0%, #fff 100%); border-radius: 16px; padding: 20px; border-left: 4px solid var(--brand-orange);">
+          <p style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-info-circle"></i> Giao hàng nhanh</p>
+          <p style="font-size: 13px; color: var(--text-gray);">Đơn hàng sẽ được giao trong vòng 30 phút nếu tại Hà Nội, 1-2 giờ nếu tại TP.HCM.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+</body>
+</html>

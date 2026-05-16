@@ -40,7 +40,8 @@
         "title": "Brew",
         "value": "Espresso"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 2,
@@ -83,7 +84,8 @@
         "title": "Size",
         "value": "350ml"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 3,
@@ -126,7 +128,8 @@
         "title": "Classic",
         "value": "Italy"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 4,
@@ -169,7 +172,8 @@
         "title": "Milk",
         "value": "Fresh"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 5,
@@ -212,7 +216,8 @@
         "title": "Strong",
         "value": "Bold"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 6,
@@ -255,7 +260,8 @@
         "title": "Caffeine",
         "value": "2x"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 7,
@@ -298,7 +304,8 @@
         "title": "Specialty",
         "value": "100%"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 8,
@@ -341,7 +348,8 @@
         "title": "Rich",
         "value": "Premium"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 9,
@@ -388,7 +396,8 @@
         "title": "Cold Blend",
         "value": "12 phút"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 10,
@@ -435,7 +444,8 @@
         "title": "Smooth",
         "value": "100%"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 11,
@@ -482,7 +492,8 @@
         "title": "Choco",
         "value": "Premium"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 12,
@@ -529,7 +540,8 @@
         "title": "Premium",
         "value": "Blend"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 13,
@@ -576,7 +588,8 @@
         "title": "Sweet",
         "value": "Deep"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 14,
@@ -623,7 +636,8 @@
         "title": "Creamy",
         "value": "Ultra"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 15,
@@ -670,7 +684,8 @@
         "title": "Creamy",
         "value": "Rich"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 16,
@@ -717,7 +732,8 @@
         "title": "Foster",
         "value": "Classic"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 17,
@@ -764,7 +780,8 @@
         "title": "Imported",
         "value": "Japan"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 18,
@@ -807,7 +824,8 @@
         "title": "Fresh",
         "value": "Daily"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 19,
@@ -850,7 +868,8 @@
         "title": "Energy",
         "value": "2x"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 20,
@@ -893,7 +912,8 @@
         "title": "Fresh",
         "value": "Blend"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 21,
@@ -936,7 +956,8 @@
         "title": "Visual",
         "value": "Stunning"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 22,
@@ -979,7 +1000,8 @@
         "title": "Plant",
         "value": "Based"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 23,
@@ -1022,7 +1044,8 @@
         "title": "Contrast",
         "value": "Unique"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 24,
@@ -1065,7 +1088,8 @@
         "title": "Summer",
         "value": "Hit"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 25,
@@ -1112,7 +1136,8 @@
         "title": "Tropical",
         "value": "Taste"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 26,
@@ -1159,7 +1184,8 @@
         "title": "Creamy",
         "value": "100%"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 27,
@@ -1206,7 +1232,8 @@
         "title": "Purple",
         "value": "Power"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 28,
@@ -1253,7 +1280,8 @@
         "title": "Natural",
         "value": "Sweet"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 29,
@@ -1300,7 +1328,8 @@
         "title": "Summer",
         "value": "Fresh"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 30,
@@ -1347,7 +1376,8 @@
         "title": "Digestive",
         "value": "Aid"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 31,
@@ -1394,7 +1424,8 @@
         "title": "Color",
         "value": "Vivid"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 32,
@@ -1441,7 +1472,8 @@
         "title": "Aroma",
         "value": "Intense"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 33,
@@ -1488,7 +1520,8 @@
         "title": "Sparkling",
         "value": "Light"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 34,
@@ -1535,7 +1568,8 @@
         "title": "Low Cal",
         "value": "Light"
       }
-    ]
+    ],
+    "isNew": false
   },
   {
     "id": 35,
@@ -1578,7 +1612,8 @@
         "title": "Pure",
         "value": "100%"
       }
-    ]
+    ],
+    "isNew": true
   },
   {
     "id": 36,
@@ -1625,7 +1660,8 @@
         "title": "Floral",
         "value": "Scent"
       }
-    ]
+    ],
+    "isNew": true
   },
   {
     "id": 37,
@@ -1672,7 +1708,8 @@
         "title": "Citrus",
         "value": "Bright"
       }
-    ]
+    ],
+    "isNew": true
   },
   {
     "id": 38,
@@ -1719,7 +1756,8 @@
         "title": "Aromatic",
         "value": "Unique"
       }
-    ]
+    ],
+    "isNew": true
   },
   {
     "id": 39,
@@ -1766,7 +1804,8 @@
         "title": "Fruity",
         "value": "Blend"
       }
-    ]
+    ],
+    "isNew": true
   },
   {
     "id": 40,
@@ -1813,6 +1852,7 @@
         "title": "Visual",
         "value": "Stunning"
       }
-    ]
+    ],
+    "isNew": true
   }
 ]
