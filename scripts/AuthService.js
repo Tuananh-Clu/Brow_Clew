@@ -22,7 +22,7 @@ function userPayload(user) {
     email: user.email,
     name: user.displayName || user.email,
     photoURL: user.photoURL,
-    
+    role: "user",
   };
 }
 
