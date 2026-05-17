@@ -23,6 +23,7 @@ function userPayload(user) {
     name: user.displayName || user.email,
     photoURL: user.photoURL,
     role: "user",
+
   };
 }
 
@@ -112,8 +113,9 @@ const logout = () => {
       if (typeof BrewStorage !== "undefined") {
         BrewStorage.duLieu.nguoiDung = null;
         BrewStorage.luu();
-        localStorage.removeItem("boldbrew");
+        
       } else localStorage.removeItem("user");
+      localStorage.removeItem("boldbrew");
       window.location.href = "index.html";
     })
     .catch((error) => {
