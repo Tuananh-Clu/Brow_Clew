@@ -1,259 +1,223 @@
-var BrewStorage = (function () {
-  var KEY = "boldbrew";
 
-  var data = {
-    user: null,
-    cart: [],
-    orders: [],
-    vip: null,
-    lastOrder: null,
-    recipes: [],
-    favorites: [],
+var BrewStorage = (function () {
+  var MAU_LUU = "boldbrew";
+  var ketNoi = null;
+  var goi = null;
+
+  var duLieu = {
+    nguoiDung: null,
+    gioHang: [],
+    donHang: [],
+    hoiVien: null,
+    donCuoi: null,
+    congThuc: [],
+    monThich: [],
   };
 
-  var db = null;
-  var firestore = null;
+  function taiTuMay() {
+    try {
+      var raw = localStorage.getItem(MAU_LUU);
+      if (raw) {
+        gopDuLieu(JSON.parse(raw));
+        return;
+      }
+    } catch (e) {}
 
-
-  function load() {
-    var saved = localStorage.getItem(KEY);
-
-    if (saved) {
-      data = JSON.parse(saved);
-      return;
-    }
-
-    data.user = JSON.parse(localStorage.getItem("user")) || null;
-    data.cart = JSON.parse(localStorage.getItem("cart")) || [];
-    data.orders = JSON.parse(localStorage.getItem("orders")) || [];
-    data.vip = JSON.parse(localStorage.getItem("vipMember")) || null;
-    data.lastOrder = JSON.parse(localStorage.getItem("lastOrder")) || null;
-    data.recipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-    data.favorites = JSON.parse(localStorage.getItem("likedProducts")) || [];
-
-    save();
+    if (localStorage.getItem("user")) duLieu.nguoiDung = JSON.parse(localStorage.getItem("user"));
+    if (localStorage.getItem("cart")) duLieu.gioHang = JSON.parse(localStorage.getItem("cart"));
+    if (localStorage.getItem("orders")) duLieu.donHang = JSON.parse(localStorage.getItem("orders"));
+    if (localStorage.getItem("vipMember")) duLieu.hoiVien = JSON.parse(localStorage.getItem("vipMember"));
+    if (localStorage.getItem("lastOrder")) duLieu.donCuoi = JSON.parse(localStorage.getItem("lastOrder"));
+    if (localStorage.getItem("savedRecipes")) duLieu.congThuc = JSON.parse(localStorage.getItem("savedRecipes"));
+    if (localStorage.getItem("likedProducts")) duLieu.monThich = JSON.parse(localStorage.getItem("likedProducts"));
+    luu();
   }
 
-
-  function save() {
-    localStorage.setItem(KEY, JSON.stringify(data));
-
-    var uid = data.user?.uid;
-
-    if (!db || !firestore || !uid) return;
-
-    firestore.setDoc(
-      firestore.doc(db, "users", uid, "storage", "data"),
-      data,
-      { merge: true }
-    );
+  function gopDuLieu(obj) {
+    if (obj.nguoiDung !== undefined) duLieu.nguoiDung = obj.nguoiDung;
+    else if (obj.user !== undefined) duLieu.nguoiDung = obj.user;
+    if (obj.gioHang !== undefined) duLieu.gioHang = obj.gioHang;
+    else if (obj.cart !== undefined) duLieu.gioHang = obj.cart;
+    if (obj.donHang !== undefined) duLieu.donHang = obj.donHang;
+    else if (obj.orders !== undefined) duLieu.donHang = obj.orders;
+    if (obj.hoiVien !== undefined) duLieu.hoiVien = obj.hoiVien;
+    else if (obj.vipMember !== undefined) duLieu.hoiVien = obj.vipMember;
+    if (obj.donCuoi !== undefined) duLieu.donCuoi = obj.donCuoi;
+    else if (obj.lastOrder !== undefined) duLieu.donCuoi = obj.lastOrder;
+    if (obj.congThuc !== undefined) duLieu.congThuc = obj.congThuc;
+    else if (obj.savedRecipes !== undefined) duLieu.congThuc = obj.savedRecipes;
+    if (obj.monThich !== undefined) duLieu.monThich = obj.monThich;
+    else if (obj.likedProducts !== undefined) duLieu.monThich = obj.likedProducts;
   }
 
-
-  async function connectFirebase() {
-    if (!window.FIREBASE_CONFIG) return;
-
-    var firebaseApp = await import(
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js"
-    );
-
-    var firebaseStore = await import(
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js"
-    );
-
-    var app =
-      firebaseApp.getApps()[0] ||
-      firebaseApp.initializeApp(window.FIREBASE_CONFIG);
-
-    db = firebaseStore.getFirestore(app);
-    firestore = firebaseStore;
-
-    loadFromServer();
+  function luu() {
+    localStorage.setItem(MAU_LUU, JSON.stringify(duLieu));
+    var id = duLieu.nguoiDung && duLieu.nguoiDung.uid ? duLieu.nguoiDung.uid : null;
+    if (!ketNoi || !goi || !id) return;
+    goi.setDoc(goi.doc(ketNoi, "users", id, "data"), duLieu, { merge: true });
   }
 
-
-  async function loadFromServer() {
-    var uid = data.user?.uid;
-
-    if (!db || !firestore || !uid) return;
-
-    var ref = firestore.doc(db, "users", uid, "storage", "data");
-
-    var snap = await firestore.getDoc(ref);
-
-    if (!snap.exists()) return;
-
-    data = {
-      ...data,
-      ...snap.data(),
-    };
-
-    localStorage.setItem(KEY, JSON.stringify(data));
-  }
-
-  function myOrders() {
-    var email = data.user?.email?.toLowerCase();
-
-    if (!email) return data.orders;
-
-    return data.orders.filter(function (order) {
-      return order.customer?.email?.toLowerCase() === email;
+  function taiTuMayChu() {
+    var id = duLieu.nguoiDung && duLieu.nguoiDung.uid ? duLieu.nguoiDung.uid : null;
+    if (!ketNoi || !goi || !id) return;
+    goi.getDoc(goi.doc(ketNoi, "users", id, "data")).then(function (snap) {
+      if (!snap.exists()) return;
+      gopDuLieu(snap.data());
+      localStorage.setItem(MAU_LUU, JSON.stringify(duLieu));
     });
   }
 
-
-  function stats() {
-    var orders = myOrders();
-
-    var points = 0;
-    var cups = 0;
-    var products = {};
-
-    orders.forEach(function (order) {
-      if (order.status === "cancelled") return;
-
-      points += Number(order.total) || 0;
-
-      order.items?.forEach(function (item) {
-        var qty = Number(item.quantity) || 1;
-
-        cups += qty;
-
-        var name = item.productName || "Sản phẩm";
-
-        products[name] = (products[name] || 0) + qty;
+  function batDauKetNoi() {
+    if (!window.FIREBASE_CONFIG) return;
+    import("https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js").then(function (ungDung) {
+      import("https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js").then(function (mayChu) {
+        var app = ungDung.getApps()[0] || ungDung.initializeApp(window.FIREBASE_CONFIG);
+        ketNoi = mayChu.getFirestore(app);
+        goi = mayChu;
+        taiTuMayChu();
       });
     });
+  }
 
-    points = Math.floor(points / 10000);
+  function donHangCuaToi() {
+    var email = duLieu.nguoiDung && duLieu.nguoiDung.email ? duLieu.nguoiDung.email.toLowerCase() : "";
+    if (!email) return duLieu.donHang;
+    return duLieu.donHang.filter(function (don) {
+      return don.customer && don.customer.email && don.customer.email.toLowerCase() === email;
+    });
+  }
 
-    var favorite = "—";
+  function thongKe() {
+    var don = donHangCuaToi().slice().sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+    var hoiVien = duLieu.hoiVien;
+    var diem = 0;
+    don.forEach(function (o) {
+      if (o.status !== "cancelled") diem += Number(o.total) || 0;
+    });
+    diem = Math.floor(diem / 10000);
+    if (hoiVien && hoiVien.welcomeBonus) diem += hoiVien.welcomeBonus;
+
+    var ly = 0;
+    var demMon = {};
+    don.forEach(function (o) {
+      if (o.status === "cancelled") return;
+      (o.items || []).forEach(function (mon) {
+        ly += Number(mon.quantity) || 1;
+        var ten = mon.productName || "Sản phẩm";
+        demMon[ten] = (demMon[ten] || 0) + (Number(mon.quantity) || 1);
+      });
+    });
+    var monYeuThich = "—";
     var max = 0;
-
-    for (var name in products) {
-      if (products[name] > max) {
-        max = products[name];
-        favorite = name;
+    for (var ten in demMon) {
+      if (demMon[ten] > max) {
+        max = demMon[ten];
+        monYeuThich = ten;
       }
     }
 
-    var tier = {
-      id: "member",
-      label: "Thành viên",
-      discount: 0,
-    };
-
-    if (points >= 200) {
-      tier = {
-        id: "platinum",
-        label: "Platinum",
-        discount: 15,
-      };
-    } else if (points >= 80) {
-      tier = {
-        id: "gold",
-        label: "Gold",
-        discount: 10,
-      };
-    } else if (points >= 30) {
-      tier = {
-        id: "silver",
-        label: "Silver",
-        discount: 5,
-      };
-    }
+    var hang = { id: "member", label: "Thành viên", discount: 0 };
+    if (diem >= 200) hang = { id: "platinum", label: "Platinum", discount: 15 };
+    else if (diem >= 80) hang = { id: "gold", label: "Gold", discount: 10 };
+    else if (diem >= 30) hang = { id: "silver", label: "Silver", discount: 5 };
 
     return {
-      user: data.user,
-      orders: orders,
-      points: points,
-      cups: cups,
-      favorite: favorite,
-      tier: tier,
+      user: duLieu.nguoiDung,
+      vip: hoiVien,
+      orders: don,
+      points: diem,
+      tier: hang,
+      cups: ly,
+      favorite: monYeuThich,
+      orderCount: don.length,
     };
   }
 
-
-  function money(value) {
-    return (
-      Math.round(Number(value) || 0).toLocaleString("vi-VN") + "đ"
-    );
+  function chu(text) {
+    if (text == null) return "";
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
-  function date(value) {
-    return new Date(value).toLocaleDateString("vi-VN");
+  function tien(so) {
+    return Math.round(Number(so) || 0).toLocaleString("vi-VN") + "đ";
   }
 
-  function time(value) {
-    return new Date(value).toLocaleTimeString("vi-VN", {
+  function ngay(iso) {
+    return new Date(iso).toLocaleDateString("vi-VN", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  }
+
+  function gio(iso) {
+    return new Date(iso).toLocaleTimeString("vi-VN", {
       hour: "2-digit",
       minute: "2-digit",
     });
   }
 
-
-  function getStatus(status) {
-    var list = {
-      confirmed: {
-        label: "Đã xác nhận",
-        class: "processing",
-      },
-
-      processing: {
-        label: "Đang chuẩn bị",
-        class: "processing",
-      },
-
-      shipping: {
-        label: "Đang giao",
-        class: "processing",
-      },
-
-      completed: {
-        label: "Hoàn thành",
-        class: "completed",
-      },
-
-      cancelled: {
-        label: "Đã hủy",
-        class: "cancelled",
-      },
+  function trangThai(ma) {
+    var bang = {
+      confirmed: { label: "Đã xác nhận", class: "processing" },
+      processing: { label: "Đang chuẩn bị", class: "processing" },
+      shipping: { label: "Đang giao", class: "processing" },
+      completed: { label: "Hoàn thành", class: "completed" },
+      cancelled: { label: "Đã hủy", class: "cancelled" },
     };
-
-    return list[status] || {
-      label: "Không rõ",
-      class: "processing",
-    };
+    return bang[ma] || { label: ma || "Không rõ", class: "processing" };
   }
 
+  function tomTatMon(danhSach) {
+    if (!danhSach || !danhSach.length) return "—";
+    var dong = danhSach
+      .map(function (mon) {
+        return (mon.productName || "Sản phẩm") + " ×" + (mon.quantity || 1);
+      })
+      .slice(0, 2)
+      .join(", ");
+    return danhSach.length > 2 ? dong + "…" : dong;
+  }
 
-  function requireLogin(page) {
-    if (data.user) return true;
+  function locDon(danhSach, boLoc) {
+    if (boLoc === "all") return danhSach;
+    if (boLoc === "processing") {
+      return danhSach.filter(function (don) {
+        return don.status === "processing" || don.status === "shipping" || don.status === "confirmed";
+      });
+    }
+    return danhSach.filter(function (don) {
+      return don.status === boLoc;
+    });
+  }
 
-    window.location.href =
-      "login.html?next=" +
-      encodeURIComponent(page || location.pathname);
-
+  function canDangNhap(trang) {
+    if (duLieu.nguoiDung) return true;
+    window.location.href = "login.html?next=" + encodeURIComponent(trang || location.pathname);
     return false;
   }
 
-  load();
-  connectFirebase();
+  taiTuMay();
+  batDauKetNoi();
 
   return {
-    data: data,
-    save: save,
-
-    myOrders: myOrders,
-
-    stats: stats,
-
-    money: money,
-    date: date,
-    time: time,
-
-    getStatus: getStatus,
-
-    requireLogin: requireLogin,
+    duLieu: duLieu,
+    luu: luu,
+    donHangCuaToi: donHangCuaToi,
+    thongKe: thongKe,
+    chu: chu,
+    tien: tien,
+    ngay: ngay,
+    gio: gio,
+    trangThai: trangThai,
+    tomTatMon: tomTatMon,
+    locDon: locDon,
+    canDangNhap: canDangNhap,
   };
 })();

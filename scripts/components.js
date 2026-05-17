@@ -225,12 +225,11 @@ function injectComponents() {
   injectAIStyles();
   const body = document.body;
   let userData = null;
-  if (typeof BrewStorage !== "undefined") userData = BrewStorage.duLieu.nguoiDung;
-  else {
-    try {
-      const raw = localStorage.getItem("user");
-      userData = raw ? JSON.parse(raw) : null;
-    } catch (e) {}
+  if (typeof BrewStorage !== "undefined") {
+    userData = BrewStorage.duLieu.nguoiDung;
+  } else {
+    const raw = localStorage.getItem("user");
+    userData = raw ? JSON.parse(raw) : null;
   }
 
   if (!document.querySelector(".ai-chat-panel")) {
