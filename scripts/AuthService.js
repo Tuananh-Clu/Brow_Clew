@@ -38,10 +38,12 @@ const getUserFromLocalStorage = () => {
 
 const saveUserToLocalStorage = (user) => {
   if (!user) return;
+  const payload = userPayload(user);
   if (typeof BrewStorage !== "undefined") {
-    BrewStorage.duLieu.nguoiDung = userPayload(user);
-    BrewStorage.luu();
-  } else localStorage.setItem("user", JSON.stringify(userPayload(user)));
+    BrewStorage.duLieu.nguoiDung = payload;
+    localStorage.setItem("boldbrew", JSON.stringify(BrewStorage.duLieu));
+  }
+  localStorage.setItem("user", JSON.stringify(payload));
 };
 
 const handleGoogleLogin = () => {

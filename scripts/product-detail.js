@@ -281,9 +281,7 @@ function applyBestChoice() {
   }
 }
 
-// =============================================
-// RENDER INGREDIENTS
-// =============================================
+
 function renderIngredients(product) {
   if (!product.ingredients?.length) return;
   const grid = document.getElementById("ingredientsGrid");
@@ -297,9 +295,7 @@ function renderIngredients(product) {
   });
 }
 
-// =============================================
-// RENDER FEATURES
-// =============================================
+
 function renderFeatures(product) {
   if (!product.features?.length) return;
   const grid = document.getElementById("featuresGrid");
@@ -318,9 +314,7 @@ function renderFeatures(product) {
   });
 }
 
-// =============================================
-// RENDER REVIEWS
-// =============================================
+
 async function renderReviews(product) {
   try {
     const allReviews = await fetch("data/reviews.json").then((r) => r.json());
@@ -362,9 +356,7 @@ async function renderReviews(product) {
   }
 }
 
-// =============================================
-// SETUP GIÁ & SỐ LƯỢNG
-// =============================================
+
 function setupPriceAndQuantity(product) {
   const totalEl = document.getElementById("total-price");
   const qtyInput = document.getElementById("qty");

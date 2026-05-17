@@ -119,7 +119,7 @@ var BrewStorage = (function () {
       .getDoc(goi.doc(ketNoi, "users", id))
       .then(function (snap) {
         if (!snap.exists()) {
-          if (choDoiLuu) luu();
+          luu();
           return;
         }
 
