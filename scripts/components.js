@@ -1,3 +1,4 @@
+const currentPage = location.pathname.split("/").pop() || "index.html";
 const history = [];
 let systemInstruction = "";
 let menuLoaded = false;
@@ -223,9 +224,9 @@ function injectComponents() {
   const footer = document.querySelector("footer");
   injectAIStyles();
   const body = document.body;
-  const userData = (() => {
-    const user = localStorage.getItem("user");
-    return user ? JSON.parse(user) : null;
+  const userData = typeof BrewStorage !== "undefined" ? BrewStorage.getUser() : (() => {
+    const raw = localStorage.getItem("user");
+    return raw ? JSON.parse(raw) : null;
   })();
 
   if (!document.querySelector(".ai-chat-panel")) {
@@ -264,8 +265,8 @@ function setupUserMenu(header, userData) {
         <p class="user-name">${userData.name}</p>
         <p class="user-email">${userData.email}</p>
       </div>
-      <a href="profile.html" class="dropdown-link"><i class="fas fa-user"></i> Hồ sơ cá nhân</a>
-      <a href="orders.html" class="dropdown-link"><i class="fas fa-box"></i> Đơn hàng</a>
+      <a href="dashboard.html" class="dropdown-link"><i class="fas fa-user"></i> Bảng điều khiển</a>
+      <a href="historyorder.html" class="dropdown-link"><i class="fas fa-box"></i> Đơn hàng</a>
       <a href="#" class="dropdown-link ai-recommend-link"><i class="fas fa-wand-magic-sparkles"></i> AI Chọn Món</a>
       <hr class="dropdown-divider">
       <button class="dropdown-link logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>

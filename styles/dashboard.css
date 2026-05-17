@@ -63,6 +63,54 @@
   color: var(--text-gray);
   font-size: 16px;
 }
+.dash-tier-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--brand-orange-soft);
+  color: var(--brand-orange);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.dash-vip-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px 28px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, var(--brand-orange-soft), #fff);
+  border: 1px solid var(--border-gray);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.dash-vip-banner:hover {
+  box-shadow: 0 12px 32px rgba(232, 93, 4, 0.15);
+  transform: translateY(-2px);
+}
+.dash-vip-banner strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--brand-black);
+}
+.dash-vip-banner strong i {
+  color: var(--brand-orange);
+  margin-right: 8px;
+}
+.dash-vip-banner span:not(.btn) {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+.dash-vip-banner[hidden] {
+  display: none !important;
+}
 .dash-profile {
   display: flex;
   align-items: center;
@@ -120,6 +168,20 @@
   color: var(--brand-black);
   line-height: 1;
 }
+.dash-card-info .value--sm { font-size: 24px; margin-top: 4px; }
+.dash-card-icon--green { background: #e6f4ea; color: #137333; }
+.dash-card-icon--red { background: #fce8e6; color: #c5221f; }
+.dash-logout-wrap { margin-top: auto; }
+.dash-logout { display: flex; gap: 8px; justify-content: center; border-radius: 16px; }
+.dash-profile-btn {
+  background: var(--white);
+  color: var(--brand-black);
+  border: 1px solid var(--border-gray);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+.table-scroll { overflow-x: auto; }
+.table-empty { text-align: center; color: var(--text-gray); padding: 32px; }
 .dash-recent {
   background: var(--white);
   border-radius: 32px;

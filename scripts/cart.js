@@ -2,7 +2,7 @@ let discountAmount = 0;
 const TAX_RATE = 0.08;
 
 function loadCart() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = BrewStorage.getCart() || [];
   const container = document.querySelector('.cart-items-col');
   const itemsDiv = document.createElement('div');
   itemsDiv.id = 'cart-items-container';
@@ -95,7 +95,7 @@ function loadCart() {
 
   document.getElementById('clear-cart-btn').addEventListener('click', clearCart);
   document.getElementById('checkout-btn').addEventListener('click', () => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = BrewStorage.getCart() || [];
     if (cart.length === 0) {
       alert('Giỏ hàng của bạn đang trống');
       return;
@@ -123,7 +123,7 @@ function renderEmptyCart() {
 }
 
 function recalcCart() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = BrewStorage.getCart() || [];
   let subtotal = 0;
 
   cart.forEach(item => {
@@ -152,7 +152,7 @@ function recalcCart() {
 }
 
 function changeCartQty(index, delta) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = BrewStorage.getCart() || [];
   const item = cart[index];
 
   if (!item) return;
@@ -163,7 +163,7 @@ function changeCartQty(index, delta) {
   item.quantity = newQty;
   item.totalPrice = item.productPrice * newQty;
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  BrewStorage.setCart(cart);
 
   document.getElementById('qty-cart-item-' + index).textContent = newQty;
   document.getElementById('price-cart-item-' + index).textContent = (item.productPrice * newQty).toLocaleString('vi-VN') + 'đ';
@@ -177,9 +177,9 @@ function removeCartItem(index) {
 
   el.classList.add('removing');
   setTimeout(() => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = BrewStorage.getCart() || [];
     cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    BrewStorage.setCart(cart);
 
     loadCart();
   }, 350);
@@ -187,7 +187,7 @@ function removeCartItem(index) {
 
 function clearCart() {
   if (!confirm('Xóa tất cả sản phẩm trong giỏ?')) return;
-  localStorage.setItem('cart', JSON.stringify([]));
+  BrewStorage.clearCart();
   document.getElementById('cart-badge').textContent = '0';
   document.getElementById('summary-subtotal').textContent = '0đ';
   document.getElementById('summary-tax').textContent = '0đ';

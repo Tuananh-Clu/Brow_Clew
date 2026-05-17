@@ -1,27 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const lastOrder = JSON.parse(localStorage.getItem('lastOrder'));
-
-  if (!lastOrder) {
-    window.location.href = 'product.html';
+document.addEventListener("DOMContentLoaded", function () {
+  var order = BrewStorage.getLastOrder();
+  if (!order) {
+    location.href = "product.html";
     return;
   }
 
-  const orderDate = new Date(lastOrder.date);
-  const estimatedTime = new Date(orderDate.getTime() + 30 * 60000);
+  var date = new Date(order.date);
+  var eta = new Date(date.getTime() + 30 * 60000);
+  var mins = Math.max(0, Math.round((eta - new Date()) / 60000));
 
-  document.getElementById('orderNumber').textContent = lastOrder.id;
-  document.getElementById('orderDate').textContent = orderDate.toLocaleDateString('vi-VN', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  });
-  document.getElementById('orderTime').textContent = orderDate.toLocaleTimeString('vi-VN', {
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-  document.getElementById('totalPrice').textContent = Math.round(lastOrder.total).toLocaleString('vi-VN') + 'đ';
-
-  const now = new Date();
-  const timeLeft = Math.max(0, Math.round((estimatedTime - now) / 60000));
-  document.getElementById('estimatedTime').textContent = timeLeft > 0 ? timeLeft + ' phút' : 'Đang giao';
+  document.getElementById("orderNumber").textContent = order.id;
+  document.getElementById("orderDate").textContent = BrewStorage.formatDate(order.date);
+  document.getElementById("orderTime").textContent = BrewStorage.formatTime(order.date);
+  document.getElementById("totalPrice").textContent = BrewStorage.formatMoney(order.total);
+  document.getElementById("estimatedTime").textContent = mins > 0 ? mins + " phút" : "Đang giao";
 });
