@@ -112,6 +112,7 @@ const logout = () => {
       if (typeof BrewStorage !== "undefined") {
         BrewStorage.duLieu.nguoiDung = null;
         BrewStorage.luu();
+        localStorage.removeItem("boldbrew");
       } else localStorage.removeItem("user");
       window.location.href = "index.html";
     })

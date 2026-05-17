@@ -90,7 +90,7 @@ var BrewStorage = (function () {
         : null;
 
     if (!ketNoi || !goi || !id) return;
-
+    
     goi
       .setDoc(
         goi.doc(ketNoi, "users", id),
