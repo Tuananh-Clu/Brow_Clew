@@ -134,6 +134,9 @@ var BrewStorage = (function () {
           MAU_LUU,
           JSON.stringify(duLieu)
         );
+        if (duLieu.nguoiDung) {
+          localStorage.setItem("user", JSON.stringify(duLieu.nguoiDung));
+        }
       })
       .catch(function (err) {
         console.error("Firestore load error:", err);
