@@ -17,13 +17,16 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 function userPayload(user) {
+  let role = "user";
+  if (user.email && user.email.toLowerCase().includes("admin")) {
+    role = "admin";
+  }
   return {
     uid: user.uid,
     email: user.email,
     name: user.displayName || user.email,
     photoURL: user.photoURL,
-    role: "user",
-
+    role: role,
   };
 }
 
@@ -50,7 +53,8 @@ const handleGoogleLogin = () => {
       .then((result) => {
         const user = result.user;
         saveUserToLocalStorage(user);
-        window.location.href = "dashboard.html";
+        const payload = userPayload(user);
+        window.location.href = payload.role === "admin" ? "admin.html" : "dashboard.html";
       })
       .catch((error) => {
         console.error("Google login error:", error);
@@ -64,8 +68,8 @@ const handleEmailSignup = () => {
   if (!signupBtn) return;
 
   signupBtn.addEventListener("click", async () => {
-    const email = document.querySelector('input[name="email"]')?.value;
-    const password = document.querySelector('input[name="password"]')?.value;
+    const email = document.querySelector('#email, #reg-email, input[name="email"]')?.value;
+    const password = document.querySelector('#password, #reg-password, input[name="password"]')?.value;
 
     if (!email || !password) {
       alert("Vui lòng điền email và mật khẩu");
@@ -75,7 +79,8 @@ const handleEmailSignup = () => {
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
       saveUserToLocalStorage(result.user);
-      window.location.href = "dashboard.html";
+      const payload = userPayload(result.user);
+      window.location.href = payload.role === "admin" ? "admin.html" : "dashboard.html";
     } catch (error) {
       console.error("Signup error:", error);
       alert("Đăng ký thất bại: " + error.message);
@@ -88,8 +93,8 @@ const handleEmailLogin = () => {
   if (!loginBtn) return;
 
   loginBtn.addEventListener("click", async () => {
-    const email = document.querySelector('input[name="email"]')?.value;
-    const password = document.querySelector('input[name="password"]')?.value;
+    const email = document.querySelector('#email, #reg-email, input[name="email"]')?.value;
+    const password = document.querySelector('#password, #reg-password, input[name="password"]')?.value;
 
     if (!email || !password) {
       alert("Vui lòng điền email và mật khẩu");
@@ -99,7 +104,8 @@ const handleEmailLogin = () => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       saveUserToLocalStorage(result.user);
-      window.location.href = "dashboard.html";
+      const payload = userPayload(result.user);
+      window.location.href = payload.role === "admin" ? "admin.html" : "dashboard.html";
     } catch (error) {
       console.error("Login error:", error);
       alert("Đăng nhập thất bại: " + error.message);
@@ -113,8 +119,8 @@ const logout = () => {
       if (typeof BrewStorage !== "undefined") {
         BrewStorage.duLieu.nguoiDung = null;
         BrewStorage.luu();
-        
-      } else localStorage.removeItem("user");
+      }
+      localStorage.removeItem("user");
       localStorage.removeItem("boldbrew");
       window.location.href = "index.html";
     })
@@ -130,8 +136,9 @@ onAuthStateChanged(auth, (firebaseUser) => {
   if (firebaseUser && !storedUser) saveUserToLocalStorage(firebaseUser);
 });
 
-if (getUserFromLocalStorage() && !document.querySelector(".btn_google_login")) {
-  window.location.href = "dashboard.html";
+const loggedInUser = getUserFromLocalStorage();
+if (loggedInUser && document.querySelector(".btn_google_login")) {
+  window.location.href = loggedInUser.role === "admin" ? "admin.html" : "dashboard.html";
 }
 
 handleGoogleLogin();

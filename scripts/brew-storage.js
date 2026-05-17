@@ -2,6 +2,7 @@ var BrewStorage = (function () {
   var MAU_LUU = "boldbrew";
   var ketNoi = null;
   var goi = null;
+  var choDoiLuu = false;
 
   var duLieu = {
     nguoiDung: null,
@@ -89,8 +90,12 @@ var BrewStorage = (function () {
         ? duLieu.nguoiDung.uid
         : null;
 
-    if (!ketNoi || !goi || !id) return;
+    if (!ketNoi || !goi || !id) {
+      choDoiLuu = true;
+      return;
+    }
     
+    choDoiLuu = false;
     goi
       .setDoc(
         goi.doc(ketNoi, "users", id),
@@ -113,7 +118,15 @@ var BrewStorage = (function () {
     goi
       .getDoc(goi.doc(ketNoi, "users", id))
       .then(function (snap) {
-        if (!snap.exists()) return;
+        if (!snap.exists()) {
+          if (choDoiLuu) luu();
+          return;
+        }
+
+        if (choDoiLuu) {
+          luu();
+          return;
+        }
 
         gopDuLieu(snap.data());
 

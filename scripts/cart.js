@@ -7,8 +7,11 @@ function loadCart() {
   const itemsDiv = document.createElement('div');
   itemsDiv.id = 'cart-items-container';
 
+  if (!container) return;
+
   if (cart.length === 0) {
     renderEmptyCart();
+    recalcCart();
     return;
   }
 
@@ -110,8 +113,9 @@ function renderEmptyCart() {
   const oldContainer = document.getElementById('cart-items-container');
   if (oldContainer) oldContainer.remove();
 
+  if (!container) return;
   container.innerHTML = `
-    <div class="cart-empty" style="display: flex;">
+    <div class="cart-empty" id="cart-empty" style="display: flex;">
       <div class="cart-empty-icon">
         <i class="fa-solid fa-mug-hot"></i>
       </div>
@@ -143,11 +147,15 @@ function recalcCart() {
   if (badge) badge.textContent = cart.length;
 
   if (cart.length === 0) {
-    document.getElementById('cart-empty').style.display = 'flex';
-    document.getElementById('checkout-btn').disabled = true;
+    const emptyEl = document.getElementById('cart-empty');
+    if (emptyEl) emptyEl.style.display = 'flex';
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) checkoutBtn.disabled = true;
   } else {
-    document.getElementById('cart-empty').style.display = 'none';
-    document.getElementById('checkout-btn').disabled = false;
+    const emptyEl = document.getElementById('cart-empty');
+    if (emptyEl) emptyEl.style.display = 'none';
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) checkoutBtn.disabled = false;
   }
 }
 
@@ -189,10 +197,14 @@ function clearCart() {
   if (!confirm('Xóa tất cả sản phẩm trong giỏ?')) return;
   BrewStorage.duLieu.gioHang = [];
   BrewStorage.luu();
-  document.getElementById('cart-badge').textContent = '0';
-  document.getElementById('summary-subtotal').textContent = '0đ';
-  document.getElementById('summary-tax').textContent = '0đ';
-  document.getElementById('summary-total').textContent = '0đ';
+  const badge = document.getElementById('cart-badge');
+  if (badge) badge.textContent = '0';
+  const subtotal = document.getElementById('summary-subtotal');
+  if (subtotal) subtotal.textContent = '0đ';
+  const tax = document.getElementById('summary-tax');
+  if (tax) tax.textContent = '0đ';
+  const total = document.getElementById('summary-total');
+  if (total) total.textContent = '0đ';
 
   loadCart();
 }

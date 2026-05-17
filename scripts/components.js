@@ -271,8 +271,7 @@ function setupUserMenu(header, userData) {
       <a href="dashboard.html" class="dropdown-link"><i class="fas fa-user"></i> Bảng điều khiển</a>
       <a href="historyorder.html" class="dropdown-link"><i class="fas fa-box"></i> Đơn hàng</a>
       <a href="#" class="dropdown-link ai-recommend-link"><i class="fas fa-wand-magic-sparkles"></i> AI Chọn Món</a>
-      <hr class="dropdown-divider">
-      <button class="dropdown-link logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+      <button class="dropdown-link logout-btn" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer; color: #ff4d4f;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
     </div>
   `;
 
