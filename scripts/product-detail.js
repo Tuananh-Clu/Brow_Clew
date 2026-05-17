@@ -11,10 +11,7 @@ async function suggestCustom(productId) {
       .flatMap((o) => o.items)
       .filter((i) => i.productId == productId);
 
-    console.log("Orders for productId", productId, ":", listOrder);
-
     if (!listOrder.length) {
-      console.log("Không có order cho sản phẩm này");
       return null;
     }
 
@@ -44,7 +41,6 @@ async function suggestCustom(productId) {
     });
 
     const result = { topToppingId, topOptions };
-    console.log("Suggest result:", result);
     return result;
   } catch (e) {
     console.error("suggestCustom error:", e);
@@ -52,15 +48,13 @@ async function suggestCustom(productId) {
   }
 }
 
-// =============================================
-// DOM READY
-// =============================================
+
 document.addEventListener("DOMContentLoaded", async () => {
   const productId = new URLSearchParams(window.location.search).get("id") || 1;
   try {
     const products = await fetch("data/ProductForHeroSection.json").then((r) => r.json());
     const product = products.find((p) => p.id == productId);
-    if (!product) return console.log("Không tìm thấy sản phẩm");
+    if (!product) return;
 
     SuggestedData = await suggestCustom(productId);
     renderProduct(product);
@@ -69,9 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// =============================================
-// RENDER PRODUCT
-// =============================================
+
 async function renderProduct(product) {
   updateProductInfo(product);
   await loadCustomizationOptions(product);
@@ -90,9 +82,7 @@ function updateProductInfo(product) {
   document.querySelector(".image-wrapper img").alt = product.name;
 }
 
-// =============================================
-// LOAD + RENDER CUSTOMIZATION
-// =============================================
+
 async function loadCustomizationOptions(product) {
   try {
     const allProducts = await fetch("data/ProductsDetail.json").then((r) => r.json());
@@ -176,9 +166,7 @@ function renderToppings(toppings, topToppingId = null) {
   });
 }
 
-// =============================================
-// SUGGEST CARD (nổi bên cạnh options)
-// =============================================
+
 function renderSuggestCard(suggested, detail) {
   const wrapper = document.querySelector(".suggest_card");
 
@@ -383,16 +371,43 @@ function setupPriceAndQuantity(product) {
     e.preventDefault();
     const btn = document.querySelector(".btn-add-cart");
     const orig = btn.innerHTML;
+    
     btn.innerHTML = "Đã thêm vào giỏ";
     setTimeout(() => (btn.innerHTML = orig), 2000);
+
+    const quantity = Number(qtyInput.value) || 1;
+    const options = {};
+    document.querySelectorAll(".options-row input[type='radio']:checked").forEach(r => options[r.name] = r.value);
+
+    const toppings = [];
+    document.querySelectorAll("#toppingsGrid input[type='checkbox']:checked").forEach(cb => {
+      toppings.push({
+        id: cb.value,
+        name: cb.nextElementSibling.querySelector(".topping-name").textContent.trim(),
+        price: Number(cb.nextElementSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, ""))
+      });
+    });
+
+    const cartItem = {
+      id: Date.now(),
+      productId: product.id,
+      productName: product.name,
+      productImage: product.image,
+      productPrice: product.price,
+      quantity: quantity,
+      options: options,
+      toppings: toppings,
+      totalPrice: product.price * quantity,
+      addedAt: new Date().toISOString(),
+    };
+    BrewStorage.duLieu.gioHang.push(cartItem);
+
   });
 
   update();
 }
 
-// =============================================
-// SETUP LIKE BUTTON
-// =============================================
+
 function setupLikeButton(product) {
   const btn = document.getElementById("likeBtn");
   if (!btn) return;

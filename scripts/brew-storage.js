@@ -23,7 +23,7 @@ var BrewStorage = (function () {
         return;
       }
     } catch (e) {
-      console.log(e);
+      
     }
 
     if (localStorage.getItem("user")) {
@@ -103,7 +103,7 @@ var BrewStorage = (function () {
         { merge: true }
       )
       .catch(function (err) {
-        console.log("Firestore save error:", err);
+        console.error("Firestore save error:", err);
       });
   }
 
@@ -136,7 +136,7 @@ var BrewStorage = (function () {
         );
       })
       .catch(function (err) {
-        console.log("Firestore load error:", err);
+        console.error("Firestore load error:", err);
       });
   }
 

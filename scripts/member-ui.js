@@ -1,4 +1,4 @@
-/** UI dùng chung: sidebar dashboard, đơn hàng, avatar */
+
 var MemberUI = (function () {
   var NAV = [
     {
