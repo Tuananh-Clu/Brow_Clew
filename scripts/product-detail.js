@@ -369,39 +369,53 @@ function setupPriceAndQuantity(product) {
 
   document.getElementById("addToCartForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    const btn = document.querySelector(".btn-add-cart");
-    const orig = btn.innerHTML;
-    
-    btn.innerHTML = "Đã thêm vào giỏ";
-    setTimeout(() => (btn.innerHTML = orig), 2000);
+    try {
+      const btn = document.querySelector(".btn-add-cart");
+      const orig = btn.innerHTML;
+      
+      btn.innerHTML = "Đã thêm vào giỏ";
+      setTimeout(() => (btn.innerHTML = orig), 2000);
 
-    const quantity = Number(qtyInput.value) || 1;
-    const options = {};
-    document.querySelectorAll(".options-row input[type='radio']:checked").forEach(r => options[r.name] = r.value);
+      const quantity = Number(qtyInput.value) || 1;
+      const options = {};
+      document.querySelectorAll(".options-row input[type='radio']:checked").forEach(r => options[r.name] = r.value);
 
-    const toppings = [];
-    document.querySelectorAll("#toppingsGrid input[type='checkbox']:checked").forEach(cb => {
-      toppings.push({
-        id: cb.value,
-        name: cb.nextElementSibling.querySelector(".topping-name").textContent.trim(),
-        price: Number(cb.nextElementSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, ""))
+      const toppings = [];
+      document.querySelectorAll("#toppingsGrid input[type='checkbox']:checked").forEach(cb => {
+        toppings.push({
+          id: cb.value,
+          name: cb.nextElementSibling.querySelector(".topping-name").textContent.trim(),
+          price: Number(cb.nextElementSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, ""))
+        });
       });
-    });
 
-    const cartItem = {
-      id: Date.now(),
-      productId: product.id,
-      productName: product.name,
-      productImage: product.image,
-      productPrice: product.price,
-      quantity: quantity,
-      options: options,
-      toppings: toppings,
-      totalPrice: product.price * quantity,
-      addedAt: new Date().toISOString(),
-    };
-    BrewStorage.duLieu.gioHang.push(cartItem);
+      const cartItem = {
+        id: Date.now(),
+        productId: product.id,
+        productName: product.name,
+        productImage: product.image,
+        productPrice: product.price,
+        quantity: quantity,
+        options: options,
+        toppings: toppings,
+        totalPrice: product.price * quantity,
+        addedAt: new Date().toISOString(),
+      };
+      
+      if (!Array.isArray(BrewStorage.duLieu.gioHang)) {
+        BrewStorage.duLieu.gioHang = [];
+      }
+      BrewStorage.duLieu.gioHang.push(cartItem);
+      BrewStorage.luu();
 
+      const cartBadge = document.getElementById("cart-badge");
+      if (cartBadge) {
+        cartBadge.textContent = BrewStorage.duLieu.gioHang.length;
+      }
+    } catch (err) {
+      alert("Lỗi thêm vào giỏ hàng: " + err.message);
+      console.error(err);
+    }
   });
 
   update();
