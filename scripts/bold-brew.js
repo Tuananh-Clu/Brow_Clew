@@ -24,7 +24,7 @@ async function init() {
 }
 
 function renderProduct(productId) {
-  const product = products.find(p => p.id === productId);
+  const product = products.find((p) => p.id === productId);
   if (!product) return;
 
   subtitleEl.innerHTML = product.subtitle;
@@ -33,11 +33,14 @@ function renderProduct(productId) {
   priceEl.innerHTML = `<span class="hero-price-label">Giá</span> ${product.price.toLocaleString("vi-VN")}đ`;
   imgEl.src = product.image;
   imgEl.alt = product.name;
-  featureEl.innerHTML = product.features.map(f => `<li>${f.title}: ${f.value}</li>`).join("");
+  featureEl.innerHTML = product.features
+    .map((f) => `<li>${f.title}: ${f.value}</li>`)
+    .join("");
   hero.style.background = product.theme.background;
   hero.style.setProperty("--brand-orange", product.theme.primary);
   hero.style.setProperty("--brand-orange-soft", product.theme.secondary);
-  btnDetails.onclick = () => window.location.href = `product-detail.html?id=${product.id}`;
+  btnDetails.onclick = () =>
+    (window.location.href = `product-detail.html?id=${product.id}`);
 }
 
 function animateChange(nextId) {
@@ -62,10 +65,35 @@ function animateChange(nextId) {
 }
 
 function getNextProductId(offset) {
-  const index = products.findIndex(p => p.id === id);
+  const index = products.findIndex((p) => p.id === id);
   return products[(index + offset + products.length) % products.length].id;
 }
 
 init();
 btnRight.addEventListener("click", () => animateChange(getNextProductId(1)));
 btnLeft.addEventListener("click", () => animateChange(getNextProductId(-1)));
+
+async function loadProducts() {
+  const res = await fetch("data/ProductForHeroSection.json");
+  const productgrid = document.querySelector(".product-grid");
+  const products = await res.json();
+
+  products.slice(0, 3).forEach((product) => {
+    const productCard = document.createElement("article");
+    productCard.classList.add("product-card");
+    productCard.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" >
+      <h3 ">${product.name}</h3>
+     <p class="product-tagline">${product.description}</p>
+     <div class="product-foot">
+            <span class="product-price">${product.price.toLocaleString("vi-VN")}đ</span>
+            <a href="#" class="btn btn-black btn-sm">Thêm vào giỏ</a>
+          </div>
+    `;
+    productCard.addEventListener("click", () => {
+      window.location.href = `product-detail.html?id=${product.id}`;
+    });
+    productgrid.appendChild(productCard);
+  });
+}
+loadProducts();
