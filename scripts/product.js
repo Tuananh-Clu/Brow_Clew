@@ -31,7 +31,6 @@ async function initProducts() {
     rendercategoryButtons([]);
     setupFilters(enrichedProducts);
     setupCustomizeModal(enrichedProducts);
-    showSavedRecipes();
 
   } catch (error) {
     console.error('Error loading products:', error);

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Thức Của Tôi - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bold-brew.css">
+  <link rel="stylesheet" href="styles/recipes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/recipes.js" defer></script>
+</head>
+<body class="recipes-page">
+  <header></header>
+
+  <main class="recipes-main">
+    <div class="recipes-hero">
+      <div class="container recipes-hero-inner">
+        <div>
+          <p class="recipes-label">Quản Lý Công Thức</p>
+          <h1>Công Thức Của Tôi</h1>
+        </div>
+        <a href="product.html" class="btn btn-outline">
+          <i class="fa-solid fa-arrow-left"></i> Quay Lại
+        </a>
+      </div>
+    </div>
+
+    <div class="container recipes-body">
+      <div id="recipesContainer" class="recipes-container">
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-state-icon">
+          <i class="fa-solid fa-bookmark"></i>
+        </div>
+        <h2>Chưa có công thức nào</h2>
+        <p>Hãy lưu công thức yêu thích của bạn từ trang sản phẩm</p>
+        <a href="product.html" class="btn btn-orange">
+          <i class="fa-solid fa-arrow-right"></i> Đến Trang Sản Phẩm
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <!-- Recipe Detail Modal -->
+  <div class="recipe-detail-modal" id="recipeDetailModal">
+    <div class="recipe-detail-overlay"></div>
+    <div class="recipe-detail-content">
+      <button class="recipe-detail-close"><i class="fa-solid fa-times"></i></button>
+      <div id="recipeDetailBody"></div>
+      <div class="recipe-detail-footer">
+        <button class="btn btn-orange btn-block" id="detailBuyBtn">
+          <i class="fa-solid fa-bag-shopping"></i> Thêm Vào Giỏ
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,3 +1,6 @@
+const history = [];
+let systemInstruction = "";
+let menuLoaded = false;
 const headerTemplate = `
   <div class="container nav-wrapper">
     <a href="index.html" class="logo">Bold Brew<span>.</span></a>
@@ -5,6 +8,7 @@ const headerTemplate = `
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="product.html">Sản phẩm</a></li>
+        <li><a href="recipes.html">Công Thức Của Tôi</a></li>
         <li><a href="about.html">Giới thiệu</a></li>
         <li><a href="contact.html">Liên hệ</a></li>
         <li><a href="leaderboard.html">Bảng Xếp Hạng</a></li>
@@ -333,9 +337,7 @@ function addAIInitialMessage() {
   }
 }
 
-const history = [];
-let systemInstruction = "";
-let menuLoaded = false;
+
 
 async function sendMessage(text) {
   const API_KEY = "AIzaSyBVChV9D0RHxR9A1t83LnjQLQp9wTSUx2g";
