@@ -10,34 +10,34 @@ import {
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAiPRFB87Pm_rIqXDPbXfH93NZNLWK6BIM",
-  authDomain: "coldbrew-e06ee.firebaseapp.com",
-  projectId: "coldbrew-e06ee",
-  storageBucket: "coldbrew-e06ee.firebasestorage.app",
-  messagingSenderId: "720297248520",
-  appId: "1:720297248520:web:91ebb35e1e2b4849038ebd",
-};
+const firebaseConfig = window.FIREBASE_CONFIG;
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+function userPayload(user) {
+  return {
+    uid: user.uid,
+    email: user.email,
+    name: user.displayName || user.email,
+    photoURL: user.photoURL,
+    
+  };
+}
+
 const getUserFromLocalStorage = () => {
-  const user = localStorage.getItem("user");
-  return user ? JSON.parse(user) : null;
+  if (typeof BrewStorage !== "undefined") return BrewStorage.duLieu.nguoiDung;
+  const raw = localStorage.getItem("user");
+  return raw ? JSON.parse(raw) : null;
 };
 
 const saveUserToLocalStorage = (user) => {
-  if (user) {
-    const userData = {
-      uid: user.uid,
-      email: user.email,
-      name: user.displayName || user.email,
-      photoURL: user.photoURL,
-    };
-    localStorage.setItem("user", JSON.stringify(userData));
-  }
+  if (!user) return;
+  if (typeof BrewStorage !== "undefined") {
+    BrewStorage.duLieu.nguoiDung = userPayload(user);
+    BrewStorage.luu();
+  } else localStorage.setItem("user", JSON.stringify(userPayload(user)));
 };
 
 const handleGoogleLogin = () => {
@@ -109,7 +109,10 @@ const handleEmailLogin = () => {
 const logout = () => {
   signOut(auth)
     .then(() => {
-      localStorage.removeItem("user");
+      if (typeof BrewStorage !== "undefined") {
+        BrewStorage.duLieu.nguoiDung = null;
+        BrewStorage.luu();
+      } else localStorage.removeItem("user");
       window.location.href = "index.html";
     })
     .catch((error) => {

@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bảng điều khiển - Bold Brew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles/bold-brew.css">
   <link rel="stylesheet" href="styles/dashboard.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
   <div class="dashboard-layout">
     <aside class="dash-sidebar" id="dashSidebar"></aside>
 
     <main class="dash-main">
-      <header class="dash-header">
-        <div class="dash-greeting">
-          <h1 id="dashGreeting">Chào bạn</h1>
-          <p id="dashSub">Đang tải…</p>
-          <span class="dash-tier-badge" id="dashTierBadge" hidden>VIP</span>
-        </div>
-        <div class="dash-profile">
-          <a href="VipMember.html" class="btn-icon dash-profile-btn" title="Hội viên VIP">
-            <i class="fa-solid fa-star"></i>
-          </a>
-          <img src="" alt="" class="dash-avatar" id="dashAvatar">
-        </div>
-      </header>
 
+      <div class="member-header">
+        <div>
+          <h1>Xin chào, <span id="userName">Khách</span>!</h1>
+          <p class="text-muted">Chào mừng bạn đến với bảng điều khiển cá nhân của Bold Brew</p>
+        </div>
+
+        <img src="" alt="" class="dash-avatar" id="userAvatar" hidden>
+      </div>
       <a href="VipMember.html" class="dash-vip-banner" id="vipBanner" hidden>
         <div>
           <strong><i class="fa-solid fa-crown"></i> Trở thành hội viên VIP</strong>
@@ -39,6 +38,7 @@
       </a>
 
       <div class="dash-grid">
+
         <article class="dash-card">
           <div class="dash-card-icon"><i class="fa-solid fa-seedling"></i></div>
           <div class="dash-card-info">
@@ -85,8 +85,10 @@
     </main>
   </div>
 
+  <script src="scripts/firebase-config.js"></script>
   <script src="scripts/brew-storage.js"></script>
   <script src="scripts/member-ui.js"></script>
   <script src="scripts/dashboard.js"></script>
 </body>
+
 </html>

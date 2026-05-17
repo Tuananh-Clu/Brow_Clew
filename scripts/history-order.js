@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   MemberUI.mountSidebar("history");
-
-  var user = BrewStorage.getUser();
+  var user = BrewStorage.duLieu.nguoiDung;
   var subtitle = document.getElementById("historySubtitle");
   var filter = "all";
 
   if (user && subtitle) {
     subtitle.textContent =
       "Xin chào " + (user.name || user.email) +
-      " — " + BrewStorage.ordersForCurrentUser().length + " đơn hàng";
+      " — " + BrewStorage.donHangCuaToi().length + " đơn hàng";
   }
 
   MemberUI.setAvatar(document.getElementById("userAvatar"), user);
 
   function render() {
-    var orders = BrewStorage.sortOrdersNewest(BrewStorage.ordersForCurrentUser());
-    orders = BrewStorage.filterOrdersByStatus(orders, filter);
+    var orders = BrewStorage.donHangCuaToi().slice().sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+    orders = BrewStorage.locDon(orders, filter);
     document.getElementById("ordersList").innerHTML = MemberUI.orderCards(orders);
   }
 

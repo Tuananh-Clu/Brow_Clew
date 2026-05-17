@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!product) return console.log("Không tìm thấy sản phẩm");
 
     SuggestedData = await suggestCustom(productId);
-    console.log("SuggestedData:", SuggestedData);
     renderProduct(product);
   } catch (e) {
     console.error("Error loading product:", e);
@@ -406,7 +405,7 @@ function setupLikeButton(product) {
   const btn = document.getElementById("likeBtn");
   if (!btn) return;
 
-  const getLiked = () => JSON.parse(localStorage.getItem("likedProducts")) || [];
+  const getLiked = () => BrewStorage.duLieu.monThich;
   const setIcon = (on) => (btn.innerHTML = `<i class="fa-${on ? "solid" : "regular"} fa-heart"></i>`);
 
   if (getLiked().some((p) => p.id === product.id)) { btn.classList.add("liked"); setIcon(true); }
@@ -416,6 +415,7 @@ function setupLikeButton(product) {
     const idx = list.findIndex((p) => p.id === product.id);
     if (idx > -1) { list.splice(idx, 1); btn.classList.remove("liked"); setIcon(false); }
     else { list.push({ id: product.id, name: product.name, image: product.image }); btn.classList.add("liked"); setIcon(true); }
-    localStorage.setItem("likedProducts", JSON.stringify(list));
+    BrewStorage.duLieu.monThich = list;
+    BrewStorage.luu();
   });
 }

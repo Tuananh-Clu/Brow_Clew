@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    var cart = BrewStorage.getCart();
+    var cart = BrewStorage.duLieu.gioHang;
     if (!cart.length) {
       alert("Giỏ hàng của bạn đang trống");
       return;
@@ -32,9 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
       status: "confirmed",
     };
 
-    BrewStorage.addOrder(order);
-    BrewStorage.setLastOrder(order);
-    BrewStorage.clearCart();
+    BrewStorage.duLieu.donHang.unshift(order);
+    BrewStorage.duLieu.donCuoi = order;
+    BrewStorage.duLieu.gioHang = [];
+    BrewStorage.luu();
+
+    if (typeof CuaHang !== 'undefined') CuaHang.themDon(order);
 
     if (window.notifyCartUpdate) window.notifyCartUpdate();
 
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadOrderSummary() {
-  var cart = BrewStorage.getCart();
+  var cart = BrewStorage.duLieu.gioHang;
   var list = document.getElementById("orderItemsList");
 
   if (!cart.length) {
@@ -60,11 +63,11 @@ function loadOrderSummary() {
 
       return (
         '<div class="summary-item">' +
-        "<div><strong>" + BrewStorage.escapeHtml(item.productName) + "</strong>" +
-        (extra ? '<div class="summary-extra">' + BrewStorage.escapeHtml(extra) + "</div>" : "") +
+        "<div><strong>" + BrewStorage.chu(item.productName) + "</strong>" +
+        (extra ? '<div class="summary-extra">' + BrewStorage.chu(extra) + "</div>" : "") +
         "</div>" +
         '<div class="summary-qty">x' + item.quantity +
-        "<div>" + BrewStorage.formatMoney(item.productPrice * item.quantity) + "</div></div>" +
+        "<div>" + BrewStorage.tien(item.productPrice * item.quantity) + "</div></div>" +
         "</div>"
       );
     })
@@ -72,13 +75,13 @@ function loadOrderSummary() {
 
   var subtotal = cartSubtotal();
   var tax = subtotal * 0.08;
-  document.getElementById("subtotal").textContent = BrewStorage.formatMoney(subtotal);
-  document.getElementById("taxAmount").textContent = BrewStorage.formatMoney(tax);
-  document.getElementById("totalAmount").textContent = BrewStorage.formatMoney(subtotal + tax);
+  document.getElementById("subtotal").textContent = BrewStorage.tien(subtotal);
+  document.getElementById("taxAmount").textContent = BrewStorage.tien(tax);
+  document.getElementById("totalAmount").textContent = BrewStorage.tien(subtotal + tax);
 }
 
 function cartSubtotal() {
-  return BrewStorage.getCart().reduce(function (sum, item) {
+  return BrewStorage.duLieu.gioHang.reduce(function (sum, item) {
     return sum + item.productPrice * item.quantity;
   }, 0);
 }

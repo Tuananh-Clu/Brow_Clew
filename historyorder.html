@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lịch sử đơn hàng - Bold Brew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles/bold-brew.css">
   <link rel="stylesheet" href="styles/dashboard.css">
   <link rel="stylesheet" href="styles/member-pages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
   <div class="dashboard-layout">
     <aside class="dash-sidebar" id="dashSidebar"></aside>
 
     <main class="dash-main">
-      <header class="dash-header">
-        <div class="dash-greeting">
+      <div class="member-header">
+        <div>
           <h1>Lịch sử đơn hàng</h1>
-          <p id="historySubtitle">Theo dõi đơn hàng của bạn</p>
+          <p class="text-muted">Xem lại các đơn hàng trước đây của bạn</p>
         </div>
-        <div class="dash-profile">
-          <img src="" alt="" class="dash-avatar" id="userAvatar" hidden>
-        </div>
-      </header>
 
+        <img src="" alt="" class="dash-avatar" id="userAvatar" hidden>
+      </div>
       <div class="member-toolbar">
+
         <div class="member-filters" id="statusFilters">
+
           <button type="button" class="filter-chip active" data-filter="all">Tất cả</button>
           <button type="button" class="filter-chip" data-filter="confirmed">Đã xác nhận</button>
           <button type="button" class="filter-chip" data-filter="processing">Đang xử lý</button>
@@ -41,8 +45,10 @@
     </main>
   </div>
 
+  <script src="scripts/firebase-config.js"></script>
   <script src="scripts/brew-storage.js"></script>
   <script src="scripts/member-ui.js"></script>
   <script src="scripts/history-order.js"></script>
 </body>
+
 </html>

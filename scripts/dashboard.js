@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   MemberUI.mountSidebar("dashboard");
-
-  var stats = BrewStorage.getDashboardStats();
+  var stats = BrewStorage.thongKe();
   var user = stats.user;
   var vip = stats.vip;
 

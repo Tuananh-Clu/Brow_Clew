@@ -13,8 +13,13 @@ function rendercategoryButtons(categories) {
 
 async function initProducts() {
   try {
-    const productsRes = await fetch('data/ProductsDetail.json');
-    const products = await productsRes.json();
+    let products = [];
+    if (typeof CuaHang !== 'undefined' && CuaHang.layMon().length) {
+      products = CuaHang.layMon();
+    } else {
+      const productsRes = await fetch('data/ProductsDetail.json');
+      products = await productsRes.json();
+    }
 
     const ordersRes = await fetch('data/orders.json');
     const orders = await ordersRes.json();
@@ -67,7 +72,7 @@ function renderProductGrid(products) {
   const grid = document.getElementById('product-grid');
   grid.innerHTML = '';
 
-  const likedProducts = JSON.parse(localStorage.getItem('likedProducts')) || [];
+  const likedProducts = BrewStorage.duLieu.monThich;
 
   products.forEach(product => {
     const card = document.createElement('article');
@@ -130,7 +135,7 @@ function showSavedRecipes() {
   const container = document.querySelector('.container');
   let savedSection = document.getElementById('savedRecipesSection');
 
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
 
   if (recipes.length === 0) {
     if (savedSection) savedSection.remove();
@@ -179,14 +184,15 @@ function showSavedRecipes() {
 
 function deleteRecipe(id) {
   if (!confirm('Xóa công thức này?')) return;
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const filtered = recipes.filter(r => r.id !== id);
-  localStorage.setItem('savedRecipes', JSON.stringify(filtered));
+  BrewStorage.duLieu.congThuc = filtered;
+  BrewStorage.luu();
   showSavedRecipes();
 }
 
 function quickBuyRecipe(id) {
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const recipe = recipes.find(r => r.id === id);
   if (!recipe) return;
 
@@ -219,7 +225,7 @@ function setupCardLikeButtons() {
       e.stopPropagation();
 
       const productId = parseInt(btn.dataset.productId);
-      const likedProducts = JSON.parse(localStorage.getItem('likedProducts')) || [];
+      const likedProducts = BrewStorage.duLieu.monThich;
       const index = likedProducts.findIndex(p => p.id === productId);
 
       if (index > -1) {
@@ -235,7 +241,7 @@ function setupCardLikeButtons() {
         btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }
 
-      localStorage.setItem('likedProducts', JSON.stringify(likedProducts));
+      BrewStorage.luu();
     });
   });
 }
@@ -359,9 +365,8 @@ function setupCustomizeModal(products) {
   }
 
   function addToCart(item) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    BrewStorage.duLieu.gioHang.push(item);
+    BrewStorage.luu();
   }
 
   function showSaveRecipeModal(product) {
@@ -424,7 +429,7 @@ function setupCustomizeModal(products) {
   }
 
   function saveRecipeToStorage(product, name) {
-    const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    const recipes = BrewStorage.duLieu.congThuc;
 
     const checkedOptions = {};
     document.querySelectorAll('#customizeForm input[type="radio"]:checked').forEach(opt => {
@@ -449,7 +454,7 @@ function setupCustomizeModal(products) {
     };
 
     recipes.push(recipe);
-    localStorage.setItem('savedRecipes', JSON.stringify(recipes));
+    BrewStorage.luu();
   }
 
   function renderModalOptions(options) {

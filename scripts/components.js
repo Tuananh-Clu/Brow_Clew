@@ -224,10 +224,14 @@ function injectComponents() {
   const footer = document.querySelector("footer");
   injectAIStyles();
   const body = document.body;
-  const userData = typeof BrewStorage !== "undefined" ? BrewStorage.getUser() : (() => {
-    const raw = localStorage.getItem("user");
-    return raw ? JSON.parse(raw) : null;
-  })();
+  let userData = null;
+  if (typeof BrewStorage !== "undefined") userData = BrewStorage.duLieu.nguoiDung;
+  else {
+    try {
+      const raw = localStorage.getItem("user");
+      userData = raw ? JSON.parse(raw) : null;
+    } catch (e) {}
+  }
 
   if (!document.querySelector(".ai-chat-panel")) {
     body.insertAdjacentHTML("beforeend", aiChatTemplate);

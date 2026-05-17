@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị - Bold Brew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/bold-brew.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <div class="dashboard-layout">
+    <aside class="dash-sidebar" id="dashSidebar"></aside>
+
+    <main class="dash-main admin-page">
+      <header class="member-header">
+        <div>
+          <h1>Quản trị cửa hàng</h1>
+          <p class="text-muted">Thêm món và theo dõi doanh thu Bold Brew</p>
+        </div>
+      </header>
+
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab active" data-tab="mon">Thực đơn</button>
+        <button type="button" class="admin-tab" data-tab="doanhthu">Doanh thu</button>
+      </div>
+
+      <section class="admin-panel" id="panelMon">
+        <div class="admin-grid-2">
+          <article class="admin-card">
+            <h2><i class="fa-solid fa-plus"></i> Thêm món mới</h2>
+            <form id="formThemMon" class="admin-form">
+              <label>Tên món<input type="text" name="ten" required placeholder="Ví dụ: Cold Brew Sữa"></label>
+              <label>Loại
+                <select name="loai" required>
+                  <option value="Coffee">Coffee</option>
+                  <option value="Milkshake">Milkshake</option>
+                  <option value="Matcha">Matcha</option>
+                  <option value="Smoothie">Smoothie</option>
+                  <option value="Ice Drink">Ice Drink</option>
+                </select>
+              </label>
+              <label>Giá (đ)<input type="number" name="gia" required min="1000" step="1000" placeholder="45000"></label>
+              <label>Link ảnh<input type="text" name="anh" placeholder="images/... hoặc URL"></label>
+              <label>Mô tả<textarea name="moTa" rows="3" placeholder="Mô tả ngắn về món"></textarea></label>
+              <label class="admin-check"><input type="checkbox" name="monMoi"> Món mới</label>
+              <button type="submit" class="btn btn-orange btn-block">Thêm vào thực đơn</button>
+            </form>
+          </article>
+
+          <article class="admin-card">
+            <h2><i class="fa-solid fa-mug-hot"></i> Danh sách món (<span id="soMon">0</span>)</h2>
+            <p class="admin-hint">Món thêm ở đây hiện trên trang Sản phẩm. Nếu chưa có món tự thêm, trang vẫn dùng file mẫu.</p>
+            <div class="table-scroll">
+              <table class="order-table admin-table">
+                <thead>
+                  <tr>
+                    <th>Tên</th>
+                    <th>Loại</th>
+                    <th>Giá</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="bangMon"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panelDoanhThu" hidden>
+        <div class="dash-grid admin-stats">
+          <article class="dash-card">
+            <div class="dash-card-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="dash-card-info">
+              <h3>Tổng doanh thu</h3>
+              <p class="value" id="tongDoanhThu">0đ</p>
+            </div>
+          </article>
+          <article class="dash-card">
+            <div class="dash-card-icon dash-card-icon--green"><i class="fa-solid fa-receipt"></i></div>
+            <div class="dash-card-info">
+              <h3>Đơn thành công</h3>
+              <p class="value" id="soDonThanhCong">0</p>
+            </div>
+          </article>
+          <article class="dash-card">
+            <div class="dash-card-icon dash-card-icon--red"><i class="fa-solid fa-ban"></i></div>
+            <div class="dash-card-info">
+              <h3>Đơn đã hủy</h3>
+              <p class="value" id="soDonHuy">0</p>
+            </div>
+          </article>
+          <article class="dash-card">
+            <div class="dash-card-icon"><i class="fa-solid fa-fire"></i></div>
+            <div class="dash-card-info">
+              <h3>Bán chạy nhất</h3>
+              <p class="value value--sm" id="monBanChay">—</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="admin-card">
+          <h2><i class="fa-solid fa-list"></i> Đơn hàng gần đây</h2>
+          <div class="table-scroll">
+            <table class="order-table">
+              <thead>
+                <tr>
+                  <th>Mã</th>
+                  <th>Ngày</th>
+                  <th>Khách</th>
+                  <th>Tổng</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody id="bangDon"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="scripts/firebase-config.js"></script>
+  <script src="scripts/brew-storage.js"></script>
+  <script src="scripts/cua-hang.js"></script>
+  <script src="scripts/member-ui.js"></script>
+  <script src="scripts/admin.js"></script>
+</body>
+
+</html>

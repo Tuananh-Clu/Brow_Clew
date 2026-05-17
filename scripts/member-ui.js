@@ -1,10 +1,31 @@
 /** UI dùng chung: sidebar dashboard, đơn hàng, avatar */
 var MemberUI = (function () {
   var NAV = [
-    { id: "dashboard", href: "dashboard.html", icon: "fa-house", label: "Tổng quan" },
-    { id: "history", href: "historyorder.html", icon: "fa-clock-rotate-left", label: "Lịch sử đơn" },
-    { id: "vip", href: "VipMember.html", icon: "fa-star", label: "Hội viên VIP" },
+    {
+      id: "dashboard",
+      href: "dashboard.html",
+      icon: "fa-house",
+      label: "Tổng quan",
+    },
+    {
+      id: "history",
+      href: "historyorder.html",
+      icon: "fa-clock-rotate-left",
+      label: "Lịch sử đơn",
+    },
+    {
+      id: "vip",
+      href: "VipMember.html",
+      icon: "fa-star",
+      label: "Hội viên VIP",
+    },
     { id: "shop", href: "product.html", icon: "fa-mug-hot", label: "Đặt món" },
+    {
+      id: "admin",
+      href: "admin.html",
+      icon: "fa-gear",
+      label: "Quản trị",
+    },
   ];
 
   function mountSidebar(activeId) {
@@ -29,7 +50,7 @@ var MemberUI = (function () {
 
     el.innerHTML =
       '<a href="index.html" class="logo dash-logo">Bold Brew<span>.</span></a>' +
-      "<ul class=\"dash-nav\">" +
+      '<ul class="dash-nav">' +
       links +
       "</ul>" +
       '<div class="dash-logout-wrap">' +
@@ -46,7 +67,8 @@ var MemberUI = (function () {
     btn.dataset.bound = "1";
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      BrewStorage.setUser(null);
+      BrewStorage.duLieu.nguoiDung = null;
+      BrewStorage.luu();
       location.href = "login.html";
     });
   }
@@ -77,20 +99,20 @@ var MemberUI = (function () {
     }
     return orders
       .map(function (order) {
-        var st = BrewStorage.statusMeta(order.status);
+        var st = BrewStorage.trangThai(order.status);
         return (
           "<tr>" +
           "<td><strong>" +
-          BrewStorage.escapeHtml(order.id) +
+          BrewStorage.chu(order.id) +
           "</strong></td>" +
           "<td>" +
-          BrewStorage.formatDate(order.date) +
+          BrewStorage.ngay(order.date) +
           "</td>" +
           "<td>" +
-          BrewStorage.orderItemsSummary(order.items) +
+          BrewStorage.tomTatMon(order.items) +
           "</td>" +
           "<td>" +
-          BrewStorage.formatMoney(order.total) +
+          BrewStorage.tien(order.total) +
           "</td>" +
           '<td><span class="status ' +
           st.class +
@@ -117,12 +139,12 @@ var MemberUI = (function () {
 
     return orders
       .map(function (order) {
-        var st = BrewStorage.statusMeta(order.status);
+        var st = BrewStorage.trangThai(order.status);
         var items = (order.items || [])
           .map(function (it) {
             return (
               "<div>" +
-              BrewStorage.escapeHtml(it.productName || "Sản phẩm") +
+              BrewStorage.chu(it.productName || "Sản phẩm") +
               " ×" +
               (it.quantity || 1) +
               "</div>"
@@ -135,14 +157,16 @@ var MemberUI = (function () {
           '<div class="order-card-head">' +
           "<div>" +
           '<div class="order-card-id">' +
-          BrewStorage.escapeHtml(order.id) +
+          BrewStorage.chu(order.id) +
           "</div>" +
           '<div class="order-card-meta">' +
-          BrewStorage.formatDate(order.date) +
+          BrewStorage.ngay(order.date) +
           " · " +
-          BrewStorage.formatTime(order.date) +
+          BrewStorage.gio(order.date) +
           " · " +
-          BrewStorage.escapeHtml((order.customer && order.customer.fullName) || "") +
+          BrewStorage.chu(
+            (order.customer && order.customer.fullName) || "",
+          ) +
           "</div>" +
           "</div>" +
           '<span class="status ' +
@@ -156,7 +180,7 @@ var MemberUI = (function () {
           items +
           "</div>" +
           '<div class="order-total">' +
-          BrewStorage.formatMoney(order.total) +
+          BrewStorage.tien(order.total) +
           "</div>" +
           "</div>" +
           "</article>"

@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   MemberUI.mountSidebar("vip");
-
   var root = document.getElementById("vipContent");
-  var vip = BrewStorage.getVip();
-  var stats = BrewStorage.getDashboardStats();
+  var vip = BrewStorage.duLieu.hoiVien;
+  var stats = BrewStorage.thongKe();
 
   if (vip && vip.registeredAt) {
     root.innerHTML = memberView(vip, stats.points, stats.tier);
     return;
   }
 
-  root.innerHTML = registerView(BrewStorage.getUser());
+  root.innerHTML = registerView(BrewStorage.duLieu.nguoiDung);
   document.getElementById("vipForm").addEventListener("submit", onRegister);
 });
 
@@ -24,7 +23,7 @@ function perk(icon, title, desc) {
 function field(label, name, type, value, required) {
   return (
     '<div class="form-row"><label>' + label + "</label>" +
-    '<input type="' + type + '" name="' + name + '" value="' + BrewStorage.escapeHtml(value) + '"' +
+    '<input type="' + type + '" name="' + name + '" value="' + BrewStorage.chu(value) + '"' +
     (required ? " required" : "") +
     "></div>"
   );
@@ -34,10 +33,10 @@ function cardPreview(name, tier, points, note) {
   return (
     '<div class="vip-card-display">' +
     '<div class="vip-card-brand">Bold Brew VIP</div>' +
-    '<div class="vip-card-name">' + BrewStorage.escapeHtml(name) + "</div>" +
-    '<span class="vip-card-tier">' + BrewStorage.escapeHtml(tier) + "</span>" +
+    '<div class="vip-card-name">' + BrewStorage.chu(name) + "</div>" +
+    '<span class="vip-card-tier">' + BrewStorage.chu(tier) + "</span>" +
     '<div class="vip-card-points">Điểm tích lũy<strong>' + points + "</strong></div>" +
-    '<p class="vip-card-note">' + BrewStorage.escapeHtml(note) + "</p></div>"
+    '<p class="vip-card-note">' + BrewStorage.chu(note) + "</p></div>"
   );
 }
 
@@ -75,7 +74,7 @@ function memberView(vip, points, tier) {
     perk("fa-gift", "Quà sinh nhật", "Món miễn phí tháng sinh nhật") +
     perk("fa-truck-fast", "Giao ưu tiên", "Đơn VIP chuẩn bị trước") +
     "</div>" +
-    '<p class="vip-registered-date">Đăng ký: ' + BrewStorage.formatDate(vip.registeredAt) + "</p></div>" +
+    '<p class="vip-registered-date">Đăng ký: ' + BrewStorage.ngay(vip.registeredAt) + "</p></div>" +
     '<div class="vip-form-panel"><div class="vip-success">' +
     '<i class="fa-solid fa-circle-check"></i><h2>Bạn đã là hội viên VIP</h2>' +
     '<p class="vip-success-text">Cảm ơn bạn đã đồng hành cùng Bold Brew.</p>' +
@@ -97,20 +96,20 @@ function onRegister(e) {
     return;
   }
 
-  BrewStorage.saveVip({
+  BrewStorage.duLieu.hoiVien = {
     fullName: fullName,
     email: email,
     phone: phone,
     birthday: fd.get("birthday") || "",
     registeredAt: new Date().toISOString(),
     welcomeBonus: 50,
-  });
+  };
 
-  var u = BrewStorage.getUser() || {};
-  u.name = fullName;
-  u.email = email;
-  u.phone = phone;
-  BrewStorage.setUser(u);
+  if (!BrewStorage.duLieu.nguoiDung) BrewStorage.duLieu.nguoiDung = {};
+  BrewStorage.duLieu.nguoiDung.name = fullName;
+  BrewStorage.duLieu.nguoiDung.email = email;
+  BrewStorage.duLieu.nguoiDung.phone = phone;
+  BrewStorage.luu();
 
   alert("Chúc mừng! Bạn đã trở thành hội viên VIP (+50 điểm chào mừng).");
   location.reload();

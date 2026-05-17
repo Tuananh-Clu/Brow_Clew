@@ -1,5 +1,5 @@
 function loadRecipes() {
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const container = document.getElementById('recipesContainer');
   const emptyState = document.getElementById('emptyState');
 
@@ -65,14 +65,15 @@ function loadRecipes() {
 
 function deleteRecipe(id) {
   if (!confirm('Bạn chắc chắn muốn xóa công thức này?')) return;
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const filtered = recipes.filter(r => r.id !== id);
-  localStorage.setItem('savedRecipes', JSON.stringify(filtered));
+  BrewStorage.duLieu.congThuc = filtered;
+  BrewStorage.luu();
   loadRecipes();
 }
 
 function viewRecipeDetail(id) {
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const recipe = recipes.find(r => r.id === id);
   if (!recipe) return;
 
@@ -108,7 +109,7 @@ function viewRecipeDetail(id) {
 }
 
 function quickBuyRecipe(id) {
-  const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+  const recipes = BrewStorage.duLieu.congThuc;
   const recipe = recipes.find(r => r.id === id);
   if (!recipe) return;
 
@@ -132,18 +133,16 @@ function quickBuyRecipe(id) {
 }
 
 function addToCart(item) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.push(item);
-  localStorage.setItem('cart', JSON.stringify(cart));
+  BrewStorage.duLieu.gioHang.push(item);
+  BrewStorage.luu();
 }
 
 function closeRecipeDetail() {
   document.getElementById('recipeDetailModal').classList.remove('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
   loadRecipes();
-
   document.querySelector('.recipe-detail-close').addEventListener('click', closeRecipeDetail);
   document.querySelector('.recipe-detail-overlay').addEventListener('click', closeRecipeDetail);
 });
