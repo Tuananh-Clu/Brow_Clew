@@ -291,7 +291,7 @@ function setupUserMenu(header, userData) {
 
   userMenu.querySelector(".logout-btn").addEventListener("click", async (e) => {
     e.preventDefault();
-    const { logout } = await import("./AuthService.js");
+    const { logout } = await import("./services/AuthService.js");
     logout();
   });
 }
@@ -348,7 +348,7 @@ async function sendMessage(text) {
   const messages = document.querySelector(".ai-chat-messages");
 
   if (!menuLoaded) {
-    const { fetchHeroProducts } = await import('./db-service.js');
+    const { fetchHeroProducts } = await import('./services/db-service.js');
     const data = await fetchHeroProducts();
     systemInstruction = `
       Bạn là trợ lý tư vấn món uống của quán cà phê Bold Brew.

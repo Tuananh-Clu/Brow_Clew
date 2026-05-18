@@ -98,20 +98,20 @@ var MemberUI = (function () {
     }
     return orders
       .map(function (order) {
-        var st = BrewStorage.trangThai(order.status);
+        var st = AppStorage.trangThai(order.status);
         return (
           "<tr>" +
           "<td><strong>" +
-          BrewStorage.chu(order.id) +
+          AppStorage.chu(order.id) +
           "</strong></td>" +
           "<td>" +
-          BrewStorage.ngay(order.date) +
+          AppStorage.ngay(order.date) +
           "</td>" +
           "<td>" +
-          BrewStorage.tomTatMon(order.items) +
+          AppStorage.tomTatMon(order.items) +
           "</td>" +
           "<td>" +
-          BrewStorage.tien(order.total) +
+          AppStorage.tien(order.total) +
           "</td>" +
           '<td><span class="status ' +
           st.class +
@@ -138,12 +138,12 @@ var MemberUI = (function () {
 
     return orders
       .map(function (order) {
-        var st = BrewStorage.trangThai(order.status);
+        var st = AppStorage.trangThai(order.status);
         var items = (order.items || [])
           .map(function (it) {
             return (
               "<div>" +
-              BrewStorage.chu(it.productName || "Sản phẩm") +
+              AppStorage.chu(it.productName || "Sản phẩm") +
               " ×" +
               (it.quantity || 1) +
               "</div>"
@@ -156,14 +156,14 @@ var MemberUI = (function () {
           '<div class="order-card-head">' +
           "<div>" +
           '<div class="order-card-id">' +
-          BrewStorage.chu(order.id) +
+          AppStorage.chu(order.id) +
           "</div>" +
           '<div class="order-card-meta">' +
-          BrewStorage.ngay(order.date) +
+          AppStorage.ngay(order.date) +
           " · " +
-          BrewStorage.gio(order.date) +
+          AppStorage.gio(order.date) +
           " · " +
-          BrewStorage.chu(
+          AppStorage.chu(
             (order.customer && order.customer.fullName) || "",
           ) +
           "</div>" +
@@ -179,7 +179,7 @@ var MemberUI = (function () {
           items +
           "</div>" +
           '<div class="order-total">' +
-          BrewStorage.tien(order.total) +
+          AppStorage.tien(order.total) +
           "</div>" +
           "</div>" +
           "</article>"

@@ -1,4 +1,4 @@
-var BrewStorage = (function () {
+var AppStorage = (function () {
   var MAU_LUU = "boldbrew";
 
   var POINTS_PER_UNIT_CURRENCY = 10000;

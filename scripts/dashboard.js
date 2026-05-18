@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } catch (e) {
   }
 
-  var stats = BrewStorage.thongKe();
+  var stats = AppStorage.thongKe();
   var vip = stats.vip;
 
   var greeting = document.getElementById("dashGreeting");

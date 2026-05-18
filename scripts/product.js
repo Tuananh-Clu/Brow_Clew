@@ -17,12 +17,12 @@ async function initProducts() {
     if (typeof CuaHang !== 'undefined' && CuaHang.layMon().length) {
       products = CuaHang.layMon();
     } else {
-      const { fetchProductsDetail, fetchOrders } = await import('./db-service.js');
+      const { fetchProductsDetail, fetchOrders } = await import('./services/db-service.js');
       const productsRes = await fetchProductsDetail();
       products = productsRes;
     }
 
-    const { fetchOrders } = await import('./db-service.js');
+    const { fetchOrders } = await import('./services/db-service.js');
     const orders = await fetchOrders();
 
     const bestSellerIds = calculateBestSellers(orders);
@@ -73,7 +73,7 @@ function renderProductGrid(products) {
   const grid = document.getElementById('product-grid');
   grid.innerHTML = '';
 
-  const likedProducts = BrewStorage.duLieu.monThich;
+  const likedProducts = AppStorage.duLieu.monThich;
 
   products.forEach(product => {
     const card = document.createElement('article');
@@ -140,7 +140,7 @@ function setupCardLikeButtons() {
       e.stopPropagation();
 
       const productId = parseInt(btn.dataset.productId);
-      const likedProducts = BrewStorage.duLieu.monThich;
+      const likedProducts = AppStorage.duLieu.monThich;
       const index = likedProducts.findIndex(p => p.id === productId);
 
       if (index > -1) {
@@ -156,7 +156,7 @@ function setupCardLikeButtons() {
         btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }
 
-      BrewStorage.luu();
+      AppStorage.luu();
     });
   });
 }
@@ -280,8 +280,8 @@ function setupCustomizeModal(products) {
   }
 
   function addToCart(item) {
-    BrewStorage.duLieu.gioHang.push(item);
-    BrewStorage.luu();
+    AppStorage.duLieu.gioHang.push(item);
+    AppStorage.luu();
   }
 
   function showSaveRecipeModal(product) {
@@ -343,7 +343,7 @@ function setupCustomizeModal(products) {
   }
 
   function saveRecipeToStorage(product, name) {
-    const recipes = BrewStorage.duLieu.congThuc;
+    const recipes = AppStorage.duLieu.congThuc;
 
     const checkedOptions = {};
     document.querySelectorAll('#customizeForm input[type="radio"]:checked').forEach(opt => {
@@ -368,7 +368,7 @@ function setupCustomizeModal(products) {
     };
 
     recipes.push(recipe);
-    BrewStorage.luu();
+    AppStorage.luu();
   }
 
   function renderModalOptions(options) {

@@ -1,6 +1,6 @@
 async function loadLeaderboard() {
     try {
-        const { fetchOrders, fetchHeroProducts } = await import('./db-service.js');
+        const { fetchOrders, fetchHeroProducts } = await import('./services/db-service.js');
         const data = await fetchOrders();
         const dataProducts = await fetchHeroProducts();
         const podiumContainer = document.querySelector('.podium-container');

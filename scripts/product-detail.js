@@ -3,7 +3,7 @@ var cachedProducts = null;
 
 async function getProducts() {
   if (!cachedProducts) {
-    const { fetchProductsDetail } = await import('./db-service.js');
+    const { fetchProductsDetail } = await import('./services/db-service.js');
     cachedProducts = await fetchProductsDetail();
   }
   return cachedProducts;
@@ -11,7 +11,7 @@ async function getProducts() {
 
 async function suggestCustom(productId) {
   try {
-    const { fetchOrders } = await import('./db-service.js');
+    const { fetchOrders } = await import('./services/db-service.js');
     const [data, orders] = await Promise.all([
       getProducts(),
       fetchOrders(),
@@ -73,7 +73,7 @@ async function suggestCustom(productId) {
 document.addEventListener("DOMContentLoaded", async () => {
   const productId = new URLSearchParams(window.location.search).get("id") || 1;
   try {
-    const { fetchHeroProducts } = await import('./db-service.js');
+    const { fetchHeroProducts } = await import('./services/db-service.js');
     const products = await fetchHeroProducts();
     if (!products) return;
 
@@ -331,7 +331,7 @@ function renderFeatures(product) {
 
 async function renderReviews(product) {
   try {
-    const { fetchReviews } = await import('./db-service.js');
+    const { fetchReviews } = await import('./services/db-service.js');
     const allReviews = await fetchReviews();
     if (!allReviews) {
       document.getElementById("reviewsSection").style.display = "none";
@@ -451,15 +451,15 @@ function setupPriceAndQuantity(product) {
         addedAt: new Date().toISOString(),
       };
 
-      if (!Array.isArray(BrewStorage.duLieu.gioHang)) {
-        BrewStorage.duLieu.gioHang = [];
+      if (!Array.isArray(AppStorage.duLieu.gioHang)) {
+        AppStorage.duLieu.gioHang = [];
       }
-      BrewStorage.duLieu.gioHang.push(cartItem);
-      BrewStorage.luu();
+      AppStorage.duLieu.gioHang.push(cartItem);
+      AppStorage.luu();
 
       const cartBadge = document.getElementById("cart-badge");
       if (cartBadge) {
-        cartBadge.textContent = BrewStorage.duLieu.gioHang.length;
+        cartBadge.textContent = AppStorage.duLieu.gioHang.length;
       }
     } catch (err) {
       alert("Lỗi thêm vào giỏ hàng: " + err.message);
@@ -475,7 +475,7 @@ function setupLikeButton(product) {
   const btn = document.getElementById("likeBtn");
   if (!btn) return;
 
-  const likedList = BrewStorage.duLieu.monThich;
+  const likedList = AppStorage.duLieu.monThich;
   const isLiked = likedList.some((p) => p.id === product.id);
   const setIcon = (on) => (btn.innerHTML = `<i class="fa-${on ? "solid" : "regular"} fa-heart"></i>`);
 
@@ -495,7 +495,7 @@ function setupLikeButton(product) {
       btn.classList.add("liked");
       setIcon(true);
     }
-    BrewStorage.duLieu.monThich = likedList;
-    BrewStorage.luu();
+    AppStorage.duLieu.monThich = likedList;
+    AppStorage.luu();
   });
 }

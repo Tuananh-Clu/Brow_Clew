@@ -39,7 +39,6 @@ var CuaHang = (function () {
       
       luu();
       
-      // Dispatch an event so admin.js knows data is ready
       window.dispatchEvent(new Event('cuaHangLoaded'));
     } catch (e) {
       console.error("Error loading from db-service:", e);
@@ -124,8 +123,8 @@ var CuaHang = (function () {
   }
 
   function gopDonTuKhach() {
-    if (typeof BrewStorage === "undefined") return;
-    var donKhach = BrewStorage.duLieu.donHang || [];
+    if (typeof AppStorage === "undefined") return;
+    var donKhach = AppStorage.duLieu.donHang || [];
     donKhach.forEach(function (don) {
       var daCo = duLieu.donHang.some(function (d) {
         return d.id === don.id;

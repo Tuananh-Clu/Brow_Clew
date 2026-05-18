@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
   if (user && subtitle) {
     subtitle.textContent =
       "Xin chào " + (user.name || user.email) +
-      " — " + BrewStorage.donHangCuaToi().length + " đơn hàng";
+      " — " + AppStorage.donHangCuaToi().length + " đơn hàng";
   }
 
   MemberUI.setAvatar(document.getElementById("userAvatar"), user);
 
   function render() {
-    var orders = BrewStorage.donHangCuaToi().slice().sort(function (a, b) {
+    var orders = AppStorage.donHangCuaToi().slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-    orders = BrewStorage.locDon(orders, filter);
+    orders = AppStorage.locDon(orders, filter);
     document.getElementById("ordersList").innerHTML = MemberUI.orderCards(orders);
   }
 

@@ -229,11 +229,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .map(function (t) {
         return (
           "<tr><td>" +
-          BrewStorage.chu(t.name) +
+          AppStorage.chu(t.name) +
           "</td><td>" +
-          BrewStorage.chu(t.category) +
+          AppStorage.chu(t.category) +
           "</td><td>" +
-          BrewStorage.tien(t.price) +
+          AppStorage.tien(t.price) +
           '</td><td><div class="table-actions"><button type="button" class="btn-icon edit" data-id="' +
           t.id +
           '" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i></button><button type="button" class="btn-icon delete" data-id="' +
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
     CuaHang.gopDonTuKhach();
     var dt = CuaHang.tinhDoanhThu();
 
-    document.getElementById("tongDoanhThu").textContent = BrewStorage.tien(dt.tong);
+    document.getElementById("tongDoanhThu").textContent = AppStorage.tien(dt.tong);
     document.getElementById("soDonThanhCong").textContent = dt.soDon;
     document.getElementById("soDonHuy").textContent = dt.soDonHuy;
     document.getElementById("monBanChay").textContent = dt.monBanChay;
@@ -321,19 +321,19 @@ document.addEventListener("DOMContentLoaded", function () {
     tbody.innerHTML = filtered
       .slice(0, 50)
       .map(function (don) {
-        var st = BrewStorage.trangThai(don.status);
+        var st = AppStorage.trangThai(don.status);
         var khach = (don.customer && don.customer.fullName) || "—";
         return (
           '<tr style="cursor: pointer;" data-id="' +
           don.id +
           '"><td>' +
-          BrewStorage.chu(don.id) +
+          AppStorage.chu(don.id) +
           "</td><td>" +
-          BrewStorage.ngay(don.date) +
+          AppStorage.ngay(don.date) +
           "</td><td>" +
-          BrewStorage.chu(khach) +
+          AppStorage.chu(khach) +
           "</td><td>" +
-          BrewStorage.tien(don.total) +
+          AppStorage.tien(don.total) +
           '</td><td><span class="status ' +
           st.class +
           '">' +
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openOrderModal(don) {
     var content = document.getElementById("orderDetailsContent");
-    var st = BrewStorage.trangThai(don.status);
+    var st = AppStorage.trangThai(don.status);
     var khach = (don.customer && don.customer.fullName) || "Khách";
     var sdt = (don.customer && don.customer.phone) || "—";
 
@@ -385,13 +385,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return (
           '<div class="order-item-row"><div><div class="order-item-name">' +
-          BrewStorage.chu(item.productName) +
+          AppStorage.chu(item.productName) +
           '</div><div class="order-item-details">' +
-          (details ? BrewStorage.chu(details) : "") +
+          (details ? AppStorage.chu(details) : "") +
           '</div></div><div class="order-item-price">×' +
           (item.quantity || 1) +
           " " +
-          BrewStorage.tien(item.totalPrice || item.price) +
+          AppStorage.tien(item.totalPrice || item.price) +
           "</div></div>"
         );
       })
@@ -399,19 +399,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     content.innerHTML =
       '<div class="order-info"><div class="order-info-item"><div class="order-info-label">Mã đơn</div><div class="order-info-value">' +
-      BrewStorage.chu(don.id) +
+      AppStorage.chu(don.id) +
       '</div></div><div class="order-info-item"><div class="order-info-label">Khách</div><div class="order-info-value">' +
-      BrewStorage.chu(khach) +
+      AppStorage.chu(khach) +
       '</div></div><div class="order-info-item"><div class="order-info-label">SĐT</div><div class="order-info-value">' +
       sdt +
       '</div></div><div class="order-info-item"><div class="order-info-label">Ngày</div><div class="order-info-value">' +
-      BrewStorage.ngay(don.date) +
+      AppStorage.ngay(don.date) +
       " " +
-      BrewStorage.gio(don.date) +
+      AppStorage.gio(don.date) +
       '</div></div></div><div class="order-items-list"><h3>Sản phẩm</h3>' +
       itemsHtml +
       '</div><div class="order-summary"><span class="order-summary-label">Tổng cộng</span><span class="order-summary-value">' +
-      BrewStorage.tien(don.total) +
+      AppStorage.tien(don.total) +
       '</span></div><div style="margin-top: 20px; display: flex; gap: 12px;"><label style="flex: 1; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 13px; font-weight: 600;">Trạng thái</span><select class="status-select" data-order-id="' +
       don.id +
       '"><option value="processing" ' +

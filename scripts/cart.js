@@ -2,7 +2,7 @@ let discountAmount = 0;
 const TAX_RATE = 0.08;
 
 function loadCart() {
-  const cart = BrewStorage.duLieu.gioHang || [];
+  const cart = AppStorage.duLieu.gioHang || [];
   const container = document.querySelector('.cart-items-col');
   const itemsDiv = document.createElement('div');
   itemsDiv.id = 'cart-items-container';
@@ -98,7 +98,7 @@ function loadCart() {
 
   document.getElementById('clear-cart-btn').addEventListener('click', clearCart);
   document.getElementById('checkout-btn').addEventListener('click', () => {
-    const cart = BrewStorage.duLieu.gioHang || [];
+    const cart = AppStorage.duLieu.gioHang || [];
     if (cart.length === 0) {
       alert('Giỏ hàng của bạn đang trống');
       return;
@@ -127,7 +127,7 @@ function renderEmptyCart() {
 }
 
 function recalcCart() {
-  const cart = BrewStorage.duLieu.gioHang || [];
+  const cart = AppStorage.duLieu.gioHang || [];
   let subtotal = 0;
 
   cart.forEach(item => {
@@ -160,7 +160,7 @@ function recalcCart() {
 }
 
 function changeCartQty(index, delta) {
-  const cart = BrewStorage.duLieu.gioHang || [];
+  const cart = AppStorage.duLieu.gioHang || [];
   const item = cart[index];
 
   if (!item) return;
@@ -171,7 +171,7 @@ function changeCartQty(index, delta) {
   item.quantity = newQty;
   item.totalPrice = item.productPrice * newQty;
 
-  BrewStorage.luu();
+  AppStorage.luu();
 
   document.getElementById('qty-cart-item-' + index).textContent = newQty;
   document.getElementById('price-cart-item-' + index).textContent = (item.productPrice * newQty).toLocaleString('vi-VN') + 'đ';
@@ -185,9 +185,9 @@ function removeCartItem(index) {
 
   el.classList.add('removing');
   setTimeout(() => {
-    const cart = BrewStorage.duLieu.gioHang || [];
+    const cart = AppStorage.duLieu.gioHang || [];
     cart.splice(index, 1);
-    BrewStorage.luu();
+    AppStorage.luu();
 
     loadCart();
   }, 350);
@@ -195,8 +195,8 @@ function removeCartItem(index) {
 
 function clearCart() {
   if (!confirm('Xóa tất cả sản phẩm trong giỏ?')) return;
-  BrewStorage.duLieu.gioHang = [];
-  BrewStorage.luu();
+  AppStorage.duLieu.gioHang = [];
+  AppStorage.luu();
   const badge = document.getElementById('cart-badge');
   if (badge) badge.textContent = '0';
   const subtotal = document.getElementById('summary-subtotal');

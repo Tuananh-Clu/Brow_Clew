@@ -43,7 +43,6 @@
             <option value="Smoothie">Smoothie</option>
             <option value="Ice Drink">Ice Drink</option>
           </select>
-          <button type="button" class="btn btn-orange" onclick="import('./scripts/db-service.js').then(m => m.uploadAllData())" style="margin-left: 10px;"><i class="fa-solid fa-cloud-arrow-up"></i> Đồng bộ 4 dữ liệu JSON lên Firestore</button>
         </div>
 
         <div class="admin-grid-2">
@@ -283,8 +282,8 @@
 
   <script src="config.js"></script>
   <script src="scripts/firebase-config.js"></script>
-  <script src="scripts/brew-storage.js"></script>
-  <script src="scripts/cua-hang.js"></script>
+  <script src="scripts/services/app-storage.js"></script>
+  <script src="scripts/services/cua-hang.js"></script>
   <script src="scripts/member-ui.js"></script>
   <script src="scripts/admin.js"></script>
 </body>
