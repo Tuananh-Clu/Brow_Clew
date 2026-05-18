@@ -131,92 +131,6 @@ function setupFilters(products) {
 
 document.addEventListener('DOMContentLoaded', initProducts);
 
-function showSavedRecipes() {
-  const container = document.querySelector('.container');
-  let savedSection = document.getElementById('savedRecipesSection');
-
-  const recipes = BrewStorage.duLieu.congThuc;
-
-  if (recipes.length === 0) {
-    if (savedSection) savedSection.remove();
-    return;
-  }
-
-  if (!savedSection) {
-    savedSection = document.createElement('div');
-    savedSection.id = 'savedRecipesSection';
-    savedSection.className = 'saved-recipes-section container';
-    container.parentNode.insertBefore(savedSection, container.nextSibling);
-  }
-
-  let html = '<h2 class="saved-recipes-title">🍵 Công Thức Của Tôi</h2><div class="saved-recipes-grid">';
-
-  recipes.forEach(recipe => {
-    html += `
-      <div class="saved-recipe-card">
-        <div class="recipe-card-header">
-          <div class="recipe-card-name">${recipe.name}</div>
-          <button class="recipe-card-delete" onclick="deleteRecipe(${recipe.id})">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <div class="recipe-card-details">
-          <div class="recipe-card-details-item"><strong>${recipe.productName}</strong></div>
-          ${Object.entries(recipe.options).map(([key, val]) => `
-            <div class="recipe-card-details-item">${key}: <strong>${val}</strong></div>
-          `).join('')}
-          ${recipe.toppings.map(topping => `
-            <div class="recipe-card-details-item">+ ${topping}</div>
-          `).join('')}
-        </div>
-        <div class="recipe-card-footer">
-          <button class="recipe-quick-buy" onclick="quickBuyRecipe(${recipe.id})">
-            <i class="fa-solid fa-bag-shopping"></i> Mua Ngay
-          </button>
-        </div>
-      </div>
-    `;
-  });
-
-  html += '</div>';
-  savedSection.innerHTML = html;
-}
-
-function deleteRecipe(id) {
-  if (!confirm('Xóa công thức này?')) return;
-  const recipes = BrewStorage.duLieu.congThuc;
-  const filtered = recipes.filter(r => r.id !== id);
-  BrewStorage.duLieu.congThuc = filtered;
-  BrewStorage.luu();
-  showSavedRecipes();
-}
-
-function quickBuyRecipe(id) {
-  const recipes = BrewStorage.duLieu.congThuc;
-  const recipe = recipes.find(r => r.id === id);
-  if (!recipe) return;
-
-  const cartItem = {
-    id: Date.now(),
-    productId: recipe.productId,
-    productName: recipe.productName,
-    productImage: recipe.productImage,
-    productPrice: recipe.price,
-    quantity: 1,
-    options: recipe.options,
-    toppings: recipe.toppings,
-    totalPrice: recipe.price,
-    addedAt: new Date().toISOString()
-  };
-
-  addToCart(cartItem);
-
-  const btn = event.target.closest('.recipe-quick-buy');
-  btn.textContent = '✓ Đã thêm vào giỏ';
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Mua Ngay';
-  }, 1500);
-}
 
 function setupCardLikeButtons() {
   document.querySelectorAll('.btn-like-card').forEach(btn => {
@@ -394,7 +308,6 @@ function setupCustomizeModal(products) {
       saveRecipeToStorage(product, name);
       saveModal.classList.remove('active');
       alert('✓ Recipe đã lưu!');
-      showSavedRecipes();
     };
 
     cancelBtn.onclick = closeBtn.onclick = () => {

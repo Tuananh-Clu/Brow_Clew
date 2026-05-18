@@ -163,7 +163,7 @@ const logout = () => {
 const getUserFromLocalStorage = () => {
   const raw = localStorage.getItem("user");
   return raw ? JSON.parse(raw) : null;
-};// Sync Firebase auth state with localStorage
+};
 onAuthStateChanged(auth, async (firebaseUser) => {
   const storedUser = getUserFromLocalStorage();
   if (!firebaseUser && !storedUser) return;

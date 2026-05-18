@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   MemberUI.mountSidebar("dashboard");
+
+  let user = null;
+  try {
+    const userRaw = localStorage.getItem("user");
+    user = userRaw ? JSON.parse(userRaw) : null;
+  } catch (e) {
+  }
+
   var stats = BrewStorage.thongKe();
-  var user = stats.user;
   var vip = stats.vip;
 
   var greeting = document.getElementById("dashGreeting");
@@ -41,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fav.textContent = stats.favorite;
   fav.style.fontSize = stats.favorite.length > 18 ? "18px" : "24px";
 
-  MemberUI.setAvatar(document.getElementById("dashAvatar"), user);
+  MemberUI.setAvatar(document.getElementById("userAvatar"), user);
 
   if (tbody) tbody.innerHTML = MemberUI.orderTableRows(stats.orders.slice(0, 5));
 });
