@@ -75,3 +75,15 @@ export async function fetchReviews() {
     return fetch('data/reviews.json').then(r => r.json());
   }
 }
+
+export async function updateProductsDetail(data) {
+  await setDoc(doc(db, "shop", "ProductsDetail"), { data });
+}
+
+export async function updateHeroProducts(data) {
+  await setDoc(doc(db, "shop", "ProductForHeroSection"), { data });
+}
+
+export async function updateOrders(data) {
+  await setDoc(doc(db, "shop", "orders"), { data });
+}

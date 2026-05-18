@@ -1,0 +1,898 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso Đậm Đà",
+    "subtitle": "Cà Phê Nguyên Chất Thuần Khiết",
+    "category": "Coffee",
+    "price": 45000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d1a00",
+      "secondary": "#f5e6d3",
+      "background": "#1a0d00"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Espresso nguyên chất đậm đà, chiết xuất từ hạt arabica rang mộc, hậu vị dài và thơm.",
+    "ingredients": [
+      {
+        "name": "Arabica Bean",
+        "detail": "Hạt arabica rang mộc tạo vị đậm đà."
+      },
+      {
+        "name": "Hot Water",
+        "detail": "Nước nóng chiết xuất tinh chất cà phê."
+      },
+      {
+        "name": "Cream Foam",
+        "detail": "Lớp crema vàng óng trên bề mặt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Caffeine",
+        "value": "High"
+      },
+      {
+        "title": "Origin",
+        "value": "Arabica"
+      },
+      {
+        "title": "Brew",
+        "value": "Espresso"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Americano Sảng Khoái",
+    "subtitle": "Espresso Pha Loãng Thanh Thoát",
+    "category": "Coffee",
+    "price": 49000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2500",
+      "secondary": "#fde8cc",
+      "background": "#1f0e00"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Americano pha loãng với nước nóng, vị đắng nhẹ thanh thoát, thích hợp uống cả ngày.",
+    "ingredients": [
+      {
+        "name": "Double Espresso",
+        "detail": "Hai shot espresso đậm đà làm nền."
+      },
+      {
+        "name": "Hot Water",
+        "detail": "Nước nóng pha loãng vị đắng nhẹ."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên làm mát sảng khoái."
+      }
+    ],
+    "features": [
+      {
+        "title": "Low Cal",
+        "value": "5 kcal"
+      },
+      {
+        "title": "Caffeine",
+        "value": "Medium"
+      },
+      {
+        "title": "Size",
+        "value": "350ml"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino Mịn Màng",
+    "subtitle": "Espresso Và Foam Sữa Cổ Điển",
+    "category": "Coffee",
+    "price": 59000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#7b4a2d",
+      "secondary": "#f9e0c8",
+      "background": "#2a1508"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Cappuccino cổ điển với lớp foam sữa mịn, vị espresso đậm hòa quyện béo nhẹ.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Shot espresso đậm làm nền vững chắc."
+      },
+      {
+        "name": "Steamed Milk",
+        "detail": "Sữa hấp tạo độ béo nhẹ dịu."
+      },
+      {
+        "name": "Milk Foam",
+        "detail": "Foam mịn tạo lớp bông bềnh hấp dẫn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Foam",
+        "value": "Silky"
+      },
+      {
+        "title": "Ratio",
+        "value": "1:1:1"
+      },
+      {
+        "title": "Classic",
+        "value": "Italy"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Latte Caramel",
+    "subtitle": "Sữa Và Sốt Caramel Thủ Công",
+    "category": "Coffee",
+    "price": 65000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Latte caramel ngọt sâu với sốt caramel thủ công và sữa tươi béo mịn.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Nền cà phê đậm đà cân bằng vị ngọt."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi béo mịn hòa quyện cùng espresso."
+      },
+      {
+        "name": "Caramel Sauce",
+        "detail": "Sốt caramel nấu thủ công tạo độ ngọt sâu."
+      }
+    ],
+    "features": [
+      {
+        "title": "Caramel",
+        "value": "Handmade"
+      },
+      {
+        "title": "Sweetness",
+        "value": "Medium"
+      },
+      {
+        "title": "Milk",
+        "value": "Fresh"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Flat White Thuần Khiết",
+    "subtitle": "Cà Phê Đậm Ít Sữa Kiểu Úc",
+    "category": "Coffee",
+    "price": 62000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5c3317",
+      "secondary": "#eddcc8",
+      "background": "#1c0e05"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Flat white đậm espresso, ít sữa hơn latte, dành cho người thích vị cà phê mạnh.",
+    "ingredients": [
+      {
+        "name": "Double Espresso",
+        "detail": "Hai shot cho vị cà phê mạnh hơn."
+      },
+      {
+        "name": "Micro Foam Milk",
+        "detail": "Sữa foam siêu mịn đặc trưng kiểu Úc."
+      },
+      {
+        "name": "Arabica Blend",
+        "detail": "Blend arabica chọn lọc tạo hậu vị ngọt."
+      }
+    ],
+    "features": [
+      {
+        "title": "Origin",
+        "value": "Australia"
+      },
+      {
+        "title": "Ratio",
+        "value": "1:2"
+      },
+      {
+        "title": "Strong",
+        "value": "Bold"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cold Brew Ủ Lạnh",
+    "subtitle": "Cà Phê Ngâm Lạnh 16 Giờ",
+    "category": "Coffee",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d4a6e",
+      "secondary": "#c8ddf5",
+      "background": "#0a1520"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Cold brew ủ lạnh 16 giờ, vị ngọt tự nhiên, ít axit, thơm mượt và cực kỳ sảng khoái.",
+    "ingredients": [
+      {
+        "name": "Coarse Ground Coffee",
+        "detail": "Cà phê xay thô ngâm lạnh 16 giờ."
+      },
+      {
+        "name": "Filtered Water",
+        "detail": "Nước lọc sạch chiết xuất chậm từng giọt."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên giữ lạnh và độ tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Brew Time",
+        "value": "16 giờ"
+      },
+      {
+        "title": "Low Acid",
+        "value": "67%"
+      },
+      {
+        "title": "Caffeine",
+        "value": "2x"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Macchiato Nghệ Thuật",
+    "subtitle": "Espresso Và Foam Sữa Bồng Bềnh",
+    "category": "Coffee",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e85d04",
+      "secondary": "#fff4ec",
+      "background": "#1b0e00"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Macchiato với lớp bọt sữa mềm mịn bồng bềnh, espresso đậm hòa quyện hoàn hảo.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Shot espresso đậm đà làm điểm nhấn."
+      },
+      {
+        "name": "Milk Foam",
+        "detail": "Foam sữa mềm mịn đặt lên trên."
+      },
+      {
+        "name": "Arabica Specialty",
+        "detail": "Hạt arabica đặc sản rang thủ công."
+      }
+    ],
+    "features": [
+      {
+        "title": "Art",
+        "value": "Latte Art"
+      },
+      {
+        "title": "Foam",
+        "value": "Velvety"
+      },
+      {
+        "title": "Specialty",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mocha Cacao Nguyên Bản",
+    "subtitle": "Cà Phê Và Cacao Nam Mỹ",
+    "category": "Coffee",
+    "price": 68000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2040",
+      "secondary": "#e8c8e0",
+      "background": "#180a14"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Mocha kết hợp espresso và cacao Nam Mỹ nguyên bản, phủ kem tươi mịn màng.",
+    "ingredients": [
+      {
+        "name": "Espresso",
+        "detail": "Cà phê đậm làm nền cho mocha."
+      },
+      {
+        "name": "Dark Cacao",
+        "detail": "Cacao Nam Mỹ 70% nguyên chất."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Kem tươi phủ lên mềm mịn hấp dẫn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Cacao",
+        "value": "70%"
+      },
+      {
+        "title": "Origin",
+        "value": "S. America"
+      },
+      {
+        "title": "Rich",
+        "value": "Premium"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Blueberry Dream",
+    "subtitle": "Việt Quất Béo Mịn Thơm Ngát",
+    "category": "Milkshake",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6f3fa5",
+      "secondary": "#d8c4ff",
+      "background": "#140b1f"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Milkshake việt quất béo mịn kết hợp cùng syrup blueberry đậm vị và whipped cream.",
+    "ingredients": [
+      {
+        "name": "Blueberry",
+        "detail": "Việt quất tươi tạo vị chua ngọt tự nhiên."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Kem sữa giúp texture mềm và mịn hơn."
+      },
+      {
+        "name": "Blueberry Syrup",
+        "detail": "Tăng hương thơm và màu tím đặc trưng."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Xay lạnh giữ độ tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fresh Berry",
+        "value": "100%"
+      },
+      {
+        "title": "Creamy",
+        "value": "Ultra"
+      },
+      {
+        "title": "Cold Blend",
+        "value": "12 phút"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Strawberry Heaven",
+    "subtitle": "Dâu Tây Ngọt Dịu Tự Nhiên",
+    "category": "Milkshake",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#ff4f7a",
+      "secondary": "#ffd4de",
+      "background": "#1a0d12"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake dâu tây mềm mịn cùng lớp syrup xoáy ngọt nhẹ và topping dâu tươi.",
+    "ingredients": [
+      {
+        "name": "Fresh Strawberry",
+        "detail": "Dâu tươi tạo vị ngọt thanh tự nhiên."
+      },
+      {
+        "name": "Milk Cream",
+        "detail": "Mang lại độ béo nhẹ cân bằng vị trái cây."
+      },
+      {
+        "name": "Strawberry Syrup",
+        "detail": "Tạo lớp swirl đỏ nổi bật."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Lớp kem phía trên mềm và mịn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sweet Taste",
+        "value": "Premium"
+      },
+      {
+        "title": "Fresh Fruit",
+        "value": "Daily"
+      },
+      {
+        "title": "Smooth",
+        "value": "100%"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Chocolate Storm",
+    "subtitle": "Cacao Đậm Vị 85%",
+    "category": "Milkshake",
+    "price": 82000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6a3d2b",
+      "secondary": "#e2c2b0",
+      "background": "#140d0a"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Chocolate shake đậm vị cacao 85% cùng whipped cream và chocolate chips giòn.",
+    "ingredients": [
+      {
+        "name": "Dark Chocolate",
+        "detail": "Chocolate đen 85% tạo vị cacao đậm."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Giúp thức uống mềm và béo hơn."
+      },
+      {
+        "name": "Chocolate Chips",
+        "detail": "Tăng độ giòn nhẹ khi uống."
+      },
+      {
+        "name": "Milk",
+        "detail": "Cân bằng vị chocolate."
+      }
+    ],
+    "features": [
+      {
+        "title": "Dark Cocoa",
+        "value": "85%"
+      },
+      {
+        "title": "Extra Cream",
+        "value": "Smooth"
+      },
+      {
+        "title": "Choco",
+        "value": "Premium"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Vanilla Cloud",
+    "subtitle": "Vanilla Bean Nhẹ Nhàng Thanh Khiết",
+    "category": "Milkshake",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d6b98d",
+      "secondary": "#fff2df",
+      "background": "#19140d"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Vanilla milkshake mềm mịn với vanilla bean nguyên chất và lớp kem béo.",
+    "ingredients": [
+      {
+        "name": "Vanilla Bean",
+        "detail": "Vanilla tự nhiên tạo mùi thơm nhẹ."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Mang lại độ béo dịu."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Lớp kem mềm phía trên."
+      },
+      {
+        "name": "Ice Cream",
+        "detail": "Tăng độ sánh và mịn."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vanilla",
+        "value": "Natural"
+      },
+      {
+        "title": "Smooth",
+        "value": "Creamy"
+      },
+      {
+        "title": "Premium",
+        "value": "Blend"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Caramel Shake Đặc",
+    "subtitle": "Caramel Thủ Công Béo Ngậy",
+    "category": "Milkshake",
+    "price": 78000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Caramel milkshake đậm đà với sốt caramel nấu thủ công, béo ngậy và thơm.",
+    "ingredients": [
+      {
+        "name": "Caramel Sauce",
+        "detail": "Caramel nấu thủ công từ đường mía."
+      },
+      {
+        "name": "Fresh Cream",
+        "detail": "Kem béo tạo độ sánh mượt."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi cân bằng vị ngọt."
+      },
+      {
+        "name": "Vanilla Extract",
+        "detail": "Vani tăng hương thơm."
+      }
+    ],
+    "features": [
+      {
+        "title": "Handmade",
+        "value": "Caramel"
+      },
+      {
+        "title": "Rich",
+        "value": "Creamy"
+      },
+      {
+        "title": "Sweet",
+        "value": "Deep"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Oreo Crush",
+    "subtitle": "Oreo Nghiền Vụn Kem Sữa",
+    "category": "Milkshake",
+    "price": 80000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d2d2d",
+      "secondary": "#e8e8e8",
+      "background": "#111111"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake Oreo nghiền vụn trộn đều với kem sữa, phủ whipped cream và Oreo nguyên.",
+    "ingredients": [
+      {
+        "name": "Oreo Cookies",
+        "detail": "Bánh Oreo nghiền tạo vị béo giòn."
+      },
+      {
+        "name": "Vanilla Ice Cream",
+        "detail": "Kem sữa vanilla trộn đều."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi giúp shake sánh mịn."
+      },
+      {
+        "name": "Whipped Cream",
+        "detail": "Kem tươi phủ trên cùng."
+      }
+    ],
+    "features": [
+      {
+        "title": "Oreo",
+        "value": "Original"
+      },
+      {
+        "title": "Cookie",
+        "value": "Crushed"
+      },
+      {
+        "title": "Creamy",
+        "value": "Ultra"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Taro Milk Shake",
+    "subtitle": "Khoai Môn Tím Đặc Trưng",
+    "category": "Milkshake",
+    "price": 76000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#9b59b6",
+      "secondary": "#e8d5f5",
+      "background": "#1a0d24"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Milkshake khoai môn tím đặc trưng, vị ngọt bùi và màu tím hấp dẫn.",
+    "ingredients": [
+      {
+        "name": "Taro Root",
+        "detail": "Khoai môn tím tươi xay nhuyễn."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi tạo độ mịn creamy."
+      },
+      {
+        "name": "Taro Powder",
+        "detail": "Bột khoai môn tăng màu và hương."
+      },
+      {
+        "name": "Coconut Milk",
+        "detail": "Nước cốt dừa thêm vị béo thơm."
+      }
+    ],
+    "features": [
+      {
+        "title": "Taro",
+        "value": "Fresh"
+      },
+      {
+        "title": "Purple",
+        "value": "Natural"
+      },
+      {
+        "title": "Creamy",
+        "value": "Rich"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Banana Foster Shake",
+    "subtitle": "Chuối Chín Vàng Kem Vanilla",
+    "category": "Milkshake",
+    "price": 70000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f5c518",
+      "secondary": "#fffde0",
+      "background": "#1a1600"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake chuối chín ngọt tự nhiên kết hợp kem vanilla và caramel nhẹ.",
+    "ingredients": [
+      {
+        "name": "Ripe Banana",
+        "detail": "Chuối chín vàng ngọt tự nhiên."
+      },
+      {
+        "name": "Vanilla Ice Cream",
+        "detail": "Kem vanilla tăng độ béo ngậy."
+      },
+      {
+        "name": "Caramel",
+        "detail": "Caramel nhẹ tạo hậu vị thơm."
+      },
+      {
+        "name": "Milk",
+        "detail": "Sữa tươi giúp shake sánh đều."
+      }
+    ],
+    "features": [
+      {
+        "title": "Banana",
+        "value": "Ripe"
+      },
+      {
+        "title": "Natural",
+        "value": "Sweet"
+      },
+      {
+        "title": "Foster",
+        "value": "Classic"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Matcha Latte Chuẩn Nhật",
+    "subtitle": "Matcha Nhật Thanh Dịu Tinh Tế",
+    "category": "Matcha",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5f8f52",
+      "secondary": "#d9f0d2",
+      "background": "#10170d"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha latte mịn với trà xanh Nhật đậm nhẹ và lớp foam sữa mềm mát.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha nguyên chất tạo vị trà đậm và thơm."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi giúp cân bằng vị chát nhẹ."
+      },
+      {
+        "name": "Cream Foam",
+        "detail": "Foam mềm tăng texture khi uống."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Giữ lạnh lâu và tươi mát."
+      }
+    ],
+    "features": [
+      {
+        "title": "Premium Matcha",
+        "value": "100%"
+      },
+      {
+        "title": "Cream Foam",
+        "value": "Smooth"
+      },
+      {
+        "title": "Imported",
+        "value": "Japan"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Matcha Cold Brew",
+    "subtitle": "Trà Xanh Ủ Lạnh Sảng Khoái",
+    "category": "Matcha",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d6b3a",
+      "secondary": "#c8e8c5",
+      "background": "#0d1a0c"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha pha cold brew lạnh, vị trà xanh đậm đà, thanh mát và tươi sảng khoái.",
+    "ingredients": [
+      {
+        "name": "Matcha Powder",
+        "detail": "Matcha xay mịn ngâm lạnh qua đêm."
+      },
+      {
+        "name": "Cold Water",
+        "detail": "Nước lạnh chiết xuất vị trà nhẹ nhàng."
+      },
+      {
+        "name": "Ice Cubes",
+        "detail": "Đá viên giữ độ mát lâu."
+      }
+    ],
+    "features": [
+      {
+        "title": "Cold Brew",
+        "value": "12 giờ"
+      },
+      {
+        "title": "Low Sugar",
+        "value": "Natural"
+      },
+      {
+        "title": "Fresh",
+        "value": "Daily"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Matcha Espresso Fusion",
+    "subtitle": "Matcha Và Espresso Kết Đôi",
+    "category": "Matcha",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4d7a3a",
+      "secondary": "#d5eecf",
+      "background": "#121a0f"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Kết hợp độc đáo matcha Nhật và espresso, hai vị đắng bổ sung cho nhau tuyệt vời.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha Uji nguyên chất vị đậm."
+      },
+      {
+        "name": "Espresso Shot",
+        "detail": "Shot espresso tạo lớp crema."
+      },
+      {
+        "name": "Fresh Milk",
+        "detail": "Sữa tươi cân bằng hai vị đắng."
+      }
+    ],
+    "features": [
+      {
+        "title": "Fusion",
+        "value": "Unique"
+      },
+      {
+        "title": "Double",
+        "value": "Bitter"
+      },
+      {
+        "title": "Energy",
+        "value": "2x"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Matcha Coconut Cream",
+    "subtitle": "Matcha Và Nước Cốt Dừa Nhiệt Đới",
+    "category": "Matcha",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a7c40",
+      "secondary": "#d0eecc",
+      "background": "#0f1a0d"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha kết hợp nước cốt dừa thơm béo, vị nhiệt đới lạ miệng và cực kỳ mát lạnh.",
+    "ingredients": [
+      {
+        "name": "Japanese Matcha",
+        "detail": "Matcha nguyên chất thơm vị trà."
+      },
+      {
+        "name": "Coconut Milk",
+        "detail": "Nước cốt dừa béo thơm nhiệt đới."
+      },
+      {
+        "name": "Ice Blend",
+        "detail": "Đá xay mịn tạo độ mát lạnh."
+      }
+    ],
+    "features": [
+      {
+        "title": "Tropical",
+        "value": "Coconut"
+      },
+      {
+        "title": "Matcha",
+        "value": "Premium"
+      },
+      {
+        "title": "Fresh",
+        "value": "Blend"
+      }
+    ]
+  }
+]

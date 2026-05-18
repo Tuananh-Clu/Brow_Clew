@@ -34,10 +34,10 @@ var BrewStorage = (function () {
     } catch (e) {
     }
 
-    var cart = localStorage.getItem(STORAGE_KEYS.cart);
+    var cart = localStorage.getItem("boldbrew_cart");
     if (cart) duLieu.gioHang = JSON.parse(cart);
 
-    var orders = localStorage.getItem(STORAGE_KEYS.orders);
+    var orders = localStorage.getItem("boldbrew_orders");
     if (orders) duLieu.donHang = JSON.parse(orders);
   }
 

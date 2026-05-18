@@ -1,0 +1,2759 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso Đậm Đà",
+    "category": "Coffee",
+    "price": 45000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d1a00",
+      "secondary": "#f5e6d3",
+      "background": "#1a0d00"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Espresso nguyên chất đậm đà, chiết xuất từ hạt arabica rang mộc, hậu vị dài và thơm.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy"
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      },
+      {
+        "id": "hanh_nhan",
+        "name": "Hạnh Nhân Sấy",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Americano Sảng Khoái",
+    "category": "Coffee",
+    "price": 49000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2500",
+      "secondary": "#fde8cc",
+      "background": "#1f0e00"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Americano pha loãng với nước nóng, vị đắng nhẹ thanh thoát, thích hợp uống cả ngày.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "kem_tuoi",
+        "name": "Kem Tươi",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino Mịn Màng",
+    "category": "Coffee",
+    "price": 59000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#7b4a2d",
+      "secondary": "#f9e0c8",
+      "background": "#2a1508"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Cappuccino cổ điển với lớp foam sữa mịn, vị espresso đậm hòa quyện béo nhẹ.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy"
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      },
+      {
+        "id": "bot_ca_cao",
+        "name": "Bột Cacao",
+        "price": 8000
+      },
+      {
+        "id": "xo_dua",
+        "name": "Xơ Dừa",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Latte Caramel",
+    "category": "Coffee",
+    "price": 65000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Latte caramel ngọt sâu với sốt caramel thủ công và sữa tươi béo mịn.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "sot_caramel",
+        "name": "Thêm Sốt Caramel",
+        "price": 8000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Flat White Thuần Khiết",
+    "category": "Coffee",
+    "price": 62000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5c3317",
+      "secondary": "#eddcc8",
+      "background": "#1c0e05"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Flat white đậm espresso, ít sữa hơn latte, dành cho người thích vị cà phê mạnh.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      },
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "hanh_nhan",
+        "name": "Hạnh Nhân Sấy",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Cold Brew Ủ Lạnh",
+    "category": "Coffee",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d4a6e",
+      "secondary": "#c8ddf5",
+      "background": "#0a1520"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Cold brew ủ lạnh 16 giờ, vị ngọt tự nhiên, ít axit, thơm mượt và cực kỳ sảng khoái.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "kem_tuoi",
+        "name": "Kem Tươi",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Macchiato Nghệ Thuật",
+    "category": "Coffee",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e85d04",
+      "secondary": "#fff4ec",
+      "background": "#1b0e00"
+    },
+    "image": "./Picture/fVeOxAAAABklEQVQDAFUIR3Xb9Zk3AAAAAElFTkSuQmCC.png",
+    "description": "Macchiato với lớp bọt sữa mềm mịn bồng bềnh, espresso đậm hòa quyện hoàn hảo.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Không Đá (Nóng)"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Macchiato",
+        "price": 15000
+      },
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "banh_quy",
+        "name": "Bánh Quy Bơ",
+        "price": 20000
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Mocha Cacao Nguyên Bản",
+    "category": "Coffee",
+    "price": 68000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a2040",
+      "secondary": "#e8c8e0",
+      "background": "#180a14"
+    },
+    "image": "./Picture/5cbb5b9aac1299a26f0a95e7a6674cf4-removebg-preview.png",
+    "description": "Mocha kết hợp espresso và cacao Nam Mỹ nguyên bản, phủ kem tươi mịn màng.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "chocolate_chip",
+        "name": "Chocolate Chip",
+        "price": 12000
+      },
+      {
+        "id": "kem_tuoi",
+        "name": "Kem Tươi",
+        "price": 12000
+      },
+      {
+        "id": "bot_ca_cao",
+        "name": "Bột Cacao",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Blueberry Dream",
+    "category": "Milkshake",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6f3fa5",
+      "secondary": "#d8c4ff",
+      "background": "#140b1f"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Milkshake việt quất béo mịn, syrup blueberry đậm vị và whipped cream.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%",
+            "default": true
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "whipped",
+        "name": "Thêm Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "viet_quat",
+        "name": "Việt Quất Tươi",
+        "price": 20000
+      },
+      {
+        "id": "pudding",
+        "name": "Pudding Trứng",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Strawberry Heaven",
+    "category": "Milkshake",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#ff4f7a",
+      "secondary": "#ffd4de",
+      "background": "#1a0d12"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake dâu tây mềm mịn, syrup xoáy ngọt nhẹ và topping dâu tươi.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Không Đá"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "dau_cat",
+        "name": "Dâu Tây Cắt Lát",
+        "price": 20000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Chocolate Storm",
+    "category": "Milkshake",
+    "price": 82000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6a3d2b",
+      "secondary": "#e2c2b0",
+      "background": "#140d0a"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Chocolate shake đậm vị cacao 85% cùng whipped cream và chocolate chips giòn.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "choco_chip",
+        "name": "Chocolate Chip",
+        "price": 12000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "sot_choco",
+        "name": "Sốt Chocolate",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Vanilla Cloud",
+    "category": "Milkshake",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d6b98d",
+      "secondary": "#fff2df",
+      "background": "#19140d"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Vanilla milkshake mềm mịn với vanilla bean nguyên chất và lớp kem béo.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Không Đá"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "vanilla_cookie",
+        "name": "Bánh Quy Vanilla",
+        "price": 18000
+      },
+      {
+        "id": "ice_cream",
+        "name": "Thêm Kem Viên",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Caramel Shake Đặc",
+    "category": "Milkshake",
+    "price": 78000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#c47b32",
+      "secondary": "#ffe0b3",
+      "background": "#1b120a"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Caramel milkshake đậm đà với sốt caramel nấu thủ công, béo ngậy và thơm.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "sot_caramel",
+        "name": "Thêm Sốt Caramel",
+        "price": 8000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Oreo Crush",
+    "category": "Milkshake",
+    "price": 80000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2d2d2d",
+      "secondary": "#e8e8e8",
+      "background": "#111111"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake Oreo nghiền vụn trộn đều với kem sữa, đỉnh phủ whipped cream và Oreo nguyên.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "oreo",
+        "name": "Oreo Thêm",
+        "price": 15000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "choco_chip",
+        "name": "Chocolate Chip",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Taro Milk Shake",
+    "category": "Milkshake",
+    "price": 76000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#9b59b6",
+      "secondary": "#e8d5f5",
+      "background": "#1a0d24"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Milkshake khoai môn tím đặc trưng, vị ngọt bùi và màu tím hấp dẫn.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Không Đá"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "pudding",
+        "name": "Pudding Taro",
+        "price": 15000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Banana Foster Shake",
+    "category": "Milkshake",
+    "price": 70000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f5c518",
+      "secondary": "#fffde0",
+      "background": "#1a1600"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Milkshake chuối chín ngọt tự nhiên kết hợp kem vanilla và caramel nhẹ.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Không Đá"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "ice_cream",
+        "name": "Kem Viên Vanilla",
+        "price": 15000
+      },
+      {
+        "id": "sot_caramel",
+        "name": "Sốt Caramel",
+        "price": 8000
+      },
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Matcha Latte Chuẩn Nhật",
+    "category": "Matcha",
+    "price": 69000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5f8f52",
+      "secondary": "#d9f0d2",
+      "background": "#10170d"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha latte mịn với trà xanh Nhật đậm nhẹ và lớp foam sữa mềm mát.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Matcha Cold Brew",
+    "category": "Matcha",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#3d6b3a",
+      "secondary": "#c8e8c5",
+      "background": "#0d1a0c"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha pha cold brew lạnh, vị trà xanh đậm đà, thanh mát và tươi sảng khoái.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Trắng",
+        "price": 10000
+      },
+      {
+        "id": "kem_tuoi",
+        "name": "Kem Tươi",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Matcha Espresso Fusion",
+    "category": "Matcha",
+    "price": 79000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4d7a3a",
+      "secondary": "#d5eecf",
+      "background": "#121a0f"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Kết hợp độc đáo matcha Nhật và espresso, hai vị đắng bổ sung cho nhau tuyệt vời.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      },
+      {
+        "id": "thach_cf",
+        "name": "Thạch Cà Phê",
+        "price": 10000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Matcha Coconut Cream",
+    "category": "Matcha",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a7c40",
+      "secondary": "#d0eecc",
+      "background": "#0f1a0d"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha kết hợp nước cốt dừa thơm béo, vị nhiệt đới lạ miệng và cực kỳ mát lạnh.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "xo_dua",
+        "name": "Xơ Dừa Nướng",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Trắng",
+        "price": 10000
+      },
+      {
+        "id": "kem_tuoi",
+        "name": "Kem Tươi",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Matcha Berry Swirl",
+    "category": "Matcha",
+    "price": 78000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5a7a3a",
+      "secondary": "#d8f0c8",
+      "background": "#111a0e"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha xoáy cùng dâu tây tươi, ombre xanh-đỏ đẹp mắt, vị chua ngọt hài hòa.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "dau_cat",
+        "name": "Dâu Tây Cắt Lát",
+        "price": 20000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      },
+      {
+        "id": "kem_cheese",
+        "name": "Kem Cheese",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Matcha Honey Oat",
+    "category": "Matcha",
+    "price": 71000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#6b8f4a",
+      "secondary": "#e0f0d0",
+      "background": "#141c10"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha với mật ong nguyên chất và sữa yến mạch, lành mạnh và thơm ngon.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nóng"
+          },
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "yen_mach",
+        "name": "Yến Mạch Rang",
+        "price": 10000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      },
+      {
+        "id": "mat_ong",
+        "name": "Thêm Mật Ong",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Matcha Foam Cheese",
+    "category": "Matcha",
+    "price": 74000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#507840",
+      "secondary": "#d5eccb",
+      "background": "#10180d"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha đá lạnh phủ lớp foam muối cheese béo ngậy, hot trend của mùa hè.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "kem_muoi",
+        "name": "Foam Muối Cheese",
+        "price": 18000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Đen",
+        "price": 10000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Matcha Đá Xay",
+    "category": "Matcha",
+    "price": 76000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4e7c3c",
+      "secondary": "#ccead8",
+      "background": "#0e1a10"
+    },
+    "image": "./Picture/88pqBMAAAABklEQVQDAB4iybGbMzZRAAAAAElFTkSuQmCC.png",
+    "description": "Matcha đá xay mịn như slush, mát lạnh sảng khoái, phủ whipped cream và matcha powder.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Dạng Đá",
+        "choices": [
+          {
+            "value": "blend",
+            "label": "Đá Xay",
+            "default": true
+          },
+          {
+            "value": "cube",
+            "label": "Đá Viên"
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "whipped",
+        "name": "Whipped Cream",
+        "price": 10000
+      },
+      {
+        "id": "thach_matcha",
+        "name": "Thạch Matcha",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Trắng",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Mango Sunset",
+    "category": "Smoothie",
+    "price": 65000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#ffb300",
+      "secondary": "#ffe7a8",
+      "background": "#1c1405"
+    },
+    "image": "./Picture/FTa1dAAAABklEQVQDAFb2Bwio1yqHAAAAAElFTkSuQmCC.png",
+    "description": "Smoothie xoài chín nhiệt đới ngọt đậm, đá xay mịn mát và vitamin C cao.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "xoai_cat",
+        "name": "Xoài Hạt Lựu",
+        "price": 15000
+      },
+      {
+        "id": "yogurt",
+        "name": "Yogurt Thêm",
+        "price": 15000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Avocado Creamy",
+    "category": "Smoothie",
+    "price": 72000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#4a7c40",
+      "secondary": "#d0eecc",
+      "background": "#0f1a0d"
+    },
+    "image": "./Picture/FTa1dAAAABklEQVQDAFb2Bwio1yqHAAAAAElFTkSuQmCC.png",
+    "description": "Bơ chín béo mịn xay nhuyễn với sữa đặc, thơm ngậy và bổ dưỡng.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "sua_dac",
+        "name": "Thêm Sữa Đặc",
+        "price": 8000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      },
+      {
+        "id": "hat_bo",
+        "name": "Hạt Bơ",
+        "price": 12000
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Mixed Berry Blast",
+    "category": "Smoothie",
+    "price": 68000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#8b3a8b",
+      "secondary": "#f0d0f0",
+      "background": "#180b18"
+    },
+    "image": "./Picture/xQH39wAAAAGSURBVAMADL46GAWxQeMAAAAASUVORK5CYII.png",
+    "description": "Hỗn hợp 4 loại berry tươi: dâu, việt quất, mâm xôi và cherry tím đậm vị.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "berry_mix",
+        "name": "Topping Berry Mix",
+        "price": 22000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      },
+      {
+        "id": "yogurt",
+        "name": "Yogurt Thêm",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Peach Paradise",
+    "category": "Smoothie",
+    "price": 62000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f0884a",
+      "secondary": "#fde8d0",
+      "background": "#1c0e05"
+    },
+    "image": "./Picture/FTa1dAAAABklEQVQDAFb2Bwio1yqHAAAAAElFTkSuQmCC.png",
+    "description": "Đào chín mọng xay mịn với yogurt và mật ong, thanh ngọt và tươi mát.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "dao_cat",
+        "name": "Đào Tươi Cắt",
+        "price": 15000
+      },
+      {
+        "id": "mat_ong",
+        "name": "Mật Ong Thêm",
+        "price": 8000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Watermelon Chill",
+    "category": "Smoothie",
+    "price": 58000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e84040",
+      "secondary": "#ffd0d0",
+      "background": "#1c0808"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Dưa hấu đỏ tươi xay lạnh, ngọt mát tự nhiên không cần thêm đường.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      },
+      {
+        "id": "lime",
+        "name": "Chanh Thái",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Pineapple Zing",
+    "category": "Smoothie",
+    "price": 60000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4a017",
+      "secondary": "#fdf0c0",
+      "background": "#1a1500"
+    },
+    "image": "./Picture/FTa1dAAAABklEQVQDAFb2Bwio1yqHAAAAAElFTkSuQmCC.png",
+    "description": "Dứa vàng nhiệt đới chua ngọt xay nhuyễn với gừng nhẹ, tươi mát và bổ dưỡng.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "gung",
+        "name": "Gừng Tươi",
+        "price": 5000
+      },
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Dragon Fruit Glow",
+    "category": "Smoothie",
+    "price": 75000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e8407a",
+      "secondary": "#ffd0e8",
+      "background": "#1c0812"
+    },
+    "image": "./Picture/2AAAABklEQVQDAIVs0Xjr1RJzAAAAAElFTkSuQmCC.png",
+    "description": "Thanh long đỏ rực xay mịn, màu sắc bắt mắt, vị nhẹ thanh và đầy chất xơ.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "thanh_long",
+        "name": "Thanh Long Hạt Lựu",
+        "price": 18000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      },
+      {
+        "id": "yogurt",
+        "name": "Yogurt Thêm",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Passion Fruit Bliss",
+    "category": "Smoothie",
+    "price": 67000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4820a",
+      "secondary": "#fde8b0",
+      "background": "#1a1000"
+    },
+    "image": "./Picture/FTa1dAAAABklEQVQDAFb2Bwio1yqHAAAAAElFTkSuQmCC.png",
+    "description": "Chanh dây vàng thơm chua ngọt, hương nhiệt đới đặc trưng, sảng khoái và quyến rũ.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "Ít Đá"
+          },
+          {
+            "value": "100",
+            "label": "Nhiều Đá",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "ruot_chanh_day",
+        "name": "Ruột Chanh Dây",
+        "price": 12000
+      },
+      {
+        "id": "chia",
+        "name": "Hạt Chia",
+        "price": 10000
+      },
+      {
+        "id": "mat_ong",
+        "name": "Mật Ong",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Mint Freeze",
+    "category": "Ice Drink",
+    "price": 55000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#41c7a5",
+      "secondary": "#c8fff1",
+      "background": "#091512"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Bạc hà mát lạnh với nước có gas, hương thơm fresh và hậu vị thanh mát.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà Tươi",
+        "price": 8000
+      },
+      {
+        "id": "lime",
+        "name": "Chanh Thái",
+        "price": 8000
+      },
+      {
+        "id": "muoi_bien",
+        "name": "Muối Biển",
+        "price": 5000
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Lemon Soda Tươi",
+    "category": "Ice Drink",
+    "price": 48000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#d4c010",
+      "secondary": "#fdfac0",
+      "background": "#191700"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Soda chanh vàng chua thanh, sủi bọt tươi, giải khát hoàn hảo ngày nắng.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "lime",
+        "name": "Thêm Chanh",
+        "price": 5000
+      },
+      {
+        "id": "muoi",
+        "name": "Muối Chanh",
+        "price": 5000
+      },
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Coconut Water Cooler",
+    "category": "Ice Drink",
+    "price": 52000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#5aaa70",
+      "secondary": "#ccf0d8",
+      "background": "#0d1a10"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Nước dừa tươi nguyên chất lạnh, ngọt thanh tự nhiên và bổ điện giải.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "Nguyên Bản",
+            "default": true
+          },
+          {
+            "value": "30",
+            "label": "Thêm Nhẹ"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "xo_dua",
+        "name": "Cơm Dừa Non",
+        "price": 12000
+      },
+      {
+        "id": "thach_dua",
+        "name": "Thạch Dừa",
+        "price": 10000
+      },
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Lychee Soda Hồng",
+    "category": "Ice Drink",
+    "price": 52000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e87090",
+      "secondary": "#ffd8e5",
+      "background": "#1a0c12"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Soda vải thiều hồng nhạt, thơm ngọt đặc trưng, sủi bọt và sảng khoái.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "vai_tuoi",
+        "name": "Vải Tươi",
+        "price": 15000
+      },
+      {
+        "id": "thach",
+        "name": "Thạch Trái Cây",
+        "price": 10000
+      },
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Soda Cam Tươi",
+    "category": "Ice Drink",
+    "price": 50000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f07020",
+      "secondary": "#fde8c8",
+      "background": "#1c0e00"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Cam tươi vắt pha soda, chua ngọt tự nhiên, vitamin C cao và cực kỳ tươi mát.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "cam_thai",
+        "name": "Cam Thái Thêm",
+        "price": 10000
+      },
+      {
+        "id": "muoi",
+        "name": "Muối Chanh",
+        "price": 5000
+      },
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà",
+        "price": 8000
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Trà Đào Cam Sả",
+    "category": "Ice Drink",
+    "price": 55000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#f09050",
+      "secondary": "#fde8d0",
+      "background": "#1c1005"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Trà đào thơm ngọt pha sả tươi và cam thái, vị nhiều lớp hấp dẫn và mát lạnh.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "dao_tuoi",
+        "name": "Đào Tươi Cắt",
+        "price": 15000
+      },
+      {
+        "id": "thach",
+        "name": "Thạch Trái Cây",
+        "price": 10000
+      },
+      {
+        "id": "tran_chau",
+        "name": "Trân Châu Trắng",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Trà Vải Dâu Tây",
+    "category": "Ice Drink",
+    "price": 57000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#e05070",
+      "secondary": "#ffd0e0",
+      "background": "#1a080f"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Trà vải thiều ngọt thơm pha dâu tây tươi, màu hồng đẹp mắt và vị chua ngọt dễ chịu.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "30",
+            "label": "30%"
+          },
+          {
+            "value": "50",
+            "label": "50%",
+            "default": true
+          },
+          {
+            "value": "100",
+            "label": "100%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "dau_cat",
+        "name": "Dâu Tây Tươi",
+        "price": 20000
+      },
+      {
+        "id": "vai_tuoi",
+        "name": "Vải Thiều Tươi",
+        "price": 15000
+      },
+      {
+        "id": "thach",
+        "name": "Thạch Trái Cây",
+        "price": 10000
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Blue Lagoon Soda",
+    "category": "Ice Drink",
+    "price": 60000,
+    "currency": "VND",
+    "theme": {
+      "primary": "#2080d0",
+      "secondary": "#c0e8ff",
+      "background": "#051520"
+    },
+    "image": "./Picture/PCpvZAAAAAZJREFUAwBkHOmsR8b2SAAAAABJRU5ErkJggg.png",
+    "description": "Soda xanh lagoon bắt mắt với bạc hà và nước cốt chanh, mát lạnh và cực kỳ ảo diệu.",
+    "options": [
+      {
+        "id": "sugar",
+        "label": "Độ Ngọt (% Đường)",
+        "choices": [
+          {
+            "value": "0",
+            "label": "0%"
+          },
+          {
+            "value": "30",
+            "label": "30%",
+            "default": true
+          },
+          {
+            "value": "50",
+            "label": "50%"
+          }
+        ]
+      },
+      {
+        "id": "ice",
+        "label": "Lượng Đá",
+        "choices": [
+          {
+            "value": "50",
+            "label": "50% Đá"
+          },
+          {
+            "value": "100",
+            "label": "Đá Đầy",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "toppings": [
+      {
+        "id": "mint",
+        "name": "Lá Bạc Hà Tươi",
+        "price": 8000
+      },
+      {
+        "id": "lime",
+        "name": "Thêm Chanh",
+        "price": 5000
+      },
+      {
+        "id": "thach_xanh",
+        "name": "Thạch Xanh",
+        "price": 10000
+      }
+    ]
+  }
+]

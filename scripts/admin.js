@@ -445,11 +445,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  veDanhSachMon();
-
-  
-  CuaHang.taiThucUongTuFirestore().then(function () {
+  window.addEventListener('cuaHangLoaded', function() {
+    veDanhSachMon();
     veDanhSachThucUong();
+    veDoanhThu();
   });
 
  

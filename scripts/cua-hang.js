@@ -1,5 +1,3 @@
-import { fetchHeroProducts } from "./db-service";
-
 var CuaHang = (function () {
   var MAU = "boldbrew_cuaHang";
   var ketNoi = null;
@@ -20,31 +18,40 @@ var CuaHang = (function () {
 
   function luu() {
     localStorage.setItem(MAU, JSON.stringify(duLieu));
-    if (!ketNoi || !goi) return;
-    goi.setDoc(goi.doc(ketNoi, "shop", "cuaHang"), duLieu, { merge: true });
+    import('./db-service.js').then(({ updateProductsDetail, updateHeroProducts, updateOrders }) => {
+      updateProductsDetail(duLieu.danhSachMon);
+      updateHeroProducts(duLieu.danhSachThucUong);
+      updateOrders(duLieu.donHang);
+    }).catch(err => console.error('Error syncing to db:', err));
   }
 
-  function taiTuMayChu() {
-    if (!ketNoi || !goi) return;
-    goi.getDoc(goi.doc(ketNoi, "shop", "cuaHang")).then(function (snap) {
-      if (!snap.exists()) return;
-      var cloud = snap.data();
-      if (cloud.danhSachMon && cloud.danhSachMon.length) duLieu.danhSachMon = cloud.danhSachMon;
-      if (cloud.donHang && cloud.donHang.length) duLieu.donHang = cloud.donHang;
-      localStorage.setItem(MAU, JSON.stringify(duLieu));
-    });
+  async function taiTuMayChu() {
+    try {
+      const { fetchProductsDetail, fetchOrders, fetchHeroProducts } = await import('./db-service.js');
+      const [mon, don, thucUong] = await Promise.all([
+        fetchProductsDetail(),
+        fetchOrders(),
+        fetchHeroProducts()
+      ]);
+      if (mon && mon.length) duLieu.danhSachMon = mon;
+      if (don && don.length) duLieu.donHang = don;
+      if (thucUong && thucUong.length) duLieu.danhSachThucUong = thucUong;
+      
+      luu();
+      
+      // Dispatch an event so admin.js knows data is ready
+      window.dispatchEvent(new Event('cuaHangLoaded'));
+    } catch (e) {
+      console.error("Error loading from db-service:", e);
+    }
   }
 
   function batDauKetNoi() {
-    if (!window.FIREBASE_CONFIG) return;
-    import("https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js").then(function (ungDung) {
-      import("https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js").then(function (mayChu) {
-        var app = ungDung.getApps()[0] || ungDung.initializeApp(window.FIREBASE_CONFIG);
-        ketNoi = mayChu.getFirestore(app);
-        goi = mayChu;
-        taiTuMayChu();
-      });
-    });
+    taiTuMayChu();
+  }
+
+  function layMon() {
+    return duLieu.danhSachMon;
   }
 
   function themMon(mon) {
@@ -78,7 +85,7 @@ var CuaHang = (function () {
   }
 
   function layThucUong() {
-    return fetchHeroProducts();
+    return duLieu.danhSachThucUong;
   }
 
   function themThucUong(thucUong) {
@@ -89,7 +96,7 @@ var CuaHang = (function () {
     thucUong.id = id;
     thucUong.isNew = !!thucUong.isNew;
     duLieu.danhSachThucUong.push(thucUong);
-    duyaThucUongLeníFirestore();
+    luu();
     return thucUong;
   }
 
@@ -100,7 +107,7 @@ var CuaHang = (function () {
     if (i < 0) return false;
     thucUongMoi.id = id;
     duLieu.danhSachThucUong[i] = Object.assign({}, duLieu.danhSachThucUong[i], thucUongMoi);
-    duyaThucUongLeníFirestore();
+    luu();
     return true;
   }
 
@@ -108,31 +115,7 @@ var CuaHang = (function () {
     duLieu.danhSachThucUong = duLieu.danhSachThucUong.filter(function (t) {
       return t.id !== id;
     });
-    duyaThucUongLeníFirestore();
-  }
-
-  function duyaThucUongLeníFirestore() {
-    localStorage.setItem(MAU, JSON.stringify(duLieu));
-    if (!ketNoi || !goi) return Promise.resolve();
-    return goi.setDoc(goi.doc(ketNoi, "shop", "cuaHang"), { danhSachThucUong: duLieu.danhSachThucUong }, { merge: true }).catch(function (err) {
-      console.error("Lỗi đẩy thức uống lên Firestore:", err);
-    });
-  }
-
-  function taiThucUongTuFirestore() {
-    if (!ketNoi || !goi) return Promise.resolve(duLieu.danhSachThucUong);
-    return goi.getDoc(goi.doc(ketNoi, "shop", "cuaHang")).then(function (snap) {
-      if (!snap.exists()) return duLieu.danhSachThucUong;
-      var cloud = snap.data();
-      if (cloud.danhSachThucUong && cloud.danhSachThucUong.length) {
-        duLieu.danhSachThucUong = cloud.danhSachThucUong;
-        localStorage.setItem(MAU, JSON.stringify(duLieu));
-      }
-      return duLieu.danhSachThucUong;
-    }).catch(function (err) {
-      console.error("Lỗi tải thức uống từ Firestore:", err);
-      return duLieu.danhSachThucUong;
-    });
+    luu();
   }
 
   function themDon(don) {
@@ -205,8 +188,6 @@ var CuaHang = (function () {
     themThucUong: themThucUong,
     suaThucUong: suaThucUong,
     xoaThucUong: xoaThucUong,
-    duyaThucUongLeníFirestore: duyaThucUongLeníFirestore,
-    taiThucUongTuFirestore: taiThucUongTuFirestore,
     themDon: themDon,
     gopDonTuKhach: gopDonTuKhach,
     tinhDoanhThu: tinhDoanhThu,
