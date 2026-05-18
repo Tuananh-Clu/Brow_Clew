@@ -1,4 +1,4 @@
-/* Lịch sử đơn + VIP — dùng chung với dashboard */
+
 .member-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -109,7 +109,7 @@
   margin-right: auto;
 }
 
-/* VIP */
+
 .vip-layout {
   display: grid;
   grid-template-columns: 1fr 1.1fr;

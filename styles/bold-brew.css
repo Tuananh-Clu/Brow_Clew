@@ -1,8 +1,6 @@
-/* ==========================================================================
-   DỰ ÁN COFFEE SHOP BOLD BREW - MAIN STYLESHEET (RÚT GỌN & DỄ HIỂU)
-   ========================================================================== */
 
-/* 1. KHAI BÁO BIẾN MÀU SẮC & PHÔNG CHỮ (EASY TO EXPLAIN) */
+
+
 :root {
   --brand-orange: #e85d04;
   --brand-orange-soft: #fff4ec;
@@ -16,7 +14,7 @@
   --font-serif: "Playfair Display", Georgia, serif;
 }
 
-/* 2. THIẾT LẬP CƠ BẢN (RESET & LAYOUT UTILITIES) */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -46,7 +44,7 @@ img {
 .text-center { text-align: center; }
 .relative { position: relative; }
 
-/* 3. NÚT BẤM (BUTTONS) */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -71,7 +69,7 @@ img {
 .btn-outline { border: 1px solid var(--border-gray); background: transparent; color: var(--brand-black); }
 .btn-outline:hover { border-color: var(--brand-black); }
 
-/* 4. THANH NAVBAR ĐẦU TRANG */
+
 header {
   position: fixed;
   top: 0;
@@ -132,7 +130,7 @@ nav a:hover { color: var(--brand-orange); }
   cursor: pointer;
 }
 
-/* 5. HERO SECTION (BANNER ĐẦU TRANG CHỦ - GIỮ NGUYÊN PREMIUM CAROUSEL) */
+
 .hero {
   position: relative;
   padding: 150px 0 60px;
@@ -239,7 +237,7 @@ nav a:hover { color: var(--brand-orange); }
 .hero .btn-outline { border-color: rgba(255, 255, 255, 0.45); color: #fff; background: transparent; }
 .hero .btn-outline:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); }
 
-/* 6. TIÊU ĐỀ SECTION CHUNG */
+
 .section-title {
   font-family: var(--font-serif);
   font-size: 36px;
@@ -250,7 +248,7 @@ nav a:hover { color: var(--brand-orange); }
 
 .section-title span { color: var(--brand-orange); }
 
-/* 7. STATS SECTION (CÁC VÒNG TRÒN THỐNG KÊ) */
+
 .stats-section {
   padding: 80px 0;
   background: var(--brand-gray);
@@ -289,7 +287,7 @@ nav a:hover { color: var(--brand-orange); }
   color: var(--brand-black);
 }
 
-/* 8. FEATURES SECTION (CƠ CẤU LAYOUT DÒNG SẢN PHẨM NỔI BẬT) */
+
 .features { padding: 120px 0; background: var(--white); }
 .features .section-title { margin-bottom: 60px; font-size: 44px; }
 .features-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; margin-bottom: 80px; }
@@ -298,14 +296,14 @@ nav a:hover { color: var(--brand-orange); }
 .features-media img { border-radius: 24px; width: 100%; aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s; }
 .features-media img:hover { transform: scale(1.04); box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15); }
 
-/* Khắc phục lỗi hiển thị 3 ảnh nằm dọc thô sơ - Khôi phục hàng 3 ảnh tuyệt đẹp của Menu phụ */
+
 .features-media--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .features-media--row img { aspect-ratio: 1; border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
 
 .features-h { font-family: var(--font-serif); font-size: 32px; margin-bottom: 16px; color: var(--brand-black); }
 .features-copy p { font-size: 15px; color: var(--text-gray); max-width: 450px; line-height: 1.8; }
 
-/* 8b. STORY SECTION (CÂU CHUYỆN THƯƠNG HIỆU - THIẾT KẾ CARD THỜI THƯỢNG) */
+
 .story { padding: 100px 0 120px; background: var(--white); }
 .story-block { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 40px; border-radius: 32px; margin-bottom: 40px; overflow: hidden; background: linear-gradient(135deg, var(--white) 0%, var(--brand-orange-soft) 100%); box-shadow: 0 16px 48px rgba(232, 93, 4, 0.08); border: 2px solid rgba(232, 93, 4, 0.1); transition: all 0.4s ease; }
 .story-block:hover { box-shadow: 0 24px 64px rgba(232, 93, 4, 0.15); transform: translateY(-4px); }
@@ -315,7 +313,7 @@ nav a:hover { color: var(--brand-orange); }
 .story-h { font-family: var(--font-serif); font-size: 32px; margin-bottom: 16px; color: var(--brand-black); }
 .story-copy p { font-size: 15px; color: var(--text-gray); max-width: 420px; line-height: 1.8; margin-bottom: 24px; }
 
-/* 9. PRODUCTS CATALOGUE SECTION (DANH SÁCH MÓN ĂN) */
+
 .products {
   padding: 90px 0;
   background: var(--brand-gray);
@@ -385,7 +383,7 @@ nav a:hover { color: var(--brand-orange); }
   font-size: 16px;
 }
 
-/* 10. TESTIMONIALS SECTION (Ý KIẾN KHÁCH HÀNG) */
+
 .testimonials {
   padding: 90px 0;
   background: var(--brand-gray);
@@ -432,7 +430,7 @@ nav a:hover { color: var(--brand-orange); }
   line-height: 1.6;
 }
 
-/* 11. NEWSLETTER (ĐĂNG KÝ BẢN TIN) */
+
 .newsletter { padding: 90px 0; }
 
 .newsletter-inner {
@@ -465,7 +463,7 @@ nav a:hover { color: var(--brand-orange); }
   outline: none;
 }
 
-/* 12. FOOTER (CHÂN TRANG CHUNG) */
+
 footer {
   padding: 60px 0 30px;
   background: var(--brand-gray);
@@ -542,7 +540,7 @@ footer {
   color: #999;
 }
 
-/* 13. MENU USER DROPDOWN (AVATAR GÓC TRÊN) */
+
 .user-menu { position: relative; }
 .btn-user-icon {
   width: 40px;
@@ -606,7 +604,7 @@ footer {
 
 .logout-btn { color: #d32f2f; }
 
-/* 14. AI CHAT OVERLAY PANEL (KHUNG TRÒ CHUYỆN AI) */
+
 .ai-chat-overlay {
   position: fixed;
   inset: 0;

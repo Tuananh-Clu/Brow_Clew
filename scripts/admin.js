@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Delete buttons
+    
     tbody.querySelectorAll(".btn-icon.delete").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var monId = Number(this.dataset.id);
@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .join("");
 
-    // Edit buttons
+    
     tbody.querySelectorAll(".btn-icon.edit").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var thucUongId = Number(this.dataset.id);
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Delete buttons
+    
     tbody.querySelectorAll(".btn-icon.delete").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var thucUongId = Number(this.dataset.id);
@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .join("");
 
-    // Click rows to open details
+    
     tbody.querySelectorAll("tr").forEach(function (row) {
       row.addEventListener("click", function () {
         var orderId = this.dataset.id;
@@ -463,36 +463,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var itemsHtml = (don.items || [])
       .map(function (item) {
-        var optionsParts = [];
-        if (item.options && typeof item.options === 'object') {
-          if (Array.isArray(item.options)) {
-            item.options.forEach(function (opt) {
-              if (opt) optionsParts.push(opt);
-            });
-          } else {
-            Object.entries(item.options).forEach(function (e) {
-              if (e[1] !== undefined && e[1] !== null) {
-                optionsParts.push(e[0] + ": " + e[1]);
-              }
-            });
-          }
-        }
+        var optionsText = Object.keys(item.options || {}).map(function(key) {
+          return key + ": " + item.options[key];
+        }).join(", ");
 
-        var toppingsParts = [];
-        if (item.toppings && Array.isArray(item.toppings)) {
-          item.toppings.forEach(function (t) {
-            if (t) {
-              if (typeof t === 'object') {
-                toppingsParts.push(t.name || t.productName || JSON.stringify(t));
-              } else {
-                toppingsParts.push(t);
-              }
-            }
-          });
-        }
+        var toppingsText = (item.toppings || []).map(function(t) {
+          return t.name || t;
+        }).join(", ");
 
-        var optionsText = optionsParts.join(", ");
-        var toppingsText = toppingsParts.join(", ");
         var details = [optionsText, toppingsText].filter(Boolean).join(" | ");
 
         return (
@@ -557,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Gọi vẽ danh sách ngay lập tức khi tải trang từ dữ liệu cục bộ đã có
+  
   veDanhSachMon();
   veDanhSachThucUong();
   veDoanhThu();

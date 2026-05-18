@@ -27,7 +27,7 @@ async function suggestCustom(productId) {
       return null;
     }
 
-    // Combine iterations for efficiency
+    
     const toppingCount = {};
     const optionCount = {};
 

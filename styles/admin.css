@@ -1,14 +1,11 @@
-/* ==========================================
-   BOLD BREW - REDESIGNED ADMIN DASHBOARD STYLES
-   Minimalist, Premium, & Concise
-   ========================================== */
+
 
 .admin-page {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 1. THANH TABS HIỆN ĐẠI (GLASSMORPHISM TABS) */
+
 .admin-tabs {
   display: inline-flex;
   background: var(--brand-gray);
@@ -42,7 +39,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* 2. KHU VỰC BỘ LỌC VÀ TÌM KIẾM (CONTROLS & SEARCH) */
+
 .admin-controls,
 .order-controls {
   display: flex;
@@ -106,7 +103,7 @@
   font-family: inherit;
 }
 
-/* 3. THẺ ADMIN GIAO DIỆN CAO CẤP (PREMIUM CARDS) */
+
 .admin-card {
   background: var(--white);
   border-radius: 24px;
@@ -138,7 +135,7 @@
   align-items: start;
 }
 
-/* 4. BIỂU MẪU NHẬP LIỆU (FORMS) */
+
 .admin-form label {
   display: block;
   margin-bottom: 18px;
@@ -194,12 +191,12 @@
   margin: -10px 0 24px;
 }
 
-/* 5. THỐNG KÊ DOANH THU (STATS GRID) */
+
 .admin-stats {
   margin-bottom: 32px;
 }
 
-/* 6. BẢNG DỮ LIỆU ĐẸP & TINH TẾ (CLEAN TABLES) */
+
 .admin-table {
   width: 100%;
   border-collapse: collapse;
@@ -245,7 +242,7 @@
   color: var(--brand-orange);
 }
 
-/* HÀNH ĐỘNG HÀNG TRÊN BẢNG (ACTION BUTTONS) */
+
 .table-actions {
   display: flex;
   gap: 8px;
@@ -275,7 +272,7 @@
   background: #fdf2f2;
 }
 
-/* 7. HỘP THOẠI MODAL SANG TRỌNG (PREMIUM MODALS) */
+
 .modal-overlay {
   display: none;
   position: fixed;
@@ -362,7 +359,7 @@
   margin-top: 24px;
 }
 
-/* 8. CHI TIẾT ĐƠN HÀNG TRONG MODAL (ORDER DETAILS CARD) */
+
 .order-info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

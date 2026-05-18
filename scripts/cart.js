@@ -25,24 +25,12 @@ function loadCart() {
   `;
 
   cart.forEach((item, index) => {
-    let optionsHtml = '';
-    if (item.options && typeof item.options === 'object') {
-      if (Array.isArray(item.options)) {
-        optionsHtml = item.options
-          .map(opt => `<span class="cart-meta-tag"><i class="fa-solid fa-cog"></i> ${opt}</span>`)
-          .join('');
-      } else {
-        optionsHtml = Object.entries(item.options)
-          .map(([key, val]) => `<span class="cart-meta-tag"><i class="fa-solid fa-cog"></i> ${key}: ${val}</span>`)
-          .join('');
-      }
-    }
+    const optionsHtml = Object.keys(item.options || {})
+      .map(key => `<span class="cart-meta-tag"><i class="fa-solid fa-cog"></i> ${key}: ${item.options[key]}</span>`)
+      .join('');
 
     const toppingsHtml = (item.toppings || [])
-      .map(t => {
-        const name = typeof t === 'object' && t !== null ? (t.name || t.productName || JSON.stringify(t)) : t;
-        return `<span class="cart-meta-tag"><i class="fa-solid fa-star"></i> ${name}</span>`;
-      })
+      .map(t => `<span class="cart-meta-tag"><i class="fa-solid fa-star"></i> ${t.name || t}</span>`)
       .join('');
 
     const metaTags = optionsHtml + toppingsHtml;

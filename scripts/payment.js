@@ -72,7 +72,7 @@ function loadOrderSummary() {
   list.innerHTML = cart
     .map(function (item) {
       var toppingNames = (item.toppings || []).map(function(t) {
-        return typeof t === 'object' && t !== null ? (t.name || t.productName) : t;
+        return t.name || t;
       });
       var optionVals = Object.values(item.options || {});
       var extra = [].concat(optionVals, toppingNames).filter(Boolean).join(" | ");
