@@ -11,7 +11,16 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-const firebaseConfig = window.FIREBASE_CONFIG;
+const firebaseConfig = {
+  apiKey: "AIzaSyAiPRFB87Pm_rIqXDPbXfH93NZNLWK6BIM",
+  authDomain: "coldbrew-e06ee.firebaseapp.com",
+  projectId: "coldbrew-e06ee",
+  storageBucket: "coldbrew-e06ee.firebasestorage.app",
+  messagingSenderId: "720297248520",
+  appId: "1:720297248520:web:91ebb35e1e2b4849038ebd",
+  measurementId: "G-V3DQBBFYJJ"
+};
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
