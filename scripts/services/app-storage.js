@@ -225,7 +225,50 @@ var AppStorage = (function () {
     return false;
   }
 
+  async function syncUserVipToFirestore() {
+    try {
+      var userRaw = localStorage.getItem("user");
+      if (!userRaw) return;
+      var user = JSON.parse(userRaw);
+      if (!user.uid) return;
+
+      const { db } = await import("./AuthService.js");
+      const { doc, setDoc } = await import("https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js");
+
+      await setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        duLieu: duLieu
+      }, { merge: true });
+      console.log("Synced all data to Firestore!");
+    } catch (e) {
+      console.error("Firestore sync error:", e);
+    }
+  }
+
+  async function taiTuCloud() {
+    try {
+      var userRaw = localStorage.getItem("user");
+      if (!userRaw) return;
+      var user = JSON.parse(userRaw);
+      if (!user.uid) return;
+
+      const { db } = await import("./AuthService.js");
+      const { doc, getDoc } = await import("https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js");
+
+      const docSnap = await getDoc(doc(db, "users", user.uid));
+      if (docSnap.exists() && docSnap.data().duLieu) {
+        duLieu = Object.assign({}, duLieu, docSnap.data().duLieu);
+        luu();
+      }
+    } catch (e) {
+      console.error("Firestore restore error:", e);
+    }
+  }
+
   taiTuMay();
+  setTimeout(taiTuCloud, 1000);
 
   return {
     duLieu: duLieu,
@@ -240,5 +283,6 @@ var AppStorage = (function () {
     tomTatMon: tomTatMon,
     locDon: locDon,
     canDangNhap: canDangNhap,
+    syncUserVipToFirestore: syncUserVipToFirestore,
   };
 })();

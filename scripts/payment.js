@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("paymentForm");
   loadOrderSummary();
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     var fullName = document.getElementById("fullName").value.trim();
@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    var submitBtn = form.querySelector('.pay-btn');
+    var originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý thanh toán...';
+
     var order = {
       id: "BBD-" + Date.now(),
       date: new Date().toISOString(),
@@ -37,7 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
     AppStorage.duLieu.gioHang = [];
     AppStorage.luu();
 
-    if (typeof CuaHang !== 'undefined') CuaHang.themDon(order);
+    try {
+      const { fetchOrders, updateOrders } = await import('./services/db-service.js');
+      const currentOrders = await fetchOrders();
+      currentOrders.unshift(order);
+      await updateOrders(currentOrders);
+      console.log("Order synced to Firestore successfully from Checkout!");
+      
+      await AppStorage.syncUserVipToFirestore();
+    } catch (err) {
+      console.error("Failed to sync order or VIP stats to Firestore from Checkout:", err);
+    }
 
     if (window.notifyCartUpdate) window.notifyCartUpdate();
 

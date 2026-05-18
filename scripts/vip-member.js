@@ -91,7 +91,7 @@ function memberView(vip, points, tier) {
   );
 }
 
-function onRegister(e) {
+async function onRegister(e) {
   e.preventDefault();
   var fd = new FormData(e.target);
   var fullName = fd.get("fullName").trim();
@@ -103,6 +103,10 @@ function onRegister(e) {
     return;
   }
 
+  var submitBtn = e.target.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Đang đăng ký...";
+
   AppStorage.duLieu.hoiVien = {
     fullName: fullName,
     email: email,
@@ -112,11 +116,13 @@ function onRegister(e) {
     welcomeBonus: 50,
   };
 
-  if (!AppStorage.duLieu.hoiVien) AppStorage.duLieu.hoiVien = {};
-  AppStorage.duLieu.hoiVien.fullName = fullName;
-  AppStorage.duLieu.hoiVien.email = email;
-  AppStorage.duLieu.hoiVien.phone = phone;
   AppStorage.luu();
+
+  try {
+    await AppStorage.syncUserVipToFirestore();
+  } catch (err) {
+    console.error("Failed to sync VIP member details to Firestore:", err);
+  }
 
   alert("Chúc mừng! Bạn đã trở thành hội viên VIP (+50 điểm chào mừng).");
   location.reload();
