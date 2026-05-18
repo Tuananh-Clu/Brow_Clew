@@ -1,3 +1,4 @@
+import { fetchHeroProducts } from "./db-service";
 
 var CuaHang = (function () {
   var MAU = "boldbrew_cuaHang";
@@ -46,10 +47,6 @@ var CuaHang = (function () {
     });
   }
 
-  function layMon() {
-    return duLieu.danhSachMon;
-  }
-
   function themMon(mon) {
     var id = 1;
     duLieu.danhSachMon.forEach(function (m) {
@@ -81,7 +78,7 @@ var CuaHang = (function () {
   }
 
   function layThucUong() {
-    return duLieu.danhSachThucUong;
+    return fetchHeroProducts();
   }
 
   function themThucUong(thucUong) {

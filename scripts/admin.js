@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("✓ Đã thêm thức uống.");
   });
 
-  // Search & Filter Menu
+
   document.getElementById("searchMon").addEventListener("input", function (e) {
     currentFilter.search = e.target.value;
     veDanhSachMon();
@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     veDanhSachMon();
   });
 
-  // Search & Filter Beverages
   document.getElementById("searchThucUong").addEventListener("input", function (e) {
     currentBeverageFilter.search = e.target.value;
     veDanhSachThucUong();
@@ -109,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     veDanhSachThucUong();
   });
 
-  // Sort table headers
   document.querySelectorAll(".sortable").forEach(function (header) {
     header.addEventListener("click", function () {
       var column = this.dataset.sort;
@@ -141,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Date range & status filters for orders
+
   document.getElementById("filterFromDate").addEventListener("change", function (e) {
     currentOrderFilter.fromDate = e.target.value;
     veDoanhThu();
@@ -157,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     veDoanhThu();
   });
 
-  // Edit item modal form
+
   document.getElementById("formSuaMon").addEventListener("submit", function (e) {
     e.preventDefault();
     var fd = new FormData(this);
@@ -203,89 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("✓ Đã cập nhật thức uống.");
   });
 
-  function veDanhSachMon() {
-    var mon = CuaHang.layMon();
-    document.getElementById("soMon").textContent = mon.length;
-
-    // Filter
-    var filtered = mon.filter(function (m) {
-      var matchSearch = m.name.toLowerCase().includes(currentFilter.search.toLowerCase());
-      var matchCategory = !currentFilter.category || m.category === currentFilter.category;
-      return matchSearch && matchCategory;
-    });
-
-    // Sort
-    filtered.sort(function (a, b) {
-      var aVal = a[currentSort.column];
-      var bVal = b[currentSort.column];
-      var cmp = aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
-      return currentSort.direction === "asc" ? cmp : -cmp;
-    });
-
-    var tbody = document.getElementById("bangMon");
-    if (!filtered.length) {
-      tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 20px; color: var(--text-gray);">Không tìm thấy món.</td></tr>';
-      return;
-    }
-
-    tbody.innerHTML = filtered
-      .map(function (m) {
-        return (
-          "<tr><td>" +
-          BrewStorage.chu(m.name) +
-          "</td><td>" +
-          BrewStorage.chu(m.category) +
-          "</td><td>" +
-          BrewStorage.tien(m.price) +
-          '</td><td><div class="table-actions"><button type="button" class="btn-icon edit" data-id="' +
-          m.id +
-          '" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i></button><button type="button" class="btn-icon delete" data-id="' +
-          m.id +
-          '" title="Xóa"><i class="fa-solid fa-trash"></i></button></div></td></tr>'
-        );
-      })
-      .join("");
-
-    // Edit buttons
-    tbody.querySelectorAll(".btn-icon.edit").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var monId = Number(this.dataset.id);
-        var mon = CuaHang.layMon().find(function (m) {
-          return m.id === monId;
-        });
-        if (mon) openEditModal(mon);
-      });
-    });
-
-    tbody.querySelectorAll(".btn-icon.delete").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var monId = Number(this.dataset.id);
-        var mon = CuaHang.layMon().find(function (m) {
-          return m.id === monId;
-        });
-        if (mon && confirm("Xóa " + mon.name + "?")) {
-          CuaHang.xoaMon(monId);
-          veDanhSachMon();
-        }
-      });
-    });
-
-
-    document.querySelectorAll(".sortable").forEach(function (h) {
-      h.classList.remove("active");
-      if (h.dataset.sort === currentSort.column) {
-        h.classList.add("active");
-        var indicator = h.querySelector(".sort-indicator");
-        indicator.textContent = currentSort.direction === "asc" ? "▲" : "▼";
-      }
-    });
-  }
-
   function veDanhSachThucUong() {
     var thucUong = CuaHang.layThucUong();
     document.getElementById("soThucUong").textContent = thucUong.length;
 
-    // Filter
+    
     var filtered = thucUong.filter(function (t) {
       var matchSearch = t.name.toLowerCase().includes(currentBeverageFilter.search.toLowerCase());
       var matchCategory = !currentBeverageFilter.category || t.category === currentBeverageFilter.category;
@@ -348,7 +268,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Update sort indicators
     document.querySelectorAll("#panelThucUong .sortable").forEach(function (h) {
       h.classList.remove("active");
       if (h.dataset.sort === currentBeverageSort.column) {
@@ -382,7 +301,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("soDonHuy").textContent = dt.soDonHuy;
     document.getElementById("monBanChay").textContent = dt.monBanChay;
 
-    // Filter orders
     var filtered = dt.donHang.filter(function (don) {
       var statusMatch = !currentOrderFilter.status || don.status === currentOrderFilter.status;
       var dateObj = new Date(don.date);
@@ -529,12 +447,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   veDanhSachMon();
 
-  // Load beverages from Firestore
+  
   CuaHang.taiThucUongTuFirestore().then(function () {
     veDanhSachThucUong();
   });
 
-  // Attach modal overlay listeners
+ 
   var setupModalListeners = function () {
     document.querySelectorAll(".modal-overlay").forEach(function (overlay) {
       overlay.removeEventListener("click", handleOverlayClick);
