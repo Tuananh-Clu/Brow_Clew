@@ -274,8 +274,3 @@
 .vip-success-text { margin-bottom: 24px; }
 .vip-cta-gap { margin-left: 8px; }
 
-@media (max-width: 992px) {
-  .vip-layout {
-    grid-template-columns: 1fr;
-  }
-}

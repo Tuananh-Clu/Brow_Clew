@@ -199,44 +199,7 @@
 .review-helpful:hover { color: var(--brand-orange); }
 .review-helpful .helpful-icon { margin-right: 4px; }
 
-@media (max-width: 1200px) {
-  .detail-gallery { padding: 40px; }
-  .hero-content { padding: 0 40px 30px; }
-}
 
-@media (max-width: 992px) {
-  .detail-container { grid-template-columns: 1fr; gap: 40px; }
-  .detail-gallery { position: static; max-width: 600px; margin: 0 auto; padding: 40px; }
-  .detail-hero { height: 180px; }
-  .hero-content { padding: 0 40px 30px; }
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
-  .reviews-header { flex-direction: column; gap: 20px; }
-  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .detail-hero { height: 160px; }
-  .hero-content { padding: 0 24px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
-  .detail-hero .breadcrumbs { text-align: left; width: 100%; order: 2; }
-  .category-badge { order: 1; }
-  .reviews-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 600px) {
-  .detail-hero { height: 140px; }
-  .hero-content { padding: 0 20px 20px; }
-  .detail-title { font-size: 32px; }
-  .detail-subtitle { font-size: 13px; }
-  .detail-price { font-size: 32px; }
-  .customization-form { padding: 24px; border-radius: 24px; }
-  .ingredients-grid { grid-template-columns: 1fr; }
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .action-row { flex-direction: column; align-items: stretch; }
-  .quantity-selector { justify-content: center; }
-  .rating-average { font-size: 40px; }
-  .rating-summary { min-width: auto; }
-}
 .suggest-card {
   background: #fff;
   border-radius: 18px;

@@ -71,10 +71,11 @@ function loadOrderSummary() {
 
   list.innerHTML = cart
     .map(function (item) {
-      var extra = [].concat(
-        Object.values(item.options || {}),
-        item.toppings || []
-      ).filter(Boolean).join(" | ");
+      var toppingNames = (item.toppings || []).map(function(t) {
+        return typeof t === 'object' && t !== null ? (t.name || t.productName) : t;
+      });
+      var optionVals = Object.values(item.options || {});
+      var extra = [].concat(optionVals, toppingNames).filter(Boolean).join(" | ");
 
       return (
         '<div class="summary-item">' +

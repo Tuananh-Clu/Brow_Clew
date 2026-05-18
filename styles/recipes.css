@@ -300,26 +300,4 @@
   border-top: 1px solid var(--border-gray);
 }
 
-.btn-block {
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .recipes-hero-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .recipes-hero h1 {
-    font-size: 32px;
-  }
-
-  .recipes-container {
-    grid-template-columns: 1fr;
-  }
-
-  .recipe-detail-content {
-    width: 95%;
-    max-width: 100%;
-  }
 }

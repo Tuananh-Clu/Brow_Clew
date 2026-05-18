@@ -1,719 +1,316 @@
+/* ==========================================================================
+   DỰ ÁN COFFEE SHOP BOLD BREW - STYLESHEET TRANG MENU SẢN PHẨM (RÚT GỌN)
+   ========================================================================== */
+
 .artistic-bg {
   background: var(--brand-gray);
   min-height: 100vh;
 }
-.glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 24px;
-}
 
+/* 1. HERO BANNER CỦA TRANG MENU */
 .product-hero {
-  padding: 180px 0 100px;
+  padding: 160px 0 60px;
   background: var(--brand-gray);
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
-.product-hero.hide,
-.artistic-product-grid.hide {
-  display: none;
-}
-.product-hero::after {
-  content: "MENU";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: 280px;
-  font-weight: 800;
-  color: rgba(0, 0, 0, 0.02);
-  z-index: 0;
-  pointer-events: none;
-}
-.product-hero-inner {
-  position: relative;
-  z-index: 1;
-}
+
 .product-hero h1 {
   font-family: var(--font-serif);
-  font-size: 64px;
-  letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 12px;
 }
+
 .product-hero p {
   color: var(--text-gray);
   max-width: 600px;
-  margin: 0 auto;
-  font-size: 16px;
+  margin: 0 auto 30px;
 }
 
+/* 2. BỘ LỌC TÌM KIẾM SẢN PHẨM (CATEGORY FILTERS) */
 .product-filters {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 48px 0 0;
+  gap: 10px;
 }
+
 .filter-btn {
-  padding: 12px 28px;
-  border-radius: 999px;
+  padding: 10px 24px;
+  border-radius: 30px;
   border: 1px solid var(--border-gray);
   background: var(--white);
   font-family: var(--font-sans);
-  font-size: 14px;
   font-weight: 600;
+  font-size: 13px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
-.filter-btn.active,
-.filter-btn:hover {
+
+.filter-btn.active, .filter-btn:hover {
   background: var(--brand-black);
   color: var(--white);
   border-color: var(--brand-black);
 }
-.filter-btn:has(+ .filter-btn.active),
-.filter-btn[data-filter="bestseller"],
-.filter-btn[data-filter="new"] {
-  border-color: var(--brand-orange);
-}
 
+/* 3. LƯỚI SẢN PHẨM (PRODUCT GRID) */
 .artistic-product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 48px;
-  padding: 60px 0 120px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 0 80px;
 }
+
 .artistic-product-card {
   position: relative;
-  border-radius: 40px;
+  border-radius: 24px;
   background: var(--white);
-  padding: 48px 32px 32px;
+  padding: 40px 24px 24px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.5s;
-  overflow: hidden;
   border: 1px solid var(--border-gray);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  overflow: hidden;
 }
 
-.artistic-product-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 180px;
-  background: linear-gradient(
-    180deg,
-    var(--brand-orange-soft) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  border-radius: 40px 40px 0 0;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
 .artistic-product-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
   border-color: var(--brand-orange);
 }
-.artistic-product-card:hover::before {
-  opacity: 1;
-}
 
+/* Các nhãn Best Seller, New */
 .badge {
   position: absolute;
   top: 16px;
   right: 16px;
   z-index: 10;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.badge-bestseller {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
-  color: #fff;
-  animation: pulse-badge 2s ease-in-out infinite;
-}
-
-.badge-new {
-  background: linear-gradient(135deg, var(--brand-orange) 0%, #ff8a3d 100%);
   color: #fff;
 }
 
+.badge-bestseller { background: #ff5252; }
+.badge-new { background: var(--brand-orange); }
+
+/* Nút thả tim yêu thích */
 .btn-like-card {
   position: absolute;
   top: 16px;
   left: 16px;
   z-index: 11;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid var(--border-gray);
+  border: 1px solid var(--border-gray);
   color: var(--brand-black);
   cursor: pointer;
   display: grid;
   place-items: center;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  font-size: 16px;
+  transition: all 0.2s;
 }
 
-.btn-like-card:hover {
-  background: var(--white);
-  border-color: var(--brand-orange);
-  color: var(--brand-orange);
-  transform: scale(1.1);
-}
-
-.btn-like-card.liked {
-  background: var(--brand-orange);
-  border-color: var(--brand-orange);
-  color: #fff;
-  animation: heart-beat 0.3s ease;
-}
-
-@keyframes heart-beat {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes pulse-badge {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
+.btn-like-card:hover { border-color: var(--brand-orange); color: var(--brand-orange); }
+.btn-like-card.liked { background: var(--brand-orange); border-color: var(--brand-orange); color: #fff; }
 
 .artistic-product-card img {
-  position: relative;
-  z-index: 1;
-  height: 240px;
-  width: 100%;
-  aspect-ratio: 1;
+  height: 180px;
+  margin: 0 auto 20px;
   object-fit: contain;
-  margin: 0 auto 32px;
-  filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.12));
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.artistic-product-card:hover img {
-  transform: scale(1.08) rotate(4deg);
+  transition: transform 0.3s;
 }
 
+.artistic-product-card:hover img { transform: scale(1.06); }
+
 .artistic-product-card h3 {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
+
 .artistic-product-card p {
-  position: relative;
-  z-index: 1;
   color: var(--text-gray);
-  font-size: 15px;
-  margin-bottom: 32px;
+  font-size: 14px;
+  margin-bottom: 24px;
   line-height: 1.6;
 }
+
 .artistic-product-card .price-wrap {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid var(--border-gray);
 }
+
 .artistic-product-card .price {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--brand-black);
 }
 
+/* Nút thêm nhanh vào giỏ */
 .btn-add {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--brand-black);
   color: var(--white);
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  transition:
-    background 0.3s,
-    transform 0.3s;
-}
-.btn-add:hover {
-  background: var(--brand-orange);
-  transform: rotate(90deg);
+  transition: all 0.2s;
 }
 
-.customize-modal {
+.btn-add:hover { background: var(--brand-orange); }
+
+/* 4. MODAL TÙY CHỈNH MÓN NƯỚC (CUSTOMIZE POPUP) */
+.customize-modal, .save-recipe-modal {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 1999;
   display: none;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.customize-modal.active {
-  display: flex;
-  opacity: 1;
-}
+.customize-modal.active, .save-recipe-modal.active { display: flex; }
+.customize-overlay, .save-recipe-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px); }
 
-.customize-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.customize-content {
+.customize-content, .save-recipe-content {
   position: relative;
   z-index: 1;
   background: var(--white);
-  border-radius: 24px;
+  border-radius: 20px;
   width: 90%;
-  max-width: 500px;
-  max-height: 90vh;
+  max-width: 480px;
+  max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.customize-close {
+.customize-close, .save-recipe-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 14px;
+  right: 14px;
   background: none;
   border: none;
-  font-size: 24px;
-  color: var(--brand-black);
+  font-size: 22px;
   cursor: pointer;
-  z-index: 10;
-  transition: color 0.2s;
-}
-
-.customize-close:hover {
-  color: var(--brand-orange);
 }
 
 .customize-header {
-  padding: 24px;
-  background: linear-gradient(135deg, var(--brand-orange-soft) 0%, #fff 100%);
-  border-bottom: 1px solid var(--border-gray);
+  padding: 20px;
+  background: var(--brand-orange-soft);
   display: flex;
   gap: 16px;
-  align-items: flex-start;
 }
 
-.customize-header img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 12px;
-}
+.customize-header img { width: 70px; height: 70px; object-fit: contain; }
+.customize-info h2 { font-size: 18px; margin-bottom: 4px; }
+.customize-info p { color: var(--brand-orange); font-weight: 700; }
 
-.customize-info h2 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--brand-black);
-  margin-bottom: 6px;
-}
+.customize-body { padding: 20px; }
+.custom-group { margin-bottom: 20px; }
+.custom-label { font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
 
-.customize-info p {
-  font-size: 14px;
-  color: var(--brand-orange);
-  font-weight: 600;
-}
-
-.customize-body {
-  padding: 24px;
-  max-height: calc(90vh - 280px);
-  overflow-y: auto;
-}
-
-.customization-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.custom-group {
-  padding-bottom: 20px;
-}
-
-.custom-group:last-of-type {
-  padding-bottom: 0;
-}
-
-.custom-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--brand-black);
-  margin-bottom: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.custom-label::before {
-  content: attr(data-icon);
-  font-size: 18px;
-}
-
-.options-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.option-pill {
-  cursor: pointer;
-  position: relative;
-}
-
-.option-pill input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
+/* Các nút thuốc chọn nhanh (Pill Buttons) */
+.options-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.option-pill { cursor: pointer; position: relative; }
+.option-pill input { position: absolute; opacity: 0; }
 
 .pill-text {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
-  border: 2px solid var(--border-gray);
-  border-radius: 999px;
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--brand-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 20px;
   font-size: 13px;
-  font-weight: 600;
-  color: var(--text-gray);
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.option-pill:hover .pill-text {
-  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-  border-color: var(--brand-orange);
-  color: var(--brand-orange);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 93, 4, 0.1);
+  transition: all 0.2s;
 }
 
 .option-pill input:checked ~ .pill-text {
-  background: linear-gradient(135deg, var(--brand-orange) 0%, #ff8a3d 100%);
-  border-color: var(--brand-orange);
+  background: var(--brand-orange);
   color: #fff;
-  box-shadow: 0 8px 16px rgba(232, 93, 4, 0.25);
-  transform: translateY(-2px);
+  border-color: var(--brand-orange);
 }
 
-.toppings-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.topping-card {
-  cursor: pointer;
-  position: relative;
-}
-
-.topping-card input {
-  position: absolute;
-  opacity: 0;
-}
+/* Lưới chọn Topping */
+.toppings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.topping-card { cursor: pointer; position: relative; }
+.topping-card input { position: absolute; opacity: 0; }
 
 .topping-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-  border: 2px solid var(--border-gray);
-  border-radius: 14px;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.topping-card:hover .topping-content {
-  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
-  border-color: var(--brand-orange);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 93, 4, 0.1);
-}
-
-.topping-card input:checked ~ .topping-content {
-  background: linear-gradient(
-    135deg,
-    var(--brand-orange-soft) 0%,
-    #ffe8d1 100%
-  );
-  border-color: var(--brand-orange);
-  box-shadow: 0 6px 16px rgba(232, 93, 4, 0.2);
-}
-
-.topping-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--brand-black);
-}
-
-.topping-card input:checked ~ .topping-content .topping-name {
-  color: var(--brand-orange);
-}
-
-.topping-price {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-gray);
-}
-
-.topping-card input:checked ~ .topping-content .topping-price {
-  color: var(--brand-orange);
-  font-weight: 800;
-}
-
-.customize-footer {
-  padding: 24px;
-  border-top: 1px solid var(--border-gray);
-  display: flex;
-  gap: 12px;
-  align-items: center;
+  padding: 10px;
   background: var(--brand-gray);
-}
-
-.customize-footer .quantity-selector {
-  flex-shrink: 0;
-  height: 44px;
-  border-radius: 999px;
-  padding: 4px;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.qty-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: var(--brand-gray);
-  color: var(--brand-black);
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
   font-size: 13px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
   transition: all 0.2s;
 }
 
-.qty-btn:hover {
-  background: var(--brand-black);
-  color: var(--white);
-}
-
-#modalQty {
-  width: 40px;
-  text-align: center;
-  border: none;
-  background: transparent;
-  font-weight: 600;
-  outline: none;
-  color: var(--brand-black);
-  font-size: 14px;
-}
-
-.customize-footer .btn {
-  flex: 1;
-  padding: 12px 16px;
-  height: 44px;
-  font-size: 13px;
-  border-radius: 999px;
-  background: var(--brand-orange);
-  color: white;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.customize-footer .btn:hover {
-  background: #ff7514;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(232, 93, 4, 0.3);
-}
-
-.btn-outline {
-  background: var(--white) !important;
-  color: var(--brand-black) !important;
-  border: 2px solid var(--border-gray) !important;
-}
-
-.btn-outline:hover {
-  background: var(--brand-gray) !important;
-  border-color: var(--brand-orange) !important;
-  color: var(--brand-orange) !important;
-}
-
-.save-recipe-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.save-recipe-modal.active {
-  display: flex;
-  opacity: 1;
-}
-
-.save-recipe-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.save-recipe-content {
-  position: relative;
-  z-index: 1;
-  background: var(--white);
-  border-radius: 24px;
-  width: 90%;
-  max-width: 400px;
-  padding: 32px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.3s ease;
-}
-
-.save-recipe-content h2 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--brand-black);
-}
-
-.save-recipe-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: var(--brand-black);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.save-recipe-close:hover {
-  color: var(--brand-orange);
-}
-
-#recipeNameInput {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid var(--border-gray);
-  border-radius: 12px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  transition: border-color 0.2s;
-}
-
-#recipeNameInput:focus {
-  outline: none;
+.topping-card input:checked ~ .topping-content {
+  background: var(--brand-orange-soft);
   border-color: var(--brand-orange);
 }
 
-.recipe-preview {
-  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+/* Chân trang Modal */
+.customize-footer {
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+  background: var(--brand-gray);
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brand-gray);
+  cursor: pointer;
+}
+
+#modalQty { width: 30px; text-align: center; border: none; font-weight: 600; outline: none; }
+
+/* 5. KHUNG LƯU CÔNG THỨC (SAVE RECIPE POPUP) */
+.save-recipe-content { max-width: 380px; padding: 24px; }
+.save-recipe-content h2 { font-size: 18px; margin-bottom: 16px; }
+
+#recipeNameInput {
+  width: 100%;
+  padding: 10px;
   border: 1px solid var(--border-gray);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.recipe-preview {
+  background: var(--brand-gray);
+  border-radius: 8px;
+  padding: 12px;
   font-size: 13px;
-  color: var(--text-gray);
-  max-height: 150px;
+  margin-bottom: 16px;
+  max-height: 120px;
   overflow-y: auto;
 }
 
-.recipe-preview-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.recipe-preview-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.save-recipe-footer {
-  display: flex;
-  gap: 12px;
-}
-
-.save-recipe-footer .btn {
-  flex: 1;
-  padding: 12px;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-}
+.save-recipe-footer { display: flex; gap: 8px; }

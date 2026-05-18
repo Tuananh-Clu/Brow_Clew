@@ -201,6 +201,84 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("✓ Đã cập nhật thức uống.");
   });
 
+  function veDanhSachMon() {
+    var mon = CuaHang.layMon();
+    var soMonEl = document.getElementById("soMon");
+    if (soMonEl) soMonEl.textContent = mon.length;
+
+    var filtered = mon.filter(function (m) {
+      var matchSearch = m.name.toLowerCase().includes(currentFilter.search.toLowerCase());
+      var matchCategory = !currentFilter.category || m.category === currentFilter.category;
+      return matchSearch && matchCategory;
+    });
+
+    filtered.sort(function (a, b) {
+      var aVal = a[currentSort.column];
+      var bVal = b[currentSort.column];
+      var cmp = aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+      return currentSort.direction === "asc" ? cmp : -cmp;
+    });
+
+    var tbody = document.getElementById("bangMon");
+    if (!tbody) return;
+    if (!filtered.length) {
+      tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 20px; color: var(--text-gray);">Không tìm thấy món.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered
+      .map(function (m) {
+        return (
+          "<tr><td>" +
+          AppStorage.chu(m.name) +
+          "</td><td>" +
+          AppStorage.chu(m.category) +
+          "</td><td>" +
+          AppStorage.tien(m.price) +
+          '</td><td><div class="table-actions"><button type="button" class="btn-icon edit" data-id="' +
+          m.id +
+          '" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i></button><button type="button" class="btn-icon delete" data-id="' +
+          m.id +
+          '" title="Xóa"><i class="fa-solid fa-trash"></i></button></div></td></tr>'
+        );
+      })
+      .join("");
+
+  
+    tbody.querySelectorAll(".btn-icon.edit").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var monId = Number(this.dataset.id);
+        var mon = CuaHang.layMon().find(function (m) {
+          return m.id === monId;
+        });
+        if (mon) openEditModal(mon);
+      });
+    });
+
+    // Delete buttons
+    tbody.querySelectorAll(".btn-icon.delete").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var monId = Number(this.dataset.id);
+        var mon = CuaHang.layMon().find(function (m) {
+          return m.id === monId;
+        });
+        if (mon && confirm("Xóa " + mon.name + "?")) {
+          CuaHang.xoaMon(monId);
+          veDanhSachMon();
+        }
+      });
+    });
+
+    document.querySelectorAll("#panelMon .sortable").forEach(function (h) {
+      h.classList.remove("active");
+      if (h.dataset.sort === currentSort.column) {
+        h.classList.add("active");
+        var indicator = h.querySelector(".sort-indicator");
+        if (indicator) indicator.textContent = currentSort.direction === "asc" ? "▲" : "▼";
+      }
+    });
+  }
+
   function veDanhSachThucUong() {
     var thucUong = CuaHang.layThucUong();
     document.getElementById("soThucUong").textContent = thucUong.length;
@@ -303,8 +381,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var filtered = dt.donHang.filter(function (don) {
       var statusMatch = !currentOrderFilter.status || don.status === currentOrderFilter.status;
-      var dateObj = new Date(don.date);
-      var dateStr = dateObj.toISOString().split("T")[0];
+      var dateStr = "";
+      try {
+        var dateObj = new Date(don.date);
+        if (dateObj && !isNaN(dateObj.getTime())) {
+          dateStr = dateObj.toISOString().split("T")[0];
+        } else if (don.date) {
+          var match = don.date.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
+          if (match) {
+            dateStr = match[3] + "-" + match[2].padStart(2, '0') + "-" + match[1].padStart(2, '0');
+          }
+        }
+      } catch (e) {}
 
       var fromMatch = !currentOrderFilter.fromDate || dateStr >= currentOrderFilter.fromDate;
       var toMatch = !currentOrderFilter.toDate || dateStr <= currentOrderFilter.toDate;
@@ -375,12 +463,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var itemsHtml = (don.items || [])
       .map(function (item) {
-        var optionsText = Object.entries(item.options || {})
-          .map(function (e) {
-            return e[0] + ": " + e[1];
-          })
-          .join(", ");
-        var toppingsText = (item.toppings || []).join(", ");
+        var optionsParts = [];
+        if (item.options && typeof item.options === 'object') {
+          if (Array.isArray(item.options)) {
+            item.options.forEach(function (opt) {
+              if (opt) optionsParts.push(opt);
+            });
+          } else {
+            Object.entries(item.options).forEach(function (e) {
+              if (e[1] !== undefined && e[1] !== null) {
+                optionsParts.push(e[0] + ": " + e[1]);
+              }
+            });
+          }
+        }
+
+        var toppingsParts = [];
+        if (item.toppings && Array.isArray(item.toppings)) {
+          item.toppings.forEach(function (t) {
+            if (t) {
+              if (typeof t === 'object') {
+                toppingsParts.push(t.name || t.productName || JSON.stringify(t));
+              } else {
+                toppingsParts.push(t);
+              }
+            }
+          });
+        }
+
+        var optionsText = optionsParts.join(", ");
+        var toppingsText = toppingsParts.join(", ");
         var details = [optionsText, toppingsText].filter(Boolean).join(" | ");
 
         return (
@@ -444,6 +556,11 @@ document.addEventListener("DOMContentLoaded", function () {
       veDoanhThu();
     }
   }
+
+  // Gọi vẽ danh sách ngay lập tức khi tải trang từ dữ liệu cục bộ đã có
+  veDanhSachMon();
+  veDanhSachThucUong();
+  veDoanhThu();
 
   window.addEventListener('cuaHangLoaded', function() {
     veDanhSachMon();

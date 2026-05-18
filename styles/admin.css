@@ -1,115 +1,130 @@
+/* ==========================================
+   BOLD BREW - REDESIGNED ADMIN DASHBOARD STYLES
+   Minimalist, Premium, & Concise
+   ========================================== */
+
 .admin-page {
-  max-width: 1100px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* 1. THANH TABS HIỆN ĐẠI (GLASSMORPHISM TABS) */
 .admin-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
+  display: inline-flex;
+  background: var(--brand-gray);
+  padding: 6px;
+  border-radius: 14px;
+  gap: 6px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border-gray);
 }
 
 .admin-tab {
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 2px solid var(--border-gray);
-  background: var(--white);
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  transition: all 0.2s;
+  color: var(--text-gray);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-tab:hover {
+  color: var(--brand-black);
 }
 
 .admin-tab.active {
-  border-color: var(--brand-orange);
-  background: var(--brand-orange-soft);
+  background: var(--white);
   color: var(--brand-orange);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Controls Section */
+/* 2. KHU VỰC BỘ LỌC VÀ TÌM KIẾM (CONTROLS & SEARCH) */
 .admin-controls,
 .order-controls {
   display: flex;
   gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.admin-controls {
+  margin-bottom: 24px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .order-controls {
-  align-items: flex-end;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-gray);
+  padding-bottom: 20px;
 }
 
 .search-input,
 .filter-select {
-  padding: 12px 16px;
+  padding: 12px 18px;
   border: 1px solid var(--border-gray);
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-family: inherit;
   background: var(--white);
-  transition: all 0.2s;
-}
-
-.search-input:focus,
-.filter-select:focus {
+  color: var(--brand-black);
   outline: none;
-  border-color: var(--brand-orange);
-  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
+  transition: all 0.2s;
 }
 
 .search-input {
   flex: 1;
-  min-width: 200px;
+  min-width: 260px;
 }
 
-.filter-select {
-  min-width: 150px;
+.search-input:focus,
+.filter-select:focus {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 4px var(--brand-orange-soft);
 }
 
 .date-range-group {
   display: flex;
   gap: 12px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .date-range-group label {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-gray);
-  margin: 0;
 }
 
 .date-range-group input {
-  padding: 10px 12px;
+  padding: 10px 14px;
   border: 1px solid var(--border-gray);
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
   font-family: inherit;
 }
 
-/* Card */
+/* 3. THẺ ADMIN GIAO DIỆN CAO CẤP (PREMIUM CARDS) */
 .admin-card {
   background: var(--white);
-  border-radius: 20px;
-  padding: 28px;
+  border-radius: 24px;
+  padding: 32px;
   border: 1px solid var(--border-gray);
-  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  margin-bottom: 32px;
 }
 
 .admin-card h2 {
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
   margin: 0 0 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  color: var(--brand-black);
 }
 
 .admin-card h2 i {
@@ -118,17 +133,18 @@
 
 .admin-grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px;
   align-items: start;
 }
 
+/* 4. BIỂU MẪU NHẬP LIỆU (FORMS) */
 .admin-form label {
   display: block;
-  margin-bottom: 14px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-dark);
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-black);
 }
 
 .admin-form input,
@@ -136,33 +152,35 @@
 .admin-form textarea {
   display: block;
   width: 100%;
-  margin-top: 6px;
-  padding: 12px 14px;
+  margin-top: 8px;
+  padding: 12px 16px;
   border: 1px solid var(--border-gray);
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: inherit;
   font-size: 14px;
+  background: var(--brand-gray);
+  outline: none;
   transition: all 0.2s;
 }
 
 .admin-form input:focus,
 .admin-form select:focus,
 .admin-form textarea:focus {
-  outline: none;
   border-color: var(--brand-orange);
-  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
+  background: var(--white);
+  box-shadow: 0 0 0 4px var(--brand-orange-soft);
 }
 
 .btn-block {
   width: 100%;
+  padding: 14px;
 }
 
 .admin-check {
   display: flex !important;
   align-items: center;
-  gap: 8px;
-  font-weight: 500 !important;
-  margin-bottom: 14px;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .admin-check input {
@@ -173,42 +191,48 @@
 .admin-hint {
   font-size: 13px;
   color: var(--text-gray);
-  margin: -8px 0 16px;
+  margin: -10px 0 24px;
 }
 
+/* 5. THỐNG KÊ DOANH THU (STATS GRID) */
 .admin-stats {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
-/* Table Improvements */
+/* 6. BẢNG DỮ LIỆU ĐẸP & TINH TẾ (CLEAN TABLES) */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .admin-table thead th {
   background: var(--brand-gray);
-  font-weight: 600;
-  color: var(--text-dark);
-  padding: 14px;
+  font-weight: 700;
+  color: var(--brand-black);
+  padding: 16px;
   text-align: left;
+  font-size: 13px;
   border-bottom: 1px solid var(--border-gray);
 }
 
 .admin-table tbody tr {
   border-bottom: 1px solid var(--border-gray);
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .admin-table tbody tr:hover {
-  background: var(--brand-gray);
+  background: rgba(232, 93, 4, 0.02);
 }
 
 .admin-table tbody td {
-  padding: 14px;
+  padding: 16px;
   font-size: 14px;
+  color: var(--text-gray);
 }
 
-/* Sortable Headers */
 .sortable {
   cursor: pointer;
   user-select: none;
-  white-space: nowrap;
 }
 
 .sortable:hover {
@@ -216,16 +240,12 @@
 }
 
 .sort-indicator {
-  font-size: 11px;
-  color: var(--text-gray);
+  font-size: 10px;
   margin-left: 4px;
-}
-
-.sortable.active .sort-indicator {
   color: var(--brand-orange);
 }
 
-/* Actions Column */
+/* HÀNH ĐỘNG HÀNG TRÊN BẢNG (ACTION BUTTONS) */
 .table-actions {
   display: flex;
   gap: 8px;
@@ -235,97 +255,90 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: all 0.2s;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 8px;
   color: var(--text-gray);
+  transition: all 0.2s;
 }
 
 .btn-icon:hover {
   background: var(--brand-gray);
-  color: var(--brand-orange);
-}
-
-.btn-icon.delete:hover {
-  color: #c53030;
 }
 
 .btn-icon.edit:hover {
   color: var(--brand-orange);
 }
 
-/* Modal Overlay */
+.btn-icon.delete:hover {
+  color: #c53030;
+  background: #fdf2f2;
+}
+
+/* 7. HỘP THOẠI MODAL SANG TRỌNG (PREMIUM MODALS) */
 .modal-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .modal-overlay.active {
   display: flex;
+  opacity: 1;
 }
 
 .modal-content {
   background: var(--white);
-  border-radius: 12px;
-  max-width: 500px;
+  border-radius: 24px;
+  max-width: 520px;
   width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .modal-content.modal-large {
-  max-width: 700px;
+  max-width: 720px;
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 24px 32px;
   border-bottom: 1px solid var(--border-gray);
 }
 
 .modal-header h2 {
   font-size: 18px;
   margin: 0;
+  font-family: var(--font-display);
 }
 
 .modal-close {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 18px;
   cursor: pointer;
   color: var(--text-gray);
-  padding: 0;
   width: 32px;
   height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
   transition: all 0.2s;
 }
 
@@ -335,170 +348,120 @@
 }
 
 .modal-form {
-  padding: 24px;
-}
-
-.modal-form label {
-  margin-bottom: 14px;
+  padding: 32px;
 }
 
 .modal-body {
-  padding: 24px;
-  font-size: 14px;
+  padding: 32px;
 }
 
 .modal-actions {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-gray);
+  margin-top: 24px;
 }
 
-.modal-actions .btn {
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-
-/* Order Details */
+/* 8. CHI TIẾT ĐƠN HÀNG TRONG MODAL (ORDER DETAILS CARD) */
 .order-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  background: var(--brand-gray);
+  padding: 20px;
+  border-radius: 16px;
   margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border-gray);
 }
 
 .order-info-item {
-  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .order-info-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
   color: var(--text-gray);
-  margin-bottom: 4px;
 }
 
 .order-info-value {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 14px;
   color: var(--brand-black);
-  font-size: 15px;
-}
-
-.order-items-list {
-  margin-bottom: 24px;
 }
 
 .order-items-list h3 {
-  font-size: 14px;
-  margin: 0 0 12px;
-  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 16px;
+  color: var(--brand-black);
 }
 
 .order-item-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
-  background: var(--brand-gray);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  font-size: 13px;
+  padding: 12px 18px;
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .order-item-name {
-  flex: 1;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-black);
 }
 
 .order-item-details {
-  color: var(--text-gray);
   font-size: 12px;
-  margin-top: 4px;
+  color: var(--text-gray);
+  margin-top: 2px;
 }
 
 .order-item-price {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--brand-orange);
-  min-width: 80px;
-  text-align: right;
+  font-size: 14px;
 }
 
 .order-summary {
-  background: var(--brand-gray);
-  padding: 16px;
-  border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  font-weight: 600;
+  align-items: center;
+  padding: 20px;
+  background: var(--brand-orange-soft);
+  border-radius: 12px;
+  margin-top: 20px;
 }
 
 .order-summary-label {
-  color: var(--text-gray);
+  font-weight: 700;
+  color: var(--brand-orange);
 }
 
 .order-summary-value {
-  color: var(--brand-black);
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--brand-orange);
 }
 
 .status-select {
-  padding: 8px 12px;
-  border: 1px solid var(--border-gray);
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 10px;
   font-size: 13px;
   font-family: inherit;
+  font-weight: 700;
+  border: 1px solid var(--border-gray);
+  background: var(--white);
+  outline: none;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .status-select:focus {
-  outline: none;
   border-color: var(--brand-orange);
-  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
-}
-
-@media (max-width: 900px) {
-  .admin-grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .admin-controls {
-    flex-direction: column;
-  }
-
-  .search-input {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .filter-select {
-    width: 100%;
-  }
-
-  .date-range-group {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .date-range-group label {
-    width: 100%;
-  }
-
-  .date-range-group input {
-    width: 100%;
-  }
-
-  .order-info {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-content {
-    max-width: calc(100vw - 40px);
-  }
 }

@@ -1,3 +1,8 @@
+/* ==========================================================================
+   DỰ ÁN COFFEE SHOP BOLD BREW - MAIN STYLESHEET (RÚT GỌN & DỄ HIỂU)
+   ========================================================================== */
+
+/* 1. KHAI BÁO BIẾN MÀU SẮC & PHÔNG CHỮ (EASY TO EXPLAIN) */
 :root {
   --brand-orange: #e85d04;
   --brand-orange-soft: #fff4ec;
@@ -11,40 +16,62 @@
   --font-serif: "Playfair Display", Georgia, serif;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-sans); font-size: 16px; color: var(--brand-black); background: var(--white); line-height: 1.55; overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
-.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+/* 2. THIẾT LẬP CƠ BẢN (RESET & LAYOUT UTILITIES) */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--brand-black);
+  background: var(--white);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .text-center { text-align: center; }
 .relative { position: relative; }
-.z-10 { z-index: 10; }
 
+/* 3. NÚT BẤM (BUTTONS) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 28px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 50px;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, background 0.2s;
 }
 
-.btn-sm { padding: 9px 18px; font-size: 12px; }
+.btn-sm { padding: 8px 16px; font-size: 12px; }
 .btn-block { width: 100%; }
 .btn-black { background: var(--brand-black); color: var(--white); }
 .btn-black:hover { background: #2a2a2a; transform: translateY(-2px); }
-.btn-orange { background: var(--brand-orange); color: var(--white); box-shadow: 0 8px 24px rgba(232, 93, 4, 0.25); }
+.btn-orange { background: var(--brand-orange); color: var(--white); }
 .btn-orange:hover { filter: brightness(1.05); transform: translateY(-1px); }
 .btn-outline { border: 1px solid var(--border-gray); background: transparent; color: var(--brand-black); }
 .btn-outline:hover { border-color: var(--brand-black); }
-.btn-story { margin-top: 20px; }
 
+/* 4. THANH NAVBAR ĐẦU TRANG */
 header {
   position: fixed;
   top: 0;
@@ -56,16 +83,56 @@ header {
   border-bottom: 1px solid var(--border-gray);
 }
 
-.nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.logo, .footer-logo { font-weight: 700; font-size: 22px; color: var(--brand-black); text-decoration: none; letter-spacing: -0.02em; }
-.logo span, .footer-logo span { color: var(--brand-orange); }
-nav ul { display: flex; gap: 32px; list-style: none; }
-nav a { color: var(--brand-black); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
-nav a:hover { color: var(--brand-orange); }
-.header-actions { display: flex; align-items: center; gap: 12px; }
-.btn-icon { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--brand-black); color: var(--white); display: grid; place-items: center; cursor: pointer; transition: transform 0.2s; }
-.btn-icon:hover { transform: scale(1.05); }
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--brand-black);
+  text-decoration: none;
+}
+
+.logo span { color: var(--brand-orange); }
+
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--brand-black);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--brand-orange); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--brand-black);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* 5. HERO SECTION (BANNER ĐẦU TRANG CHỦ - GIỮ NGUYÊN PREMIUM CAROUSEL) */
 .hero {
   position: relative;
   padding: 150px 0 60px;
@@ -172,54 +239,73 @@ nav a:hover { color: var(--brand-orange); }
 .hero .btn-outline { border-color: rgba(255, 255, 255, 0.45); color: #fff; background: transparent; }
 .hero .btn-outline:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); }
 
+/* 6. TIÊU ĐỀ SECTION CHUNG */
 .section-title {
   font-family: var(--font-serif);
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  max-width: 900px;
-  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.section-title--left { margin: 0; }
-.section-title-sub { font-size: 0.55em; font-weight: 600; opacity: 0.85; }
-.section-lead { margin-top: 12px; font-size: 14px; color: var(--text-gray); }
+.section-title span { color: var(--brand-orange); }
 
-.stats-section { padding: 120px 0; background: linear-gradient(135deg, var(--brand-gray) 0%, #faf8f6 100%); text-align: center; }
-.stats-grid { margin-top: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
-.stat-circle { width: 220px; height: 220px; border-radius: 50%; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 20px 60px rgba(232, 93, 4, 0.08); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); border: 3px solid var(--brand-orange); position: relative; }
-.stat-circle::before { content: ''; position: absolute; inset: -8px; border: 2px solid var(--brand-orange); border-radius: 50%; opacity: 0; animation: pulse-ring 2s ease-out infinite; }
-.stat-circle:hover { transform: scale(1.08); box-shadow: 0 32px 80px rgba(232, 93, 4, 0.16); }
-.stat-circle h3 { font-family: var(--font-display); font-size: 42px; font-weight: 800; background: linear-gradient(135deg, var(--brand-orange), #ff8a3d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.stat-circle p { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand-black); }
-@keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.3); opacity: 0; } }
+/* 7. STATS SECTION (CÁC VÒNG TRÒN THỐNG KÊ) */
+.stats-section {
+  padding: 80px 0;
+  background: var(--brand-gray);
+}
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.stat-circle {
+  background: var(--white);
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--border-gray);
+  transition: transform 0.3s;
+}
+
+.stat-circle:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-orange);
+}
+
+.stat-circle h3 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--brand-orange);
+  margin-bottom: 8px;
+}
+
+.stat-circle p {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--brand-black);
+}
+
+/* 8. FEATURES SECTION (CƠ CẤU LAYOUT DÒNG SẢN PHẨM NỔI BẬT) */
 .features { padding: 120px 0; background: var(--white); }
 .features .section-title { margin-bottom: 60px; font-size: 44px; }
-.features-track { position: relative; padding: 0; }
 .features-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; margin-bottom: 80px; }
 .features-row--reverse .features-media { order: 2; }
 .features-row--reverse .features-copy { order: 1; }
 .features-media img { border-radius: 24px; width: 100%; aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s; }
 .features-media img:hover { transform: scale(1.04); box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15); }
+
+/* Khắc phục lỗi hiển thị 3 ảnh nằm dọc thô sơ - Khôi phục hàng 3 ảnh tuyệt đẹp của Menu phụ */
 .features-media--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .features-media--row img { aspect-ratio: 1; border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
+
 .features-h { font-family: var(--font-serif); font-size: 32px; margin-bottom: 16px; color: var(--brand-black); }
 .features-copy p { font-size: 15px; color: var(--text-gray); max-width: 450px; line-height: 1.8; }
 
-.products { padding: 120px 0; background: var(--brand-gray); }
-.products .section-title { margin-bottom: 50px; font-size: 44px; }
-.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.product-card { background: var(--white); border: 2px solid transparent; border-radius: 32px; padding: 32px 24px 24px; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); }
-.product-card:hover { transform: translateY(-12px); box-shadow: 0 32px 70px rgba(232, 93, 4, 0.12); border-color: var(--brand-orange); }
-.product-card img { height: 260px; width: 100%; aspect-ratio: 1; margin: 0 auto 16px; object-fit: contain; transition: transform 0.4s ease; }
-.product-card:hover img { transform: scale(1.1) rotate(2deg); }
-.product-card h3 { margin-top: 8px; text-align: center; font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--brand-black); }
-.product-tagline { text-align: center; font-size: 13px; color: var(--text-gray); margin: 10px 0 20px; }
-.product-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--border-gray); }
-.product-price { font-weight: 800; color: var(--brand-orange); font-size: 16px; }
-
+/* 8b. STORY SECTION (CÂU CHUYỆN THƯƠNG HIỆU - THIẾT KẾ CARD THỜI THƯỢNG) */
 .story { padding: 100px 0 120px; background: var(--white); }
 .story-block { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 40px; border-radius: 32px; margin-bottom: 40px; overflow: hidden; background: linear-gradient(135deg, var(--white) 0%, var(--brand-orange-soft) 100%); box-shadow: 0 16px 48px rgba(232, 93, 4, 0.08); border: 2px solid rgba(232, 93, 4, 0.1); transition: all 0.4s ease; }
 .story-block:hover { box-shadow: 0 24px 64px rgba(232, 93, 4, 0.15); transform: translateY(-4px); }
@@ -229,80 +315,305 @@ nav a:hover { color: var(--brand-orange); }
 .story-h { font-family: var(--font-serif); font-size: 32px; margin-bottom: 16px; color: var(--brand-black); }
 .story-copy p { font-size: 15px; color: var(--text-gray); max-width: 420px; line-height: 1.8; margin-bottom: 24px; }
 
-.testimonials { padding: 120px 0; background: linear-gradient(135deg, var(--brand-gray) 0%, #faf8f6 100%); text-align: center; }
-.testimonials .section-title { margin-bottom: 50px; font-size: 44px; }
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
-.testimonial-card { background: var(--white); border-radius: 28px; padding: 40px 32px; border: 2px solid transparent; box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 24px 56px rgba(232, 93, 4, 0.12); border-color: var(--brand-orange); }
-.avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid var(--brand-orange); box-shadow: 0 8px 20px rgba(232, 93, 4, 0.2); }
-.t-name { font-style: normal; font-weight: 700; font-size: 16px; display: block; margin-bottom: 12px; color: var(--brand-black); }
-.t-quote { font-size: 15px; color: var(--text-gray); line-height: 1.7; }
-
-.newsletter { padding: 100px 0; background: var(--white); }
-.newsletter-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; padding: 60px 56px; border-radius: 40px; background: linear-gradient(135deg, var(--brand-orange-soft) 0%, #fffaf5 100%); border: 2px solid var(--brand-orange); box-shadow: 0 20px 60px rgba(232, 93, 4, 0.12); }
-.newsletter-visual { display: flex; justify-content: center; }
-.newsletter-figure { width: 240px; max-width: 100%; aspect-ratio: 3/4; border-radius: 28px; background: linear-gradient(160deg, #2a2a2a 0%, #4a3728 45%, var(--brand-orange) 100%); box-shadow: 0 28px 56px rgba(0, 0, 0, 0.25); }
-.newsletter-kicker { font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand-orange); margin-bottom: 12px; }
-.newsletter-title { font-family: var(--font-serif); font-size: 36px; margin-bottom: 24px; color: var(--brand-black); }
-.newsletter-form { display: flex; gap: 12px; }
-.newsletter-form input { flex: 1; padding: 14px 24px; border-radius: 999px; border: 2px solid var(--brand-orange); background: var(--white); font-family: var(--font-sans); font-size: 14px; outline: none; transition: all 0.3s; }
-.newsletter-form input:focus { box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1); }
-
-footer { padding: 72px 0 32px; background: var(--brand-gray); border-top: 1px solid var(--border-gray); }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 40px; }
-.footer-tagline { font-size: 14px; color: #888; margin: 12px 0 20px; max-width: 280px; }
-.social { display: flex; gap: 12px; }
-.social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-gray); display: grid; place-items: center; font-size: 11px; font-weight: 700; color: var(--brand-black); text-decoration: none; background: var(--white); transition: border-color 0.2s, color 0.2s; }
-.social a:hover { border-color: var(--brand-orange); color: var(--brand-orange); }
-.footer-title { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; margin-bottom: 18px; }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { color: var(--text-gray); text-decoration: none; font-size: 14px; }
-.footer-links a:hover { color: var(--brand-orange); }
-.callback-card { background: var(--white); padding: 24px; border-radius: 20px; border: 1px solid var(--border-gray); }
-.callback-title { font-size: 16px; margin-bottom: 14px; }
-.callback-card input { width: 100%; margin-bottom: 10px; padding: 11px 14px; border-radius: 12px; border: 1px solid var(--border-gray); background: var(--brand-gray); font-family: var(--font-sans); font-size: 14px; }
-.footer-copy { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-gray); font-size: 12px; color: #aaa; }
-
-.user-menu { position: relative; }
-.btn-user-icon { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--border-gray); background: transparent; color: var(--brand-black); display: grid; place-items: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s; padding: 0; }
-.btn-user-icon:hover { border-color: var(--brand-orange); transform: scale(1.05); }
-.user-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-.user-dropdown {
-  position: absolute;
-  top: 56px;
-  right: 0;
-  min-width: 240px;
-  background: var(--white);
-  border: 1px solid var(--border-gray);
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
-  z-index: 100;
-  overflow: hidden;
+/* 9. PRODUCTS CATALOGUE SECTION (DANH SÁCH MÓN ĂN) */
+.products {
+  padding: 90px 0;
+  background: var(--brand-gray);
 }
 
-.user-dropdown.active { opacity: 1; visibility: visible; transform: translateY(0); }
-.user-info { padding: 16px 16px 12px; border-bottom: 1px solid var(--border-gray); }
-.user-name { font-weight: 600; font-size: 14px; color: var(--brand-black); margin-bottom: 2px; }
-.user-email { font-size: 12px; color: var(--text-gray); }
-.dropdown-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--brand-black); text-decoration: none; font-size: 14px; border: 0; background: transparent; cursor: pointer; width: 100%; text-align: left; transition: background 0.2s, color 0.2s; }
-.dropdown-link:hover { background: var(--brand-orange-soft); color: var(--brand-orange); }
-.dropdown-link svg { flex-shrink: 0; opacity: 0.6; }
-.dropdown-divider { margin: 8px 0; border: 0; height: 1px; background: var(--border-gray); }
-.logout-btn { color: #d32f2f; }
-.logout-btn:hover { background: rgba(211, 47, 47, 0.1); color: #d32f2f; }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
+.product-card {
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: 32px;
+  padding: 32px 24px 24px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 32px 70px rgba(232, 93, 4, 0.12);
+  border-color: var(--brand-orange);
+}
+
+.product-card img {
+  height: 240px;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto 16px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.product-card h3 {
+  margin-top: 8px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-black);
+}
+
+.product-tagline {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-gray);
+  margin: 10px 0 20px;
+}
+
+.product-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.product-price {
+  font-weight: 800;
+  color: var(--brand-orange);
+  font-size: 16px;
+}
+
+/* 10. TESTIMONIALS SECTION (Ý KIẾN KHÁCH HÀNG) */
+.testimonials {
+  padding: 90px 0;
+  background: var(--brand-gray);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-orange);
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 2px solid var(--brand-orange);
+}
+
+.t-name {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--brand-black);
+}
+
+.t-quote {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* 11. NEWSLETTER (ĐĂNG KÝ BẢN TIN) */
+.newsletter { padding: 90px 0; }
+
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  padding: 50px;
+  border-radius: 30px;
+  background: var(--brand-orange-soft);
+  border: 2px solid var(--brand-orange);
+}
+
+.newsletter-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--border-gray);
+  outline: none;
+}
+
+/* 12. FOOTER (CHÂN TRANG CHUNG) */
+footer {
+  padding: 60px 0 30px;
+  background: var(--brand-gray);
+  border-top: 1px solid var(--border-gray);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin: 12px 0;
+  max-width: 240px;
+}
+
+.social { display: flex; gap: 10px; }
+.social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-gray);
+  display: grid;
+  place-items: center;
+  color: var(--brand-black);
+  text-decoration: none;
+  background: var(--white);
+}
+
+.footer-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li { margin-bottom: 8px; }
+.footer-links a {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover { color: var(--brand-orange); }
+
+.callback-card {
+  background: var(--white);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-gray);
+}
+
+.callback-card input {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-gray);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-gray);
+  font-size: 12px;
+  color: #999;
+}
+
+/* 13. MENU USER DROPDOWN (AVATAR GÓC TRÊN) */
+.user-menu { position: relative; }
+.btn-user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border-gray);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+}
+
+.user-avatar { width: 100%; height: 100%; object-fit: cover; }
+
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  min-width: 200px;
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.user-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-info {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.user-name { font-weight: 600; font-size: 13px; }
+.user-email { font-size: 11px; color: var(--text-gray); }
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  color: var(--brand-black);
+  text-decoration: none;
+  font-size: 13px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dropdown-link:hover {
+  background: var(--brand-orange-soft);
+  color: var(--brand-orange);
+}
+
+.logout-btn { color: #d32f2f; }
+
+/* 14. AI CHAT OVERLAY PANEL (KHUNG TRÒ CHUYỆN AI) */
 .ai-chat-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: all 0.3s;
   z-index: 1999;
 }
 
@@ -310,213 +621,81 @@ footer { padding: 72px 0 32px; background: var(--brand-gray); border-top: 1px so
   position: fixed;
   bottom: -100%;
   right: 20px;
-  width: 380px;
-  height: 600px;
+  width: 350px;
+  height: 520px;
   background: var(--white);
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   z-index: 2000;
-  transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ai-chat-panel.active { bottom: 20px; }
 .ai-chat-panel.active + .ai-chat-overlay { opacity: 1; visibility: visible; }
 
-.ai-chat-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: linear-gradient(135deg, var(--brand-orange) 0%, #e6691a 100%); color: white; border-radius: 20px 20px 0 0; border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
-.ai-chat-header h3 { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; margin: 0; }
-.ai-close-btn { background: rgba(255, 255, 255, 0.2); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; transition: background 0.2s; }
-.ai-close-btn:hover { background: rgba(255, 255, 255, 0.3); }
-
-.ai-chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-.ai-message, .user-message { display: flex; animation: slideIn 0.3s ease-out; }
-
-@keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-.ai-message { justify-content: flex-start; }
-.user-message { justify-content: flex-end; }
-.ai-message-content { background: var(--brand-gray); color: var(--brand-black); padding: 12px 16px; border-radius: 4px 16px 16px 16px; font-size: 14px; line-height: 1.4; max-width: 85%; word-wrap: break-word; }
-.user-message-content { background: var(--brand-orange); color: white; padding: 12px 16px; border-radius: 16px 4px 16px 16px; font-size: 14px; line-height: 1.4; max-width: 85%; word-wrap: break-word; }
-.ai-product-btn { background: var(--brand-orange); color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
-.ai-product-btn:hover { background: #d64c03; }
-
-.ai-chat-input-group { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border-gray); background: var(--brand-gray); border-radius: 0 0 20px 20px; }
-.ai-chat-input { flex: 1; border: 1px solid var(--border-gray); border-radius: 24px; padding: 10px 16px; font-size: 13px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s; }
-.ai-chat-input:focus { border-color: var(--brand-orange); }
-.ai-chat-send { background: var(--brand-orange); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; transition: transform 0.2s, background 0.2s; }
-.ai-chat-send:hover { background: #d64c03; transform: scale(1.05); }
-.btn-ai-open { background: linear-gradient(135deg, var(--brand-orange) 0%, #e6691a 100%); color: white; box-shadow: 0 4px 12px rgba(232, 93, 4, 0.3); }
-.btn-ai-open:hover { transform: scale(1.08); box-shadow: 0 6px 16px rgba(232, 93, 4, 0.4); }
-
-@media (max-width: 1200px) {
-  .hero-title { font-size: 100px; }
-  .hero-watermark { font-size: 60px; }
-  .hero-bottom { margin-top: 140px; }
-}
-
-@media (max-width: 992px) {
-  nav ul { flex-wrap: wrap; justify-content: center; gap: 16px 20px; }
-  .hero-watermark { display: none; }
-  .hero-title { font-size: 64px; }
-  .hero-img-wrap { position: relative; left: auto; top: auto; transform: none; width: 100%; max-width: 420px; margin: 20px auto 0; }
-  .hero-glow { width: 360px; height: 360px; margin: -180px 0 0 -180px; }
-  .hero-img { max-height: 420px; }
-  .hero-bottom { grid-template-columns: 1fr; margin-top: 24px; text-align: center; }
-  .hero-desc, .hero-col--right { margin: 0 auto; text-align: center; }
-  .hero-col--right { justify-self: center; }
-  .section-title { font-size: 28px; }
-  .newsletter-title { font-size: 26px; }
-  .features-track { padding-left: 0; }
-  .features-curve { display: none; }
-  .features-row, .features-row--reverse { grid-template-columns: 1fr; }
-  .features-row--reverse .features-media, .features-row--reverse .features-copy { order: unset; }
-  .features-media--row { grid-template-columns: 1fr 1fr 1fr; }
-  .product-grid { grid-template-columns: 1fr; }
-  .story-block, .story-block--reverse { grid-template-columns: 1fr; }
-  .story-block--reverse .story-media, .story-block--reverse .story-copy { order: unset; }
-  .testimonial-grid { grid-template-columns: 1fr; }
-  .newsletter-inner { grid-template-columns: 1fr; padding: 28px; text-align: center; }
-  .newsletter-form { justify-content: center; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .social { justify-content: center; }
-  .footer-brand { text-align: center; }
-  .footer-tagline { margin: 12px auto; }
-}
-
-@media (max-width: 600px) {
-  .hero-title { font-size: 52px; }
-  .hero-price { font-size: 36px; }
-  .stat-circle { width: 160px; height: 160px; }
-  .stat-circle h3 { font-size: 30px; }
-}
-
-@media (max-width: 768px) {
-  .ai-chat-panel { width: calc(100% - 40px); inset-inline: 20px; }
-}
-
-.ai-suggestions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.suggestion-card {
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.suggestion-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.2);
-}
-
-.suggestion-img-wrap {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.suggestion-img-wrap img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.suggestion-category {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-}
-
-.suggestion-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.suggestion-info h4 {
-  margin: 0;
-  font-size: 15px;
-  color: #fff;
-  font-weight: 600;
-}
-
-.suggestion-subtitle {
-  font-size: 12px;
-  color: #aaa;
-  margin: 0;
-}
-
-.suggestion-desc {
-  font-size: 12px;
-  color: #888;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.suggestion-footer {
+.ai-chat-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: auto;
+  padding: 14px 18px;
+  background: var(--brand-black);
+  color: white;
+  border-radius: 16px 16px 0 0;
 }
 
-.suggestion-price {
-  font-size: 15px;
-  font-weight: 700;
-  color: #f5c842;
-}
-
-.suggestion-btn {
-  background: #f5c842;
-  color: #111;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.suggestion-btn:hover {
-  background: #e6b800;
-}
-
-.typing-dots {
+.ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
   display: flex;
-  gap: 4px;
-  padding: 4px 0;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.typing-dots span {
-  width: 8px;
-  height: 8px;
-  background: #666;
+.ai-message-content {
+  background: var(--brand-gray);
+  padding: 10px 14px;
+  border-radius: 4px 12px 12px 12px;
+  font-size: 13px;
+  max-width: 85%;
+}
+
+.user-message-content {
+  background: var(--brand-orange);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px 4px 12px 12px;
+  font-size: 13px;
+  margin-left: auto;
+  max-width: 85%;
+}
+
+.ai-chat-input-group {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.ai-chat-input {
+  flex: 1;
+  border: 1px solid var(--border-gray);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+.ai-chat-send {
+  background: var(--brand-orange);
+  color: white;
+  border: none;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  animation: bounce 1.2s infinite;
-}
-
-.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes bounce {
-  0%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-6px); }
+  cursor: pointer;
+  display: grid;
+  place-items: center;
 }

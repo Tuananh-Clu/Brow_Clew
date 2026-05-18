@@ -549,34 +549,7 @@
 .toast-text { display: flex; flex-direction: column; gap: 2px; }
 .toast-text strong { font-size: 15px; }
 .toast-text span { font-size: 13px; color: rgba(255,255,255,0.7); }
-
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 1200px) {
-  .register-visual { flex: 0 0 380px; }
-  .register-visual-title { font-size: 42px; }
-  .register-form-inner { padding: 36px 40px; }
-  .register-top-nav { padding: 20px 40px; }
-}
-
-@media (max-width: 960px) {
-  .register-layout { flex-direction: column; }
-  .register-visual { flex: none; min-height: 380px; align-items: flex-end; padding: 36px; }
-  .register-visual-title { font-size: 44px; }
-  .register-perks { flex-direction: row; flex-wrap: wrap; }
-  .perk-item { flex: 1 1 200px; }
-  .register-form-container { max-height: none; overflow-y: visible; }
-  .register-top-nav { padding: 16px 24px; }
-  .register-form-inner { padding: 32px 24px; }
-}
-
-@media (max-width: 600px) {
-  .register-visual { min-height: 320px; }
-  .register-visual-title { font-size: 34px; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  .social-register-btns { grid-template-columns: 1fr; }
-  .success-toast { left: 16px; right: 16px; bottom: 16px; }
 }

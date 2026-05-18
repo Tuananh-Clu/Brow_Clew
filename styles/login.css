@@ -125,13 +125,3 @@
 .login-back:hover {
   background: rgba(255,255,255,0.2);
 }
-
-@media (max-width: 1200px) {
-  .login-form-container { padding: 60px 40px; }
-}
-
-@media (max-width: 992px) {
-  .login-layout { flex-direction: column; }
-  .login-visual { min-height: 400px; flex: none; }
-  .login-form-container { max-width: 100%; }
-}

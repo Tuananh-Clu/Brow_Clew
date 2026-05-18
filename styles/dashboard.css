@@ -215,14 +215,3 @@
   background: var(--brand-orange-soft);
   color: var(--brand-orange);
 }
-
-@media (max-width: 1200px) {
-  .dash-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 992px) {
-  .dashboard-layout { grid-template-columns: 1fr; }
-  .dash-sidebar { display: none; }
-  .dash-main { padding: 32px 24px; }
-  .dash-grid { grid-template-columns: 1fr; }
-}
