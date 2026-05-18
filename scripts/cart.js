@@ -137,11 +137,22 @@ function recalcCart() {
   const tax = subtotal * TAX_RATE;
   const total = subtotal - discountAmount + tax;
 
-  document.getElementById('summary-subtotal').textContent = subtotal.toLocaleString('vi-VN') + 'đ';
-  document.getElementById('summary-tax').textContent = (tax).toLocaleString('vi-VN') + 'đ';
-  document.getElementById('summary-total').textContent = total.toLocaleString('vi-VN') + 'đ';
-  document.getElementById('summary-count').textContent = cart.length;
-  document.getElementById('item-count-label').textContent = cart.length + ' sản phẩm trong giỏ';
+  const subtotalEl = document.getElementById('summary-subtotal');
+  if (subtotalEl) subtotalEl.textContent = subtotal.toLocaleString('vi-VN') + 'đ';
+
+  const taxEl = document.getElementById('summary-tax');
+  if (taxEl) taxEl.textContent = (tax).toLocaleString('vi-VN') + 'đ';
+
+  const totalEl = document.getElementById('summary-total');
+  if (totalEl) totalEl.textContent = total.toLocaleString('vi-VN') + 'đ';
+
+  const countEl = document.getElementById('summary-count');
+  if (countEl) countEl.textContent = cart.length;
+
+  const itemCountLabel = document.getElementById('item-count-label');
+  if (itemCountLabel) {
+    itemCountLabel.textContent = cart.length + ' sản phẩm trong giỏ';
+  }
 
   const badge = document.getElementById('cart-badge');
   if (badge) badge.textContent = cart.length;
