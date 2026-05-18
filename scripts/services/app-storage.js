@@ -264,6 +264,9 @@ var AppStorage = (function () {
       const docSnap = await getDoc(doc(db, "users", user.uid));
       if (docSnap.exists() && docSnap.data().duLieu) {
         duLieu = Object.assign({}, duLieu, docSnap.data().duLieu);
+        if (!Array.isArray(duLieu.gioHang)) duLieu.gioHang = [];
+        if (!Array.isArray(duLieu.donHang)) duLieu.donHang = [];
+        if (!Array.isArray(duLieu.monThich)) duLieu.monThich = [];
         luu();
       }
     } catch (e) {
