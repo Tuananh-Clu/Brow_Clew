@@ -274,24 +274,27 @@ function renderSuggestCard(suggested, detail) {
 
 function applyBestChoice() {
   if (!SuggestedData) return;
-  const { topOptions, topToppingId } = SuggestedData;
-  
 
-  Object.entries(topOptions || {}).forEach(([name, value]) => {
-    const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+  var options = SuggestedData.topOptions || {};
+  for (var name in options) {
+    var radio = document.querySelector('input[name="' + name + '"][value="' + options[name] + '"]');
     if (radio) radio.checked = true;
+  }
+
+
+  var checkboxes = document.querySelectorAll("#toppingsGrid input[type='checkbox']");
+  checkboxes.forEach(function (cb) {
+    cb.checked = (cb.value === SuggestedData.topToppingId);
   });
 
-  document.querySelectorAll("#toppingsGrid input[type='checkbox']").forEach((cb) => {
-    cb.checked = cb.value === topToppingId;
-  });
+ 
+  document.getElementById("toppingsGrid")?.dispatchEvent(new Event("change", { bubbles: true }));
 
-  const btn = document.querySelector(".sc-btn");
+ 
+  var btn = document.querySelector(".sc-btn");
   if (btn) {
-    const orig = btn.textContent;
     btn.textContent = "✓ Đã áp dụng!";
-    btn.style.background = "#3B6D11";
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ""; }, 2000);
+    setTimeout(function () { btn.textContent = "Áp dụng ngay"; }, 2000);
   }
 }
 
