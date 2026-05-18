@@ -348,9 +348,8 @@ async function sendMessage(text) {
   const messages = document.querySelector(".ai-chat-messages");
 
   if (!menuLoaded) {
-    const data = await fetch("data/ProductForHeroSection.json").then((res) =>
-      res.json()
-    );
+    const { fetchHeroProducts } = await import('./db-service.js');
+    const data = await fetchHeroProducts();
     systemInstruction = `
       Bạn là trợ lý tư vấn món uống của quán cà phê Bold Brew.
       Đây là toàn bộ menu: ${JSON.stringify(data)}

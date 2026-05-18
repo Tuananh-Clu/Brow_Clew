@@ -1,31 +1,20 @@
 var SuggestedData = null;
 var cachedProducts = null;
 
-
-async function fetchJSON(path) {
-  try {
-    const response = await fetch(path);
-    if (!response.ok) throw new Error("Failed to fetch " + path);
-    return response.json();
-  } catch (e) {
-    console.error("Error fetching " + path + ":", e);
-    return null;
-  }
-}
-
-
 async function getProducts() {
   if (!cachedProducts) {
-    cachedProducts = await fetchJSON("data/ProductsDetail.json");
+    const { fetchProductsDetail } = await import('./db-service.js');
+    cachedProducts = await fetchProductsDetail();
   }
   return cachedProducts;
 }
 
 async function suggestCustom(productId) {
   try {
+    const { fetchOrders } = await import('./db-service.js');
     const [data, orders] = await Promise.all([
       getProducts(),
-      fetchJSON("data/orders.json"),
+      fetchOrders(),
     ]);
 
     if (!data || !orders) return null;
@@ -84,7 +73,8 @@ async function suggestCustom(productId) {
 document.addEventListener("DOMContentLoaded", async () => {
   const productId = new URLSearchParams(window.location.search).get("id") || 1;
   try {
-    const products = await fetchJSON("data/ProductForHeroSection.json");
+    const { fetchHeroProducts } = await import('./db-service.js');
+    const products = await fetchHeroProducts();
     if (!products) return;
 
     const product = products.find((p) => p.id == productId);
@@ -341,7 +331,8 @@ function renderFeatures(product) {
 
 async function renderReviews(product) {
   try {
-    const allReviews = await fetchJSON("data/reviews.json");
+    const { fetchReviews } = await import('./db-service.js');
+    const allReviews = await fetchReviews();
     if (!allReviews) {
       document.getElementById("reviewsSection").style.display = "none";
       return;

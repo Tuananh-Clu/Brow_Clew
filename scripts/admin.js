@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Sort beverage table headers
+
   var setupBeverageSortHeaders = function () {
     var headers = document.querySelectorAll("#panelThucUong .sortable");
     headers.forEach(function (header) {
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Đã cập nhật món.");
   });
 
-  // Edit beverage modal form
+
   document.getElementById("formSuaThucUong").addEventListener("submit", function (e) {
     e.preventDefault();
     var fd = new FormData(this);
@@ -257,7 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Delete buttons
     tbody.querySelectorAll(".btn-icon.delete").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var monId = Number(this.dataset.id);
@@ -271,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Update sort indicators
+
     document.querySelectorAll(".sortable").forEach(function (h) {
       h.classList.remove("active");
       if (h.dataset.sort === currentSort.column) {
@@ -293,7 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return matchSearch && matchCategory;
     });
 
-    // Sort
     filtered.sort(function (a, b) {
       var aVal = a[currentBeverageSort.column];
       var bVal = b[currentBeverageSort.column];

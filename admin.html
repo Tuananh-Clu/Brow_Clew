@@ -21,12 +21,10 @@
     <aside class="dash-sidebar" id="dashSidebar"></aside>
 
     <main class="dash-main admin-page">
-      <header class="member-header">
-        <div>
-          <h1>Quản trị cửa hàng</h1>
-          <p class="text-muted">Thêm món và theo dõi doanh thu Bold Brew</p>
-        </div>
-      </header>
+      <div>
+        <h1 class="dash-title"><i class="fa-solid fa-gear"></i> Bảng điều khiển quản trị</h1>
+        <p class="dash-subtitle">Quản lý thực đơn, thức uống và theo dõi doanh thu.</p>
+      </div>
 
       <div class="admin-tabs">
         <button type="button" class="admin-tab active" data-tab="mon">Thực đơn</button>
@@ -45,6 +43,7 @@
             <option value="Smoothie">Smoothie</option>
             <option value="Ice Drink">Ice Drink</option>
           </select>
+          <button type="button" class="btn btn-orange" onclick="import('./scripts/db-service.js').then(m => m.uploadAllData())" style="margin-left: 10px;"><i class="fa-solid fa-cloud-arrow-up"></i> Đồng bộ 4 dữ liệu JSON lên Firestore</button>
         </div>
 
         <div class="admin-grid-2">

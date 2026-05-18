@@ -1,7 +1,8 @@
 async function loadLeaderboard() {
     try {
-        const data = await fetch('data/orders.json').then(res => res.json());
-        const dataProducts = await fetch('data/ProductForHeroSection.json').then(res => res.json());
+        const { fetchOrders, fetchHeroProducts } = await import('./db-service.js');
+        const data = await fetchOrders();
+        const dataProducts = await fetchHeroProducts();
         const podiumContainer = document.querySelector('.podium-container');
         const datalist = [];
         data.forEach(order => {

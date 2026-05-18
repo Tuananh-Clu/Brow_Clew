@@ -17,12 +17,13 @@ async function initProducts() {
     if (typeof CuaHang !== 'undefined' && CuaHang.layMon().length) {
       products = CuaHang.layMon();
     } else {
-      const productsRes = await fetch('data/ProductsDetail.json');
-      products = await productsRes.json();
+      const { fetchProductsDetail, fetchOrders } = await import('./db-service.js');
+      const productsRes = await fetchProductsDetail();
+      products = productsRes;
     }
 
-    const ordersRes = await fetch('data/orders.json');
-    const orders = await ordersRes.json();
+    const { fetchOrders } = await import('./db-service.js');
+    const orders = await fetchOrders();
 
     const bestSellerIds = calculateBestSellers(orders);
 

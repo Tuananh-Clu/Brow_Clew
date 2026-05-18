@@ -15,8 +15,8 @@ const btnRight = document.querySelector(".button_right");
 const btnDetails = document.querySelector(".button_details");
 
 async function init() {
-  const res = await fetch("data/ProductForHeroSection.json");
-  products = await res.json();
+  const { fetchHeroProducts } = await import('./db-service.js');
+  products = await fetchHeroProducts();
   if (products.length) {
     id = products[0].id;
     renderProduct(id);
@@ -74,9 +74,9 @@ btnRight.addEventListener("click", () => animateChange(getNextProductId(1)));
 btnLeft.addEventListener("click", () => animateChange(getNextProductId(-1)));
 
 async function loadProducts() {
-  const res = await fetch("data/ProductForHeroSection.json");
+  const { fetchHeroProducts } = await import('./db-service.js');
   const productgrid = document.querySelector(".product-grid");
-  const products = await res.json();
+  const products = await fetchHeroProducts();
 
   products.slice(0, 3).forEach((product) => {
     const productCard = document.createElement("article");
