@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styles/bold-brew.css">
   <link rel="stylesheet" href="styles/register.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="scripts/firebase-config.js" defer></script>
+  <script src="scripts/brew-storage.js" defer></script>
+  <script type="module" src="scripts/AuthService.js" defer></script>
 </head>
 <body>
 
@@ -190,7 +193,7 @@
           </div>
 
           
-          <button type="submit" class="btn btn-orange btn-block register-submit-btn" id="register-submit">
+          <button type="submit" class="btn btn-orange btn-block register-submit-btn btn_email_signup" id="register-submit">
             <i class="fa-solid fa-user-plus"></i>
             <span id="submit-text">Tạo tài khoản ngay</span>
             <span class="spinner" id="submit-spinner" style="display:none;"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
@@ -271,11 +274,10 @@
     });
 
     // Form submit
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       let valid = true;
 
-      // Clear errors
       document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
       document.querySelectorAll('.register-form input').forEach(el => el.classList.remove('input-error'));
 
@@ -313,24 +315,35 @@
 
       if (!valid) return;
 
-      // Show loading
       const btn = document.getElementById('register-submit');
       document.getElementById('submit-text').style.display = 'none';
       document.getElementById('submit-spinner').style.display = 'inline-flex';
       btn.disabled = true;
 
-      setTimeout(() => {
+      try {
+        // Wait for AuthService to be loaded (it's deferred)
+        await new Promise(resolve => {
+          if (window.handleEmailSignup) {
+            resolve();
+          } else {
+            const timer = setInterval(() => {
+              if (window.handleEmailSignup) {
+                clearInterval(timer);
+                resolve();
+              }
+            }, 100);
+            setTimeout(() => clearInterval(timer), 5000);
+          }
+        });
+
+        // Trigger click on the signup button to use AuthService logic
+        document.querySelector('.btn_email_signup')?.click();
+      } catch (error) {
         btn.disabled = false;
         document.getElementById('submit-text').style.display = 'inline';
         document.getElementById('submit-spinner').style.display = 'none';
-        // Show success toast
-        const toast = document.getElementById('success-toast');
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-          window.location.href = 'dashboard.html';
-        }, 2200);
-      }, 1800);
+        alert('Đăng ký thất bại: ' + error.message);
+      }
     });
 
     function showError(errId, inputId, msg) {

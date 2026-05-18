@@ -18,17 +18,28 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
+
+const ROLES = { ADMIN: "admin", USER: "user" };
+const PAGES = { ADMIN: "admin.html", DASHBOARD: "dashboard.html" };
+
+
+const getFormInputs = () => ({
+  email: document.querySelector('#email, #reg-email, input[name="email"]')?.value,
+  password: document.querySelector('#password, #reg-password, input[name="password"]')?.value,
+});
+
+const redirectByRole = (role) => {
+  window.location.href = role === ROLES.ADMIN ? PAGES.ADMIN : PAGES.DASHBOARD;
+};
+
 const saveUserToLocalStorage = (payload) => {
   if (!payload) return;
-  if (typeof BrewStorage !== "undefined") {
-    BrewStorage.duLieu.nguoiDung = payload;
-    localStorage.setItem("boldbrew", JSON.stringify(BrewStorage.duLieu));
-  }
   localStorage.setItem("user", JSON.stringify(payload));
 };
 
 async function fetchUserPayload(firebaseUser) {
-  let role = "user";
+  let role = ROLES.USER;
+
   try {
     const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
     if (userDoc.exists()) {
@@ -37,17 +48,10 @@ async function fetchUserPayload(firebaseUser) {
         role = data.role;
       } else if (data.nguoiDung && data.nguoiDung.role) {
         role = data.nguoiDung.role;
-      } else if (firebaseUser.email && firebaseUser.email.toLowerCase().includes("admin")) {
-        role = "admin";
       }
-    } else if (firebaseUser.email && firebaseUser.email.toLowerCase().includes("admin")) {
-      role = "admin";
     }
   } catch (e) {
     console.error("Error fetching role:", e);
-    if (firebaseUser.email && firebaseUser.email.toLowerCase().includes("admin")) {
-      role = "admin";
-    }
   }
 
   return {
@@ -62,7 +66,7 @@ async function fetchUserPayload(firebaseUser) {
 const checkRoleAndRedirect = async (firebaseUser) => {
   const payload = await fetchUserPayload(firebaseUser);
   saveUserToLocalStorage(payload);
-  window.location.href = payload.role === "admin" ? "admin.html" : "dashboard.html";
+  redirectByRole(payload.role);
 };
 
 const handleGoogleLogin = () => {
@@ -72,6 +76,16 @@ const handleGoogleLogin = () => {
   googleLoginBtn.addEventListener("click", () => {
     signInWithPopup(auth, provider)
       .then(async (result) => {
+        const userDoc = await getDoc(doc(db, "users", result.user.uid));
+        if (!userDoc.exists()) {
+          await setDoc(doc(db, "users", result.user.uid), {
+            email: result.user.email,
+            name: result.user.displayName || result.user.email,
+            photoURL: result.user.photoURL || null,
+            role: ROLES.USER,
+            createdAt: new Date(),
+          });
+        }
         await checkRoleAndRedirect(result.user);
       })
       .catch((error) => {
@@ -86,8 +100,7 @@ const handleEmailSignup = () => {
   if (!signupBtn) return;
 
   signupBtn.addEventListener("click", async () => {
-    const email = document.querySelector('#email, #reg-email, input[name="email"]')?.value;
-    const password = document.querySelector('#password, #reg-password, input[name="password"]')?.value;
+    const { email, password } = getFormInputs();
 
     if (!email || !password) {
       alert("Vui lòng điền email và mật khẩu");
@@ -96,6 +109,15 @@ const handleEmailSignup = () => {
 
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
+
+      await setDoc(doc(db, "users", result.user.uid), {
+        email,
+        name: result.user.displayName || email,
+        photoURL: result.user.photoURL || null,
+        role: ROLES.USER,
+        createdAt: new Date(),
+      });
+
       await checkRoleAndRedirect(result.user);
     } catch (error) {
       console.error("Signup error:", error);
@@ -109,8 +131,7 @@ const handleEmailLogin = () => {
   if (!loginBtn) return;
 
   loginBtn.addEventListener("click", async () => {
-    const email = document.querySelector('#email, #reg-email, input[name="email"]')?.value;
-    const password = document.querySelector('#password, #reg-password, input[name="password"]')?.value;
+    const { email, password } = getFormInputs();
 
     if (!email || !password) {
       alert("Vui lòng điền email và mật khẩu");
@@ -130,12 +151,7 @@ const handleEmailLogin = () => {
 const logout = () => {
   signOut(auth)
     .then(() => {
-      if (typeof BrewStorage !== "undefined") {
-        BrewStorage.duLieu.nguoiDung = null;
-        BrewStorage.luu();
-      }
       localStorage.removeItem("user");
-      localStorage.removeItem("boldbrew");
       window.location.href = "index.html";
     })
     .catch((error) => {
@@ -161,7 +177,7 @@ onAuthStateChanged(auth, async (firebaseUser) => {
 
 const loggedInUser = getUserFromLocalStorage();
 if (loggedInUser && document.querySelector(".btn_google_login")) {
-  window.location.href = loggedInUser.role === "admin" ? "admin.html" : "dashboard.html";
+  redirectByRole(loggedInUser.role);
 }
 
 handleGoogleLogin();

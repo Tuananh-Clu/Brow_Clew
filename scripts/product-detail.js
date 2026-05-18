@@ -1,11 +1,34 @@
 var SuggestedData = null;
+var cachedProducts = null;
+
+
+async function fetchJSON(path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error("Failed to fetch " + path);
+    return response.json();
+  } catch (e) {
+    console.error("Error fetching " + path + ":", e);
+    return null;
+  }
+}
+
+
+async function getProducts() {
+  if (!cachedProducts) {
+    cachedProducts = await fetchJSON("data/ProductsDetail.json");
+  }
+  return cachedProducts;
+}
 
 async function suggestCustom(productId) {
   try {
     const [data, orders] = await Promise.all([
-      fetch("data/ProductsDetail.json").then((r) => r.json()),
-      fetch("data/orders.json").then((r) => r.json()),
+      getProducts(),
+      fetchJSON("data/orders.json"),
     ]);
+
+    if (!data || !orders) return null;
 
     const listOrder = orders
       .flatMap((o) => o.items)
@@ -15,29 +38,38 @@ async function suggestCustom(productId) {
       return null;
     }
 
+    // Combine iterations for efficiency
     const toppingCount = {};
-    listOrder.forEach((item) =>
+    const optionCount = {};
+
+    listOrder.forEach((item) => {
       item.toppings?.forEach((t) => {
         toppingCount[t.id] = (toppingCount[t.id] || 0) + 1;
-      })
-    );
+      });
 
-
-    const optionCount = {};
-    listOrder.forEach((item) =>
       Object.entries(item.options || {}).forEach(([k, v]) => {
         optionCount[k] = optionCount[k] || {};
         optionCount[k][v] = (optionCount[k][v] || 0) + 1;
-      })
-    );
+      });
+    });
 
-    const topToppingId = Object.keys(toppingCount).length
-      ? Object.entries(toppingCount).reduce((a, b) => (b[1] > a[1] ? b : a))[0]
-      : null;
+    const findMaxId = (countObj) => {
+      let maxId = null;
+      let maxCount = 0;
+      for (const [id, count] of Object.entries(countObj)) {
+        if (count > maxCount) {
+          maxCount = count;
+          maxId = id;
+        }
+      }
+      return maxId;
+    };
+
+    const topToppingId = findMaxId(toppingCount);
 
     const topOptions = {};
     Object.entries(optionCount).forEach(([k, v]) => {
-      topOptions[k] = Object.entries(v).reduce((a, b) => (b[1] > a[1] ? b : a))[0];
+      topOptions[k] = findMaxId(v);
     });
 
     const result = { topToppingId, topOptions };
@@ -52,7 +84,9 @@ async function suggestCustom(productId) {
 document.addEventListener("DOMContentLoaded", async () => {
   const productId = new URLSearchParams(window.location.search).get("id") || 1;
   try {
-    const products = await fetch("data/ProductForHeroSection.json").then((r) => r.json());
+    const products = await fetchJSON("data/ProductForHeroSection.json");
+    if (!products) return;
+
     const product = products.find((p) => p.id == productId);
     if (!product) return;
 
@@ -85,7 +119,9 @@ function updateProductInfo(product) {
 
 async function loadCustomizationOptions(product) {
   try {
-    const allProducts = await fetch("data/ProductsDetail.json").then((r) => r.json());
+    const allProducts = await getProducts();
+    if (!allProducts) return;
+
     const detail = allProducts.find((p) => p.id == product.id);
     if (!detail) return;
 
@@ -305,7 +341,12 @@ function renderFeatures(product) {
 
 async function renderReviews(product) {
   try {
-    const allReviews = await fetch("data/reviews.json").then((r) => r.json());
+    const allReviews = await fetchJSON("data/reviews.json");
+    if (!allReviews) {
+      document.getElementById("reviewsSection").style.display = "none";
+      return;
+    }
+
     const reviews = allReviews.filter((r) => r.productId == product.id);
 
     if (!reviews.length) {
@@ -345,63 +386,80 @@ async function renderReviews(product) {
 }
 
 
+function getToppingPrice(toppingElement) {
+  const priceText = toppingElement.querySelector(".topping-price")?.textContent || "";
+  return Number(priceText.replace(/[^0-9]/g, ""));
+}
+
+function getSelectedToppings() {
+  return Array.from(document.querySelectorAll("#toppingsGrid input[type='checkbox']:checked")).map((cb) => ({
+    id: cb.value,
+    name: cb.nextElementSibling?.querySelector(".topping-name")?.textContent?.trim() || "Topping",
+    price: getToppingPrice(cb.nextElementSibling),
+  }));
+}
+
 function setupPriceAndQuantity(product) {
   const totalEl = document.getElementById("total-price");
   const qtyInput = document.getElementById("qty");
+  const basePrice = product.price;
   const fmt = (p) => p.toLocaleString("vi-VN") + " ₫";
-  const update = () => (totalEl.textContent = fmt(product.price * Number(qtyInput.value)));
 
-  document.querySelector("#base-price").textContent = fmt(product.price);
-  document.querySelector("#base-price").dataset.price = product.price;
+  const updatePrice = () => {
+    const extraPrice = getSelectedToppings().reduce((sum, t) => sum + t.price, 0);
+    const currentPrice = basePrice + extraPrice;
+    totalEl.textContent = fmt(currentPrice * Number(qtyInput.value));
+    product.price = currentPrice;
+  };
 
-  document.querySelectorAll("#toppingsGrid input[type='checkbox']").forEach((cb) => {
-    cb.addEventListener("change", () => {
-     const inputs = document.querySelectorAll("#toppingsGrid input[type='checkbox']");
-     const extra = Array.from(inputs).reduce((sum, i) => sum + (i.checked ? Number(i.nextElementSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, "")) : 0), 0);
-     const basePrice = Number(document.querySelector("#base-price").dataset.price);
-     product.price = basePrice + extra;
-      update();
-    });
+  document.querySelector("#base-price").textContent = fmt(basePrice);
+  document.querySelector("#base-price").dataset.price = basePrice;
+
+
+  document.getElementById("toppingsGrid")?.addEventListener("change", updatePrice);
+
+  document.querySelector(".plus").addEventListener("click", () => {
+    qtyInput.value++;
+    updatePrice();
   });
 
-  document.querySelector(".plus").addEventListener("click", () => { qtyInput.value++; update(); });
-  document.querySelector(".minus").addEventListener("click", () => { if (qtyInput.value > 1) { qtyInput.value--; update(); } });
+  document.querySelector(".minus").addEventListener("click", () => {
+    if (qtyInput.value > 1) {
+      qtyInput.value--;
+      updatePrice();
+    }
+  });
 
   document.getElementById("addToCartForm").addEventListener("submit", (e) => {
     e.preventDefault();
     try {
       const btn = document.querySelector(".btn-add-cart");
       const orig = btn.innerHTML;
-      
+
       btn.innerHTML = "Đã thêm vào giỏ";
       setTimeout(() => (btn.innerHTML = orig), 2000);
 
       const quantity = Number(qtyInput.value) || 1;
       const options = {};
-      document.querySelectorAll(".options-row input[type='radio']:checked").forEach(r => options[r.name] = r.value);
-
-      const toppings = [];
-      document.querySelectorAll("#toppingsGrid input[type='checkbox']:checked").forEach(cb => {
-        toppings.push({
-          id: cb.value,
-          name: cb.nextElementSibling.querySelector(".topping-name").textContent.trim(),
-          price: Number(cb.nextElementSibling.querySelector(".topping-price").textContent.replace(/[^0-9]/g, ""))
-        });
+      document.querySelectorAll(".options-row input[type='radio']:checked").forEach((r) => {
+        options[r.name] = r.value;
       });
+
+      const toppings = getSelectedToppings();
 
       const cartItem = {
         id: Date.now(),
         productId: product.id,
         productName: product.name,
         productImage: product.image,
-        productPrice: product.price,
+        productPrice: basePrice + toppings.reduce((s, t) => s + t.price, 0),
         quantity: quantity,
         options: options,
         toppings: toppings,
-        totalPrice: product.price * quantity,
+        totalPrice: (basePrice + toppings.reduce((s, t) => s + t.price, 0)) * quantity,
         addedAt: new Date().toISOString(),
       };
-      
+
       if (!Array.isArray(BrewStorage.duLieu.gioHang)) {
         BrewStorage.duLieu.gioHang = [];
       }
@@ -418,7 +476,7 @@ function setupPriceAndQuantity(product) {
     }
   });
 
-  update();
+  updatePrice();
 }
 
 
@@ -426,17 +484,27 @@ function setupLikeButton(product) {
   const btn = document.getElementById("likeBtn");
   if (!btn) return;
 
-  const getLiked = () => BrewStorage.duLieu.monThich;
+  const likedList = BrewStorage.duLieu.monThich;
+  const isLiked = likedList.some((p) => p.id === product.id);
   const setIcon = (on) => (btn.innerHTML = `<i class="fa-${on ? "solid" : "regular"} fa-heart"></i>`);
 
-  if (getLiked().some((p) => p.id === product.id)) { btn.classList.add("liked"); setIcon(true); }
+  if (isLiked) {
+    btn.classList.add("liked");
+    setIcon(true);
+  }
 
   btn.addEventListener("click", () => {
-    const list = getLiked();
-    const idx = list.findIndex((p) => p.id === product.id);
-    if (idx > -1) { list.splice(idx, 1); btn.classList.remove("liked"); setIcon(false); }
-    else { list.push({ id: product.id, name: product.name, image: product.image }); btn.classList.add("liked"); setIcon(true); }
-    BrewStorage.duLieu.monThich = list;
+    const idx = likedList.findIndex((p) => p.id === product.id);
+    if (idx > -1) {
+      likedList.splice(idx, 1);
+      btn.classList.remove("liked");
+      setIcon(false);
+    } else {
+      likedList.push({ id: product.id, name: product.name, image: product.image });
+      btn.classList.add("liked");
+      setIcon(true);
+    }
+    BrewStorage.duLieu.monThich = likedList;
     BrewStorage.luu();
   });
 }

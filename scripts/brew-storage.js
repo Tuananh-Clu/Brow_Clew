@@ -1,175 +1,59 @@
 var BrewStorage = (function () {
   var MAU_LUU = "boldbrew";
-  var ketNoi = null;
-  var goi = null;
-  var choDoiLuu = false;
+
+  var POINTS_PER_UNIT_CURRENCY = 10000;
+
+  var TIER_CONFIG = [
+    { minPoints: 200, id: "platinum", label: "Platinum", discount: 15 },
+    { minPoints: 80, id: "gold", label: "Gold", discount: 10 },
+    { minPoints: 30, id: "silver", label: "Silver", discount: 5 },
+    { minPoints: 0, id: "member", label: "Thành viên", discount: 0 },
+  ];
+
+  var TRANG_THAI_MAP = {
+    confirmed: { label: "Đã xác nhận", class: "processing" },
+    processing: { label: "Đang chuẩn bị", class: "processing" },
+    shipping: { label: "Đang giao", class: "processing" },
+    completed: { label: "Hoàn thành", class: "completed" },
+    cancelled: { label: "Đã hủy", class: "cancelled" },
+  };
 
   var duLieu = {
-    nguoiDung: null,
     gioHang: [],
     donHang: [],
     hoiVien: null,
-    donCuoi: null,
-    congThuc: [],
-    monThich: [],
   };
 
   function taiTuMay() {
     try {
       var raw = localStorage.getItem(MAU_LUU);
-
       if (raw) {
-        gopDuLieu(JSON.parse(raw));
+        duLieu = Object.assign({}, duLieu, JSON.parse(raw));
         return;
       }
     } catch (e) {
-      
     }
 
-    if (localStorage.getItem("user")) {
-      duLieu.nguoiDung = JSON.parse(localStorage.getItem("user"));
-    }
+    var cart = localStorage.getItem(STORAGE_KEYS.cart);
+    if (cart) duLieu.gioHang = JSON.parse(cart);
 
-    if (localStorage.getItem("cart")) {
-      duLieu.gioHang = JSON.parse(localStorage.getItem("cart"));
-    }
-
-    if (localStorage.getItem("orders")) {
-      duLieu.donHang = JSON.parse(localStorage.getItem("orders"));
-    }
-
-    if (localStorage.getItem("vipMember")) {
-      duLieu.hoiVien = JSON.parse(localStorage.getItem("vipMember"));
-    }
-
-    if (localStorage.getItem("lastOrder")) {
-      duLieu.donCuoi = JSON.parse(localStorage.getItem("lastOrder"));
-    }
-
-    if (localStorage.getItem("savedRecipes")) {
-      duLieu.congThuc = JSON.parse(localStorage.getItem("savedRecipes"));
-    }
-
-    if (localStorage.getItem("likedProducts")) {
-      duLieu.monThich = JSON.parse(localStorage.getItem("likedProducts"));
-    }
-
-    luu();
-  }
-
-  function gopDuLieu(obj) {
-    if (!obj) return;
-
-    if (obj.nguoiDung !== undefined) duLieu.nguoiDung = obj.nguoiDung;
-    else if (obj.user !== undefined) duLieu.nguoiDung = obj.user;
-
-    if (obj.gioHang !== undefined) duLieu.gioHang = obj.gioHang;
-    else if (obj.cart !== undefined) duLieu.gioHang = obj.cart;
-
-    if (obj.donHang !== undefined) duLieu.donHang = obj.donHang;
-    else if (obj.orders !== undefined) duLieu.donHang = obj.orders;
-
-    if (obj.hoiVien !== undefined) duLieu.hoiVien = obj.hoiVien;
-    else if (obj.vipMember !== undefined) duLieu.hoiVien = obj.vipMember;
-
-    if (obj.donCuoi !== undefined) duLieu.donCuoi = obj.donCuoi;
-    else if (obj.lastOrder !== undefined) duLieu.donCuoi = obj.lastOrder;
-
-    if (obj.congThuc !== undefined) duLieu.congThuc = obj.congThuc;
-    else if (obj.savedRecipes !== undefined) duLieu.congThuc = obj.savedRecipes;
-
-    if (obj.monThich !== undefined) duLieu.monThich = obj.monThich;
-    else if (obj.likedProducts !== undefined) duLieu.monThich = obj.likedProducts;
+    var orders = localStorage.getItem(STORAGE_KEYS.orders);
+    if (orders) duLieu.donHang = JSON.parse(orders);
   }
 
   function luu() {
     localStorage.setItem(MAU_LUU, JSON.stringify(duLieu));
-
-    var id =
-      duLieu.nguoiDung && duLieu.nguoiDung.uid
-        ? duLieu.nguoiDung.uid
-        : null;
-
-    if (!ketNoi || !goi || !id) {
-      choDoiLuu = true;
-      return;
-    }
-    
-    choDoiLuu = false;
-    goi
-      .setDoc(
-        goi.doc(ketNoi, "users", id),
-        duLieu,
-        { merge: true }
-      )
-      .catch(function (err) {
-        console.error("Firestore save error:", err);
-      });
-  }
-
-  function taiTuMayChu() {
-    var id =
-      duLieu.nguoiDung && duLieu.nguoiDung.uid
-        ? duLieu.nguoiDung.uid
-        : null;
-
-    if (!ketNoi || !goi || !id) return;
-
-    goi
-      .getDoc(goi.doc(ketNoi, "users", id))
-      .then(function (snap) {
-        if (!snap.exists()) {
-          luu();
-          return;
-        }
-
-        if (choDoiLuu) {
-          luu();
-          return;
-        }
-
-        gopDuLieu(snap.data());
-
-        localStorage.setItem(
-          MAU_LUU,
-          JSON.stringify(duLieu)
-        );
-        if (duLieu.nguoiDung) {
-          localStorage.setItem("user", JSON.stringify(duLieu.nguoiDung));
-        }
-      })
-      .catch(function (err) {
-        console.error("Firestore load error:", err);
-      });
-  }
-
-  function batDauKetNoi() {
-    if (!window.FIREBASE_CONFIG) return;
-
-    import(
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js"
-    ).then(function (ungDung) {
-      import(
-        "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js"
-      ).then(function (mayChu) {
-        var app =
-          ungDung.getApps()[0] ||
-          ungDung.initializeApp(window.FIREBASE_CONFIG);
-
-        ketNoi = mayChu.getFirestore(app);
-        goi = mayChu;
-
-        taiTuMayChu();
-      });
-    });
   }
 
   function donHangCuaToi() {
-    var email =
-      duLieu.nguoiDung &&
-      duLieu.nguoiDung.email
-        ? duLieu.nguoiDung.email.toLowerCase()
-        : "";
+    var user = null;
+    try {
+      var userRaw = localStorage.getItem("user");
+      if (userRaw) user = JSON.parse(userRaw);
+    } catch (e) {
+    }
+
+    var email = user && user.email ? user.email.toLowerCase() : "";
 
     if (!email) return duLieu.donHang;
 
@@ -189,38 +73,35 @@ var BrewStorage = (function () {
         return new Date(b.date) - new Date(a.date);
       });
 
-    var hoiVien = duLieu.hoiVien;
-
-    var diem = 0;
-
-    don.forEach(function (o) {
-      if (o.status !== "cancelled") {
-        diem += Number(o.total) || 0;
-      }
-    });
-
-    diem = Math.floor(diem / 10000);
-
-    if (hoiVien && hoiVien.welcomeBonus) {
-      diem += hoiVien.welcomeBonus;
+    var user = null;
+    try {
+      var userRaw = localStorage.getItem("user");
+      if (userRaw) user = JSON.parse(userRaw);
+    } catch (e) {
     }
 
+    var hoiVien = duLieu.hoiVien;
+    var diem = 0;
     var ly = 0;
     var demMon = {};
 
     don.forEach(function (o) {
-      if (o.status === "cancelled") return;
-
-      (o.items || []).forEach(function (mon) {
-        ly += Number(mon.quantity) || 1;
-
-        var ten = mon.productName || "Sản phẩm";
-
-        demMon[ten] =
-          (demMon[ten] || 0) +
-          (Number(mon.quantity) || 1);
-      });
+      if (o.status !== "cancelled") {
+        diem += Number(o.total) || 0;
+        ly += (o.items || []).reduce(function (sum, mon) {
+          var quantity = Number(mon.quantity) || 1;
+          var ten = mon.productName || "Sản phẩm";
+          demMon[ten] = (demMon[ten] || 0) + quantity;
+          return sum + quantity;
+        }, 0);
+      }
     });
+
+    diem = Math.floor(diem / POINTS_PER_UNIT_CURRENCY);
+
+    if (hoiVien && hoiVien.welcomeBonus) {
+      diem += hoiVien.welcomeBonus;
+    }
 
     var monYeuThich = "—";
     var max = 0;
@@ -232,34 +113,16 @@ var BrewStorage = (function () {
       }
     }
 
-    var hang = {
-      id: "member",
-      label: "Thành viên",
-      discount: 0,
-    };
-
-    if (diem >= 200) {
-      hang = {
-        id: "platinum",
-        label: "Platinum",
-        discount: 15,
-      };
-    } else if (diem >= 80) {
-      hang = {
-        id: "gold",
-        label: "Gold",
-        discount: 10,
-      };
-    } else if (diem >= 30) {
-      hang = {
-        id: "silver",
-        label: "Silver",
-        discount: 5,
-      };
+    var hang = TIER_CONFIG[TIER_CONFIG.length - 1];
+    for (var i = 0; i < TIER_CONFIG.length; i++) {
+      if (diem >= TIER_CONFIG[i].minPoints) {
+        hang = TIER_CONFIG[i];
+        break;
+      }
     }
 
     return {
-      user: duLieu.nguoiDung,
+      user: user,
       vip: hoiVien,
       orders: don,
       points: diem,
@@ -303,31 +166,8 @@ var BrewStorage = (function () {
   }
 
   function trangThai(ma) {
-    var bang = {
-      confirmed: {
-        label: "Đã xác nhận",
-        class: "processing",
-      },
-      processing: {
-        label: "Đang chuẩn bị",
-        class: "processing",
-      },
-      shipping: {
-        label: "Đang giao",
-        class: "processing",
-      },
-      completed: {
-        label: "Hoàn thành",
-        class: "completed",
-      },
-      cancelled: {
-        label: "Đã hủy",
-        class: "cancelled",
-      },
-    };
-
     return (
-      bang[ma] || {
+      TRANG_THAI_MAP[ma] || {
         label: ma || "Không rõ",
         class: "processing",
       }
@@ -372,7 +212,11 @@ var BrewStorage = (function () {
   }
 
   function canDangNhap(trang) {
-    if (duLieu.nguoiDung) return true;
+    try {
+      var userRaw = localStorage.getItem("user");
+      if (userRaw) return true;
+    } catch (e) {
+    }
 
     window.location.href =
       "login.html?next=" +
@@ -382,7 +226,6 @@ var BrewStorage = (function () {
   }
 
   taiTuMay();
-  batDauKetNoi();
 
   return {
     duLieu: duLieu,
