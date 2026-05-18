@@ -22,6 +22,7 @@ var AppStorage = (function () {
     gioHang: [],
     donHang: [],
     hoiVien: null,
+    monThich: [],
   };
 
   function taiTuMay() {
@@ -29,6 +30,7 @@ var AppStorage = (function () {
       var raw = localStorage.getItem(MAU_LUU);
       if (raw) {
         duLieu = Object.assign({}, duLieu, JSON.parse(raw));
+        if (!Array.isArray(duLieu.monThich)) duLieu.monThich = [];
         return;
       }
     } catch (e) {
@@ -39,6 +41,8 @@ var AppStorage = (function () {
 
     var orders = localStorage.getItem("boldbrew_orders");
     if (orders) duLieu.donHang = JSON.parse(orders);
+
+    if (!Array.isArray(duLieu.monThich)) duLieu.monThich = [];
   }
 
   function luu() {

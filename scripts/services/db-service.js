@@ -2,26 +2,6 @@ import { db } from "./AuthService.js";
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-export async function uploadAllData() {
-  try {
-    const products = await fetch('data/ProductsDetail.json').then(r => r.json());
-    const heroProducts = await fetch('data/ProductForHeroSection.json').then(r => r.json());
-    const orders = await fetch('data/orders.json').then(r => r.json());
-    const reviews = await fetch('data/reviews.json').then(r => r.json());
-
-    await setDoc(doc(db, "shop", "ProductsDetail"), { data: products });
-    await setDoc(doc(db, "shop", "ProductForHeroSection"), { data: heroProducts });
-    await setDoc(doc(db, "shop", "orders"), { data: orders });
-    await setDoc(doc(db, "shop", "reviews"), { data: reviews });
-
-    console.log("Data synced to Firestore successfully!");
-    alert("Đồng bộ toàn bộ dữ liệu mẫu JSON lên Firestore thành công!");
-  } catch (e) {
-    console.error("Error syncing data: ", e);
-    alert("Có lỗi khi đồng bộ dữ liệu: " + e.message);
-  }
-}
-
 export async function fetchProductsDetail() {
   try {
     const docSnap = await getDoc(doc(db, "shop", "ProductsDetail"));
