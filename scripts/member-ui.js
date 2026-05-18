@@ -67,8 +67,7 @@ var MemberUI = (function () {
     btn.dataset.bound = "1";
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      BrewStorage.duLieu.nguoiDung = null;
-      BrewStorage.luu();
+      localStorage.removeItem("user");
       location.href = "login.html";
     });
   }

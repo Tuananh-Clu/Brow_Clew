@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  if (typeof BrewStorage === "undefined" || !BrewStorage.duLieu.nguoiDung) {
+  try {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      location.href = "login.html?next=admin.html";
+      return;
+    }
+  } catch (e) {
     location.href = "login.html?next=admin.html";
     return;
   }

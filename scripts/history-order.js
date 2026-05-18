@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   MemberUI.mountSidebar("history");
-  var user = BrewStorage.duLieu.nguoiDung;
+  var user = null;
+  try {
+    const userRaw = localStorage.getItem("user");
+    user = userRaw ? JSON.parse(userRaw) : null;
+  } catch (e) {
+  }
   var subtitle = document.getElementById("historySubtitle");
   var filter = "all";
 

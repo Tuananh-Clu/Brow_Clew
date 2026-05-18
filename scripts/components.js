@@ -225,12 +225,8 @@ function injectComponents() {
   injectAIStyles();
   const body = document.body;
   let userData = null;
-  if (typeof BrewStorage !== "undefined") {
-    userData = BrewStorage.duLieu.nguoiDung;
-  } else {
-    const raw = localStorage.getItem("user");
-    userData = raw ? JSON.parse(raw) : null;
-  }
+  const raw = localStorage.getItem("user");
+  userData = raw ? JSON.parse(raw) : null;
 
   if (!document.querySelector(".ai-chat-panel")) {
     body.insertAdjacentHTML("beforeend", aiChatTemplate);
@@ -344,7 +340,7 @@ function addAIInitialMessage() {
 
 
 async function sendMessage(text) {
-  const API_KEY = "AIzaSyBVChV9D0RHxR9A1t83LnjQLQp9wTSUx2g";
+  const API_KEY = window.ENV.apiKey;
 
   if (!text.trim()) return;
 

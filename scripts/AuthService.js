@@ -161,7 +161,6 @@ const logout = () => {
 };
 
 const getUserFromLocalStorage = () => {
-  if (typeof BrewStorage !== "undefined" && BrewStorage.duLieu && BrewStorage.duLieu.nguoiDung) return BrewStorage.duLieu.nguoiDung;
   const raw = localStorage.getItem("user");
   return raw ? JSON.parse(raw) : null;
 };

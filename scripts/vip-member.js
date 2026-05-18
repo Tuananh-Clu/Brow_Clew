@@ -4,12 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
   var vip = BrewStorage.duLieu.hoiVien;
   var stats = BrewStorage.thongKe();
 
+  let user = null;
+  try {
+    const userRaw = localStorage.getItem("user");
+    user = userRaw ? JSON.parse(userRaw) : null;
+  } catch (e) {
+  }
+
   if (vip && vip.registeredAt) {
     root.innerHTML = memberView(vip, stats.points, stats.tier);
     return;
   }
 
-  root.innerHTML = registerView(BrewStorage.duLieu.nguoiDung);
+  root.innerHTML = registerView(user);
   document.getElementById("vipForm").addEventListener("submit", onRegister);
 });
 
@@ -105,10 +112,10 @@ function onRegister(e) {
     welcomeBonus: 50,
   };
 
-  if (!BrewStorage.duLieu.nguoiDung) BrewStorage.duLieu.nguoiDung = {};
-  BrewStorage.duLieu.nguoiDung.name = fullName;
-  BrewStorage.duLieu.nguoiDung.email = email;
-  BrewStorage.duLieu.nguoiDung.phone = phone;
+  if (!BrewStorage.duLieu.hoiVien) BrewStorage.duLieu.hoiVien = {};
+  BrewStorage.duLieu.hoiVien.fullName = fullName;
+  BrewStorage.duLieu.hoiVien.email = email;
+  BrewStorage.duLieu.hoiVien.phone = phone;
   BrewStorage.luu();
 
   alert("Chúc mừng! Bạn đã trở thành hội viên VIP (+50 điểm chào mừng).");
