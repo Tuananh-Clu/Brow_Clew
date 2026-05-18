@@ -6,6 +6,7 @@ var CuaHang = (function () {
 
   var duLieu = {
     danhSachMon: [],
+    danhSachThucUong: [],
     donHang: [],
   };
 
@@ -79,6 +80,64 @@ var CuaHang = (function () {
     luu();
   }
 
+  function layThucUong() {
+    return duLieu.danhSachThucUong;
+  }
+
+  function themThucUong(thucUong) {
+    var id = 1;
+    duLieu.danhSachThucUong.forEach(function (t) {
+      if (t.id >= id) id = t.id + 1;
+    });
+    thucUong.id = id;
+    thucUong.isNew = !!thucUong.isNew;
+    duLieu.danhSachThucUong.push(thucUong);
+    duyaThucUongLeníFirestore();
+    return thucUong;
+  }
+
+  function suaThucUong(id, thucUongMoi) {
+    var i = duLieu.danhSachThucUong.findIndex(function (t) {
+      return t.id === id;
+    });
+    if (i < 0) return false;
+    thucUongMoi.id = id;
+    duLieu.danhSachThucUong[i] = Object.assign({}, duLieu.danhSachThucUong[i], thucUongMoi);
+    duyaThucUongLeníFirestore();
+    return true;
+  }
+
+  function xoaThucUong(id) {
+    duLieu.danhSachThucUong = duLieu.danhSachThucUong.filter(function (t) {
+      return t.id !== id;
+    });
+    duyaThucUongLeníFirestore();
+  }
+
+  function duyaThucUongLeníFirestore() {
+    localStorage.setItem(MAU, JSON.stringify(duLieu));
+    if (!ketNoi || !goi) return Promise.resolve();
+    return goi.setDoc(goi.doc(ketNoi, "shop", "cuaHang"), { danhSachThucUong: duLieu.danhSachThucUong }, { merge: true }).catch(function (err) {
+      console.error("Lỗi đẩy thức uống lên Firestore:", err);
+    });
+  }
+
+  function taiThucUongTuFirestore() {
+    if (!ketNoi || !goi) return Promise.resolve(duLieu.danhSachThucUong);
+    return goi.getDoc(goi.doc(ketNoi, "shop", "cuaHang")).then(function (snap) {
+      if (!snap.exists()) return duLieu.danhSachThucUong;
+      var cloud = snap.data();
+      if (cloud.danhSachThucUong && cloud.danhSachThucUong.length) {
+        duLieu.danhSachThucUong = cloud.danhSachThucUong;
+        localStorage.setItem(MAU, JSON.stringify(duLieu));
+      }
+      return duLieu.danhSachThucUong;
+    }).catch(function (err) {
+      console.error("Lỗi tải thức uống từ Firestore:", err);
+      return duLieu.danhSachThucUong;
+    });
+  }
+
   function themDon(don) {
     duLieu.donHang.unshift(don);
     luu();
@@ -145,6 +204,12 @@ var CuaHang = (function () {
     themMon: themMon,
     suaMon: suaMon,
     xoaMon: xoaMon,
+    layThucUong: layThucUong,
+    themThucUong: themThucUong,
+    suaThucUong: suaThucUong,
+    xoaThucUong: xoaThucUong,
+    duyaThucUongLeníFirestore: duyaThucUongLeníFirestore,
+    taiThucUongTuFirestore: taiThucUongTuFirestore,
     themDon: themDon,
     gopDonTuKhach: gopDonTuKhach,
     tinhDoanhThu: tinhDoanhThu,

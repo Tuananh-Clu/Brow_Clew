@@ -30,10 +30,23 @@
 
       <div class="admin-tabs">
         <button type="button" class="admin-tab active" data-tab="mon">Thực đơn</button>
+        <button type="button" class="admin-tab" data-tab="thucuong">Thức uống</button>
         <button type="button" class="admin-tab" data-tab="doanhthu">Doanh thu</button>
       </div>
 
       <section class="admin-panel" id="panelMon">
+        <div class="admin-controls">
+          <input type="text" id="searchMon" class="search-input" placeholder="🔍 Tìm kiếm món...">
+          <select id="filterCategory" class="filter-select">
+            <option value="">Tất cả loại</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Milkshake">Milkshake</option>
+            <option value="Matcha">Matcha</option>
+            <option value="Smoothie">Smoothie</option>
+            <option value="Ice Drink">Ice Drink</option>
+          </select>
+        </div>
+
         <div class="admin-grid-2">
           <article class="admin-card">
             <h2><i class="fa-solid fa-plus"></i> Thêm món mới</h2>
@@ -63,13 +76,68 @@
               <table class="order-table admin-table">
                 <thead>
                   <tr>
-                    <th>Tên</th>
-                    <th>Loại</th>
-                    <th>Giá</th>
-                    <th></th>
+                    <th class="sortable" data-sort="ten">Tên <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="loai">Loại <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="gia">Giá <span class="sort-indicator"></span></th>
+                    <th>Hành động</th>
                   </tr>
                 </thead>
                 <tbody id="bangMon"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panelThucUong" hidden>
+        <div class="admin-controls">
+          <input type="text" id="searchThucUong" class="search-input" placeholder="🔍 Tìm kiếm thức uống...">
+          <select id="filterBeverageCategory" class="filter-select">
+            <option value="">Tất cả loại</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Milkshake">Milkshake</option>
+            <option value="Matcha">Matcha</option>
+            <option value="Smoothie">Smoothie</option>
+            <option value="Ice Drink">Ice Drink</option>
+          </select>
+        </div>
+
+        <div class="admin-grid-2">
+          <article class="admin-card">
+            <h2><i class="fa-solid fa-plus"></i> Thêm thức uống mới</h2>
+            <form id="formThemThucUong" class="admin-form">
+              <label>Tên thức uống<input type="text" name="ten" required placeholder="Ví dụ: Espresso Đen"></label>
+              <label>Loại
+                <select name="loai" required>
+                  <option value="Coffee">Coffee</option>
+                  <option value="Milkshake">Milkshake</option>
+                  <option value="Matcha">Matcha</option>
+                  <option value="Smoothie">Smoothie</option>
+                  <option value="Ice Drink">Ice Drink</option>
+                </select>
+              </label>
+              <label>Giá (đ)<input type="number" name="gia" required min="1000" step="1000" placeholder="45000"></label>
+              <label>Link ảnh<input type="text" name="anh" placeholder="images/... hoặc URL"></label>
+              <label>Mô tả<textarea name="moTa" rows="3" placeholder="Mô tả ngắn về thức uống"></textarea></label>
+              <label class="admin-check"><input type="checkbox" name="monMoi"> Thức uống mới</label>
+              <button type="submit" class="btn btn-orange btn-block">Thêm vào menu</button>
+            </form>
+          </article>
+
+          <article class="admin-card">
+            <h2><i class="fa-solid fa-wine-glass"></i> Danh sách thức uống (<span id="soThucUong">0</span>)</h2>
+            <p class="admin-hint">Thức uống thêm ở đây sẽ hiện trên trang Sản phẩm và đồng bộ lên Firestore tự động.</p>
+            <div class="table-scroll">
+              <table class="order-table admin-table">
+                <thead>
+                  <tr>
+                    <th class="sortable" data-sort="ten">Tên <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="loai">Loại <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="gia">Giá <span class="sort-indicator"></span></th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="bangThucUong"></tbody>
               </table>
             </div>
           </article>
@@ -109,6 +177,19 @@
         </div>
 
         <article class="admin-card">
+          <div class="order-controls">
+            <div class="date-range-group">
+              <label>Từ <input type="date" id="filterFromDate"></label>
+              <label>Đến <input type="date" id="filterToDate"></label>
+            </div>
+            <select id="filterOrderStatus" class="filter-select">
+              <option value="">Tất cả trạng thái</option>
+              <option value="completed">✓ Thành công</option>
+              <option value="processing">⟳ Đang xử lý</option>
+              <option value="cancelled">✗ Đã hủy</option>
+            </select>
+          </div>
+
           <h2><i class="fa-solid fa-list"></i> Đơn hàng gần đây</h2>
           <div class="table-scroll">
             <table class="order-table">
@@ -127,6 +208,78 @@
         </article>
       </section>
     </main>
+  </div>
+
+  <!-- MODALS -->
+  <!-- Edit Item Modal -->
+  <div class="modal-overlay" id="editItemModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Chỉnh sửa món</h2>
+        <button class="modal-close" onclick="closeModal('editItemModal')">✕</button>
+      </div>
+      <form id="formSuaMon" class="admin-form modal-form">
+        <label>Tên món<input type="text" name="ten" required></label>
+        <label>Loại
+          <select name="loai" required>
+            <option value="Coffee">Coffee</option>
+            <option value="Milkshake">Milkshake</option>
+            <option value="Matcha">Matcha</option>
+            <option value="Smoothie">Smoothie</option>
+            <option value="Ice Drink">Ice Drink</option>
+          </select>
+        </label>
+        <label>Giá (đ)<input type="number" name="gia" required min="1000" step="1000"></label>
+        <label>Link ảnh<input type="text" name="anh"></label>
+        <label>Mô tả<textarea name="moTa" rows="3"></textarea></label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" onclick="closeModal('editItemModal')">Hủy</button>
+          <button type="submit" class="btn btn-orange">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Edit Beverage Modal -->
+  <div class="modal-overlay" id="editBeverageModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Chỉnh sửa thức uống</h2>
+        <button class="modal-close" onclick="closeModal('editBeverageModal')">✕</button>
+      </div>
+      <form id="formSuaThucUong" class="admin-form modal-form">
+        <label>Tên thức uống<input type="text" name="ten" required></label>
+        <label>Loại
+          <select name="loai" required>
+            <option value="Coffee">Coffee</option>
+            <option value="Milkshake">Milkshake</option>
+            <option value="Matcha">Matcha</option>
+            <option value="Smoothie">Smoothie</option>
+            <option value="Ice Drink">Ice Drink</option>
+          </select>
+        </label>
+        <label>Giá (đ)<input type="number" name="gia" required min="1000" step="1000"></label>
+        <label>Link ảnh<input type="text" name="anh"></label>
+        <label>Mô tả<textarea name="moTa" rows="3"></textarea></label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" onclick="closeModal('editBeverageModal')">Hủy</button>
+          <button type="submit" class="btn btn-orange">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div class="modal-overlay" id="orderDetailsModal">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h2>Chi tiết đơn hàng</h2>
+        <button class="modal-close" onclick="closeModal('orderDetailsModal')">✕</button>
+      </div>
+      <div id="orderDetailsContent" class="modal-body">
+        <!-- Dynamic content here -->
+      </div>
+    </div>
   </div>
 
   <script src="config.js"></script>
